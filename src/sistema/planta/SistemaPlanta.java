@@ -14,8 +14,14 @@ public class SistemaPlanta {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+     public static void main(String arg[]){
+   
+   int num_uno = 3;
+   int num_dos = 2;
+   int resultado = 0;
+
+   resultado = num_uno + num_dos;
+
+   System.out.println("El valor de tu suma es: " + resultado);   
+ }
 }
