@@ -37,7 +37,7 @@ public class waitPage extends javax.swing.JFrame {
         initComponents();
         iconImage();
         
-        
+        System.out.println("bbsote");
      
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
         
@@ -65,7 +65,8 @@ public class waitPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
             OpenXAMPP();
         }
-        System.out.println("segundo commit");
+            System.out.println("conectado");
+        
     }
 
     private void AudioPlayer() {

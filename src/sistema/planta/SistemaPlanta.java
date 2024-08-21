@@ -12,11 +12,10 @@ package sistema.planta;
 public class SistemaPlanta {
 
     /**
-     ** @param args the command line arguments
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
     }
     
 }
-
