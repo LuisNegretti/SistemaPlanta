@@ -41,17 +41,6 @@ public class Menu1 extends javax.swing.JFrame {
         Riesgos = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         Jardin = new javax.swing.JPanel();
-        Clima = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextPane7 = new javax.swing.JTextPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jTextPane5 = new javax.swing.JTextPane();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTextArea7 = new javax.swing.JTextArea();
         CicloDeAgua1 = new javax.swing.JPanel();
         MenuCiclo = new javax.swing.JTabbedPane();
         ProcesoPrincipal = new javax.swing.JPanel();
@@ -76,6 +65,9 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea4 = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         Plantas = new javax.swing.JPanel();
         jTabbedPaneMargarita = new javax.swing.JTabbedPane();
         jLabel6 = new javax.swing.JLabel();
@@ -89,6 +81,19 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         jTextPane3 = new javax.swing.JTextPane();
         jPanel10 = new javax.swing.JPanel();
+        Clima = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jTextPane7 = new javax.swing.JTextPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jTextPane5 = new javax.swing.JTextPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTextArea8 = new javax.swing.JTextArea();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -97,18 +102,19 @@ public class Menu1 extends javax.swing.JFrame {
         setTitle("Interfaz");
         setBackground(new java.awt.Color(0, 153, 102));
         setName("MenuPrincipal"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1064, 768));
         setResizable(false);
 
         jTabbedPane1.setBackground(new java.awt.Color(0, 102, 0));
         jTabbedPane1.setForeground(new java.awt.Color(51, 255, 0));
         jTabbedPane1.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1049, 903));
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1064, 768));
 
         Operaciones.setBackground(new java.awt.Color(0, 51, 0));
         Operaciones.setForeground(new java.awt.Color(0, 51, 0));
         Operaciones.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Operaciones.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        Operaciones.setPreferredSize(new java.awt.Dimension(1064, 768));
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(102, 102, 0)), "Descripcion.", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 102, 0))); // NOI18N
         jScrollPane1.setToolTipText("");
@@ -155,162 +161,64 @@ public class Menu1 extends javax.swing.JFrame {
                     .addGroup(OperacionesLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(bt_op_ventana)))
-                .addContainerGap(642, Short.MAX_VALUE))
+                .addContainerGap(514, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Operaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Operaciones); // NOI18N
 
         Riesgos.setBackground(new java.awt.Color(0, 51, 0));
-        Riesgos.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 768));
 
         javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1047, Short.MAX_VALUE)
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 901, Short.MAX_VALUE)
+            .addGap(0, 773, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(0, 51, 0));
-        jPanel7.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        jPanel7.setPreferredSize(new java.awt.Dimension(1064, 768));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1047, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 901, Short.MAX_VALUE)
+            .addGap(0, 773, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Recomendaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/brote.png")), jPanel7); // NOI18N
 
         Jardin.setBackground(new java.awt.Color(0, 51, 0));
-        Jardin.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        Jardin.setPreferredSize(new java.awt.Dimension(1064, 768));
 
         javax.swing.GroupLayout JardinLayout = new javax.swing.GroupLayout(Jardin);
         Jardin.setLayout(JardinLayout);
         JardinLayout.setHorizontalGroup(
             JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1047, Short.MAX_VALUE)
         );
         JardinLayout.setVerticalGroup(
             JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 901, Short.MAX_VALUE)
+            .addGap(0, 773, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
-
-        Clima.setBackground(new java.awt.Color(0, 51, 0));
-        Clima.setPreferredSize(new java.awt.Dimension(1400, 1026));
-
-        jTextArea1.setBackground(new java.awt.Color(0, 102, 153));
-        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(153, 204, 0));
-        jTextArea1.setTabSize(0);
-        jTextArea1.setText("Imagina un gran circuito \n(sistema ecológico) o \npropiamente un sistema de la \nnaturaleza donde el agua \ncambia constantemente de \nestado, pasando de líquido a \ngaseoso y de gaseoso a \nlíquido, en un ciclo sin fin. \n¡Este es el ciclo del agua! \n\nEn este viaje, descubriremos \ncómo el sol, la gravedad y la \ntemperatura juegan un papel \nfundamental, y cómo este ciclo \nes esencial para la vida en la \nTierra, además te \nproporcionaremos \ninformación para aprovechar \nal máximo este ciclo de agua \npara tus plantas, y de que \nmanera lo puedes emplear. ");
-        jTextArea1.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jTextArea1);
-
-        jTextPane7.setEditable(false);
-        jTextPane7.setBackground(new java.awt.Color(0, 102, 153));
-        jTextPane7.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextPane7.setForeground(new java.awt.Color(153, 204, 0));
-        jTextPane7.setText("Imagina un gran circuito (sistema ecológico) o propiamente un sistema de la naturaleza donde el agua cambia constantemente de estado, pasando de líquido a gaseoso y de gaseoso a líquido, en un ciclo sin fin. ¡Este es el ciclo del agua! \n\nEn este viaje, descubriremos cómo el sol, la gravedad y la temperatura juegan un papel fundamental, y cómo este ciclo es esencial para la vida en la Tierra, además te proporcionaremos información para aprovechar al máximo este ciclo de agua para tus plantas, y de que manera lo puedes emplear. \n\n");
-        jTextPane7.setToolTipText("");
-        jTextPane7.setFocusable(false);
-
-        jTextArea3.setBackground(new java.awt.Color(0, 102, 153));
-        jTextArea3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(153, 204, 0));
-        jTextArea3.setTabSize(0);
-        jTextArea3.setText("¿Alguna vez te has preguntado \nde dónde viene el agua que\nbebemos, la que riega las plantas \no la que forma los ríos, lagunas, \nvenas de agua, pozos y cauces? \n¡Pues se trata de un recurso \nrenovable que da vida y del cual \nes un viaje increíble que no para nunca! ");
-        jTextArea3.setWrapStyleWord(true);
-        jScrollPane4.setViewportView(jTextArea3);
-
-        jTextPane5.setEditable(false);
-        jTextPane5.setBackground(new java.awt.Color(0, 102, 153));
-        jTextPane5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextPane5.setForeground(new java.awt.Color(153, 204, 0));
-        jTextPane5.setText("¿Estás preparado para embarcarte en esta emocionante aventura?\n\nA tu derecha, encontrarás material cuidadosamente elaborado que ofrece información valiosa sobre el ciclo del agua. Descubrirás cómo este proceso no solo beneficia a las plantas, sino también cómo influye en el comportamiento de los ecosistemas.");
-        jTextPane5.setToolTipText("");
-        jTextPane5.setFocusable(false);
-
-        jTextArea5.setEditable(false);
-        jTextArea5.setBackground(new java.awt.Color(0, 102, 153));
-        jTextArea5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextArea5.setForeground(new java.awt.Color(153, 204, 0));
-        jTextArea5.setTabSize(0);
-        jTextArea5.setText("¿Estás preparado para \nembarcarte en esta emocionante \naventura?\n\nA tu derecha, encontrarás material \ncuidadosamente elaborado que \nofrece información valiosa sobre \nel ciclo del agua. Descubrirás\ncómo este proceso no solo \nbeneficia a las plantas, sino \ntambién cómo influye en el \ncomportamiento de los \necosistemas.");
-        jTextArea5.setWrapStyleWord(true);
-        jTextArea5.setAutoscrolls(false);
-        jTextArea5.setBorder(null);
-        jScrollPane6.setViewportView(jTextArea5);
-
-        jTextArea7.setBackground(new java.awt.Color(0, 51, 0));
-        jTextArea7.setColumns(20);
-        jTextArea7.setRows(5);
-        jScrollPane8.setViewportView(jTextArea7);
-
-        javax.swing.GroupLayout ClimaLayout = new javax.swing.GroupLayout(Clima);
-        Clima.setLayout(ClimaLayout);
-        ClimaLayout.setHorizontalGroup(
-            ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ClimaLayout.createSequentialGroup()
-                .addGroup(ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ClimaLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81)
-                        .addComponent(jScrollPane8))
-                    .addGroup(ClimaLayout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)
-                        .addComponent(jTextPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(105, 105, 105)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        ClimaLayout.setVerticalGroup(
-            ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ClimaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jTextPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73))
-            .addGroup(ClimaLayout.createSequentialGroup()
-                .addGroup(ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ClimaLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jTextPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, ClimaLayout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
-        );
-
-        jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
         CicloDeAgua1.setBackground(new java.awt.Color(0, 102, 153));
         CicloDeAgua1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         CicloDeAgua1.setForeground(new java.awt.Color(0, 102, 153));
         CicloDeAgua1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 768));
         CicloDeAgua1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuCiclo.setBackground(new java.awt.Color(204, 255, 204));
@@ -407,7 +315,7 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.add(MenuCiclo, new org.netbeans.lib.awtextra.AbsoluteConstraints(547, 3, 490, 900));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin2.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/32.png"))); // NOI18N
         CicloDeAgua1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
@@ -416,56 +324,71 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/81qaU6Yza-L._UC256,256_CACC,256,256_.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 630, -1, -1));
+        CicloDeAgua1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ObOhgosRIJnnCAeHU_twkrWC9uCJRpoI5QYeKZF9GJk.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        CicloDeAgua1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin3.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 660, -1, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ahorrar-agua.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, -1));
+
+        jScrollPane3.setBorder(null);
 
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(0, 102, 153));
-        jTextArea2.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextArea2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(102, 255, 0));
         jTextArea2.setTabSize(0);
-        jTextArea2.setText("¿Alguna vez te has preguntado \nde dónde viene el agua que\nbebemos, la que riega las plantas \no la que forma los ríos, lagunas, \nvenas de agua, pozos y cauces? \n¡Pues se trata de un recurso \nrenovable que da vida y del cual \nes un viaje increíble que no para nunca! ");
+        jTextArea2.setText("¿Alguna vez te has preguntado de dónde viene\nel agua quebebemos, la que riega las plantas \no la que forma los ríos, lagunas, venas de agua, \npozos y cauces? ¡Pues se trata de un recurso \nrenovable que da vida y del cual es un viaje \nincreíble que no para nunca! ");
         jTextArea2.setWrapStyleWord(true);
-        jTextArea2.setAutoscrolls(false);
         jTextArea2.setBorder(null);
         jScrollPane3.setViewportView(jTextArea2);
 
-        CicloDeAgua1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 330, 180));
+        CicloDeAgua1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 330, 110));
+
+        jScrollPane5.setBorder(null);
 
         jTextArea4.setEditable(false);
         jTextArea4.setBackground(new java.awt.Color(0, 102, 153));
-        jTextArea4.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextArea4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jTextArea4.setForeground(new java.awt.Color(102, 255, 0));
         jTextArea4.setTabSize(0);
-        jTextArea4.setText("Imagina un gran circuito \n(sistema ecológico) o \npropiamente un sistema de la \nnaturaleza donde el agua \ncambia constantemente de \nestado, pasando de líquido a \ngaseoso y de gaseoso a \nlíquido, en un ciclo sin fin. \n¡Este es el ciclo del agua! \n\nEn este viaje, descubriremos \ncómo el sol, la gravedad y la \ntemperatura juegan un papel \nfundamental, y cómo este ciclo \nes esencial para la vida en la \nTierra, además te \nproporcionaremos \ninformación para aprovechar \nal máximo este ciclo de agua \npara tus plantas, y de que \nmanera lo puedes emplear. ");
+        jTextArea4.setText("Imagina un gran circuito (sistema ecológico) \no propiamente un sistema de la naturaleza \ndonde el agua cambia constantemente de \nestado, pasando de líquido a gaseoso \ny de gaseoso a líquido, en un ciclo sin fin. \n¡Este es el ciclo del agua! \n\nEn este viaje, descubriremos cómo el sol, \nla gravedad y la temperatura juegan un papel \nfundamental, y cómo este ciclo es esencial \npara la vida en la Tierra, además viene\nincluida la información para aprovechar \nal máximo este ciclo de agua para tus plantas, \ny de que manera lo puedes emplear.");
         jTextArea4.setWrapStyleWord(true);
         jTextArea4.setBorder(null);
         jScrollPane5.setViewportView(jTextArea4);
 
-        CicloDeAgua1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
+        CicloDeAgua1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 280, 230));
+
+        jScrollPane7.setBorder(null);
 
         jTextArea6.setEditable(false);
         jTextArea6.setBackground(new java.awt.Color(0, 102, 153));
-        jTextArea6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextArea6.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jTextArea6.setForeground(new java.awt.Color(102, 255, 0));
         jTextArea6.setTabSize(0);
-        jTextArea6.setText("¿Estás preparado para \nembarcarte en esta emocionante \naventura?\n\nA tu derecha, encontrarás material \ncuidadosamente elaborado que \nofrece información valiosa sobre \nel ciclo del agua. Descubrirás\ncómo este proceso no solo \nbeneficia a las plantas, sino \ntambién cómo influye en el \ncomportamiento de los \necosistemas.");
+        jTextArea6.setText("¿Estás preparado para embarcarte en esta\nemocionante aventura?\n\nA tu derecha, encontrarás material elaborado\nque ofrece buena información sobre el ciclo \ndel agua donde descubrirás cómo este \nproceso no solo beneficia a las plantas, \nsino también cómo influye en el conjunto\nde los ecosistemas.");
         jTextArea6.setWrapStyleWord(true);
         jTextArea6.setAutoscrolls(false);
         jTextArea6.setBorder(null);
         jScrollPane7.setViewportView(jTextArea6);
 
-        CicloDeAgua1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 270, 280));
+        CicloDeAgua1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 280, 150));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin3.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas (1).png"))); // NOI18N
+        CicloDeAgua1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flores.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
 
         jTabbedPane1.addTab("Ciclo del agua", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/filtro-de-agua.png")), CicloDeAgua1); // NOI18N
 
         Plantas.setBackground(new java.awt.Color(0, 51, 0));
-        Plantas.setPreferredSize(new java.awt.Dimension(1400, 1026));
+        Plantas.setPreferredSize(new java.awt.Dimension(1064, 768));
+        Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPaneMargarita.setBackground(new java.awt.Color(0, 204, 51));
         jTabbedPaneMargarita.setPreferredSize(new java.awt.Dimension(270, 360));
@@ -511,6 +434,9 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPaneMargarita.addTab("Nota", jPanel9);
 
+        Plantas.add(jTabbedPaneMargarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 6, 328, 604));
+        jTabbedPaneMargarita.getAccessibleContext().setAccessibleName("Planta");
+
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapola Rosa.png"))); // NOI18N
         jTabbedPaneIxoras.addTab("tab3", jLabel10);
 
@@ -549,42 +475,125 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPaneIxoras.addTab("tab3", jPanel10);
 
-        javax.swing.GroupLayout PlantasLayout = new javax.swing.GroupLayout(Plantas);
-        Plantas.setLayout(PlantasLayout);
-        PlantasLayout.setHorizontalGroup(
-            PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PlantasLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jTabbedPaneMargarita, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPaneIxoras, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
-        );
-        PlantasLayout.setVerticalGroup(
-            PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PlantasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTabbedPaneIxoras)
-                    .addComponent(jTabbedPaneMargarita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(284, Short.MAX_VALUE))
-        );
-
-        jTabbedPaneMargarita.getAccessibleContext().setAccessibleName("Planta");
+        Plantas.add(jTabbedPaneIxoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 6, 336, -1));
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
+
+        Clima.setBackground(new java.awt.Color(0, 51, 0));
+        Clima.setPreferredSize(new java.awt.Dimension(1064, 768));
+
+        jTextArea1.setBackground(new java.awt.Color(0, 102, 153));
+        jTextArea1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(153, 204, 0));
+        jTextArea1.setTabSize(0);
+        jTextArea1.setText("Imagina un gran circuito \n(sistema ecológico) o \npropiamente un sistema de la \nnaturaleza donde el agua \ncambia constantemente de \nestado, pasando de líquido a \ngaseoso y de gaseoso a \nlíquido, en un ciclo sin fin. \n¡Este es el ciclo del agua! \n\nEn este viaje, descubriremos \ncómo el sol, la gravedad y la \ntemperatura juegan un papel \nfundamental, y cómo este ciclo \nes esencial para la vida en la \nTierra, además te \nproporcionaremos \ninformación para aprovechar \nal máximo este ciclo de agua \npara tus plantas, y de que \nmanera lo puedes emplear. ");
+        jTextArea1.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(jTextArea1);
+
+        jTextPane7.setEditable(false);
+        jTextPane7.setBackground(new java.awt.Color(0, 102, 153));
+        jTextPane7.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextPane7.setForeground(new java.awt.Color(153, 204, 0));
+        jTextPane7.setText("Imagina un gran circuito (sistema ecológico) o propiamente un sistema de la naturaleza donde el agua cambia constantemente de estado, pasando de líquido a gaseoso y de gaseoso a líquido, en un ciclo sin fin. ¡Este es el ciclo del agua! \n\nEn este viaje, descubriremos cómo el sol, la gravedad y la temperatura juegan un papel fundamental, y cómo este ciclo es esencial para la vida en la Tierra, además te proporcionaremos información para aprovechar al máximo este ciclo de agua para tus plantas, y de que manera lo puedes emplear. \n\n");
+        jTextPane7.setToolTipText("");
+        jTextPane7.setFocusable(false);
+
+        jTextArea3.setBackground(new java.awt.Color(0, 102, 153));
+        jTextArea3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextArea3.setForeground(new java.awt.Color(153, 204, 0));
+        jTextArea3.setTabSize(0);
+        jTextArea3.setText("¿Alguna vez te has preguntado \nde dónde viene el agua que\nbebemos, la que riega las plantas \no la que forma los ríos, lagunas, \nvenas de agua, pozos y cauces? \n¡Pues se trata de un recurso \nrenovable que da vida y del cual \nes un viaje increíble que no para nunca! ");
+        jTextArea3.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(jTextArea3);
+
+        jTextPane5.setEditable(false);
+        jTextPane5.setBackground(new java.awt.Color(0, 102, 153));
+        jTextPane5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextPane5.setForeground(new java.awt.Color(153, 204, 0));
+        jTextPane5.setText("¿Estás preparado para embarcarte en esta emocionante aventura?\n\nA tu derecha, encontrarás material cuidadosamente elaborado que ofrece información valiosa sobre el ciclo del agua. Descubrirás cómo este proceso no solo beneficia a las plantas, sino también cómo influye en el comportamiento de los ecosistemas.");
+        jTextPane5.setToolTipText("");
+        jTextPane5.setFocusable(false);
+
+        jTextArea5.setEditable(false);
+        jTextArea5.setBackground(new java.awt.Color(0, 102, 153));
+        jTextArea5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jTextArea5.setForeground(new java.awt.Color(153, 204, 0));
+        jTextArea5.setTabSize(0);
+        jTextArea5.setText("¿Estás preparado para \nembarcarte en esta emocionante \naventura?\n\nA tu derecha, encontrarás material \ncuidadosamente elaborado que \nofrece información valiosa sobre \nel ciclo del agua. Descubrirás\ncómo este proceso no solo \nbeneficia a las plantas, sino \ntambién cómo influye en el \ncomportamiento de los \necosistemas.");
+        jTextArea5.setWrapStyleWord(true);
+        jTextArea5.setAutoscrolls(false);
+        jTextArea5.setBorder(null);
+        jScrollPane6.setViewportView(jTextArea5);
+
+        jTextArea7.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea7.setColumns(20);
+        jTextArea7.setRows(5);
+        jScrollPane8.setViewportView(jTextArea7);
+
+        jTextArea8.setColumns(20);
+        jTextArea8.setRows(5);
+        jTextArea8.setText("¿Alguna vez te has preguntado \nde dónde viene el agua que\nbebemos, la que riega las plantas \no la que forma los ríos, lagunas, \nvenas de agua, pozos y cauces? \n¡Pues se trata de un recurso \nrenovable que da vida y del cual \nes un viaje increíble que no para nunca!");
+        jScrollPane11.setViewportView(jTextArea8);
+
+        javax.swing.GroupLayout ClimaLayout = new javax.swing.GroupLayout(Clima);
+        Clima.setLayout(ClimaLayout);
+        ClimaLayout.setHorizontalGroup(
+            ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ClimaLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jTextPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addGap(105, 105, 105)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jTextPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(ClimaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ClimaLayout.setVerticalGroup(
+            ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ClimaLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jTextPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(ClimaLayout.createSequentialGroup()
+                .addGroup(ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ClimaLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ClimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27))
+                    .addGroup(ClimaLayout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(421, 421, 421))
+        );
+
+        jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1050, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1049, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1037, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 903, Short.MAX_VALUE)
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Jardin");
@@ -674,6 +683,9 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -691,6 +703,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -709,6 +722,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextArea jTextArea8;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
