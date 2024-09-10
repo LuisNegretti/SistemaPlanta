@@ -6,7 +6,6 @@
 package sistema.planta;
 
 import CICLODELAGUA.Coleccion;
-import CICLODELAGUA.Potabilizacion;
 import CICLODELAGUA.Precipitacion;
 import CICLODELAGUA.condensacion;
 import CICLODELAGUA.evaporacion;
@@ -39,6 +38,10 @@ public class Menu1 extends javax.swing.JFrame {
 
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        Operaciones = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        bt_op_ventana = new javax.swing.JButton();
         Riesgos = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         Jardin = new javax.swing.JPanel();
@@ -60,14 +63,6 @@ public class Menu1 extends javax.swing.JFrame {
         precipitacion = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         Potabilizacion = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        potabilizacion = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -90,14 +85,30 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        jTextArea10 = new javax.swing.JTextArea();
+        jLabel24 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jTabbedPaneIxoras = new javax.swing.JTabbedPane();
         jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        jTextArea9 = new javax.swing.JTextArea();
+        jLabel28 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        jTabbedPaneIxoras1 = new javax.swing.JTabbedPane();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea11 = new javax.swing.JTextArea();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextArea12 = new javax.swing.JTextArea();
+        jLabel27 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         Clima = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -111,10 +122,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea7 = new javax.swing.JTextArea();
         jScrollPane11 = new javax.swing.JScrollPane();
         jTextArea8 = new javax.swing.JTextArea();
-        Operaciones = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        bt_op_ventana = new javax.swing.JButton();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -131,6 +138,61 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1049, 903));
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(1064, 800));
 
+        Operaciones.setBackground(new java.awt.Color(0, 51, 0));
+        Operaciones.setForeground(new java.awt.Color(0, 51, 0));
+        Operaciones.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        Operaciones.setPreferredSize(new java.awt.Dimension(1064, 800));
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(102, 102, 0)), "Descripcion.", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 102, 0))); // NOI18N
+        jScrollPane1.setToolTipText("");
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jTextPane1.setEditable(false);
+        jTextPane1.setBackground(new java.awt.Color(0, 51, 0));
+        jTextPane1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jTextPane1.setForeground(new java.awt.Color(153, 102, 0));
+        jTextPane1.setText("Una planta ornamental se cultiva y comercializa con propósitos decorativos por sus características estéticas, flores, perfume, frutos o tallos en jardines y diseños paisajísticos, como planta de interior o para flor cortada.");
+        jTextPane1.setToolTipText("");
+        jTextPane1.setFocusable(false);
+        jScrollPane1.setViewportView(jTextPane1);
+
+        bt_op_ventana.setBackground(new java.awt.Color(102, 51, 0));
+        bt_op_ventana.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
+        bt_op_ventana.setForeground(new java.awt.Color(153, 255, 153));
+        bt_op_ventana.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/evolucion.png"))); // NOI18N
+        bt_op_ventana.setText("Realizar operacion.");
+        bt_op_ventana.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_op_ventanaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OperacionesLayout = new javax.swing.GroupLayout(Operaciones);
+        Operaciones.setLayout(OperacionesLayout);
+        OperacionesLayout.setHorizontalGroup(
+            OperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperacionesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_op_ventana)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(295, 295, 295))
+        );
+        OperacionesLayout.setVerticalGroup(
+            OperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OperacionesLayout.createSequentialGroup()
+                .addGroup(OperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OperacionesLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(OperacionesLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(bt_op_ventana)))
+                .addContainerGap(508, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Operaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Operaciones); // NOI18N
+
         Riesgos.setBackground(new java.awt.Color(0, 51, 0));
         Riesgos.setPreferredSize(new java.awt.Dimension(1064, 800));
 
@@ -142,7 +204,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 767, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -158,7 +220,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 767, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Recomendaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/brote.png")), jPanel7); // NOI18N
@@ -174,7 +236,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         JardinLayout.setVerticalGroup(
             JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 767, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
@@ -188,7 +250,7 @@ public class Menu1 extends javax.swing.JFrame {
 
         MenuCiclo.setBackground(new java.awt.Color(204, 255, 204));
         MenuCiclo.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 51, 0)));
-        MenuCiclo.setForeground(new java.awt.Color(0, 0, 255));
+        MenuCiclo.setForeground(new java.awt.Color(0, 51, 102));
         MenuCiclo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         MenuCiclo.setPreferredSize(new java.awt.Dimension(541, 604));
 
@@ -300,56 +362,9 @@ public class Menu1 extends javax.swing.JFrame {
 
         MenuCiclo.addTab("Ciclos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (6).png")), ProcesoPrincipal); // NOI18N
 
-        Potabilizacion.setBackground(new java.awt.Color(204, 255, 204));
+        Potabilizacion.setBackground(new java.awt.Color(0, 51, 153));
         Potabilizacion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Potabilizacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-cycle_525893.png"))); // NOI18N
-        jButton1.setBorder(null);
-        Potabilizacion.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 70, -1));
-
-        potabilizacion.setBackground(new java.awt.Color(255, 255, 255));
-        potabilizacion.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        potabilizacion.setForeground(new java.awt.Color(153, 0, 0));
-        potabilizacion.setText("?");
-        potabilizacion.setBorder(null);
-        potabilizacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                potabilizacionActionPerformed(evt);
-            }
-        });
-        Potabilizacion.add(potabilizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 30, -1));
-
-        jButton4.setBackground(new java.awt.Color(153, 102, 0));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-bottle_4213671.png"))); // NOI18N
-        jButton4.setBorder(null);
-        Potabilizacion.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 70, -1));
-
-        jButton5.setBackground(new java.awt.Color(51, 0, 0));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water_5625899.png"))); // NOI18N
-        jButton5.setBorder(null);
-        Potabilizacion.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 70, -1));
-
-        jButton6.setBackground(new java.awt.Color(0, 255, 204));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-bottle_4213671.png"))); // NOI18N
-        jButton6.setBorder(null);
-        Potabilizacion.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, 70, -1));
-
-        jButton7.setBackground(new java.awt.Color(0, 153, 204));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/h2o_3357227.png"))); // NOI18N
-        jButton7.setBorder(null);
-        Potabilizacion.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 70, -1));
-
-        jButton8.setBackground(new java.awt.Color(0, 102, 51));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/save-water_7296364.png"))); // NOI18N
-        jButton8.setBorder(null);
-        Potabilizacion.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 70, -1));
-
-        jButton9.setBackground(new java.awt.Color(102, 51, 0));
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/nature_14864451.png"))); // NOI18N
-        jButton9.setBorder(null);
-        Potabilizacion.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 70, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/potabilizacion.jpg"))); // NOI18N
         jLabel8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
@@ -439,32 +454,44 @@ public class Menu1 extends javax.swing.JFrame {
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPaneMargarita.setBackground(new java.awt.Color(0, 204, 51));
+        jTabbedPaneMargarita.setMinimumSize(new java.awt.Dimension(300, 520));
         jTabbedPaneMargarita.setPreferredSize(new java.awt.Dimension(270, 360));
 
         jLabel6.setBackground(new java.awt.Color(0, 51, 0));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Margaritajava.png"))); // NOI18N
         jTabbedPaneMargarita.addTab("Planta", jLabel6);
 
-        jPanel8.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel8.setBackground(new java.awt.Color(62, 151, 62));
 
-        jTextPane2.setEditable(false);
-        jTextPane2.setBackground(new java.awt.Color(0, 102, 153));
-        jTextPane2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jTextPane2.setForeground(new java.awt.Color(153, 204, 0));
-        jTextPane2.setText("Margaritas.\n\nContenido en Minerales:\n- Sin requisitos estrictos.\n\nNivel de pH:\n-  4.5 – 7.5\n\nHumedad del suelo:\n-  Sin requisitos estrictos.\n\nSalinidad:\n-  No soportada\n\nTipo de tierra: \n- Rico en Nitrógeno, bajos en fertilizantes\n\n");
-        jScrollPane9.setViewportView(jTextPane2);
+        jTextArea10.setBackground(new java.awt.Color(62, 151, 62));
+        jTextArea10.setColumns(20);
+        jTextArea10.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jTextArea10.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea10.setRows(5);
+        jTextArea10.setText("Margaritas.\n\nContenido en Minerales:\n- Sin requisitos estrictos.\n\nNivel de pH:\n-  4.5 – 7.5\n\nHumedad del suelo:\n-  Sin requisitos estrictos.\n\nSalinidad:\n-  No soportada\n\nTipo de tierra: \n- Rico en Nitrógeno\nbajos en fertilizantes");
+        jScrollPane9.setViewportView(jTextArea10);
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/a.png"))); // NOI18N
+        jLabel24.setText("jLabel22");
+        jLabel24.setMaximumSize(new java.awt.Dimension(185, 123));
+        jLabel24.setPreferredSize(new java.awt.Dimension(185, 123));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPaneMargarita.addTab("Inf", jPanel8);
@@ -473,39 +500,54 @@ public class Menu1 extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 295, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
 
         jTabbedPaneMargarita.addTab("Nota", jPanel9);
 
-        Plantas.add(jTabbedPaneMargarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 6, 328, 604));
+        Plantas.add(jTabbedPaneMargarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 6, 300, 520));
         jTabbedPaneMargarita.getAccessibleContext().setAccessibleName("Planta");
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapola Rosa.png"))); // NOI18N
         jTabbedPaneIxoras.addTab("tab3", jLabel10);
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
+        jPanel3.setBackground(new java.awt.Color(62, 151, 62));
         jPanel3.setPreferredSize(new java.awt.Dimension(323, 574));
 
-        jTextPane3.setBackground(new java.awt.Color(0, 102, 153));
-        jTextPane3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextPane3.setForeground(new java.awt.Color(153, 204, 0));
-        jTextPane3.setText("Amapola Rosa\n\nContenido en Minerales:\n- Sin requisitos estrictos.\n\nNivel de pH:\n-  6.0 – 6.8\n\nHumedad del suelo:\n-  Sin requisitos estrictos.\n\nSalinidad:\n-  No soportada\n\nTipo de tierra:\n-  Tierra de Jardín (Común) \n");
-        jScrollPane10.setViewportView(jTextPane3);
+        jTextArea9.setEditable(false);
+        jTextArea9.setBackground(new java.awt.Color(62, 151, 62));
+        jTextArea9.setColumns(20);
+        jTextArea9.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jTextArea9.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea9.setRows(5);
+        jTextArea9.setText("Amapola Rosa\n\nContenido en Minerales:\n- Sin requisitos estrictos.\n\nNivel de pH:\n-  6.0 – 6.8\n\nHumedad del suelo:\n-  Sin requisitos estrictos.\n\nSalinidad:\n-  No soportada\n\nTipo de tierra:\n-  Tierra de Jardín (Común) \n");
+        jTextArea9.setWrapStyleWord(true);
+        jTextArea9.setBorder(null);
+        jTextArea9.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jScrollPane10.setViewportView(jTextArea9);
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Regadera.png"))); // NOI18N
+        jLabel28.setText("jLabel27");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jLabel28))
         );
 
         jTabbedPaneIxoras.addTab("tab2", jPanel3);
@@ -514,16 +556,128 @@ public class Menu1 extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 331, Short.MAX_VALUE)
+            .addGap(0, 295, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 578, Short.MAX_VALUE)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
 
         jTabbedPaneIxoras.addTab("tab3", jPanel10);
 
-        Plantas.add(jTabbedPaneIxoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 6, 336, -1));
+        Plantas.add(jTabbedPaneIxoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 6, 300, 520));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapola Rosa.png"))); // NOI18N
+        jTabbedPaneIxoras1.addTab("tab3", jLabel23);
+
+        jPanel4.setBackground(new java.awt.Color(62, 151, 62));
+        jPanel4.setPreferredSize(new java.awt.Dimension(323, 574));
+
+        jTextArea11.setEditable(false);
+        jTextArea11.setBackground(new java.awt.Color(62, 151, 62));
+        jTextArea11.setColumns(20);
+        jTextArea11.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jTextArea11.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea11.setRows(5);
+        jTextArea11.setText("Amapola Rosa\n\nContenido en Minerales:\n- Sin requisitos estrictos.\n\nNivel de pH:\n-  6.0 – 6.8\n\nHumedad del suelo:\n-  Sin requisitos estrictos.\n\nSalinidad:\n-  No soportada\n\nTipo de tierra:\n-  Tierra de Jardín (Común) \n");
+        jTextArea11.setWrapStyleWord(true);
+        jTextArea11.setBorder(null);
+        jTextArea11.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        jScrollPane12.setViewportView(jTextArea11);
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Imagen de WhatsApp 2024-09-08 a las 01.53.43_38bcb1df.png"))); // NOI18N
+        jLabel25.setText("jLabel22");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jLabel25))
+        );
+
+        jTabbedPaneIxoras1.addTab("tab2", jPanel4);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 295, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 492, Short.MAX_VALUE)
+        );
+
+        jTabbedPaneIxoras1.addTab("tab3", jPanel11);
+
+        Plantas.add(jTabbedPaneIxoras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 6, 300, 520));
+
+        jTabbedPane2.setMinimumSize(new java.awt.Dimension(328, 602));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Rosa del desierto.png"))); // NOI18N
+        jLabel26.setText("jLabel26");
+        jLabel26.setMaximumSize(new java.awt.Dimension(323, 574));
+        jLabel26.setMinimumSize(new java.awt.Dimension(323, 574));
+        jLabel26.setOpaque(true);
+        jLabel26.setPreferredSize(new java.awt.Dimension(323, 574));
+        jTabbedPane2.addTab("tab1", jLabel26);
+
+        jPanel1.setBackground(new java.awt.Color(62, 151, 62));
+
+        jTextArea12.setBackground(new java.awt.Color(62, 151, 62));
+        jTextArea12.setColumns(20);
+        jTextArea12.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        jTextArea12.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea12.setRows(5);
+        jTextArea12.setText("Rosa del Desierto\n\nContenido de minerales: \n- Sin requisitos Estrictos\n\nHumedad del suelo:\n- Sin requisitos Estrictos\n\nSalinidad:\n- No soportada\n\nTipo de tierra:\nArena, perlita.");
+        jScrollPane13.setViewportView(jTextArea12);
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Regadera.png"))); // NOI18N
+        jLabel27.setText("jLabel27");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jLabel27))
+        );
+
+        jTabbedPane2.addTab("tab2", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 295, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 490, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab3", jPanel2);
+
+        Plantas.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 300, 518));
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
 
@@ -593,7 +747,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addComponent(jTextPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
                 .addGap(105, 105, 105)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -633,66 +787,6 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
-        Operaciones.setBackground(new java.awt.Color(0, 51, 0));
-        Operaciones.setForeground(new java.awt.Color(0, 51, 0));
-        Operaciones.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Operaciones.setPreferredSize(new java.awt.Dimension(1064, 800));
-
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(102, 102, 0)), "Descripcion.", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 102, 0))); // NOI18N
-        jScrollPane1.setToolTipText("");
-        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jTextPane1.setEditable(false);
-        jTextPane1.setBackground(new java.awt.Color(0, 51, 0));
-        jTextPane1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(153, 102, 0));
-        jTextPane1.setText("Una planta ornamental se cultiva y comercializa con propósitos decorativos por sus características estéticas, flores, perfume, frutos o tallos en jardines y diseños paisajísticos, como planta de interior o para flor cortada.");
-        jTextPane1.setToolTipText("");
-        jTextPane1.setFocusable(false);
-        jScrollPane1.setViewportView(jTextPane1);
-
-        bt_op_ventana.setBackground(new java.awt.Color(102, 51, 0));
-        bt_op_ventana.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
-        bt_op_ventana.setForeground(new java.awt.Color(153, 255, 153));
-        bt_op_ventana.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/evolucion.png"))); // NOI18N
-        bt_op_ventana.setText("Realizar operacion.");
-        bt_op_ventana.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_op_ventanaMouseClicked(evt);
-            }
-        });
-        bt_op_ventana.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_op_ventanaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout OperacionesLayout = new javax.swing.GroupLayout(Operaciones);
-        Operaciones.setLayout(OperacionesLayout);
-        OperacionesLayout.setHorizontalGroup(
-            OperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OperacionesLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(bt_op_ventana)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(295, 295, 295))
-        );
-        OperacionesLayout.setVerticalGroup(
-            OperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OperacionesLayout.createSequentialGroup()
-                .addGroup(OperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(OperacionesLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(OperacionesLayout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(bt_op_ventana)))
-                .addContainerGap(411, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Operaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Operaciones); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -716,6 +810,12 @@ public class Menu1 extends javax.swing.JFrame {
     
     
     
+    private void bt_op_ventanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_op_ventanaMouseClicked
+
+        Operaciones btop = new Operaciones();
+        btop.setVisible(true); 
+    }//GEN-LAST:event_bt_op_ventanaMouseClicked
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -745,24 +845,8 @@ public class Menu1 extends javax.swing.JFrame {
         Coleccion acceso = new Coleccion();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
-     
+        this.setVisible(false);
     }//GEN-LAST:event_coleccionActionPerformed
-
-    private void bt_op_ventanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_op_ventanaMouseClicked
-
-        Operaciones btop = new Operaciones();
-        btop.setVisible(true);
-    }//GEN-LAST:event_bt_op_ventanaMouseClicked
-
-    private void bt_op_ventanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_op_ventanaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bt_op_ventanaActionPerformed
-
-    private void potabilizacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potabilizacionActionPerformed
-        Potabilizacion acceso = new Potabilizacion();
-        acceso.setVisible(true);
-        acceso.setLocationRelativeTo(null);
-    }//GEN-LAST:event_potabilizacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -814,14 +898,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton condensacion;
     private javax.swing.JPanel consejos;
     private javax.swing.JButton evaporacion;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -837,6 +914,12 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -844,14 +927,20 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -861,9 +950,14 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPaneIxoras;
+    private javax.swing.JTabbedPane jTabbedPaneIxoras1;
     private javax.swing.JTabbedPane jTabbedPaneMargarita;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea10;
+    private javax.swing.JTextArea jTextArea11;
+    private javax.swing.JTextArea jTextArea12;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
@@ -871,12 +965,10 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextArea jTextArea8;
+    private javax.swing.JTextArea jTextArea9;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
     private javax.swing.JTextPane jTextPane5;
     private javax.swing.JTextPane jTextPane7;
-    private javax.swing.JButton potabilizacion;
     private javax.swing.JButton precipitacion;
     // End of variables declaration//GEN-END:variables
 }
