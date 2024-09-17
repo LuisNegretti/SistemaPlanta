@@ -11,6 +11,7 @@ import CICLODELAGUA.Precipitacion;
 import CICLODELAGUA.RAICES;
 import CICLODELAGUA.condensacion;
 import CICLODELAGUA.evaporacion;
+import CLIMA.Desertico;
 import OPERACIONES.Operaciones;
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -123,10 +124,13 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        SubTropical = new javax.swing.JPanel();
+        antartico = new javax.swing.JPanel();
+        continental = new javax.swing.JPanel();
+        tropical = new javax.swing.JPanel();
+        mediterraneo = new javax.swing.JPanel();
+        Desertico = new javax.swing.JPanel();
+        Templado = new javax.swing.JPanel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -411,7 +415,7 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.add(MenuCiclo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 490, 650));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin2.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, -1, 180));
+        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, 180));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/32.png"))); // NOI18N
         CicloDeAgua1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
@@ -760,65 +764,117 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/Brown Autumn Photo Collage2.png"))); // NOI18N
         Clima.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1120, -1));
 
-        jPanel13.setBackground(new java.awt.Color(255, 204, 204));
+        SubTropical.setBackground(new java.awt.Color(255, 204, 204));
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout SubTropicalLayout = new javax.swing.GroupLayout(SubTropical);
+        SubTropical.setLayout(SubTropicalLayout);
+        SubTropicalLayout.setHorizontalGroup(
+            SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+        SubTropicalLayout.setVerticalGroup(
+            SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+
+        Clima.add(SubTropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 430, 220, 220));
+
+        antartico.setBackground(new java.awt.Color(255, 204, 204));
+
+        javax.swing.GroupLayout antarticoLayout = new javax.swing.GroupLayout(antartico);
+        antartico.setLayout(antarticoLayout);
+        antarticoLayout.setHorizontalGroup(
+            antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 490, Short.MAX_VALUE)
+        );
+        antarticoLayout.setVerticalGroup(
+            antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+
+        Clima.add(antartico, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 490, 230));
+
+        continental.setBackground(new java.awt.Color(255, 204, 204));
+        continental.setName("continental"); // NOI18N
+
+        javax.swing.GroupLayout continentalLayout = new javax.swing.GroupLayout(continental);
+        continental.setLayout(continentalLayout);
+        continentalLayout.setHorizontalGroup(
+            continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
+        );
+        continentalLayout.setVerticalGroup(
+            continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        Clima.add(continental, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 260, 300));
+        continental.getAccessibleContext().setAccessibleName("continental");
+
+        tropical.setBackground(new java.awt.Color(255, 204, 204));
+
+        javax.swing.GroupLayout tropicalLayout = new javax.swing.GroupLayout(tropical);
+        tropical.setLayout(tropicalLayout);
+        tropicalLayout.setHorizontalGroup(
+            tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 380, Short.MAX_VALUE)
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        tropicalLayout.setVerticalGroup(
+            tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 390, Short.MAX_VALUE)
         );
 
-        Clima.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 380, 390));
+        Clima.add(tropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 380, 390));
 
-        jPanel12.setBackground(new java.awt.Color(255, 204, 204));
+        mediterraneo.setBackground(new java.awt.Color(255, 204, 204));
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout mediterraneoLayout = new javax.swing.GroupLayout(mediterraneo);
+        mediterraneo.setLayout(mediterraneoLayout);
+        mediterraneoLayout.setHorizontalGroup(
+            mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 350, Short.MAX_VALUE)
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        mediterraneoLayout.setVerticalGroup(
+            mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 200, Short.MAX_VALUE)
         );
 
-        Clima.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 350, 200));
+        Clima.add(mediterraneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 350, 200));
 
-        jPanel6.setBackground(new java.awt.Color(255, 204, 204));
+        Desertico.setBackground(new java.awt.Color(255, 204, 204));
+        Desertico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeserticoMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout DeserticoLayout = new javax.swing.GroupLayout(Desertico);
+        Desertico.setLayout(DeserticoLayout);
+        DeserticoLayout.setHorizontalGroup(
+            DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 280, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DeserticoLayout.setVerticalGroup(
+            DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        Clima.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 330));
+        Clima.add(Desertico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 330));
 
-        jPanel5.setBackground(new java.awt.Color(255, 204, 204));
+        Templado.setBackground(new java.awt.Color(255, 204, 204));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout TempladoLayout = new javax.swing.GroupLayout(Templado);
+        Templado.setLayout(TempladoLayout);
+        TempladoLayout.setHorizontalGroup(
+            TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 350, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TempladoLayout.setVerticalGroup(
+            TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 180, Short.MAX_VALUE)
         );
 
-        Clima.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 350, 180));
+        Clima.add(Templado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 350, 180));
 
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
@@ -895,6 +951,14 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_condensacion2ActionPerformed
 
+    private void DeserticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeserticoMouseClicked
+        
+        Desertico acceso = new Desertico();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_DeserticoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -933,12 +997,16 @@ public class Menu1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CicloDeAgua1;
     private javax.swing.JPanel Clima;
+    private javax.swing.JPanel Desertico;
     private javax.swing.JPanel Jardin;
     private javax.swing.JTabbedPane MenuCiclo;
     private javax.swing.JPanel Operaciones;
     private javax.swing.JPanel Plantas;
     private javax.swing.JPanel ProcesoPrincipal;
     private javax.swing.JPanel Riesgos;
+    private javax.swing.JPanel SubTropical;
+    private javax.swing.JPanel Templado;
+    private javax.swing.JPanel antartico;
     private javax.swing.JButton bt_op_ventana;
     private javax.swing.JButton coleccion;
     private javax.swing.JButton condensacion;
@@ -946,6 +1014,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton condensacion2;
     private javax.swing.JPanel consejos;
     private javax.swing.JPanel consejos1;
+    private javax.swing.JPanel continental;
     private javax.swing.JButton evaporacion;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
@@ -988,13 +1057,9 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -1019,6 +1084,8 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextArea jTextArea9;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JPanel mediterraneo;
     private javax.swing.JButton precipitacion;
+    private javax.swing.JPanel tropical;
     // End of variables declaration//GEN-END:variables
 }
