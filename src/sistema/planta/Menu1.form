@@ -336,13 +336,6 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
                 </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder bottom="3" left="3" right="3" top="3">
-                      <Color PropertyName="color" blue="0" green="33" red="66" type="rgb"/>
-                    </MatteColorBorder>
-                  </Border>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="33" red="0" type="rgb"/>
                 </Property>
@@ -940,7 +933,7 @@
                       <Color blue="0" green="ff" red="66" type="rgb"/>
                     </Property>
                     <Property name="tabSize" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="&#xbf;Alguna vez te has preguntado de d&#xf3;nde &#xa;vieneel agua que bebemos, la que riega &#xa;las plantas o la que forma los r&#xed;os, &#xa;lagunas, pozos y cauces? &#xa;&#xa;&#xa1;Pues se trata de un recurso renovable &#xa;que da vida y del cual es un viaje incre&#xed;ble &#xa;que no para nunca! "/>
+                    <Property name="text" type="java.lang.String" value="&#xbf;Alguna vez te has preguntado de d&#xf3;nde &#xa;viene el agua que bebemos, la que riega &#xa;las plantas o la que forma los r&#xed;os, &#xa;lagunas, pozos y cauces? &#xa;&#xa;&#xa1;Pues se trata de un recurso renovable &#xa;que da vida y del cual es un viaje incre&#xed;ble &#xa;que no para nunca! "/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
@@ -1577,6 +1570,11 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                <MatteColorBorder bottom="0" left="5" right="5" top="5"/>
+              </Border>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[1064, 800]"/>
             </Property>
@@ -1726,6 +1724,9 @@
                   <Color blue="cc" green="cc" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SubTropicalMouseClicked"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="820" y="430" width="220" height="220"/>

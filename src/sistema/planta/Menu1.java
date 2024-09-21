@@ -12,6 +12,7 @@ import CICLODELAGUA.RAICES;
 import CICLODELAGUA.condensacion;
 import CICLODELAGUA.evaporacion;
 import CLIMA.Desertico;
+import CLIMA.subTropical;
 import OPERACIONES.Operaciones;
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -258,7 +259,6 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuCiclo.setBackground(new java.awt.Color(204, 255, 204));
-        MenuCiclo.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(102, 51, 0)));
         MenuCiclo.setForeground(new java.awt.Color(0, 51, 102));
         MenuCiclo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         MenuCiclo.setPreferredSize(new java.awt.Dimension(541, 604));
@@ -459,7 +459,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jTextArea2.setForeground(new java.awt.Color(102, 255, 0));
         jTextArea2.setTabSize(0);
-        jTextArea2.setText("¿Alguna vez te has preguntado de dónde \nvieneel agua que bebemos, la que riega \nlas plantas o la que forma los ríos, \nlagunas, pozos y cauces? \n\n¡Pues se trata de un recurso renovable \nque da vida y del cual es un viaje increíble \nque no para nunca! ");
+        jTextArea2.setText("¿Alguna vez te has preguntado de dónde \nviene el agua que bebemos, la que riega \nlas plantas o la que forma los ríos, \nlagunas, pozos y cauces? \n\n¡Pues se trata de un recurso renovable \nque da vida y del cual es un viaje increíble \nque no para nunca! ");
         jTextArea2.setWrapStyleWord(true);
         jTextArea2.setBorder(null);
         jScrollPane3.setViewportView(jTextArea2);
@@ -723,6 +723,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
 
         Clima.setBackground(new java.awt.Color(255, 204, 204));
+        Clima.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 0, 5, new java.awt.Color(0, 0, 0)));
         Clima.setPreferredSize(new java.awt.Dimension(1064, 800));
         Clima.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -765,6 +766,11 @@ public class Menu1 extends javax.swing.JFrame {
         Clima.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1120, -1));
 
         SubTropical.setBackground(new java.awt.Color(255, 204, 204));
+        SubTropical.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubTropicalMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout SubTropicalLayout = new javax.swing.GroupLayout(SubTropical);
         SubTropical.setLayout(SubTropicalLayout);
@@ -947,7 +953,7 @@ public class Menu1 extends javax.swing.JFrame {
 
     private void condensacion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_condensacion2ActionPerformed
        RAICES acceso = new RAICES();
-        acceso.setVisible(true);
+        acceso.setVisible(true); 
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_condensacion2ActionPerformed
 
@@ -958,6 +964,12 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setLocationRelativeTo(null);
         
     }//GEN-LAST:event_DeserticoMouseClicked
+
+    private void SubTropicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubTropicalMouseClicked
+        subTropical acceso = new subTropical();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_SubTropicalMouseClicked
 
     /**
      * @param args the command line arguments
