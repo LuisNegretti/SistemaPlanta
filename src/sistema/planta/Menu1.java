@@ -635,6 +635,7 @@ public class Menu1 extends javax.swing.JFrame {
 
         butt_Margarita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Margaritas.jpg"))); // NOI18N
         butt_Margarita.setText("jButton_Margarita ");
+        butt_Margarita.setBorder(null);
         butt_Margarita.setMaximumSize(new java.awt.Dimension(240, 200));
         butt_Margarita.setMinimumSize(new java.awt.Dimension(240, 200));
         butt_Margarita.setPreferredSize(new java.awt.Dimension(240, 200));
@@ -643,24 +644,24 @@ public class Menu1 extends javax.swing.JFrame {
                 butt_MargaritaActionPerformed(evt);
             }
         });
-        Plantas.add(butt_Margarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 220, 200));
+        Plantas.add(butt_Margarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 220, 200));
         butt_Margarita.getAccessibleContext().setAccessibleName("jbutt_Margarita");
 
         butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
         butt_Ixora.setText("jButton1");
-        Plantas.add(butt_Ixora, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 220, 200));
+        Plantas.add(butt_Ixora, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 50, 220, 200));
 
         butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
         butt_rosaDelDesierto.setText("jButton1");
-        Plantas.add(butt_rosaDelDesierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 220, 200));
+        Plantas.add(butt_rosaDelDesierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, 220, 200));
 
         butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
         butt_Tulipanes.setText("jButton1");
-        Plantas.add(butt_Tulipanes, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 220, 200));
+        Plantas.add(butt_Tulipanes, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 220, 200));
 
         butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
         butt_AmapolasRosas.setText("jButton1");
-        Plantas.add(butt_AmapolasRosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 220, 200));
+        Plantas.add(butt_AmapolasRosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 220, 200));
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
 
