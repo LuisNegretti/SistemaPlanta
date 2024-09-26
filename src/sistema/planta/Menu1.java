@@ -89,6 +89,13 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         Clima = new javax.swing.JPanel();
+        SubTropical = new javax.swing.JPanel();
+        antartico = new javax.swing.JPanel();
+        continental = new javax.swing.JPanel();
+        tropical = new javax.swing.JPanel();
+        mediterraneo = new javax.swing.JPanel();
+        Desertico = new javax.swing.JPanel();
+        Templado = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -97,13 +104,6 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        SubTropical = new javax.swing.JPanel();
-        antartico = new javax.swing.JPanel();
-        continental = new javax.swing.JPanel();
-        tropical = new javax.swing.JPanel();
-        mediterraneo = new javax.swing.JPanel();
-        Desertico = new javax.swing.JPanel();
-        Templado = new javax.swing.JPanel();
         Plantas = new javax.swing.JPanel();
         butt_Margarita = new javax.swing.JButton();
         butt_Ixora = new javax.swing.JButton();
@@ -147,7 +147,7 @@ public class Menu1 extends javax.swing.JFrame {
         BienvenidaLayout.setHorizontalGroup(
             BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BienvenidaLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap(41, Short.MAX_VALUE)
                 .addComponent(bt_op_ventana)
                 .addGap(712, 712, 712))
         );
@@ -156,7 +156,7 @@ public class Menu1 extends javax.swing.JFrame {
             .addGroup(BienvenidaLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(bt_op_ventana)
-                .addContainerGap(528, Short.MAX_VALUE))
+                .addContainerGap(631, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Bienvenida", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
@@ -168,11 +168,11 @@ public class Menu1 extends javax.swing.JFrame {
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
+            .addGap(0, 1062, Short.MAX_VALUE)
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addGap(0, 773, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -184,11 +184,11 @@ public class Menu1 extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
+            .addGap(0, 1062, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addGap(0, 773, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Recomendaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/brote.png")), jPanel7); // NOI18N
@@ -200,11 +200,11 @@ public class Menu1 extends javax.swing.JFrame {
         Jardin.setLayout(JardinLayout);
         JardinLayout.setHorizontalGroup(
             JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
+            .addGap(0, 1062, Short.MAX_VALUE)
         );
         JardinLayout.setVerticalGroup(
             JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
+            .addGap(0, 773, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
@@ -452,6 +452,145 @@ public class Menu1 extends javax.swing.JFrame {
         Clima.setPreferredSize(new java.awt.Dimension(1064, 800));
         Clima.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        SubTropical.setBackground(new java.awt.Color(255, 204, 204));
+        SubTropical.setOpaque(false);
+        SubTropical.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubTropicalMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SubTropicalLayout = new javax.swing.GroupLayout(SubTropical);
+        SubTropical.setLayout(SubTropicalLayout);
+        SubTropicalLayout.setHorizontalGroup(
+            SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+        SubTropicalLayout.setVerticalGroup(
+            SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+
+        Clima.add(SubTropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 430, 220, 220));
+
+        antartico.setBackground(new java.awt.Color(255, 204, 204));
+        antartico.setOpaque(false);
+
+        javax.swing.GroupLayout antarticoLayout = new javax.swing.GroupLayout(antartico);
+        antartico.setLayout(antarticoLayout);
+        antarticoLayout.setHorizontalGroup(
+            antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 490, Short.MAX_VALUE)
+        );
+        antarticoLayout.setVerticalGroup(
+            antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 230, Short.MAX_VALUE)
+        );
+
+        Clima.add(antartico, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 490, 230));
+
+        continental.setBackground(new java.awt.Color(255, 204, 204));
+        continental.setName("continental"); // NOI18N
+        continental.setOpaque(false);
+
+        javax.swing.GroupLayout continentalLayout = new javax.swing.GroupLayout(continental);
+        continental.setLayout(continentalLayout);
+        continentalLayout.setHorizontalGroup(
+            continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 260, Short.MAX_VALUE)
+        );
+        continentalLayout.setVerticalGroup(
+            continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        Clima.add(continental, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 260, 300));
+        continental.getAccessibleContext().setAccessibleName("continental");
+
+        tropical.setBackground(new java.awt.Color(255, 204, 204));
+        tropical.setOpaque(false);
+        tropical.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tropicalMouseClicked(evt);
+            }
+        });
+        tropical.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tropicalKeyPressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tropicalLayout = new javax.swing.GroupLayout(tropical);
+        tropical.setLayout(tropicalLayout);
+        tropicalLayout.setHorizontalGroup(
+            tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+        tropicalLayout.setVerticalGroup(
+            tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
+        );
+
+        Clima.add(tropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 380, 390));
+
+        mediterraneo.setBackground(new java.awt.Color(255, 204, 204));
+        mediterraneo.setOpaque(false);
+
+        javax.swing.GroupLayout mediterraneoLayout = new javax.swing.GroupLayout(mediterraneo);
+        mediterraneo.setLayout(mediterraneoLayout);
+        mediterraneoLayout.setHorizontalGroup(
+            mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+        mediterraneoLayout.setVerticalGroup(
+            mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 210, Short.MAX_VALUE)
+        );
+
+        Clima.add(mediterraneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 350, 210));
+
+        Desertico.setBackground(new java.awt.Color(255, 204, 204));
+        Desertico.setOpaque(false);
+        Desertico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeserticoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout DeserticoLayout = new javax.swing.GroupLayout(Desertico);
+        Desertico.setLayout(DeserticoLayout);
+        DeserticoLayout.setHorizontalGroup(
+            DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+        DeserticoLayout.setVerticalGroup(
+            DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
+        );
+
+        Clima.add(Desertico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 330));
+
+        Templado.setBackground(new java.awt.Color(255, 204, 204));
+        Templado.setOpaque(false);
+        Templado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TempladoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TempladoLayout = new javax.swing.GroupLayout(Templado);
+        Templado.setLayout(TempladoLayout);
+        TempladoLayout.setHorizontalGroup(
+            TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 350, Short.MAX_VALUE)
+        );
+        TempladoLayout.setVerticalGroup(
+            TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
+        );
+
+        Clima.add(Templado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 350, 180));
+
         jLabel13.setFont(new java.awt.Font("Harlow Solid Italic", 1, 48)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(51, 204, 255));
         jLabel13.setText("Antartico");
@@ -494,138 +633,6 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
         Clima.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1120, -1));
-
-        SubTropical.setBackground(new java.awt.Color(255, 204, 204));
-        SubTropical.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SubTropicalMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout SubTropicalLayout = new javax.swing.GroupLayout(SubTropical);
-        SubTropical.setLayout(SubTropicalLayout);
-        SubTropicalLayout.setHorizontalGroup(
-            SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-        SubTropicalLayout.setVerticalGroup(
-            SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
-
-        Clima.add(SubTropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 430, 220, 220));
-
-        antartico.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout antarticoLayout = new javax.swing.GroupLayout(antartico);
-        antartico.setLayout(antarticoLayout);
-        antarticoLayout.setHorizontalGroup(
-            antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-        );
-        antarticoLayout.setVerticalGroup(
-            antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
-        );
-
-        Clima.add(antartico, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 490, 230));
-
-        continental.setBackground(new java.awt.Color(255, 204, 204));
-        continental.setName("continental"); // NOI18N
-
-        javax.swing.GroupLayout continentalLayout = new javax.swing.GroupLayout(continental);
-        continental.setLayout(continentalLayout);
-        continentalLayout.setHorizontalGroup(
-            continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-        continentalLayout.setVerticalGroup(
-            continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        Clima.add(continental, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 260, 300));
-        continental.getAccessibleContext().setAccessibleName("continental");
-
-        tropical.setBackground(new java.awt.Color(255, 204, 204));
-        tropical.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tropicalMouseClicked(evt);
-            }
-        });
-        tropical.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tropicalKeyPressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout tropicalLayout = new javax.swing.GroupLayout(tropical);
-        tropical.setLayout(tropicalLayout);
-        tropicalLayout.setHorizontalGroup(
-            tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
-        );
-        tropicalLayout.setVerticalGroup(
-            tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
-        );
-
-        Clima.add(tropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 380, 390));
-
-        mediterraneo.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout mediterraneoLayout = new javax.swing.GroupLayout(mediterraneo);
-        mediterraneo.setLayout(mediterraneoLayout);
-        mediterraneoLayout.setHorizontalGroup(
-            mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-        );
-        mediterraneoLayout.setVerticalGroup(
-            mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-
-        Clima.add(mediterraneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 350, 200));
-
-        Desertico.setBackground(new java.awt.Color(255, 204, 204));
-        Desertico.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DeserticoMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout DeserticoLayout = new javax.swing.GroupLayout(Desertico);
-        Desertico.setLayout(DeserticoLayout);
-        DeserticoLayout.setHorizontalGroup(
-            DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
-        );
-        DeserticoLayout.setVerticalGroup(
-            DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
-        );
-
-        Clima.add(Desertico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 330));
-
-        Templado.setBackground(new java.awt.Color(255, 204, 204));
-        Templado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TempladoMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TempladoLayout = new javax.swing.GroupLayout(Templado);
-        Templado.setLayout(TempladoLayout);
-        TempladoLayout.setHorizontalGroup(
-            TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
-        );
-        TempladoLayout.setVerticalGroup(
-            TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
-        );
-
-        Clima.add(Templado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 350, 180));
 
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
