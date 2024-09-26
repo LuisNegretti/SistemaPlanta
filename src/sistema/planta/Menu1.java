@@ -12,6 +12,7 @@ import CICLODELAGUA.RAICES;
 import CICLODELAGUA.condensacion;
 import CICLODELAGUA.evaporacion;
 import CLIMA.Desertico;
+import CLIMA.Templado;
 import CLIMA.Tropical;
 import CLIMA.subTropical;
 import OPERACIONES.Operaciones;
@@ -487,6 +488,11 @@ public class Menu1 extends javax.swing.JFrame {
         Clima.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/Brown Autumn Photo Collage2.png"))); // NOI18N
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
         Clima.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1120, -1));
 
         SubTropical.setBackground(new java.awt.Color(255, 204, 204));
@@ -547,6 +553,11 @@ public class Menu1 extends javax.swing.JFrame {
                 tropicalMouseClicked(evt);
             }
         });
+        tropical.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tropicalKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tropicalLayout = new javax.swing.GroupLayout(tropical);
         tropical.setLayout(tropicalLayout);
@@ -597,6 +608,11 @@ public class Menu1 extends javax.swing.JFrame {
         Clima.add(Desertico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 330));
 
         Templado.setBackground(new java.awt.Color(255, 204, 204));
+        Templado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TempladoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout TempladoLayout = new javax.swing.GroupLayout(Templado);
         Templado.setLayout(TempladoLayout);
@@ -763,6 +779,22 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_tropicalMouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void TempladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TempladoMouseClicked
+        Templado acceso = new Templado();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_TempladoMouseClicked
+
+    private void tropicalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tropicalKeyPressed
+        Tropical acceso = new Tropical();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_tropicalKeyPressed
 
     /**
      * @param args the command line arguments
