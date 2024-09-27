@@ -11,7 +11,10 @@ import CICLODELAGUA.Precipitacion;
 import CICLODELAGUA.RAICES;
 import CICLODELAGUA.condensacion;
 import CICLODELAGUA.evaporacion;
+import CLIMA.Antartico;
+import CLIMA.Continental;
 import CLIMA.Desertico;
+import CLIMA.Mediterraneo;
 import CLIMA.Templado;
 import CLIMA.Tropical;
 import CLIMA.subTropical;
@@ -475,6 +478,11 @@ public class Menu1 extends javax.swing.JFrame {
 
         antartico.setBackground(new java.awt.Color(255, 204, 204));
         antartico.setOpaque(false);
+        antartico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                antarticoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout antarticoLayout = new javax.swing.GroupLayout(antartico);
         antartico.setLayout(antarticoLayout);
@@ -492,6 +500,11 @@ public class Menu1 extends javax.swing.JFrame {
         continental.setBackground(new java.awt.Color(255, 204, 204));
         continental.setName("continental"); // NOI18N
         continental.setOpaque(false);
+        continental.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                continentalMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout continentalLayout = new javax.swing.GroupLayout(continental);
         continental.setLayout(continentalLayout);
@@ -535,6 +548,11 @@ public class Menu1 extends javax.swing.JFrame {
 
         mediterraneo.setBackground(new java.awt.Color(255, 204, 204));
         mediterraneo.setOpaque(false);
+        mediterraneo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mediterraneoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout mediterraneoLayout = new javax.swing.GroupLayout(mediterraneo);
         mediterraneo.setLayout(mediterraneoLayout);
@@ -802,6 +820,24 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_tropicalKeyPressed
+
+    private void mediterraneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mediterraneoMouseClicked
+        Mediterraneo acceso = new Mediterraneo();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_mediterraneoMouseClicked
+
+    private void continentalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_continentalMouseClicked
+        Continental acceso = new Continental();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_continentalMouseClicked
+
+    private void antarticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_antarticoMouseClicked
+        Antartico acceso = new Antartico();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_antarticoMouseClicked
 
     /**
      * @param args the command line arguments
