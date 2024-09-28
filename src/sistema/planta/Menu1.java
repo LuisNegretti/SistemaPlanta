@@ -668,12 +668,12 @@ public class Menu1 extends javax.swing.JFrame {
                 butt_MargaritaActionPerformed(evt);
             }
         });
-        Plantas.add(butt_Margarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 220, 200));
+        Plantas.add(butt_Margarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 220, 200));
         butt_Margarita.getAccessibleContext().setAccessibleName("jbutt_Margarita");
 
         butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
         butt_Ixora.setText("jButton1");
-        Plantas.add(butt_Ixora, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 220, 200));
+        Plantas.add(butt_Ixora, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 220, 200));
 
         butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
         butt_rosaDelDesierto.setText("jButton1");
@@ -682,15 +682,15 @@ public class Menu1 extends javax.swing.JFrame {
                 butt_rosaDelDesiertoActionPerformed(evt);
             }
         });
-        Plantas.add(butt_rosaDelDesierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 220, 200));
+        Plantas.add(butt_rosaDelDesierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, 220, 200));
 
         butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
         butt_Tulipanes.setText("jButton1");
-        Plantas.add(butt_Tulipanes, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 220, 200));
+        Plantas.add(butt_Tulipanes, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 220, 200));
 
         butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
         butt_AmapolasRosas.setText("jButton1");
-        Plantas.add(butt_AmapolasRosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 220, 200));
+        Plantas.add(butt_AmapolasRosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 220, 200));
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
 
