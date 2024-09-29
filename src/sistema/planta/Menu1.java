@@ -162,7 +162,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addContainerGap(631, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Bienvenida", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
+        jTabbedPane1.addTab("Bienvenida ", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
 
         Riesgos.setBackground(new java.awt.Color(0, 51, 0));
         Riesgos.setPreferredSize(new java.awt.Dimension(1064, 800));

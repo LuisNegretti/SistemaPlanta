@@ -37,7 +37,6 @@ public class waitPage extends javax.swing.JFrame {
         initComponents();
         iconImage();
         
-        System.out.println("bbsote");
      
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
         
@@ -63,7 +62,7 @@ public class waitPage extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(waitPage.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
-            OpenXAMPP();
+//            OpenXAMPP();
         }
             System.out.println("conectado");
         
@@ -105,23 +104,23 @@ public class waitPage extends javax.swing.JFrame {
         this.setIconImage(icono.getImage());
     }
 
-    private void OpenXAMPP() {
-     
-        try {
-        // Ruta al ejecutable de XAMPP
-        String xamppPath = "C:\\xampp\\xampp-control.exe";
-       
-
-        // Ejecuta el comando para abrir XAMPP
-        Runtime.getRuntime().exec(xamppPath);
-        System.out.println("XAMPP iniciado correctamente");
-
-        
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-       
-    }
+//    private void OpenXAMPP() {
+//     
+//        try {
+//        // Ruta al ejecutable de XAMPP
+//        String xamppPath = "C:\\xampp\\xampp-control.exe";
+//       
+//
+//        // Ejecuta el comando para abrir XAMPP
+//        Runtime.getRuntime().exec(xamppPath);
+//        System.out.println("XAMPP iniciado correctamente");
+//
+//        
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
+//       
+//    }
     
     
     
@@ -197,7 +196,7 @@ public class waitPage extends javax.swing.JFrame {
                         waitPage.dispose();// Cerrar el JFrame actual 
                 
                     // Abrir otro JFrame
-                new Menu1().setVisible(true);
+                new Principal().setVisible(true);
             }
         });
             // Iniciar el temporizador
