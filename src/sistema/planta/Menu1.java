@@ -19,11 +19,7 @@ import CLIMA.Templado;
 import CLIMA.Tropical;
 import CLIMA.subTropical;
 import OPERACIONES.Operaciones;
-import Plantas.Amapolas_Rosas;
-import Plantas.Ixoras1;
 import Plantas.Margaritas1;
-import Plantas.Rosa_del_Desierto1;
-import Plantas.Tulipanes;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
@@ -55,7 +51,6 @@ public class Menu1 extends javax.swing.JFrame {
         Bienvenida = new javax.swing.JPanel();
         bt_op_ventana = new javax.swing.JButton();
         Riesgos = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
         Jardin = new javax.swing.JPanel();
         CicloDeAgua1 = new javax.swing.JPanel();
         MenuCiclo = new javax.swing.JTabbedPane();
@@ -112,11 +107,27 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         Plantas = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
         butt_Margarita = new javax.swing.JButton();
-        butt_Ixora = new javax.swing.JButton();
-        butt_rosaDelDesierto = new javax.swing.JButton();
-        butt_Tulipanes = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         butt_AmapolasRosas = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        butt_Ixora = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        butt_Tulipanes = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        butt_rosaDelDesierto = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -154,7 +165,7 @@ public class Menu1 extends javax.swing.JFrame {
         BienvenidaLayout.setHorizontalGroup(
             BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BienvenidaLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(bt_op_ventana)
                 .addGap(712, 712, 712))
         );
@@ -163,7 +174,7 @@ public class Menu1 extends javax.swing.JFrame {
             .addGroup(BienvenidaLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(bt_op_ventana)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addContainerGap(588, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Bienvenida ", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
@@ -175,30 +186,14 @@ public class Menu1 extends javax.swing.JFrame {
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1062, Short.MAX_VALUE)
+            .addGap(0, 1050, Short.MAX_VALUE)
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 773, Short.MAX_VALUE)
+            .addGap(0, 730, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
-
-        jPanel7.setBackground(new java.awt.Color(0, 51, 0));
-        jPanel7.setPreferredSize(new java.awt.Dimension(1064, 800));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1062, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 773, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Recomendaciones", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/brote.png")), jPanel7); // NOI18N
 
         Jardin.setBackground(new java.awt.Color(0, 51, 0));
         Jardin.setPreferredSize(new java.awt.Dimension(1064, 800));
@@ -211,7 +206,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         JardinLayout.setVerticalGroup(
             JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 773, Short.MAX_VALUE)
+            .addGap(0, 730, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
@@ -662,6 +657,8 @@ public class Menu1 extends javax.swing.JFrame {
         Plantas.setPreferredSize(new java.awt.Dimension(1064, 800));
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 0));
+
         butt_Margarita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Margaritas.jpg"))); // NOI18N
         butt_Margarita.setText("jButton_Margarita ");
         butt_Margarita.setMaximumSize(new java.awt.Dimension(240, 200));
@@ -672,17 +669,131 @@ public class Menu1 extends javax.swing.JFrame {
                 butt_MargaritaActionPerformed(evt);
             }
         });
-        Plantas.add(butt_Margarita, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 220, 200));
+
+        jScrollPane4.setBorder(null);
+
+        jTextArea3.setEditable(false);
+        jTextArea3.setBackground(new java.awt.Color(153, 153, 0));
+        jTextArea3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea3.setTabSize(0);
+        jTextArea3.setText("¿Alguna vez te has preguntado de dónde \nviene el agua que bebemos, la que riega \nlas plantas o la que forma los ríos, \nlagunas, pozos y cauces? \n\n¡Pues se trata de un recurso renovable \nque da vida y del cual es un viaje increíble \nque no para nunca! ");
+        jTextArea3.setWrapStyleWord(true);
+        jTextArea3.setBorder(null);
+        jScrollPane4.setViewportView(jTextArea3);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ObOhgosRIJnnCAeHU_twkrWC9uCJRpoI5QYeKZF9GJk.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(butt_Margarita, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(203, 203, 203))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(52, 52, 52)))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(309, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(butt_Margarita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(jLabel6)))
+                .addContainerGap(334, Short.MAX_VALUE))
+        );
+
         butt_Margarita.getAccessibleContext().setAccessibleName("jbutt_Margarita");
+
+        jTabbedPane2.addTab("tab1", jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(51, 0, 51));
+
+        butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
+        butt_AmapolasRosas.setText("jButton1");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(813, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(488, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("tab2", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(153, 0, 0));
 
         butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
         butt_Ixora.setText("jButton1");
-        butt_Ixora.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butt_IxoraActionPerformed(evt);
-            }
-        });
-        Plantas.add(butt_Ixora, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 220, 200));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(815, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(488, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("tab3", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(204, 0, 51));
+        jPanel4.setForeground(new java.awt.Color(204, 0, 51));
+
+        butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
+        butt_Tulipanes.setText("jButton1");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(818, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(491, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("tab4", jPanel4);
+
+        jPanel5.setBackground(new java.awt.Color(255, 153, 255));
 
         butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
         butt_rosaDelDesierto.setText("jButton1");
@@ -691,27 +802,120 @@ public class Menu1 extends javax.swing.JFrame {
                 butt_rosaDelDesiertoActionPerformed(evt);
             }
         });
-        Plantas.add(butt_rosaDelDesierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 60, 220, 200));
 
-        butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
-        butt_Tulipanes.setText("jButton1");
-        butt_Tulipanes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butt_TulipanesActionPerformed(evt);
-            }
-        });
-        Plantas.add(butt_Tulipanes, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 220, 200));
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(821, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(493, Short.MAX_VALUE))
+        );
 
-        butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
-        butt_AmapolasRosas.setText("jButton1");
-        butt_AmapolasRosas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butt_AmapolasRosasActionPerformed(evt);
-            }
-        });
-        Plantas.add(butt_AmapolasRosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 220, 200));
+        jTabbedPane2.addTab("tab5", jPanel5);
 
-        jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab6", jPanel6);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab7", jPanel8);
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab8", jPanel9);
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab9", jPanel10);
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab10", jPanel11);
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab11", jPanel12);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("tab12", jPanel13);
+
+        Plantas.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 740));
+
+        jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (3).png")), Plantas); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -809,11 +1013,7 @@ public class Menu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_butt_MargaritaActionPerformed
 
     private void butt_rosaDelDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_rosaDelDesiertoActionPerformed
-        Rosa_del_Desierto1 newframe = new Rosa_del_Desierto1();
-       
-        newframe.setVisible(true);
-        
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_butt_rosaDelDesiertoActionPerformed
 
     private void bt_op_ventanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_op_ventanaMouseClicked
@@ -861,24 +1061,6 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_antarticoMouseClicked
-
-    private void butt_IxoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_IxoraActionPerformed
-       Ixoras1 newframe = new Ixoras1();
-       
-       newframe.setVisible(true);
-    }//GEN-LAST:event_butt_IxoraActionPerformed
-
-    private void butt_AmapolasRosasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_AmapolasRosasActionPerformed
-        Amapolas_Rosas newframe = new Amapolas_Rosas();
-       
-        newframe.setVisible(true); 
-    }//GEN-LAST:event_butt_AmapolasRosasActionPerformed
-
-    private void butt_TulipanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_TulipanesActionPerformed
-        Tulipanes newframe = new Tulipanes();
-       
-        newframe.setVisible(true); 
-    }//GEN-LAST:event_butt_TulipanesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -969,15 +1151,30 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JPanel mediterraneo;
