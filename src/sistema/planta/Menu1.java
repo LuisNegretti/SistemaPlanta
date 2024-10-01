@@ -19,7 +19,11 @@ import CLIMA.Templado;
 import CLIMA.Tropical;
 import CLIMA.subTropical;
 import OPERACIONES.Operaciones;
+import Plantas.Amapolas_Rosas;
+import Plantas.Ixoras1;
 import Plantas.Margaritas1;
+import Plantas.Rosa_del_Desierto1;
+import Plantas.Tulipanes;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
@@ -673,6 +677,11 @@ public class Menu1 extends javax.swing.JFrame {
 
         butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
         butt_Ixora.setText("jButton1");
+        butt_Ixora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butt_IxoraActionPerformed(evt);
+            }
+        });
         Plantas.add(butt_Ixora, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 220, 200));
 
         butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
@@ -686,10 +695,20 @@ public class Menu1 extends javax.swing.JFrame {
 
         butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
         butt_Tulipanes.setText("jButton1");
+        butt_Tulipanes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butt_TulipanesActionPerformed(evt);
+            }
+        });
         Plantas.add(butt_Tulipanes, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 220, 200));
 
         butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
         butt_AmapolasRosas.setText("jButton1");
+        butt_AmapolasRosas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butt_AmapolasRosasActionPerformed(evt);
+            }
+        });
         Plantas.add(butt_AmapolasRosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 220, 200));
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/hoja.png")), Plantas); // NOI18N
@@ -790,7 +809,11 @@ public class Menu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_butt_MargaritaActionPerformed
 
     private void butt_rosaDelDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_rosaDelDesiertoActionPerformed
-        // TODO add your handling code here:
+        Rosa_del_Desierto1 newframe = new Rosa_del_Desierto1();
+       
+        newframe.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_butt_rosaDelDesiertoActionPerformed
 
     private void bt_op_ventanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_op_ventanaMouseClicked
@@ -838,6 +861,24 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_antarticoMouseClicked
+
+    private void butt_IxoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_IxoraActionPerformed
+       Ixoras1 newframe = new Ixoras1();
+       
+       newframe.setVisible(true);
+    }//GEN-LAST:event_butt_IxoraActionPerformed
+
+    private void butt_AmapolasRosasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_AmapolasRosasActionPerformed
+        Amapolas_Rosas newframe = new Amapolas_Rosas();
+       
+        newframe.setVisible(true); 
+    }//GEN-LAST:event_butt_AmapolasRosasActionPerformed
+
+    private void butt_TulipanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_TulipanesActionPerformed
+        Tulipanes newframe = new Tulipanes();
+       
+        newframe.setVisible(true); 
+    }//GEN-LAST:event_butt_TulipanesActionPerformed
 
     /**
      * @param args the command line arguments
