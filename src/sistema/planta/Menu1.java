@@ -109,10 +109,19 @@ public class Menu1 extends javax.swing.JFrame {
         Plantas = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        butt_Margarita = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea8 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         butt_AmapolasRosas = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -657,66 +666,153 @@ public class Menu1 extends javax.swing.JFrame {
         Plantas.setPreferredSize(new java.awt.Dimension(1064, 800));
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 0));
-
-        butt_Margarita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Margaritas.jpg"))); // NOI18N
-        butt_Margarita.setText("jButton_Margarita ");
-        butt_Margarita.setMaximumSize(new java.awt.Dimension(240, 200));
-        butt_Margarita.setMinimumSize(new java.awt.Dimension(240, 200));
-        butt_Margarita.setPreferredSize(new java.awt.Dimension(240, 200));
-        butt_Margarita.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butt_MargaritaActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(0, 204, 102));
 
         jScrollPane4.setBorder(null);
 
         jTextArea3.setEditable(false);
-        jTextArea3.setBackground(new java.awt.Color(153, 153, 0));
-        jTextArea3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea3.setBackground(new java.awt.Color(0, 204, 102));
+        jTextArea3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jTextArea3.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea3.setTabSize(0);
-        jTextArea3.setText("¿Alguna vez te has preguntado de dónde \nviene el agua que bebemos, la que riega \nlas plantas o la que forma los ríos, \nlagunas, pozos y cauces? \n\n¡Pues se trata de un recurso renovable \nque da vida y del cual es un viaje increíble \nque no para nunca! ");
+        jTextArea3.setText("MARGARITAS");
         jTextArea3.setWrapStyleWord(true);
         jTextArea3.setBorder(null);
         jScrollPane4.setViewportView(jTextArea3);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ObOhgosRIJnnCAeHU_twkrWC9uCJRpoI5QYeKZF9GJk.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/margaritovalada.png"))); // NOI18N
+        jLabel10.setText("jLabel10");
+
+        jScrollPane6.setBorder(null);
+
+        jTextArea5.setEditable(false);
+        jTextArea5.setBackground(new java.awt.Color(0, 204, 102));
+        jTextArea5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea5.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea5.setLineWrap(true);
+        jTextArea5.setTabSize(0);
+        jTextArea5.setText("Las margaritas son una planta resistente y adaptable que puede encontrarse en muchos jardines y paisajes. A nivel ornamental, estas flores perennes son valoradas por su apariencia clásica: pétalos blancos que rodean un centro amarillo brillante. Se adaptan bien a diferentes tipos de climas y pueden crecer tanto en sol pleno como en sombra parcial, lo que las convierte en una opción versátil para cubrir grandes áreas de jardín o crear bordes naturales en paisajes. Además, su capacidad para florecer durante varias estaciones del año las hace un componente clave en jardines que buscan tener color constante.\n\nMás allá de su valor estético, las margaritas tienen un historial en medicina tradicional. Se han utilizado en infusiones para tratar dolencias menores como resfriados, problemas digestivos y para aliviar dolores leves. También se han aplicado tópicamente en forma de cataplasmas para tratar heridas, quemaduras menores y picaduras de insectos debido a sus propiedades antiinflamatorias y calmantes.");
+        jTextArea5.setToolTipText("");
+        jTextArea5.setWrapStyleWord(true);
+        jTextArea5.setBorder(null);
+        jScrollPane6.setViewportView(jTextArea5);
+
+        jScrollPane8.setBorder(null);
+
+        jTextArea7.setEditable(false);
+        jTextArea7.setBackground(new java.awt.Color(0, 204, 102));
+        jTextArea7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea7.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea7.setLineWrap(true);
+        jTextArea7.setTabSize(0);
+        jTextArea7.setText("Contenido en Minerales:\n- Sin requisitos estrictos.\nNivel de pH:\n-  4.5 – 7.5\nHumedad del suelo:\n-  Sin requisitos estrictos.\nSalinidad:\n-  No soportada\nTipo de tierra: \n- Rico en Nitrógeno \nbajos en fertilizantes");
+        jTextArea7.setToolTipText("");
+        jTextArea7.setWrapStyleWord(true);
+        jTextArea7.setBorder(null);
+        jScrollPane8.setViewportView(jTextArea7);
+
+        jScrollPane9.setBorder(null);
+
+        jTextArea8.setEditable(false);
+        jTextArea8.setBackground(new java.awt.Color(0, 204, 102));
+        jTextArea8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea8.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea8.setLineWrap(true);
+        jTextArea8.setTabSize(0);
+        jTextArea8.setText("Desde un punto de vista ecológico, las margaritas juegan un papel importante en el equilibrio del suelo y el ecosistema del jardín. Al ser una planta que cubre bien el suelo, son útiles para evitar la erosión del suelo y controlar el crecimiento de malezas no deseadas. \nAdemás, atraen polinizadores como abejas y mariposas, lo que contribuye a la biodiversidad y mejora la polinización de otras plantas cercanas. \nSu habilidad para crecer en suelos pobres o ligeramente compactados también las convierte en una opción excelente para terrenos difíciles, mejorando la estructura del suelo al permitir una mayor infiltración de agua.");
+        jTextArea8.setToolTipText("");
+        jTextArea8.setWrapStyleWord(true);
+        jTextArea8.setBorder(null);
+        jScrollPane9.setViewportView(jTextArea8);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Regadera.png"))); // NOI18N
+        jLabel6.setText("jLabel1");
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Regadera.png"))); // NOI18N
+        jLabel23.setText("jLabel1");
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Regadera.png"))); // NOI18N
+        jLabel24.setText("jLabel1");
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Regadera.png"))); // NOI18N
+        jLabel25.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(butt_Margarita, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(203, 203, 203))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(52, 52, 52)))
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(309, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(73, 73, 73)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(332, 332, 332)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(581, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(415, 415, 415)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(498, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(890, Short.MAX_VALUE)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(23, 23, 23)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(butt_Margarita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(69, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(252, 252, 252)
-                        .addComponent(jLabel6)))
-                .addContainerGap(334, Short.MAX_VALUE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane8))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(393, Short.MAX_VALUE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(182, 182, 182)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(547, Short.MAX_VALUE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(28, 28, 28)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(21, 21, 21)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(554, Short.MAX_VALUE)))
         );
-
-        butt_Margarita.getAccessibleContext().setAccessibleName("jbutt_Margarita");
 
         jTabbedPane2.addTab("tab1", jPanel1);
 
@@ -1004,14 +1100,6 @@ public class Menu1 extends javax.swing.JFrame {
         acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_SubTropicalMouseClicked
 
-    private void butt_MargaritaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_MargaritaActionPerformed
-       Margaritas1 newframe = new Margaritas1();
-       
-       newframe.setVisible(true); 
-       
-       
-    }//GEN-LAST:event_butt_MargaritaActionPerformed
-
     private void butt_rosaDelDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_rosaDelDesiertoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_butt_rosaDelDesiertoActionPerformed
@@ -1113,7 +1201,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton bt_op_ventana;
     private javax.swing.JButton butt_AmapolasRosas;
     private javax.swing.JButton butt_Ixora;
-    private javax.swing.JButton butt_Margarita;
     private javax.swing.JButton butt_Tulipanes;
     private javax.swing.JButton butt_rosaDelDesierto;
     private javax.swing.JButton coleccion;
@@ -1127,6 +1214,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1140,6 +1228,9 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1170,13 +1261,19 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextArea jTextArea8;
     private javax.swing.JPanel mediterraneo;
     private javax.swing.JButton precipitacion;
     private javax.swing.JPanel tropical;
