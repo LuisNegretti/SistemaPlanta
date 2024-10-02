@@ -50,8 +50,46 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Bienvenida = new javax.swing.JPanel();
         bt_op_ventana = new javax.swing.JButton();
-        Riesgos = new javax.swing.JPanel();
+        Plantas = new javax.swing.JPanel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        Margaritas = new javax.swing.JPanel();
+        butt_Margarita = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        ixoras = new javax.swing.JPanel();
+        butt_AmapolasRosas = new javax.swing.JButton();
+        Amapolas = new javax.swing.JPanel();
+        butt_Ixora = new javax.swing.JButton();
+        RosaDelDesierto = new javax.swing.JPanel();
+        butt_Tulipanes = new javax.swing.JButton();
+        Tulipanes = new javax.swing.JPanel();
+        butt_rosaDelDesierto = new javax.swing.JButton();
+        Azalea = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jPanel20 = new javax.swing.JPanel();
+        Genciana = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jPanel25 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        Helecho = new javax.swing.JPanel();
+        DienteDeLeon = new javax.swing.JPanel();
+        Fresa = new javax.swing.JPanel();
+        Rododendro = new javax.swing.JPanel();
+        llanten = new javax.swing.JPanel();
+        Achicoria = new javax.swing.JPanel();
+        Quenopodio = new javax.swing.JPanel();
+        BocaDeDragon = new javax.swing.JPanel();
+        Calendula = new javax.swing.JPanel();
+        MastuerzoMarino = new javax.swing.JPanel();
+        Tagetes = new javax.swing.JPanel();
+        ArbolDelAmor = new javax.swing.JPanel();
         Jardin = new javax.swing.JPanel();
+        Riesgos = new javax.swing.JPanel();
         CicloDeAgua1 = new javax.swing.JPanel();
         MenuCiclo = new javax.swing.JTabbedPane();
         consejos1 = new javax.swing.JPanel();
@@ -106,6 +144,8 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
         Plantas = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -137,6 +177,7 @@ public class Menu1 extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
+>>>>>>> 81a4fc261f7cc0fae14c003f499df33e9f4329b1
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -188,21 +229,552 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Bienvenida ", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
 
-        Riesgos.setBackground(new java.awt.Color(0, 51, 0));
-        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 800));
+        Plantas.setBackground(new java.awt.Color(0, 51, 0));
+        Plantas.setPreferredSize(new java.awt.Dimension(1064, 800));
+        Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
-        Riesgos.setLayout(RiesgosLayout);
-        RiesgosLayout.setHorizontalGroup(
-            RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1050, Short.MAX_VALUE)
+        jTabbedPane2.setForeground(new java.awt.Color(255, 255, 0));
+
+        Margaritas.setBackground(new java.awt.Color(153, 153, 0));
+
+        butt_Margarita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Margaritas.jpg"))); // NOI18N
+        butt_Margarita.setText("jButton_Margarita ");
+        butt_Margarita.setMaximumSize(new java.awt.Dimension(240, 200));
+        butt_Margarita.setMinimumSize(new java.awt.Dimension(240, 200));
+        butt_Margarita.setPreferredSize(new java.awt.Dimension(240, 200));
+        butt_Margarita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butt_MargaritaActionPerformed(evt);
+            }
+        });
+
+        jScrollPane4.setBorder(null);
+
+        jTextArea3.setEditable(false);
+        jTextArea3.setBackground(new java.awt.Color(153, 153, 0));
+        jTextArea3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextArea3.setTabSize(0);
+        jTextArea3.setText("¿Alguna vez te has preguntado de dónde \nviene el agua que bebemos, la que riega \nlas plantas o la que forma los ríos, \nlagunas, pozos y cauces? \n\n¡Pues se trata de un recurso renovable \nque da vida y del cual es un viaje increíble \nque no para nunca! ");
+        jTextArea3.setWrapStyleWord(true);
+        jTextArea3.setBorder(null);
+        jScrollPane4.setViewportView(jTextArea3);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ObOhgosRIJnnCAeHU_twkrWC9uCJRpoI5QYeKZF9GJk.png"))); // NOI18N
+
+        javax.swing.GroupLayout MargaritasLayout = new javax.swing.GroupLayout(Margaritas);
+        Margaritas.setLayout(MargaritasLayout);
+        MargaritasLayout.setHorizontalGroup(
+            MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MargaritasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MargaritasLayout.createSequentialGroup()
+                        .addComponent(butt_Margarita, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(203, 203, 203))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(52, 52, 52)))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(309, Short.MAX_VALUE))
         );
-        RiesgosLayout.setVerticalGroup(
-            RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+        MargaritasLayout.setVerticalGroup(
+            MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MargaritasLayout.createSequentialGroup()
+                .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MargaritasLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(butt_Margarita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MargaritasLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(MargaritasLayout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(jLabel6)))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
+        butt_Margarita.getAccessibleContext().setAccessibleName("jbutt_Margarita");
+
+        jTabbedPane2.addTab("Margaritas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/Margaritas.png")), Margaritas); // NOI18N
+
+        ixoras.setBackground(new java.awt.Color(51, 0, 51));
+
+        butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
+        butt_AmapolasRosas.setText("jButton1");
+
+        javax.swing.GroupLayout ixorasLayout = new javax.swing.GroupLayout(ixoras);
+        ixoras.setLayout(ixorasLayout);
+        ixorasLayout.setHorizontalGroup(
+            ixorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ixorasLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(813, Short.MAX_VALUE))
+        );
+        ixorasLayout.setVerticalGroup(
+            ixorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ixorasLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(472, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Ixoras", ixoras);
+
+        Amapolas.setBackground(new java.awt.Color(153, 0, 0));
+
+        butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
+        butt_Ixora.setText("jButton1");
+
+        javax.swing.GroupLayout AmapolasLayout = new javax.swing.GroupLayout(Amapolas);
+        Amapolas.setLayout(AmapolasLayout);
+        AmapolasLayout.setHorizontalGroup(
+            AmapolasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AmapolasLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(815, Short.MAX_VALUE))
+        );
+        AmapolasLayout.setVerticalGroup(
+            AmapolasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AmapolasLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(472, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Amapolas", Amapolas);
+
+        RosaDelDesierto.setBackground(new java.awt.Color(204, 0, 51));
+        RosaDelDesierto.setForeground(new java.awt.Color(204, 0, 51));
+
+        butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
+        butt_Tulipanes.setText("jButton1");
+
+        javax.swing.GroupLayout RosaDelDesiertoLayout = new javax.swing.GroupLayout(RosaDelDesierto);
+        RosaDelDesierto.setLayout(RosaDelDesiertoLayout);
+        RosaDelDesiertoLayout.setHorizontalGroup(
+            RosaDelDesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RosaDelDesiertoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(818, Short.MAX_VALUE))
+        );
+        RosaDelDesiertoLayout.setVerticalGroup(
+            RosaDelDesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RosaDelDesiertoLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(475, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Rosa del desierto", RosaDelDesierto);
+
+        Tulipanes.setBackground(new java.awt.Color(255, 153, 255));
+
+        butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
+        butt_rosaDelDesierto.setText("jButton1");
+        butt_rosaDelDesierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butt_rosaDelDesiertoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TulipanesLayout = new javax.swing.GroupLayout(Tulipanes);
+        Tulipanes.setLayout(TulipanesLayout);
+        TulipanesLayout.setHorizontalGroup(
+            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TulipanesLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(821, Short.MAX_VALUE))
+        );
+        TulipanesLayout.setVerticalGroup(
+            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TulipanesLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(477, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Tulipanes", Tulipanes);
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel19Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel19Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout AzaleaLayout = new javax.swing.GroupLayout(Azalea);
+        Azalea.setLayout(AzaleaLayout);
+        AzaleaLayout.setHorizontalGroup(
+            AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AzaleaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        AzaleaLayout.setVerticalGroup(
+            AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(AzaleaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane2.addTab("Azalea", Azalea);
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel27Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel27Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel26Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel26Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel25Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel25Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel23Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel23Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel23Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel23Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel22Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel22Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout GencianaLayout = new javax.swing.GroupLayout(Genciana);
+        Genciana.setLayout(GencianaLayout);
+        GencianaLayout.setHorizontalGroup(
+            GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+            .addGroup(GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(GencianaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        GencianaLayout.setVerticalGroup(
+            GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 714, Short.MAX_VALUE)
+            .addGroup(GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(GencianaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jTabbedPane2.addTab("Genciana", Genciana);
+
+        javax.swing.GroupLayout HelechoLayout = new javax.swing.GroupLayout(Helecho);
+        Helecho.setLayout(HelechoLayout);
+        HelechoLayout.setHorizontalGroup(
+            HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        HelechoLayout.setVerticalGroup(
+            HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Helecho", Helecho);
+
+        javax.swing.GroupLayout DienteDeLeonLayout = new javax.swing.GroupLayout(DienteDeLeon);
+        DienteDeLeon.setLayout(DienteDeLeonLayout);
+        DienteDeLeonLayout.setHorizontalGroup(
+            DienteDeLeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        DienteDeLeonLayout.setVerticalGroup(
+            DienteDeLeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Diente de leon", DienteDeLeon);
+
+        javax.swing.GroupLayout FresaLayout = new javax.swing.GroupLayout(Fresa);
+        Fresa.setLayout(FresaLayout);
+        FresaLayout.setHorizontalGroup(
+            FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        FresaLayout.setVerticalGroup(
+            FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Fresa", Fresa);
+
+        javax.swing.GroupLayout RododendroLayout = new javax.swing.GroupLayout(Rododendro);
+        Rododendro.setLayout(RododendroLayout);
+        RododendroLayout.setHorizontalGroup(
+            RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        RododendroLayout.setVerticalGroup(
+            RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Rododendro", Rododendro);
+
+        javax.swing.GroupLayout llantenLayout = new javax.swing.GroupLayout(llanten);
+        llanten.setLayout(llantenLayout);
+        llantenLayout.setHorizontalGroup(
+            llantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        llantenLayout.setVerticalGroup(
+            llantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("llanten", llanten);
+
+        javax.swing.GroupLayout AchicoriaLayout = new javax.swing.GroupLayout(Achicoria);
+        Achicoria.setLayout(AchicoriaLayout);
+        AchicoriaLayout.setHorizontalGroup(
+            AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        AchicoriaLayout.setVerticalGroup(
+            AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Achicoria", Achicoria);
+
+        javax.swing.GroupLayout QuenopodioLayout = new javax.swing.GroupLayout(Quenopodio);
+        Quenopodio.setLayout(QuenopodioLayout);
+        QuenopodioLayout.setHorizontalGroup(
+            QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        QuenopodioLayout.setVerticalGroup(
+            QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Quenopodio", Quenopodio);
+
+        javax.swing.GroupLayout BocaDeDragonLayout = new javax.swing.GroupLayout(BocaDeDragon);
+        BocaDeDragon.setLayout(BocaDeDragonLayout);
+        BocaDeDragonLayout.setHorizontalGroup(
+            BocaDeDragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        BocaDeDragonLayout.setVerticalGroup(
+            BocaDeDragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Boca de dragon", BocaDeDragon);
+
+        javax.swing.GroupLayout CalendulaLayout = new javax.swing.GroupLayout(Calendula);
+        Calendula.setLayout(CalendulaLayout);
+        CalendulaLayout.setHorizontalGroup(
+            CalendulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        CalendulaLayout.setVerticalGroup(
+            CalendulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Calendula", Calendula);
+
+        javax.swing.GroupLayout MastuerzoMarinoLayout = new javax.swing.GroupLayout(MastuerzoMarino);
+        MastuerzoMarino.setLayout(MastuerzoMarinoLayout);
+        MastuerzoMarinoLayout.setHorizontalGroup(
+            MastuerzoMarinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        MastuerzoMarinoLayout.setVerticalGroup(
+            MastuerzoMarinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Mastuerzo marino", MastuerzoMarino);
+
+        javax.swing.GroupLayout TagetesLayout = new javax.swing.GroupLayout(Tagetes);
+        Tagetes.setLayout(TagetesLayout);
+        TagetesLayout.setHorizontalGroup(
+            TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        TagetesLayout.setVerticalGroup(
+            TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Tagetes", Tagetes);
+
+        javax.swing.GroupLayout ArbolDelAmorLayout = new javax.swing.GroupLayout(ArbolDelAmor);
+        ArbolDelAmor.setLayout(ArbolDelAmorLayout);
+        ArbolDelAmorLayout.setHorizontalGroup(
+            ArbolDelAmorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1058, Short.MAX_VALUE)
+        );
+        ArbolDelAmorLayout.setVerticalGroup(
+            ArbolDelAmorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 698, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Arbol del amor", ArbolDelAmor);
+
+        Plantas.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 740));
+        jTabbedPane2.getAccessibleContext().setAccessibleName("Margaritas");
+
+        jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (3).png")), Plantas); // NOI18N
 
         Jardin.setBackground(new java.awt.Color(0, 51, 0));
         Jardin.setPreferredSize(new java.awt.Dimension(1064, 800));
@@ -219,6 +791,22 @@ public class Menu1 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
+
+        Riesgos.setBackground(new java.awt.Color(0, 51, 0));
+        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 800));
+
+        javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
+        Riesgos.setLayout(RiesgosLayout);
+        RiesgosLayout.setHorizontalGroup(
+            RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1050, Short.MAX_VALUE)
+        );
+        RiesgosLayout.setVerticalGroup(
+            RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
 
         CicloDeAgua1.setBackground(new java.awt.Color(0, 51, 153));
         CicloDeAgua1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
@@ -662,6 +1250,8 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
+<<<<<<< HEAD
+=======
         Plantas.setBackground(new java.awt.Color(0, 51, 0));
         Plantas.setPreferredSize(new java.awt.Dimension(1064, 800));
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1013,6 +1603,7 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (3).png")), Plantas); // NOI18N
 
+>>>>>>> 81a4fc261f7cc0fae14c003f499df33e9f4329b1
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1186,17 +1777,34 @@ public class Menu1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Achicoria;
+    private javax.swing.JPanel Amapolas;
+    private javax.swing.JPanel ArbolDelAmor;
+    private javax.swing.JPanel Azalea;
     private javax.swing.JPanel Bienvenida;
+    private javax.swing.JPanel BocaDeDragon;
+    private javax.swing.JPanel Calendula;
     private javax.swing.JPanel CicloDeAgua1;
     private javax.swing.JPanel Clima;
     private javax.swing.JPanel Desertico;
+    private javax.swing.JPanel DienteDeLeon;
+    private javax.swing.JPanel Fresa;
+    private javax.swing.JPanel Genciana;
+    private javax.swing.JPanel Helecho;
     private javax.swing.JPanel Jardin;
+    private javax.swing.JPanel Margaritas;
+    private javax.swing.JPanel MastuerzoMarino;
     private javax.swing.JTabbedPane MenuCiclo;
     private javax.swing.JPanel Plantas;
     private javax.swing.JPanel ProcesoPrincipal;
+    private javax.swing.JPanel Quenopodio;
     private javax.swing.JPanel Riesgos;
+    private javax.swing.JPanel Rododendro;
+    private javax.swing.JPanel RosaDelDesierto;
     private javax.swing.JPanel SubTropical;
+    private javax.swing.JPanel Tagetes;
     private javax.swing.JPanel Templado;
+    private javax.swing.JPanel Tulipanes;
     private javax.swing.JPanel antartico;
     private javax.swing.JButton bt_op_ventana;
     private javax.swing.JButton butt_AmapolasRosas;
@@ -1211,6 +1819,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel consejos1;
     private javax.swing.JPanel continental;
     private javax.swing.JButton evaporacion;
+    private javax.swing.JPanel ixoras;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
@@ -1246,18 +1855,15 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1272,8 +1878,12 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
+<<<<<<< HEAD
+    private javax.swing.JPanel llanten;
+=======
     private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextArea jTextArea8;
+>>>>>>> 81a4fc261f7cc0fae14c003f499df33e9f4329b1
     private javax.swing.JPanel mediterraneo;
     private javax.swing.JButton precipitacion;
     private javax.swing.JPanel tropical;
