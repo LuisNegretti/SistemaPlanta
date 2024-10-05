@@ -5,6 +5,7 @@
  */
 package CICLODELAGUA;
 
+import java.awt.Toolkit;
 import sistema.planta.Menu1;
 
 /**
@@ -18,6 +19,7 @@ public class Coleccion extends javax.swing.JFrame {
      */
     public Coleccion() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
     }
 
     /**

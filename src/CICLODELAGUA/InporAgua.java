@@ -5,6 +5,8 @@
  */
 package CICLODELAGUA;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author pc
@@ -16,6 +18,7 @@ public class InporAgua extends javax.swing.JFrame {
      */
     public InporAgua() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
     }
 
     /**

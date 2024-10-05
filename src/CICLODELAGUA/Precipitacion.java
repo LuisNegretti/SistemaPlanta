@@ -5,6 +5,7 @@
  */
 package CICLODELAGUA;
 
+import java.awt.Toolkit;
 import sistema.planta.Menu1;
 
 /**
@@ -18,6 +19,7 @@ public class Precipitacion extends javax.swing.JFrame {
      */
     public Precipitacion() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
     }
 
     /**

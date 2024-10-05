@@ -5,6 +5,8 @@
  */
 package sistema.planta;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author pc
@@ -16,6 +18,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
           this.setLocationRelativeTo(null);
     }
 
