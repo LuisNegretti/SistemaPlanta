@@ -39,7 +39,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" pref="1049" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" pref="1065" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -107,7 +107,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                       <Component id="bt_op_ventana" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="712" max="-2" attributes="0"/>
                   </Group>
@@ -169,7 +169,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1047" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1060" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -1290,6 +1290,44 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
+                <Container class="javax.swing.JPanel" name="Int_Plantas">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Plantas">
+                        <Property name="tabTitle" type="java.lang.String" value="Plantas"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel49" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel49" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="jLabel49">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/ImagenesPlanta/intPlant.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="jLabel49"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
                 <Container class="javax.swing.JPanel" name="Margaritas">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1330,7 +1368,7 @@
                                       <Component id="jScrollPane6" min="-2" pref="479" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel6" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <EmptySpace pref="33" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
@@ -1382,7 +1420,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jScrollPane9" min="-2" pref="260" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1395,14 +1433,14 @@
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="391" max="32767" attributes="0"/>
+                                  <EmptySpace pref="373" max="32767" attributes="0"/>
                                   <Component id="jLabel23" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="545" max="32767" attributes="0"/>
+                                  <EmptySpace pref="527" max="32767" attributes="0"/>
                                   <Component id="jLabel24" min="-2" pref="137" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
@@ -1411,7 +1449,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Component id="jLabel25" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <EmptySpace pref="552" max="32767" attributes="0"/>
+                                  <EmptySpace pref="534" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1602,7 +1640,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel2">
+                <Container class="javax.swing.JPanel" name="Amapolas_Rosas">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="33" type="rgb"/>
@@ -1610,8 +1648,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab2">
-                        <Property name="tabTitle" type="java.lang.String" value="tab2"/>
+                      <JTabbedPaneConstraints tabName="Amapolas Rosas">
+                        <Property name="tabTitle" type="java.lang.String" value="Amapolas Rosas"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1622,7 +1660,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               <Component id="butt_AmapolasRosas" min="-2" pref="220" max="-2" attributes="0"/>
-                              <EmptySpace pref="813" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1631,7 +1669,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="butt_AmapolasRosas" min="-2" pref="200" max="-2" attributes="0"/>
-                              <EmptySpace pref="484" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1647,7 +1685,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel3">
+                <Container class="javax.swing.JPanel" name="Ixoras">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="99" type="rgb"/>
@@ -1655,8 +1693,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab3">
-                        <Property name="tabTitle" type="java.lang.String" value="tab3"/>
+                      <JTabbedPaneConstraints tabName="Ixoras">
+                        <Property name="tabTitle" type="java.lang.String" value="Ixoras"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1667,7 +1705,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="butt_Ixora" min="-2" pref="220" max="-2" attributes="0"/>
-                              <EmptySpace pref="815" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1676,7 +1714,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="butt_Ixora" min="-2" pref="200" max="-2" attributes="0"/>
-                              <EmptySpace pref="484" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1692,7 +1730,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel4">
+                <Container class="javax.swing.JPanel" name="Tulipanes">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -1703,8 +1741,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab4">
-                        <Property name="tabTitle" type="java.lang.String" value="tab4"/>
+                      <JTabbedPaneConstraints tabName="Tulipanes">
+                        <Property name="tabTitle" type="java.lang.String" value="Tulipanes"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1715,7 +1753,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Component id="butt_Tulipanes" min="-2" pref="220" max="-2" attributes="0"/>
-                              <EmptySpace pref="818" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1724,7 +1762,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="butt_Tulipanes" min="-2" pref="200" max="-2" attributes="0"/>
-                              <EmptySpace pref="487" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1740,7 +1778,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel5">
+                <Container class="javax.swing.JPanel" name="Rosas_Desierto">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="ff" type="rgb"/>
@@ -1748,8 +1786,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab5">
-                        <Property name="tabTitle" type="java.lang.String" value="tab5"/>
+                      <JTabbedPaneConstraints tabName="Rosas Del Desierto">
+                        <Property name="tabTitle" type="java.lang.String" value="Rosas Del Desierto"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1760,7 +1798,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Component id="butt_rosaDelDesierto" min="-2" pref="220" max="-2" attributes="0"/>
-                              <EmptySpace pref="821" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1769,7 +1807,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Component id="butt_rosaDelDesierto" min="-2" pref="200" max="-2" attributes="0"/>
-                              <EmptySpace pref="489" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1788,11 +1826,11 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel6">
+                <Container class="javax.swing.JPanel" name="Magnolio">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab6">
-                        <Property name="tabTitle" type="java.lang.String" value="tab6"/>
+                      <JTabbedPaneConstraints tabName="Magnolio">
+                        <Property name="tabTitle" type="java.lang.String" value="Magnolio"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1800,21 +1838,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel8">
+                <Container class="javax.swing.JPanel" name="Azalea">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab7">
-                        <Property name="tabTitle" type="java.lang.String" value="tab7"/>
+                      <JTabbedPaneConstraints tabName="Azalea">
+                        <Property name="tabTitle" type="java.lang.String" value="Azalea"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1822,21 +1860,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel9">
+                <Container class="javax.swing.JPanel" name="Genciana">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab8">
-                        <Property name="tabTitle" type="java.lang.String" value="tab8"/>
+                      <JTabbedPaneConstraints tabName="Genciana">
+                        <Property name="tabTitle" type="java.lang.String" value="Genciana"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1844,21 +1882,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel10">
+                <Container class="javax.swing.JPanel" name="Primula">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab9">
-                        <Property name="tabTitle" type="java.lang.String" value="tab9"/>
+                      <JTabbedPaneConstraints tabName="Primula">
+                        <Property name="tabTitle" type="java.lang.String" value="Primula"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1866,21 +1904,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel11">
+                <Container class="javax.swing.JPanel" name="Hortensia">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab10">
-                        <Property name="tabTitle" type="java.lang.String" value="tab10"/>
+                      <JTabbedPaneConstraints tabName="Hortensia">
+                        <Property name="tabTitle" type="java.lang.String" value="Hortensia"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1888,21 +1926,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel12">
+                <Container class="javax.swing.JPanel" name="Begonia">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab11">
-                        <Property name="tabTitle" type="java.lang.String" value="tab11"/>
+                      <JTabbedPaneConstraints tabName="Begonia">
+                        <Property name="tabTitle" type="java.lang.String" value="Begonia"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1910,21 +1948,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel13">
+                <Container class="javax.swing.JPanel" name="Narciso">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab12">
-                        <Property name="tabTitle" type="java.lang.String" value="tab12"/>
+                      <JTabbedPaneConstraints tabName="Narciso">
+                        <Property name="tabTitle" type="java.lang.String" value="Narciso"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1932,21 +1970,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1058" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel7">
+                <Container class="javax.swing.JPanel" name="Brezo">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab13">
-                        <Property name="tabTitle" type="java.lang.String" value="tab13"/>
+                      <JTabbedPaneConstraints tabName="Brezo">
+                        <Property name="tabTitle" type="java.lang.String" value="Brezo"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1954,21 +1992,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel1">
+                <Container class="javax.swing.JPanel" name="Gardenia">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab14">
-                        <Property name="tabTitle" type="java.lang.String" value="tab14"/>
+                      <JTabbedPaneConstraints tabName="Gardenia">
+                        <Property name="tabTitle" type="java.lang.String" value="Gardenia"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1976,21 +2014,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel14">
+                <Container class="javax.swing.JPanel" name="Helecho">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab15">
-                        <Property name="tabTitle" type="java.lang.String" value="tab15"/>
+                      <JTabbedPaneConstraints tabName="Helecho">
+                        <Property name="tabTitle" type="java.lang.String" value="Helecho"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -1998,21 +2036,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel15">
+                <Container class="javax.swing.JPanel" name="Diente_Leon">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab16">
-                        <Property name="tabTitle" type="java.lang.String" value="tab16"/>
+                      <JTabbedPaneConstraints tabName="Diente De Le&#xf3;n">
+                        <Property name="tabTitle" type="java.lang.String" value="Diente De Le&#xf3;n"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2020,21 +2058,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel16">
+                <Container class="javax.swing.JPanel" name="Fresa">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab17">
-                        <Property name="tabTitle" type="java.lang.String" value="tab17"/>
+                      <JTabbedPaneConstraints tabName="Fresa">
+                        <Property name="tabTitle" type="java.lang.String" value="Fresa"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2042,21 +2080,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel17">
+                <Container class="javax.swing.JPanel" name="Rododendro">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab18">
-                        <Property name="tabTitle" type="java.lang.String" value="tab18"/>
+                      <JTabbedPaneConstraints tabName="Rododendro">
+                        <Property name="tabTitle" type="java.lang.String" value="Rododendro"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2064,21 +2102,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel18">
+                <Container class="javax.swing.JPanel" name="Llanten">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab19">
-                        <Property name="tabTitle" type="java.lang.String" value="tab19"/>
+                      <JTabbedPaneConstraints tabName="Llant&#xe9;n">
+                        <Property name="tabTitle" type="java.lang.String" value="Llant&#xe9;n"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2086,21 +2124,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel19">
+                <Container class="javax.swing.JPanel" name="Achicoria">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab20">
-                        <Property name="tabTitle" type="java.lang.String" value="tab20"/>
+                      <JTabbedPaneConstraints tabName="Achicoria">
+                        <Property name="tabTitle" type="java.lang.String" value="Achicoria"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2108,21 +2146,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel20">
+                <Container class="javax.swing.JPanel" name="Quenopodio">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab21">
-                        <Property name="tabTitle" type="java.lang.String" value="tab21"/>
+                      <JTabbedPaneConstraints tabName="Quenopodio">
+                        <Property name="tabTitle" type="java.lang.String" value="Quenopodio"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2130,21 +2168,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel21">
+                <Container class="javax.swing.JPanel" name="Boca_De_dragon">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab22">
-                        <Property name="tabTitle" type="java.lang.String" value="tab22"/>
+                      <JTabbedPaneConstraints tabName="Boca de drag&#xf3;n">
+                        <Property name="tabTitle" type="java.lang.String" value="Boca de drag&#xf3;n"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2152,21 +2190,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel22">
+                <Container class="javax.swing.JPanel" name="Cal&#xe9;ndula">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab23">
-                        <Property name="tabTitle" type="java.lang.String" value="tab23"/>
+                      <JTabbedPaneConstraints tabName="Cal&#xe9;ndula">
+                        <Property name="tabTitle" type="java.lang.String" value="Cal&#xe9;ndula"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2174,21 +2212,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel23">
+                <Container class="javax.swing.JPanel" name="Mastuerzo_marino">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab24">
-                        <Property name="tabTitle" type="java.lang.String" value="tab24"/>
+                      <JTabbedPaneConstraints tabName="Mastuerzo marino">
+                        <Property name="tabTitle" type="java.lang.String" value="Mastuerzo marino"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2196,21 +2234,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel24">
+                <Container class="javax.swing.JPanel" name="Tagetes">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab25">
-                        <Property name="tabTitle" type="java.lang.String" value="tab25"/>
+                      <JTabbedPaneConstraints tabName="Tagetes">
+                        <Property name="tabTitle" type="java.lang.String" value="Tagetes"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2218,21 +2256,21 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanel25">
+                <Container class="javax.swing.JPanel" name="&#xc1;rbol_del_amor">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab26">
-                        <Property name="tabTitle" type="java.lang.String" value="tab26"/>
+                      <JTabbedPaneConstraints tabName="&#xc1;rbol del amor">
+                        <Property name="tabTitle" type="java.lang.String" value="&#xc1;rbol del amor"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -2240,34 +2278,12 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                  </Layout>
-                </Container>
-                <Container class="javax.swing.JPanel" name="jPanel26">
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="tab27">
-                        <Property name="tabTitle" type="java.lang.String" value="tab27"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
-
-                  <Layout>
-                    <DimensionLayout dim="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="1055" max="32767" attributes="0"/>
-                      </Group>
-                    </DimensionLayout>
-                    <DimensionLayout dim="1">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="710" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -2559,9 +2575,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="24" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Dise&#xf1;o del Jardin Escolar."/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2607,9 +2620,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="14" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Un dise&#xf1;o bien pensado puede fomentar&#xa;la curiosidad de los estudiantes, pro...&#xa;mover la sostenibilidad en el ambiente &#xa;y servir como un laboratorio al aire libre &#xa;para la ense&#xf1;anza sobre las plantas."/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2640,9 +2650,6 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="23" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Preparacion y construccion."/>
@@ -2675,9 +2682,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="24" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Beneficios."/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2708,9 +2712,6 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="22" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Adaptacion del terreno."/>
@@ -2743,9 +2744,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="24" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Tipos de Suelos."/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2776,9 +2774,6 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="24" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Mantenimiento."/>
@@ -2846,9 +2841,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="14" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Esto incluye tareas regulares como el &#xa;riego, la poda, el control de plagas y la &#xa;rotaci&#xf3;n de cultivos, as&#xed; como actividades &#xa;educativas que involucren a los estudiantes &#xa;en el cuidado continuo del espacio.&#xa;"/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2879,9 +2871,6 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="La preparaci&#xf3;n y construcci&#xf3;n del jard&#xed;n &#xa;comienza con la selecci&#xf3;n del sitio ade&#xa;cuado, la evaluaci&#xf3;n del tipo de suelo y &#xa;la determinaci&#xf3;n de las plantas m&#xe1;s &#xa;adecuadas para el clima local.&#xa;"/>
@@ -2914,9 +2903,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="14" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="El suelo es un recurso vital que sus&#xa;tenta la vida en nuestro planeta, actu&#xa;ando como un medio para el creci-&#xa;miento de las plantas y un h&#xe1;bitat &#xa;para una variedad de organismos. &#xa;"/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2948,9 +2934,6 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="14" style="1"/>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Cada uno con caracter&#xed;sticas &#xfa;nicas,  &#xa;influyen en su capacidad para retener &#xa;agua, nutrientes y su idoneidad para &#xa;diferentes cultivos.&#xa;"/>
                     <Property name="wrapStyleWord" type="boolean" value="true"/>
@@ -2981,9 +2964,6 @@
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Dialog" size="14" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="tabSize" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="La adaptaci&#xf3;n del terreno para maximizar &#xa;el uso de cada tipo de suelo es esencial &#xa;para la agricultura sostenible y la conser&#xa;vaci&#xf3;n del medio ambiente. &#xa;"/>

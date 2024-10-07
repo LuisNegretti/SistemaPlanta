@@ -110,6 +110,8 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         Plantas = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        Int_Plantas = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
         Margaritas = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
@@ -124,36 +126,35 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        Amapolas_Rosas = new javax.swing.JPanel();
         butt_AmapolasRosas = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        Ixoras = new javax.swing.JPanel();
         butt_Ixora = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
+        Tulipanes = new javax.swing.JPanel();
         butt_Tulipanes = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
+        Rosas_Desierto = new javax.swing.JPanel();
         butt_rosaDelDesierto = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel18 = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        jPanel21 = new javax.swing.JPanel();
-        jPanel22 = new javax.swing.JPanel();
-        jPanel23 = new javax.swing.JPanel();
-        jPanel24 = new javax.swing.JPanel();
-        jPanel25 = new javax.swing.JPanel();
-        jPanel26 = new javax.swing.JPanel();
+        Magnolio = new javax.swing.JPanel();
+        Azalea = new javax.swing.JPanel();
+        Genciana = new javax.swing.JPanel();
+        Primula = new javax.swing.JPanel();
+        Hortensia = new javax.swing.JPanel();
+        Begonia = new javax.swing.JPanel();
+        Narciso = new javax.swing.JPanel();
+        Brezo = new javax.swing.JPanel();
+        Gardenia = new javax.swing.JPanel();
+        Helecho = new javax.swing.JPanel();
+        Diente_Leon = new javax.swing.JPanel();
+        Fresa = new javax.swing.JPanel();
+        Rododendro = new javax.swing.JPanel();
+        Llanten = new javax.swing.JPanel();
+        Achicoria = new javax.swing.JPanel();
+        Quenopodio = new javax.swing.JPanel();
+        Boca_De_dragon = new javax.swing.JPanel();
+        Caléndula = new javax.swing.JPanel();
+        Mastuerzo_marino = new javax.swing.JPanel();
+        Tagetes = new javax.swing.JPanel();
+        Árbol_del_amor = new javax.swing.JPanel();
         Jardin = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTextArea9 = new javax.swing.JTextArea();
@@ -237,7 +238,7 @@ public class Menu1 extends javax.swing.JFrame {
         BienvenidaLayout.setHorizontalGroup(
             BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BienvenidaLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addComponent(bt_op_ventana)
                 .addGap(712, 712, 712))
         );
@@ -258,7 +259,7 @@ public class Menu1 extends javax.swing.JFrame {
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1047, Short.MAX_VALUE)
+            .addGap(0, 1060, Short.MAX_VALUE)
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -713,6 +714,26 @@ public class Menu1 extends javax.swing.JFrame {
         Plantas.setPreferredSize(new java.awt.Dimension(1064, 800));
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/intPlant.png"))); // NOI18N
+        jLabel49.setText("jLabel49");
+
+        javax.swing.GroupLayout Int_PlantasLayout = new javax.swing.GroupLayout(Int_Plantas);
+        Int_Plantas.setLayout(Int_PlantasLayout);
+        Int_PlantasLayout.setHorizontalGroup(
+            Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Int_PlantasLayout.createSequentialGroup()
+                .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        Int_PlantasLayout.setVerticalGroup(
+            Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Int_PlantasLayout.createSequentialGroup()
+                .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane2.addTab("Plantas", Int_Plantas);
+
         Margaritas.setBackground(new java.awt.Color(0, 204, 102));
 
         jScrollPane4.setBorder(null);
@@ -804,7 +825,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(33, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(MargaritasLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -841,7 +862,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MargaritasLayout.createSequentialGroup()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 56, Short.MAX_VALUE))
+                        .addGap(0, 38, Short.MAX_VALUE))
                     .addGroup(MargaritasLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -850,97 +871,97 @@ public class Menu1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
-                    .addContainerGap(391, Short.MAX_VALUE)
+                    .addContainerGap(373, Short.MAX_VALUE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(182, 182, 182)))
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
-                    .addContainerGap(545, Short.MAX_VALUE)
+                    .addContainerGap(527, Short.MAX_VALUE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(28, 28, 28)))
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(MargaritasLayout.createSequentialGroup()
                     .addGap(21, 21, 21)
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(552, Short.MAX_VALUE)))
+                    .addContainerGap(534, Short.MAX_VALUE)))
         );
 
         jTabbedPane2.addTab("Margaritas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/Margaritas.png")), Margaritas); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(51, 0, 51));
+        Amapolas_Rosas.setBackground(new java.awt.Color(51, 0, 51));
 
         butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
         butt_AmapolasRosas.setText("jButton1");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout Amapolas_RosasLayout = new javax.swing.GroupLayout(Amapolas_Rosas);
+        Amapolas_Rosas.setLayout(Amapolas_RosasLayout);
+        Amapolas_RosasLayout.setHorizontalGroup(
+            Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Amapolas_RosasLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(813, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        Amapolas_RosasLayout.setVerticalGroup(
+            Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Amapolas_RosasLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab2", jPanel2);
+        jTabbedPane2.addTab("Amapolas Rosas", Amapolas_Rosas);
 
-        jPanel3.setBackground(new java.awt.Color(153, 0, 0));
+        Ixoras.setBackground(new java.awt.Color(153, 0, 0));
 
         butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
         butt_Ixora.setText("jButton1");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout IxorasLayout = new javax.swing.GroupLayout(Ixoras);
+        Ixoras.setLayout(IxorasLayout);
+        IxorasLayout.setHorizontalGroup(
+            IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IxorasLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(815, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        IxorasLayout.setVerticalGroup(
+            IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IxorasLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(484, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab3", jPanel3);
+        jTabbedPane2.addTab("Ixoras", Ixoras);
 
-        jPanel4.setBackground(new java.awt.Color(204, 0, 51));
-        jPanel4.setForeground(new java.awt.Color(204, 0, 51));
+        Tulipanes.setBackground(new java.awt.Color(204, 0, 51));
+        Tulipanes.setForeground(new java.awt.Color(204, 0, 51));
 
         butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
         butt_Tulipanes.setText("jButton1");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout TulipanesLayout = new javax.swing.GroupLayout(Tulipanes);
+        Tulipanes.setLayout(TulipanesLayout);
+        TulipanesLayout.setHorizontalGroup(
+            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TulipanesLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(818, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        TulipanesLayout.setVerticalGroup(
+            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TulipanesLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(487, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab4", jPanel4);
+        jTabbedPane2.addTab("Tulipanes", Tulipanes);
 
-        jPanel5.setBackground(new java.awt.Color(255, 153, 255));
+        Rosas_Desierto.setBackground(new java.awt.Color(255, 153, 255));
 
         butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
         butt_rosaDelDesierto.setText("jButton1");
@@ -950,310 +971,297 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout Rosas_DesiertoLayout = new javax.swing.GroupLayout(Rosas_Desierto);
+        Rosas_Desierto.setLayout(Rosas_DesiertoLayout);
+        Rosas_DesiertoLayout.setHorizontalGroup(
+            Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(821, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        Rosas_DesiertoLayout.setVerticalGroup(
+            Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(489, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab5", jPanel5);
+        jTabbedPane2.addTab("Rosas Del Desierto", Rosas_Desierto);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
+        javax.swing.GroupLayout MagnolioLayout = new javax.swing.GroupLayout(Magnolio);
+        Magnolio.setLayout(MagnolioLayout);
+        MagnolioLayout.setHorizontalGroup(
+            MagnolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab6", jPanel6);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        MagnolioLayout.setVerticalGroup(
+            MagnolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab7", jPanel8);
+        jTabbedPane2.addTab("Magnolio", Magnolio);
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
+        javax.swing.GroupLayout AzaleaLayout = new javax.swing.GroupLayout(Azalea);
+        Azalea.setLayout(AzaleaLayout);
+        AzaleaLayout.setHorizontalGroup(
+            AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab8", jPanel9);
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        AzaleaLayout.setVerticalGroup(
+            AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab9", jPanel10);
+        jTabbedPane2.addTab("Azalea", Azalea);
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
+        javax.swing.GroupLayout GencianaLayout = new javax.swing.GroupLayout(Genciana);
+        Genciana.setLayout(GencianaLayout);
+        GencianaLayout.setHorizontalGroup(
+            GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab10", jPanel11);
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        GencianaLayout.setVerticalGroup(
+            GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab11", jPanel12);
+        jTabbedPane2.addTab("Genciana", Genciana);
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1058, Short.MAX_VALUE)
+        javax.swing.GroupLayout PrimulaLayout = new javax.swing.GroupLayout(Primula);
+        Primula.setLayout(PrimulaLayout);
+        PrimulaLayout.setHorizontalGroup(
+            PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab12", jPanel13);
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        PrimulaLayout.setVerticalGroup(
+            PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab13", jPanel7);
+        jTabbedPane2.addTab("Primula", Primula);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout HortensiaLayout = new javax.swing.GroupLayout(Hortensia);
+        Hortensia.setLayout(HortensiaLayout);
+        HortensiaLayout.setHorizontalGroup(
+            HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab14", jPanel1);
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        HortensiaLayout.setVerticalGroup(
+            HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab15", jPanel14);
+        jTabbedPane2.addTab("Hortensia", Hortensia);
 
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout BegoniaLayout = new javax.swing.GroupLayout(Begonia);
+        Begonia.setLayout(BegoniaLayout);
+        BegoniaLayout.setHorizontalGroup(
+            BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab16", jPanel15);
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        BegoniaLayout.setVerticalGroup(
+            BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab17", jPanel16);
+        jTabbedPane2.addTab("Begonia", Begonia);
 
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout NarcisoLayout = new javax.swing.GroupLayout(Narciso);
+        Narciso.setLayout(NarcisoLayout);
+        NarcisoLayout.setHorizontalGroup(
+            NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab18", jPanel17);
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        NarcisoLayout.setVerticalGroup(
+            NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab19", jPanel18);
+        jTabbedPane2.addTab("Narciso", Narciso);
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout BrezoLayout = new javax.swing.GroupLayout(Brezo);
+        Brezo.setLayout(BrezoLayout);
+        BrezoLayout.setHorizontalGroup(
+            BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab20", jPanel19);
-
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        BrezoLayout.setVerticalGroup(
+            BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab21", jPanel20);
+        jTabbedPane2.addTab("Brezo", Brezo);
 
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout GardeniaLayout = new javax.swing.GroupLayout(Gardenia);
+        Gardenia.setLayout(GardeniaLayout);
+        GardeniaLayout.setHorizontalGroup(
+            GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab22", jPanel21);
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        GardeniaLayout.setVerticalGroup(
+            GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab23", jPanel22);
+        jTabbedPane2.addTab("Gardenia", Gardenia);
 
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout HelechoLayout = new javax.swing.GroupLayout(Helecho);
+        Helecho.setLayout(HelechoLayout);
+        HelechoLayout.setHorizontalGroup(
+            HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab24", jPanel23);
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        HelechoLayout.setVerticalGroup(
+            HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab25", jPanel24);
+        jTabbedPane2.addTab("Helecho", Helecho);
 
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+        javax.swing.GroupLayout Diente_LeonLayout = new javax.swing.GroupLayout(Diente_Leon);
+        Diente_Leon.setLayout(Diente_LeonLayout);
+        Diente_LeonLayout.setHorizontalGroup(
+            Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab26", jPanel25);
-
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+        Diente_LeonLayout.setVerticalGroup(
+            Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("tab27", jPanel26);
+        jTabbedPane2.addTab("Diente De León", Diente_Leon);
+
+        javax.swing.GroupLayout FresaLayout = new javax.swing.GroupLayout(Fresa);
+        Fresa.setLayout(FresaLayout);
+        FresaLayout.setHorizontalGroup(
+            FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        FresaLayout.setVerticalGroup(
+            FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Fresa", Fresa);
+
+        javax.swing.GroupLayout RododendroLayout = new javax.swing.GroupLayout(Rododendro);
+        Rododendro.setLayout(RododendroLayout);
+        RododendroLayout.setHorizontalGroup(
+            RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        RododendroLayout.setVerticalGroup(
+            RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Rododendro", Rododendro);
+
+        javax.swing.GroupLayout LlantenLayout = new javax.swing.GroupLayout(Llanten);
+        Llanten.setLayout(LlantenLayout);
+        LlantenLayout.setHorizontalGroup(
+            LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        LlantenLayout.setVerticalGroup(
+            LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Llantén", Llanten);
+
+        javax.swing.GroupLayout AchicoriaLayout = new javax.swing.GroupLayout(Achicoria);
+        Achicoria.setLayout(AchicoriaLayout);
+        AchicoriaLayout.setHorizontalGroup(
+            AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        AchicoriaLayout.setVerticalGroup(
+            AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Achicoria", Achicoria);
+
+        javax.swing.GroupLayout QuenopodioLayout = new javax.swing.GroupLayout(Quenopodio);
+        Quenopodio.setLayout(QuenopodioLayout);
+        QuenopodioLayout.setHorizontalGroup(
+            QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        QuenopodioLayout.setVerticalGroup(
+            QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Quenopodio", Quenopodio);
+
+        javax.swing.GroupLayout Boca_De_dragonLayout = new javax.swing.GroupLayout(Boca_De_dragon);
+        Boca_De_dragon.setLayout(Boca_De_dragonLayout);
+        Boca_De_dragonLayout.setHorizontalGroup(
+            Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        Boca_De_dragonLayout.setVerticalGroup(
+            Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Boca de dragón", Boca_De_dragon);
+
+        javax.swing.GroupLayout CaléndulaLayout = new javax.swing.GroupLayout(Caléndula);
+        Caléndula.setLayout(CaléndulaLayout);
+        CaléndulaLayout.setHorizontalGroup(
+            CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        CaléndulaLayout.setVerticalGroup(
+            CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Caléndula", Caléndula);
+
+        javax.swing.GroupLayout Mastuerzo_marinoLayout = new javax.swing.GroupLayout(Mastuerzo_marino);
+        Mastuerzo_marino.setLayout(Mastuerzo_marinoLayout);
+        Mastuerzo_marinoLayout.setHorizontalGroup(
+            Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        Mastuerzo_marinoLayout.setVerticalGroup(
+            Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Mastuerzo marino", Mastuerzo_marino);
+
+        javax.swing.GroupLayout TagetesLayout = new javax.swing.GroupLayout(Tagetes);
+        Tagetes.setLayout(TagetesLayout);
+        TagetesLayout.setHorizontalGroup(
+            TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        TagetesLayout.setVerticalGroup(
+            TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Tagetes", Tagetes);
+
+        javax.swing.GroupLayout Árbol_del_amorLayout = new javax.swing.GroupLayout(Árbol_del_amor);
+        Árbol_del_amor.setLayout(Árbol_del_amorLayout);
+        Árbol_del_amorLayout.setHorizontalGroup(
+            Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        Árbol_del_amorLayout.setVerticalGroup(
+            Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jTabbedPane2.addTab("Árbol del amor", Árbol_del_amor);
 
         Plantas.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 740));
 
@@ -1267,7 +1275,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea9.setEditable(false);
         jTextArea9.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea9.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jTextArea9.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea9.setTabSize(0);
         jTextArea9.setText("Diseño del Jardin Escolar.");
         jTextArea9.setWrapStyleWord(true);
@@ -1284,7 +1291,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea10.setEditable(false);
         jTextArea10.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea10.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea10.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea10.setTabSize(0);
         jTextArea10.setText("Un diseño bien pensado puede fomentar\nla curiosidad de los estudiantes, pro...\nmover la sostenibilidad en el ambiente \ny servir como un laboratorio al aire libre \npara la enseñanza sobre las plantas.");
         jTextArea10.setWrapStyleWord(true);
@@ -1296,7 +1302,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea11.setEditable(false);
         jTextArea11.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea11.setFont(new java.awt.Font("Dialog", 1, 23)); // NOI18N
-        jTextArea11.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea11.setTabSize(0);
         jTextArea11.setText("Preparacion y construccion.");
         jTextArea11.setWrapStyleWord(true);
@@ -1308,7 +1313,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea12.setEditable(false);
         jTextArea12.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jTextArea12.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea12.setTabSize(0);
         jTextArea12.setText("Beneficios.");
         jTextArea12.setWrapStyleWord(true);
@@ -1320,7 +1324,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea13.setEditable(false);
         jTextArea13.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea13.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
-        jTextArea13.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea13.setTabSize(0);
         jTextArea13.setText("Adaptacion del terreno.");
         jTextArea13.setWrapStyleWord(true);
@@ -1332,7 +1335,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea14.setEditable(false);
         jTextArea14.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea14.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jTextArea14.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea14.setTabSize(0);
         jTextArea14.setText("Tipos de Suelos.");
         jTextArea14.setWrapStyleWord(true);
@@ -1344,7 +1346,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea15.setEditable(false);
         jTextArea15.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea15.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jTextArea15.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea15.setTabSize(0);
         jTextArea15.setText("Mantenimiento.");
         jTextArea15.setWrapStyleWord(true);
@@ -1366,7 +1367,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea16.setEditable(false);
         jTextArea16.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea16.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea16.setTabSize(0);
         jTextArea16.setText("Esto incluye tareas regulares como el \nriego, la poda, el control de plagas y la \nrotación de cultivos, así como actividades \neducativas que involucren a los estudiantes \nen el cuidado continuo del espacio.\n");
         jTextArea16.setWrapStyleWord(true);
@@ -1378,7 +1378,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea17.setEditable(false);
         jTextArea17.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea17.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea17.setTabSize(0);
         jTextArea17.setText("La preparación y construcción del jardín \ncomienza con la selección del sitio ade\ncuado, la evaluación del tipo de suelo y \nla determinación de las plantas más \nadecuadas para el clima local.\n");
         jTextArea17.setWrapStyleWord(true);
@@ -1390,7 +1389,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea18.setEditable(false);
         jTextArea18.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea18.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea18.setTabSize(0);
         jTextArea18.setText("El suelo es un recurso vital que sus\ntenta la vida en nuestro planeta, actu\nando como un medio para el creci-\nmiento de las plantas y un hábitat \npara una variedad de organismos. \n");
         jTextArea18.setWrapStyleWord(true);
@@ -1402,7 +1400,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea19.setEditable(false);
         jTextArea19.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea19.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea19.setTabSize(0);
         jTextArea19.setText("Cada uno con características únicas,  \ninfluyen en su capacidad para retener \nagua, nutrientes y su idoneidad para \ndiferentes cultivos.\n");
         jTextArea19.setWrapStyleWord(true);
@@ -1414,7 +1411,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea20.setEditable(false);
         jTextArea20.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea20.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea20.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea20.setTabSize(0);
         jTextArea20.setText("La adaptación del terreno para maximizar \nel uso de cada tipo de suelo es esencial \npara la agricultura sostenible y la conser\nvación del medio ambiente. \n");
         jTextArea20.setWrapStyleWord(true);
@@ -1646,7 +1642,7 @@ public class Menu1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1049, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1065, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1811,18 +1807,43 @@ public class Menu1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Achicoria;
+    private javax.swing.JPanel Amapolas_Rosas;
+    private javax.swing.JPanel Azalea;
+    private javax.swing.JPanel Begonia;
     private javax.swing.JPanel Bienvenida;
+    private javax.swing.JPanel Boca_De_dragon;
+    private javax.swing.JPanel Brezo;
+    private javax.swing.JPanel Caléndula;
     private javax.swing.JPanel CicloDeAgua1;
     private javax.swing.JPanel Clima;
     private javax.swing.JPanel Desertico;
+    private javax.swing.JPanel Diente_Leon;
+    private javax.swing.JPanel Fresa;
+    private javax.swing.JPanel Gardenia;
+    private javax.swing.JPanel Genciana;
+    private javax.swing.JPanel Helecho;
+    private javax.swing.JPanel Hortensia;
+    private javax.swing.JPanel Int_Plantas;
+    private javax.swing.JPanel Ixoras;
     private javax.swing.JPanel Jardin;
+    private javax.swing.JPanel Llanten;
+    private javax.swing.JPanel Magnolio;
     private javax.swing.JPanel Margaritas;
+    private javax.swing.JPanel Mastuerzo_marino;
     private javax.swing.JTabbedPane MenuCiclo;
+    private javax.swing.JPanel Narciso;
     private javax.swing.JPanel Plantas;
+    private javax.swing.JPanel Primula;
     private javax.swing.JPanel ProcesoPrincipal;
+    private javax.swing.JPanel Quenopodio;
     private javax.swing.JPanel Riesgos;
+    private javax.swing.JPanel Rododendro;
+    private javax.swing.JPanel Rosas_Desierto;
     private javax.swing.JPanel SubTropical;
+    private javax.swing.JPanel Tagetes;
     private javax.swing.JPanel Templado;
+    private javax.swing.JPanel Tulipanes;
     private javax.swing.JPanel antartico;
     private javax.swing.JButton bt_op_ventana;
     private javax.swing.JButton butt_AmapolasRosas;
@@ -1888,37 +1909,12 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -1962,5 +1958,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel mediterraneo;
     private javax.swing.JButton precipitacion;
     private javax.swing.JPanel tropical;
+    private javax.swing.JPanel Árbol_del_amor;
     // End of variables declaration//GEN-END:variables
 }
