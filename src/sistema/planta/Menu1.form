@@ -16,6 +16,9 @@
       <Color blue="66" green="99" red="0" type="rgb"/>
     </Property>
     <Property name="name" type="java.lang.String" value="MenuPrincipal" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1071, 830]"/>
+    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
@@ -39,16 +42,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" pref="1065" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jTabbedPane1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -68,7 +68,7 @@
           <Dimension value="[1049, 903]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1064, 800]"/>
+          <Dimension value="[1064, 830]"/>
         </Property>
       </Properties>
       <AccessibilityProperties>
@@ -89,7 +89,7 @@
               <Font name="Dialog" size="24" style="0"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1064, 800]"/>
+              <Dimension value="[1064, 830]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -106,45 +106,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="37" max="32767" attributes="0"/>
-                      <Component id="bt_op_ventana" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="712" max="-2" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="1062" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                      <Component id="bt_op_ventana" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="588" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="760" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JButton" name="bt_op_ventana">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="33" red="66" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calisto MT" size="24" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="ff" red="99" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/sistema/planta/iconos/evolucion.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Realizar operacion."/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bt_op_ventanaMouseClicked"/>
-              </Events>
-            </Component>
-          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Riesgos">
           <Properties>
@@ -152,7 +122,7 @@
               <Color blue="0" green="33" red="0" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1064, 800]"/>
+              <Dimension value="[1064, 830]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -169,12 +139,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1060" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1062" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="730" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="760" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -196,7 +166,7 @@
               <Font name="Dialog" size="18" style="1"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1064, 800]"/>
+              <Dimension value="[1064, 830]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -902,7 +872,7 @@
               </Border>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1064, 800]"/>
+              <Dimension value="[1064, 830]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1263,7 +1233,7 @@
               <Color blue="0" green="33" red="0" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1064, 800]"/>
+              <Dimension value="[1064, 830]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -2267,7 +2237,7 @@
               <Color blue="0" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[1064, 800]"/>
+              <Dimension value="[1064, 830]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -2508,7 +2478,7 @@
                                       <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="68" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="98" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -2516,7 +2486,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="656" max="32767" attributes="0"/>
+                          <EmptySpace pref="686" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

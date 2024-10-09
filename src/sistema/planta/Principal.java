@@ -5,6 +5,7 @@
  */
 package sistema.planta;
 
+import OPERACIONES.Operaciones;
 import java.awt.Toolkit;
 
 /**
@@ -86,6 +87,11 @@ public class Principal extends javax.swing.JFrame {
         Operaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-pila-de-compost-48.png"))); // NOI18N
         Operaciones.setToolTipText("Operaciones.");
         Operaciones.setBorder(null);
+        Operaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OperacionesActionPerformed(evt);
+            }
+        });
 
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-parque-con-farola-48.png"))); // NOI18N
         info.setToolTipText("Sobre el sistema.");
@@ -161,6 +167,13 @@ public class Principal extends javax.swing.JFrame {
             acceso.setLocationRelativeTo(null);
             this.setVisible(false);
     }//GEN-LAST:event_EducacionActionPerformed
+
+    private void OperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacionesActionPerformed
+       Operaciones acceso = new Operaciones();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+            this.setVisible(false);
+    }//GEN-LAST:event_OperacionesActionPerformed
 
     /**
      * @param args the command line arguments

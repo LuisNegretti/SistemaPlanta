@@ -52,7 +52,6 @@ public class Menu1 extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Bienvenida = new javax.swing.JPanel();
-        bt_op_ventana = new javax.swing.JButton();
         Riesgos = new javax.swing.JPanel();
         CicloDeAgua1 = new javax.swing.JPanel();
         MenuCiclo = new javax.swing.JTabbedPane();
@@ -208,61 +207,45 @@ public class Menu1 extends javax.swing.JFrame {
         setTitle("Interfaz");
         setBackground(new java.awt.Color(0, 153, 102));
         setName("MenuPrincipal"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1071, 830));
         setResizable(false);
 
         jTabbedPane1.setBackground(new java.awt.Color(0, 102, 0));
         jTabbedPane1.setForeground(new java.awt.Color(51, 255, 0));
         jTabbedPane1.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1049, 903));
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1064, 800));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1064, 830));
 
         Bienvenida.setBackground(new java.awt.Color(0, 51, 0));
         Bienvenida.setForeground(new java.awt.Color(0, 51, 0));
         Bienvenida.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Bienvenida.setPreferredSize(new java.awt.Dimension(1064, 800));
-
-        bt_op_ventana.setBackground(new java.awt.Color(102, 51, 0));
-        bt_op_ventana.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
-        bt_op_ventana.setForeground(new java.awt.Color(153, 255, 153));
-        bt_op_ventana.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/evolucion.png"))); // NOI18N
-        bt_op_ventana.setText("Realizar operacion.");
-        bt_op_ventana.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_op_ventanaMouseClicked(evt);
-            }
-        });
+        Bienvenida.setPreferredSize(new java.awt.Dimension(1064, 830));
 
         javax.swing.GroupLayout BienvenidaLayout = new javax.swing.GroupLayout(Bienvenida);
         Bienvenida.setLayout(BienvenidaLayout);
         BienvenidaLayout.setHorizontalGroup(
             BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BienvenidaLayout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(bt_op_ventana)
-                .addGap(712, 712, 712))
+            .addGap(0, 1062, Short.MAX_VALUE)
         );
         BienvenidaLayout.setVerticalGroup(
             BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BienvenidaLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(bt_op_ventana)
-                .addContainerGap(588, Short.MAX_VALUE))
+            .addGap(0, 760, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Bienvenida ", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
 
         Riesgos.setBackground(new java.awt.Color(0, 51, 0));
-        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 800));
+        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 830));
 
         javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1060, Short.MAX_VALUE)
+            .addGap(0, 1062, Short.MAX_VALUE)
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+            .addGap(0, 760, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -271,7 +254,7 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         CicloDeAgua1.setForeground(new java.awt.Color(0, 102, 153));
         CicloDeAgua1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 800));
+        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 830));
         CicloDeAgua1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuCiclo.setBackground(new java.awt.Color(204, 255, 204));
@@ -507,7 +490,7 @@ public class Menu1 extends javax.swing.JFrame {
 
         Clima.setBackground(new java.awt.Color(255, 204, 204));
         Clima.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 0, 5, new java.awt.Color(0, 0, 0)));
-        Clima.setPreferredSize(new java.awt.Dimension(1064, 800));
+        Clima.setPreferredSize(new java.awt.Dimension(1064, 830));
         Clima.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SubTropical.setBackground(new java.awt.Color(255, 204, 204));
@@ -710,7 +693,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
         Plantas.setBackground(new java.awt.Color(0, 51, 0));
-        Plantas.setPreferredSize(new java.awt.Dimension(1064, 800));
+        Plantas.setPreferredSize(new java.awt.Dimension(1064, 830));
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/intPlant.png"))); // NOI18N
@@ -1250,7 +1233,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (3).png")), Plantas); // NOI18N
 
         Jardin.setBackground(new java.awt.Color(255, 255, 0));
-        Jardin.setPreferredSize(new java.awt.Dimension(1064, 800));
+        Jardin.setPreferredSize(new java.awt.Dimension(1064, 830));
 
         jScrollPane10.setBorder(null);
 
@@ -1608,12 +1591,12 @@ public class Menu1 extends javax.swing.JFrame {
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel47)))
-                        .addGap(0, 68, Short.MAX_VALUE))))
+                        .addGap(0, 98, Short.MAX_VALUE))))
             .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JardinLayout.createSequentialGroup()
                     .addGap(10, 10, 10)
                     .addComponent(jLabel43)
-                    .addContainerGap(656, Short.MAX_VALUE)))
+                    .addContainerGap(686, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
@@ -1624,13 +1607,11 @@ public class Menu1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1065, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Jardin");
@@ -1706,12 +1687,6 @@ public class Menu1 extends javax.swing.JFrame {
     private void butt_rosaDelDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_rosaDelDesiertoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_butt_rosaDelDesiertoActionPerformed
-
-    private void bt_op_ventanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_op_ventanaMouseClicked
-
-        Operaciones btop = new Operaciones();
-        btop.setVisible(true);
-    }//GEN-LAST:event_bt_op_ventanaMouseClicked
 
     private void tropicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tropicalMouseClicked
         Tropical acceso = new Tropical();
@@ -1827,7 +1802,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Templado;
     private javax.swing.JPanel Tulipanes;
     private javax.swing.JPanel antartico;
-    private javax.swing.JButton bt_op_ventana;
     private javax.swing.JButton butt_AmapolasRosas;
     private javax.swing.JButton butt_Ixora;
     private javax.swing.JButton butt_Tulipanes;
