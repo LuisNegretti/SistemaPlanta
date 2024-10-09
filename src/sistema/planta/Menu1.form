@@ -1349,53 +1349,37 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jScrollPane8" min="-2" pref="248" max="-2" attributes="0"/>
-                                          <Component id="jLabel10" min="-2" pref="300" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane6" min="-2" pref="479" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel6" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jScrollPane9" min="-2" pref="419" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" pref="300" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" min="-2" pref="484" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabel24" min="-2" pref="142" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="jScrollPane8" min="-2" pref="314" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                              <Component id="jScrollPane9" max="32767" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="332" max="-2" attributes="0"/>
-                                  <Component id="jLabel23" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <EmptySpace pref="581" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="349" max="-2" attributes="0"/>
+                                  <Component id="jLabel25" min="-2" pref="142" max="-2" attributes="0"/>
+                                  <EmptySpace pref="564" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="415" max="-2" attributes="0"/>
-                                  <Component id="jLabel24" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <EmptySpace pref="498" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="890" max="32767" attributes="0"/>
-                                  <Component id="jLabel25" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                  <EmptySpace pref="903" max="32767" attributes="0"/>
+                                  <Component id="jLabel50" min="-2" pref="142" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1404,52 +1388,45 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane6" min="-2" pref="346" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane6" alignment="0" min="-2" pref="377" max="-2" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel6" min="-2" pref="137" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Component id="jLabel24" min="-2" pref="137" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jScrollPane9" min="-2" pref="260" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane8" min="-2" pref="247" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane8" min="-2" pref="173" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="373" max="32767" attributes="0"/>
-                                  <Component id="jLabel23" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                                  <EmptySpace pref="429" max="32767" attributes="0"/>
+                                  <Component id="jLabel25" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="527" max="32767" attributes="0"/>
-                                  <Component id="jLabel24" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="jLabel25" min="-2" pref="137" max="-2" attributes="0"/>
-                                  <EmptySpace pref="534" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Component id="jLabel50" min="-2" pref="137" max="-2" attributes="0"/>
+                                  <EmptySpace pref="562" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1475,7 +1452,7 @@
                               <Color blue="66" green="cc" red="0" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Dialog" size="18" style="1"/>
+                              <Font name="Dialog" size="20" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -1524,7 +1501,7 @@
                             </Property>
                             <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="tabSize" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="Las margaritas son una planta resistente y adaptable que puede &#xa;encontrarse en muchos jardines y paisajes. A nivel ornamental, &#xa;estas flores perennes son valoradas por su apariencia cl&#xe1;sica: &#xa;p&#xe9;talos blancos que rodean un centro amarillo brillante. &#xa;Se adaptan bien a diferentes tipos de climas y pueden crecer &#xa;tanto en sol pleno como en sombra parcial, lo que las convierte &#xa;en una opci&#xf3;n vers&#xe1;til para cubrir grandes &#xe1;reas de jard&#xed;n o &#xa;crear bordes naturales en paisajes. Adem&#xe1;s, su capacidad para &#xa;florecer durante varias estaciones del a&#xf1;o las hace un componente&#xa;clave en jardines que buscan tener color constante.&#xa;&#xa;M&#xe1;s all&#xe1; de su valor est&#xe9;tico, las margaritas tienen un historial en &#xa;medicina tradicional. Se han utilizado en infusiones para tratar &#xa;dolencias menores como resfriados, problemas digestivos y para &#xa;aliviar dolores leves. Tambi&#xe9;n se han aplicado t&#xf3;picamente en &#xa;forma de cataplasmas para tratar heridas, quemaduras menores &#xa;y picaduras de insectos debido a sus propiedades anti-inflamatorias&#xa;y calmantes."/>
+                            <Property name="text" type="java.lang.String" value="En cuanto a sus beneficios, las margaritas pueden ser utilizadas &#xa;en infusiones que ayudan con problemas digestivos y act&#xfa;an &#xa;como antiinflamatorios naturales. A nivel de suelo, estas plantas&#xa;no son particularmente exigentes y pueden adaptarse a una va-&#xa;riedad de condiciones, siendo su principal requerimiento un &#xa;suelo bien drenado y rico en nutrientes. Pueden crecer tanto en &#xa;macetas como directamente en la tierra, lo que las convierte en &#xa;una opci&#xf3;n vers&#xe1;til para jardines reciclados o comunitarios.&#xa;&#xa;En cuanto a sus necesidades espec&#xed;ficas de cuidado, las marga-&#xa;ritas prosperan en zonas con abundante luz solar, aunque tam-&#xa;bi&#xe9;ntoleran la sombra parcial. El riego debe ser moderado, evit-&#xa;ando tanto el encharcamiento como la sequedad extrema del &#xa;suelo. Aunque no tienen requisitos estrictos de humedad, es &#xa;fundamental regarlas de manera regular, sin llegar a excesos &#xa;que puedan provocar pudrici&#xf3;n en las ra&#xed;ces. Prefieren suelos &#xa;ricos en nitr&#xf3;geno, y es importante que los fertilizantes se utilic-&#xa;en de forma cont-rolada, ya que en grandes cantidades pueden &#xa;da&#xf1;ar la planta. "/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="wrapStyleWord" type="boolean" value="true"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1560,7 +1537,7 @@
                             </Property>
                             <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="tabSize" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="Contenido en Minerales:&#xa;- Sin requisitos estrictos.&#xa;Nivel de pH:&#xa;-  4.5 &#x2013; 7.5&#xa;Humedad del suelo:&#xa;-  Sin requisitos estrictos.&#xa;Salinidad:&#xa;-  No soportada&#xa;Tipo de tierra: &#xa;- Rico en Nitr&#xf3;geno &#xa;bajos en&#xa0;fertilizantes"/>
+                            <Property name="text" type="java.lang.String" value="Las margaritas son plantas sumamente&#xa;apreciadas por su sencillez y belleza &#xa;natural.Son conocidas por sus flores &#xa;blancas con centros amarillos vibrantes,&#xa;que simbolizanpureza e inocencia. &#xa;Estas flores pueden crecer en diversas &#xa;condiciones clim&#xe1;ticas, haci&#xe9;ndolas &#xa;populares en muchos tipos de jardines."/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="wrapStyleWord" type="boolean" value="true"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1596,7 +1573,7 @@
                             </Property>
                             <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="tabSize" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="Desde un punto de vista ecol&#xf3;gico, las margaritas juegan un papel importante en el equilibrio del suelo y el ecosistema del jard&#xed;n. Al ser una planta que cubre bien el suelo, son &#xfa;tiles para evitar la erosi&#xf3;n del suelo y controlar el crecimiento de malezas no deseadas. &#xa;Adem&#xe1;s, atraen polinizadores como abejas y mariposas, lo que contribuye a la biodiversidad y mejora la polinizaci&#xf3;n de otras plantas cercanas. &#xa;Su habilidad para crecer en suelos pobres o ligeramente compactados tambi&#xe9;n las convierte en una opci&#xf3;n excelente para terrenos dif&#xed;ciles, mejorando la estructura del suelo al permitir una mayor infiltraci&#xf3;n de agua."/>
+                            <Property name="text" type="java.lang.String" value="En cuanto al pH del suelo, las margaritas toleran un amplio rango que va desde&#xa;4.5 hasta 7.5, lo que les permite adaptarse a diferentes tipos de terrenos. Sin&#xa;embargo, no soportan suelos con alta salinidad, lo cual es crucial evitar si se &#xa;desea que la planta florezca de manera &#xf3;ptima.&#xa;&#xa;En resumen, las margaritas son plantas resistentes, f&#xe1;ciles de cuidar y benefi-&#xa;ciosas tanto para las personas como para los ecosistemas. Son una opci&#xf3;n &#xa;ideal para jardines escolares o proyectos comunitarios por su capacidad para &#xa;crecer en condiciones variadas, su contribuci&#xf3;n a la biodiversidad y su facilida-&#xa;d de propagaci&#xf3;n. Con cuidados b&#xe1;sicos, estas flores brindar&#xe1;n belleza y vida&#xa;a cualquier entorno donde sean plantadas.&#xa;"/>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="wrapStyleWord" type="boolean" value="true"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1606,22 +1583,6 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="jLabel6">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/ImagenesPlanta/Regadera.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel1"/>
-                      </Properties>
-                    </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel23">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/ImagenesPlanta/Regadera.png"/>
-                        </Property>
-                        <Property name="text" type="java.lang.String" value="jLabel1"/>
-                      </Properties>
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -1631,6 +1592,14 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel25">
+                      <Properties>
+                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                          <Image iconType="3" name="/ImagenesPlanta/Regadera.png"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="jLabel1"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel50">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                           <Image iconType="3" name="/ImagenesPlanta/Regadera.png"/>
