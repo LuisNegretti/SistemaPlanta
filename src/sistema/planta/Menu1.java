@@ -52,17 +52,32 @@ public class Menu1 extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         Bienvenida = new javax.swing.JPanel();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        jTextArea22 = new javax.swing.JTextArea();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        jTextArea23 = new javax.swing.JTextArea();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        jTextArea24 = new javax.swing.JTextArea();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        jTextArea25 = new javax.swing.JTextArea();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
         Riesgos = new javax.swing.JPanel();
         CicloDeAgua1 = new javax.swing.JPanel();
         MenuCiclo = new javax.swing.JTabbedPane();
         consejos1 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         consejos = new javax.swing.JPanel();
         condensacion1 = new javax.swing.JButton();
         condensacion2 = new javax.swing.JButton();
@@ -91,6 +106,9 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea6 = new javax.swing.JTextArea();
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         Clima = new javax.swing.JPanel();
         SubTropical = new javax.swing.JPanel();
         antartico = new javax.swing.JPanel();
@@ -207,35 +225,126 @@ public class Menu1 extends javax.swing.JFrame {
         setTitle("Interfaz");
         setBackground(new java.awt.Color(0, 153, 102));
         setName("MenuPrincipal"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1071, 830));
+        setPreferredSize(new java.awt.Dimension(1071, 900));
         setResizable(false);
 
-        jTabbedPane1.setBackground(new java.awt.Color(0, 102, 0));
+        jTabbedPane1.setBackground(new java.awt.Color(0, 51, 0));
         jTabbedPane1.setForeground(new java.awt.Color(51, 255, 0));
         jTabbedPane1.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
         jTabbedPane1.setMinimumSize(new java.awt.Dimension(1049, 903));
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1064, 830));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(1064, 900));
 
-        Bienvenida.setBackground(new java.awt.Color(0, 51, 0));
+        Bienvenida.setBackground(new java.awt.Color(0, 153, 153));
+        Bienvenida.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         Bienvenida.setForeground(new java.awt.Color(0, 51, 0));
         Bienvenida.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        Bienvenida.setPreferredSize(new java.awt.Dimension(1064, 830));
+        Bienvenida.setPreferredSize(new java.awt.Dimension(1064, 870));
+        Bienvenida.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout BienvenidaLayout = new javax.swing.GroupLayout(Bienvenida);
-        Bienvenida.setLayout(BienvenidaLayout);
-        BienvenidaLayout.setHorizontalGroup(
-            BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1062, Short.MAX_VALUE)
-        );
-        BienvenidaLayout.setVerticalGroup(
-            BienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
-        );
+        jScrollPane23.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 0)));
+
+        jTextArea22.setEditable(false);
+        jTextArea22.setBackground(new java.awt.Color(255, 153, 153));
+        jTextArea22.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 23)); // NOI18N
+        jTextArea22.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea22.setTabSize(0);
+        jTextArea22.setText(" Es un honor recibirte en este fascinante mundo de la jardinería escolar y el cuidado \n de nuestras plantas. Exploraremos juntos la diversidad de las plantas y su adapta\n ción a diferentes tierras y climas, lo que te permitirá comprender mejor su cuidado \n y mantenimiento. Este es un lugar para experimentar, aprender y compartir tu pasi-\n ón por la naturaleza.");
+        jTextArea22.setWrapStyleWord(true);
+        jTextArea22.setBorder(null);
+        jScrollPane23.setViewportView(jTextArea22);
+
+        Bienvenida.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 150));
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/pngwing.com (6).png"))); // NOI18N
+        Bienvenida.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, 610));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/plantas.png"))); // NOI18N
+        Bienvenida.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, -1, -1));
+
+        jScrollPane24.setBorder(null);
+
+        jTextArea23.setEditable(false);
+        jTextArea23.setBackground(new java.awt.Color(0, 153, 153));
+        jTextArea23.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        jTextArea23.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea23.setTabSize(0);
+        jTextArea23.setText(" Aprenderás a identificar los riesgos que pueden afectar \n a tus plantas y cómo prevenirlos, asegurando un entor-\n no saludable para que florezcan.");
+        jTextArea23.setWrapStyleWord(true);
+        jTextArea23.setBorder(null);
+        jScrollPane24.setViewportView(jTextArea23);
+
+        Bienvenida.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 570, 80));
+
+        jLabel51.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel51.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 40)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel51.setText("Hola! Bienvenidos a nuestro espacio educativo.");
+        Bienvenida.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 6, -1, -1));
+
+        jLabel52.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel52.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 40)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel52.setText("Aqui aprenderas sobre:");
+        Bienvenida.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+
+        jLabel53.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel53.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 40)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel53.setText("1*");
+        Bienvenida.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
+
+        jScrollPane25.setBorder(null);
+
+        jTextArea24.setEditable(false);
+        jTextArea24.setBackground(new java.awt.Color(0, 153, 153));
+        jTextArea24.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        jTextArea24.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea24.setTabSize(0);
+        jTextArea24.setText(" Abordaremos temas como la selección de plantas, \n el uso sostenible de recursos, la planificación del \n espacio y las tendencias actuales en jardinería.");
+        jTextArea24.setWrapStyleWord(true);
+        jTextArea24.setBorder(null);
+        jScrollPane25.setViewportView(jTextArea24);
+
+        Bienvenida.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 510, 70));
+
+        jLabel54.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel54.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 40)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel54.setText("2*");
+        Bienvenida.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+
+        jLabel55.setBackground(new java.awt.Color(255, 204, 204));
+        jLabel55.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 40)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel55.setText("3*");
+        Bienvenida.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
+
+        jScrollPane26.setBorder(null);
+
+        jTextArea25.setBackground(new java.awt.Color(0, 153, 153));
+        jTextArea25.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
+        jTextArea25.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea25.setTabSize(0);
+        jTextArea25.setText(" Los secretos del ciclo del agua y cómo este elemento vital \n influye en el crecimiento y bienestar de las plantas. ");
+        jTextArea25.setWrapStyleWord(true);
+        jTextArea25.setBorder(null);
+        jScrollPane26.setViewportView(jTextArea25);
+
+        Bienvenida.add(jScrollPane26, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 420, 590, 60));
+
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/ciclo del agua.png"))); // NOI18N
+        Bienvenida.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 610, 160, 90));
+
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/riesgos.png"))); // NOI18N
+        Bienvenida.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, 160, 140));
+
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/jardin.png"))); // NOI18N
+        Bienvenida.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, -1, -1));
 
         jTabbedPane1.addTab("Bienvenida ", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
 
         Riesgos.setBackground(new java.awt.Color(0, 51, 0));
-        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 830));
+        Riesgos.setPreferredSize(new java.awt.Dimension(1064, 870));
 
         javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
         Riesgos.setLayout(RiesgosLayout);
@@ -245,7 +354,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
+            .addGap(0, 833, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -254,7 +363,7 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
         CicloDeAgua1.setForeground(new java.awt.Color(0, 102, 153));
         CicloDeAgua1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 830));
+        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 870));
         CicloDeAgua1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuCiclo.setBackground(new java.awt.Color(204, 255, 204));
@@ -266,30 +375,21 @@ public class Menu1 extends javax.swing.JFrame {
         consejos1.setPreferredSize(new java.awt.Dimension(533, 604));
         consejos1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/enfriar.png"))); // NOI18N
-        consejos1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, -1, -1));
-
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/enfriar.png"))); // NOI18N
         consejos1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/gato.png"))); // NOI18N
-        consejos1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
+        consejos1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas.png"))); // NOI18N
-        consejos1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 60, -1));
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flor.png"))); // NOI18N
-        consejos1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, -1));
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/dia-mundial-del-agua.png"))); // NOI18N
+        consejos1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, -1, -1));
 
         jLabel33.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ES Water_ A Resource for Everyone by Slidesgo2.jpg"))); // NOI18N
         jLabel33.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 255, 255)));
         jLabel33.setMaximumSize(new java.awt.Dimension(300, 300));
         jLabel33.setPreferredSize(new java.awt.Dimension(533, 604));
-        consejos1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 520));
-
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/dia-mundial-del-agua.png"))); // NOI18N
-        consejos1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
+        consejos1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 480, 520));
 
         MenuCiclo.addTab("Agua", new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/h2o_3357227.png")), consejos1); // NOI18N
 
@@ -350,7 +450,7 @@ public class Menu1 extends javax.swing.JFrame {
                 coleccionActionPerformed(evt);
             }
         });
-        ProcesoPrincipal.add(coleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 70, 60));
+        ProcesoPrincipal.add(coleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 70, 60));
 
         jButton3.setBackground(new java.awt.Color(255, 153, 0));
         jButton3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -376,7 +476,7 @@ public class Menu1 extends javax.swing.JFrame {
                 condensacionActionPerformed(evt);
             }
         });
-        ProcesoPrincipal.add(condensacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, -1, -1));
+        ProcesoPrincipal.add(condensacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         evaporacion.setBackground(new java.awt.Color(0, 0, 153));
         evaporacion.setForeground(new java.awt.Color(0, 255, 255));
@@ -388,7 +488,7 @@ public class Menu1 extends javax.swing.JFrame {
                 evaporacionActionPerformed(evt);
             }
         });
-        ProcesoPrincipal.add(evaporacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        ProcesoPrincipal.add(evaporacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         precipitacion.setBackground(new java.awt.Color(0, 255, 153));
         precipitacion.setForeground(new java.awt.Color(0, 204, 153));
@@ -400,21 +500,21 @@ public class Menu1 extends javax.swing.JFrame {
                 precipitacionActionPerformed(evt);
             }
         });
-        ProcesoPrincipal.add(precipitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
+        ProcesoPrincipal.add(precipitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/Captura.JPG"))); // NOI18N
         jLabel9.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 255, 255)));
         jLabel9.setMaximumSize(new java.awt.Dimension(300, 300));
         jLabel9.setPreferredSize(new java.awt.Dimension(533, 604));
-        ProcesoPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, -10, 450, 510));
+        ProcesoPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 510));
 
         MenuCiclo.addTab("Ciclos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (6).png")), ProcesoPrincipal); // NOI18N
 
         CicloDeAgua1.add(MenuCiclo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 490, 650));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin2.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, 180));
+        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, 210));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/32.png"))); // NOI18N
         CicloDeAgua1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
@@ -429,10 +529,10 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ahorrar-agua.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, -1, -1));
+        CicloDeAgua1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas (1).png"))); // NOI18N
-        CicloDeAgua1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, -1, -1));
+        CicloDeAgua1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 590, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin3.png"))); // NOI18N
         CicloDeAgua1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
@@ -481,16 +581,25 @@ public class Menu1 extends javax.swing.JFrame {
         CicloDeAgua1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 260, 240));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flores.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 590, -1, -1));
+        CicloDeAgua1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 660, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/dia-mundial-del-agua.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, -1));
+        CicloDeAgua1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 660, -1, -1));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 660, 60, -1));
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flor.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/enfriar.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 660, -1, -1));
 
         jTabbedPane1.addTab("Ciclo del agua", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/filtro-de-agua.png")), CicloDeAgua1); // NOI18N
 
         Clima.setBackground(new java.awt.Color(255, 204, 204));
-        Clima.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 0, 5, new java.awt.Color(0, 0, 0)));
-        Clima.setPreferredSize(new java.awt.Dimension(1064, 830));
+        Clima.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 80, 5, new java.awt.Color(0, 0, 0)));
+        Clima.setPreferredSize(new java.awt.Dimension(1064, 870));
         Clima.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         SubTropical.setBackground(new java.awt.Color(255, 204, 204));
@@ -693,7 +802,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
         Plantas.setBackground(new java.awt.Color(0, 51, 0));
-        Plantas.setPreferredSize(new java.awt.Dimension(1064, 830));
+        Plantas.setPreferredSize(new java.awt.Dimension(1064, 870));
         Plantas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/intPlant.png"))); // NOI18N
@@ -1233,7 +1342,9 @@ public class Menu1 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Plantas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (3).png")), Plantas); // NOI18N
 
         Jardin.setBackground(new java.awt.Color(255, 255, 0));
-        Jardin.setPreferredSize(new java.awt.Dimension(1064, 830));
+        Jardin.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 50, 5, new java.awt.Color(0, 0, 0)));
+        Jardin.setPreferredSize(new java.awt.Dimension(1064, 870));
+        Jardin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane10.setBorder(null);
 
@@ -1246,10 +1357,13 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea9.setBorder(null);
         jScrollPane10.setViewportView(jTextArea9);
 
+        Jardin.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 104, -1, -1));
+
         jLabel26.setBackground(new java.awt.Color(153, 102, 0));
         jLabel26.setFont(new java.awt.Font("Calisto MT", 1, 48)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 102, 0));
         jLabel26.setText("JARDIN DE APRENDIZAJE");
+        Jardin.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 0, -1, 84));
 
         jScrollPane11.setBorder(null);
 
@@ -1262,6 +1376,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea10.setBorder(null);
         jScrollPane11.setViewportView(jTextArea10);
 
+        Jardin.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 142, 294, -1));
+
         jScrollPane12.setBorder(null);
 
         jTextArea11.setEditable(false);
@@ -1272,6 +1388,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea11.setWrapStyleWord(true);
         jTextArea11.setBorder(null);
         jScrollPane12.setViewportView(jTextArea11);
+
+        Jardin.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 319, -1, -1));
 
         jScrollPane13.setBorder(null);
 
@@ -1284,6 +1402,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea12.setBorder(null);
         jScrollPane13.setViewportView(jTextArea12);
 
+        Jardin.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 319, -1, -1));
+
         jScrollPane14.setBorder(null);
 
         jTextArea13.setEditable(false);
@@ -1294,6 +1414,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea13.setWrapStyleWord(true);
         jTextArea13.setBorder(null);
         jScrollPane14.setViewportView(jTextArea13);
+
+        Jardin.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 513, -1, -1));
 
         jScrollPane15.setBorder(null);
 
@@ -1306,6 +1428,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea14.setBorder(null);
         jScrollPane15.setViewportView(jTextArea14);
 
+        Jardin.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 104, -1, -1));
+
         jScrollPane16.setBorder(null);
 
         jTextArea15.setEditable(false);
@@ -1317,15 +1441,22 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea15.setBorder(null);
         jScrollPane16.setViewportView(jTextArea15);
 
+        Jardin.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 481, -1, -1));
+
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin.png"))); // NOI18N
+        Jardin.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 124, -1, -1));
 
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/beneficios.png"))); // NOI18N
+        Jardin.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 100, -1, -1));
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin3_1.png"))); // NOI18N
+        Jardin.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 306, -1, -1));
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/tierra-arcillosa-seca-y-compactada..png"))); // NOI18N
+        Jardin.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/buenas-practicas-agricolas-tipos-suelo.png"))); // NOI18N
+        Jardin.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 270, -1, -1));
 
         jScrollPane17.setBorder(null);
 
@@ -1338,6 +1469,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea16.setBorder(null);
         jScrollPane17.setViewportView(jTextArea16);
 
+        Jardin.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 519, -1, -1));
+
         jScrollPane18.setBorder(null);
 
         jTextArea17.setEditable(false);
@@ -1348,6 +1481,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea17.setWrapStyleWord(true);
         jTextArea17.setBorder(null);
         jScrollPane18.setViewportView(jTextArea17);
+
+        Jardin.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 361, -1, -1));
 
         jScrollPane19.setBorder(null);
 
@@ -1360,6 +1495,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea18.setBorder(null);
         jScrollPane19.setViewportView(jTextArea18);
 
+        Jardin.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(587, 142, -1, -1));
+
         jScrollPane20.setBorder(null);
 
         jTextArea19.setEditable(false);
@@ -1370,6 +1507,8 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea19.setWrapStyleWord(true);
         jTextArea19.setBorder(null);
         jScrollPane20.setViewportView(jTextArea19);
+
+        Jardin.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 363, -1, -1));
 
         jScrollPane21.setBorder(null);
 
@@ -1382,222 +1521,58 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea20.setBorder(null);
         jScrollPane21.setViewportView(jTextArea20);
 
+        Jardin.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 557, 294, -1));
+
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton1.setBorder(null);
+        Jardin.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 481, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton2.setBorder(null);
+        Jardin.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(509, 319, -1, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton4.setBorder(null);
+        Jardin.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(497, 104, -1, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton5.setBorder(null);
+        Jardin.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(786, 104, -1, -1));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton6.setBorder(null);
+        Jardin.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(731, 319, -1, -1));
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton7.setBorder(null);
+        Jardin.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(839, 513, -1, -1));
 
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/regando-plantas (1).png"))); // NOI18N
+        Jardin.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 6, -1, -1));
 
         jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flores.png"))); // NOI18N
+        Jardin.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 192, -1, -1));
 
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/cactus.png"))); // NOI18N
+        Jardin.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(984, 10, -1, -1));
 
         jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/impresion-de-la-mano.png"))); // NOI18N
+        Jardin.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 481, -1, -1));
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/impresion-de-mano.png"))); // NOI18N
+        Jardin.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 243, -1, -1));
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/informe-de-crecimiento.png"))); // NOI18N
+        Jardin.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel47.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/jardin-de-infancia.png"))); // NOI18N
+        Jardin.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin2_1.png"))); // NOI18N
+        Jardin.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 472, -1, -1));
 
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/siembra.png"))); // NOI18N
-
-        javax.swing.GroupLayout JardinLayout = new javax.swing.GroupLayout(Jardin);
-        Jardin.setLayout(JardinLayout);
-        JardinLayout.setHorizontalGroup(
-            JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JardinLayout.createSequentialGroup()
-                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JardinLayout.createSequentialGroup()
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel28)))
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel27))
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel47)))
-                        .addGap(18, 18, 18)
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JardinLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton2)
-                                        .addGap(56, 56, 56))
-                                    .addGroup(JardinLayout.createSequentialGroup()
-                                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(JardinLayout.createSequentialGroup()
-                                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(JardinLayout.createSequentialGroup()
-                                                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(jButton1)))
-                                                .addGap(36, 36, 36))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JardinLayout.createSequentialGroup()
-                                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                        .addComponent(jLabel44)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(JardinLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6))
-                                    .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(JardinLayout.createSequentialGroup()
-                                            .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton7))
-                                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(JardinLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton4)
-                                        .addGap(36, 36, 36))
-                                    .addGroup(JardinLayout.createSequentialGroup()
-                                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel45))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel42)))
-                                .addGap(22, 22, 22)
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(JardinLayout.createSequentialGroup()
-                                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton5))
-                                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JardinLayout.createSequentialGroup()
-                                .addComponent(jLabel48)
-                                .addGap(18, 18, 18))))
-                    .addGroup(JardinLayout.createSequentialGroup()
-                        .addComponent(jLabel46)
-                        .addGap(139, 139, 139)
-                        .addComponent(jLabel26)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel41)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JardinLayout.createSequentialGroup()
-                    .addContainerGap(984, Short.MAX_VALUE)
-                    .addComponent(jLabel43)
-                    .addGap(15, 15, 15)))
-        );
-        JardinLayout.setVerticalGroup(
-            JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JardinLayout.createSequentialGroup()
-                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel46)
-                    .addGroup(JardinLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel41)))
-                .addGap(20, 20, 20)
-                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JardinLayout.createSequentialGroup()
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel42))
-                                .addGap(63, 63, 63)
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(JardinLayout.createSequentialGroup()
-                                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton6))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButton2)))
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel45)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel44)
-                                    .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jButton7)
-                                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(JardinLayout.createSequentialGroup()
-                        .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(JardinLayout.createSequentialGroup()
-                                .addComponent(jLabel37)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel40)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel39)
-                                .addGap(45, 45, 45)
-                                .addComponent(jLabel48))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JardinLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel28)
-                                .addGap(62, 62, 62)
-                                .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel47)))
-                        .addGap(0, 98, Short.MAX_VALUE))))
-            .addGroup(JardinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(JardinLayout.createSequentialGroup()
-                    .addGap(10, 10, 10)
-                    .addComponent(jLabel43)
-                    .addContainerGap(686, Short.MAX_VALUE)))
-        );
+        Jardin.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 620, -1, -1));
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
 
@@ -1837,6 +1812,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -1867,6 +1843,15 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1882,6 +1867,10 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1903,6 +1892,10 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea19;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea20;
+    private javax.swing.JTextArea jTextArea22;
+    private javax.swing.JTextArea jTextArea23;
+    private javax.swing.JTextArea jTextArea24;
+    private javax.swing.JTextArea jTextArea25;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
