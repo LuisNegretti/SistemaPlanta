@@ -71,44 +71,6 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         Riesgos = new javax.swing.JPanel();
-        CicloDeAgua1 = new javax.swing.JPanel();
-        MenuCiclo = new javax.swing.JTabbedPane();
-        consejos1 = new javax.swing.JPanel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        consejos = new javax.swing.JPanel();
-        condensacion1 = new javax.swing.JButton();
-        condensacion2 = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        ProcesoPrincipal = new javax.swing.JPanel();
-        coleccion = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        condensacion = new javax.swing.JButton();
-        evaporacion = new javax.swing.JButton();
-        precipitacion = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         Clima = new javax.swing.JPanel();
         SubTropical = new javax.swing.JPanel();
         antartico = new javax.swing.JPanel();
@@ -220,6 +182,33 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
+        CicloDeAgua1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        condensacion1 = new javax.swing.JButton();
+        condensacion2 = new javax.swing.JButton();
+        coleccion = new javax.swing.JButton();
+        evaporacion = new javax.swing.JButton();
+        precipitacion = new javax.swing.JButton();
+        condensacion = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -360,244 +349,6 @@ public class Menu1 extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
-
-        CicloDeAgua1.setBackground(new java.awt.Color(0, 51, 153));
-        CicloDeAgua1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
-        CicloDeAgua1.setForeground(new java.awt.Color(0, 102, 153));
-        CicloDeAgua1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 870));
-        CicloDeAgua1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        MenuCiclo.setBackground(new java.awt.Color(204, 255, 204));
-        MenuCiclo.setForeground(new java.awt.Color(0, 51, 102));
-        MenuCiclo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        MenuCiclo.setPreferredSize(new java.awt.Dimension(541, 604));
-
-        consejos1.setBackground(new java.awt.Color(0, 51, 153));
-        consejos1.setPreferredSize(new java.awt.Dimension(533, 604));
-        consejos1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/enfriar.png"))); // NOI18N
-        consejos1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
-
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/gato.png"))); // NOI18N
-        consejos1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
-
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/dia-mundial-del-agua.png"))); // NOI18N
-        consejos1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, -1, -1));
-
-        jLabel33.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ES Water_ A Resource for Everyone by Slidesgo2.jpg"))); // NOI18N
-        jLabel33.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 255, 255)));
-        jLabel33.setMaximumSize(new java.awt.Dimension(300, 300));
-        jLabel33.setPreferredSize(new java.awt.Dimension(533, 604));
-        consejos1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 480, 520));
-
-        MenuCiclo.addTab("Agua", new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/h2o_3357227.png")), consejos1); // NOI18N
-
-        consejos.setBackground(new java.awt.Color(0, 51, 153));
-        consejos.setPreferredSize(new java.awt.Dimension(533, 604));
-        consejos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        condensacion1.setBackground(new java.awt.Color(153, 102, 0));
-        condensacion1.setForeground(new java.awt.Color(0, 0, 204));
-        condensacion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/arbolRaices.png"))); // NOI18N
-        condensacion1.setActionCommand("¿Que es la evaporacion?");
-        condensacion1.setIconTextGap(1);
-        condensacion1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                condensacion1ActionPerformed(evt);
-            }
-        });
-        consejos.add(condensacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 80));
-
-        condensacion2.setBackground(new java.awt.Color(0, 204, 204));
-        condensacion2.setForeground(new java.awt.Color(0, 0, 204));
-        condensacion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-tap_5824199.png"))); // NOI18N
-        condensacion2.setActionCommand("¿Que es la evaporacion?");
-        condensacion2.setIconTextGap(1);
-        condensacion2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                condensacion2ActionPerformed(evt);
-            }
-        });
-        consejos.add(condensacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, -1, 80));
-
-        jLabel35.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/importancia-de-la-calidad-del-agua-para-riego-el-elemento-clave-para-el-exito-en-la-agricultura.jpg"))); // NOI18N
-        jLabel35.setMaximumSize(new java.awt.Dimension(300, 300));
-        jLabel35.setPreferredSize(new java.awt.Dimension(533, 604));
-        consejos.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 490, 530));
-
-        jLabel8.setFont(new java.awt.Font("Goudy Old Style", 1, 28)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 255, 0));
-        jLabel8.setText("El agua es fuente de vida para ellas.");
-        consejos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
-        MenuCiclo.addTab("Importancia", new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/tap_964403.png")), consejos); // NOI18N
-
-        ProcesoPrincipal.setBackground(new java.awt.Color(0, 51, 153));
-        ProcesoPrincipal.setName("Principal"); // NOI18N
-        ProcesoPrincipal.setPreferredSize(new java.awt.Dimension(533, 604));
-        ProcesoPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        coleccion.setBackground(new java.awt.Color(255, 153, 0));
-        coleccion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        coleccion.setForeground(new java.awt.Color(153, 153, 0));
-        coleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/save-water_7296364.png"))); // NOI18N
-        coleccion.setActionCommand("¿Que es la evaporacion?");
-        coleccion.setIconTextGap(1);
-        coleccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                coleccionActionPerformed(evt);
-            }
-        });
-        ProcesoPrincipal.add(coleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 70, 60));
-
-        jButton3.setBackground(new java.awt.Color(255, 153, 0));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 153, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/save-water_7296364.png"))); // NOI18N
-        jButton3.setText("Coleccion.");
-        jButton3.setActionCommand("¿Que es la evaporacion?");
-        jButton3.setIconTextGap(1);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        ProcesoPrincipal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 730, -1, -1));
-
-        condensacion.setBackground(new java.awt.Color(0, 204, 204));
-        condensacion.setForeground(new java.awt.Color(0, 0, 204));
-        condensacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-purification_13505860.png"))); // NOI18N
-        condensacion.setActionCommand("¿Que es la evaporacion?");
-        condensacion.setIconTextGap(1);
-        condensacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                condensacionActionPerformed(evt);
-            }
-        });
-        ProcesoPrincipal.add(condensacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
-
-        evaporacion.setBackground(new java.awt.Color(0, 0, 153));
-        evaporacion.setForeground(new java.awt.Color(0, 255, 255));
-        evaporacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-cycle_525893.png"))); // NOI18N
-        evaporacion.setActionCommand("¿Que es la evaporacion?");
-        evaporacion.setIconTextGap(1);
-        evaporacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                evaporacionActionPerformed(evt);
-            }
-        });
-        ProcesoPrincipal.add(evaporacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
-
-        precipitacion.setBackground(new java.awt.Color(0, 255, 153));
-        precipitacion.setForeground(new java.awt.Color(0, 204, 153));
-        precipitacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water_5625899.png"))); // NOI18N
-        precipitacion.setActionCommand("¿Que es la evaporacion?");
-        precipitacion.setIconTextGap(1);
-        precipitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                precipitacionActionPerformed(evt);
-            }
-        });
-        ProcesoPrincipal.add(precipitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/Captura.JPG"))); // NOI18N
-        jLabel9.setBorder(javax.swing.BorderFactory.createMatteBorder(4, 4, 4, 4, new java.awt.Color(204, 255, 255)));
-        jLabel9.setMaximumSize(new java.awt.Dimension(300, 300));
-        jLabel9.setPreferredSize(new java.awt.Dimension(533, 604));
-        ProcesoPrincipal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 450, 510));
-
-        MenuCiclo.addTab("Ciclos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/planta (6).png")), ProcesoPrincipal); // NOI18N
-
-        CicloDeAgua1.add(MenuCiclo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 490, 650));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin2.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, -1, 210));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/32.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin1.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/81qaU6Yza-L._UC256,256_CACC,256,256_.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, -1, 140));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ObOhgosRIJnnCAeHU_twkrWC9uCJRpoI5QYeKZF9GJk.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ahorrar-agua.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 650, -1, -1));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas (1).png"))); // NOI18N
-        CicloDeAgua1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 590, -1, -1));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin3.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
-
-        jScrollPane5.setBorder(null);
-
-        jTextArea4.setEditable(false);
-        jTextArea4.setBackground(new java.awt.Color(0, 51, 153));
-        jTextArea4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea4.setForeground(new java.awt.Color(102, 255, 0));
-        jTextArea4.setTabSize(0);
-        jTextArea4.setText("Imagina que la naturaleza es como \nun gran juego de agua. En este juego, \nel agua se mueve de un lugar a otro \ny cambia de forma. A veces está \nlíquida, como cuando bebes agua, y \notras veces se convierte en vapor, \ncomo cuando ves humo o el vapor \nde una olla caliente. \n¡Esto se llama el ciclo del agua!\n\nEste ciclo del agua es super \nimportante para que todas las plantas\n y animales vivan felices en la Tierra.");
-        jTextArea4.setWrapStyleWord(true);
-        jTextArea4.setBorder(null);
-        jScrollPane5.setViewportView(jTextArea4);
-
-        CicloDeAgua1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, 260));
-
-        jScrollPane3.setBorder(null);
-
-        jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(0, 51, 153));
-        jTextArea2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea2.setForeground(new java.awt.Color(102, 255, 0));
-        jTextArea2.setTabSize(0);
-        jTextArea2.setText("¿Alguna vez te has preguntado de dónde \nviene el agua que bebemos, la que riega \nlas plantas o la que forma los ríos, \nlagunas, pozos y cauces? \n\n¡Pues se trata de un recurso renovable \nque da vida y del cual es un viaje increíble \nque no para nunca! ");
-        jTextArea2.setWrapStyleWord(true);
-        jTextArea2.setBorder(null);
-        jScrollPane3.setViewportView(jTextArea2);
-
-        CicloDeAgua1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 320, 230));
-
-        jScrollPane7.setBorder(null);
-
-        jTextArea6.setEditable(false);
-        jTextArea6.setBackground(new java.awt.Color(0, 51, 153));
-        jTextArea6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jTextArea6.setForeground(new java.awt.Color(102, 255, 0));
-        jTextArea6.setTabSize(0);
-        jTextArea6.setText("¿Estás preparado para embarcarte \nen esta emocionante aventura?\n\nA tu derecha, encontrarás material \nelaborado que ofrece buena \ninformación sobre el ciclo del agua \ndonde veras cómo este proceso no \nsolo beneficia a las plantas, sino \ntambién cómo influye en el conjunto\nde los ecosistemas.");
-        jTextArea6.setWrapStyleWord(true);
-        jTextArea6.setAutoscrolls(false);
-        jTextArea6.setBorder(null);
-        jScrollPane7.setViewportView(jTextArea6);
-
-        CicloDeAgua1.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 260, 240));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flores.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 660, -1, -1));
-
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/dia-mundial-del-agua.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 660, -1, -1));
-
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 660, 60, -1));
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flor.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 660, -1, -1));
-
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/enfriar.png"))); // NOI18N
-        CicloDeAgua1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 660, -1, -1));
-
-        jTabbedPane1.addTab("Ciclo del agua", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/filtro-de-agua.png")), CicloDeAgua1); // NOI18N
 
         Clima.setBackground(new java.awt.Color(255, 204, 204));
         Clima.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 80, 5, new java.awt.Color(0, 0, 0)));
@@ -952,9 +703,9 @@ public class Menu1 extends javax.swing.JFrame {
             MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MargaritasLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(MargaritasLayout.createSequentialGroup()
@@ -1602,6 +1353,168 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
 
+        CicloDeAgua1.setBackground(new java.awt.Color(0, 51, 153));
+        CicloDeAgua1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(0, 0, 0)));
+        CicloDeAgua1.setForeground(new java.awt.Color(0, 102, 153));
+        CicloDeAgua1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        CicloDeAgua1.setPreferredSize(new java.awt.Dimension(1064, 870));
+        CicloDeAgua1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin2.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, 210));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/32.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin1.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/81qaU6Yza-L._UC256,256_CACC,256,256_.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, 140));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ObOhgosRIJnnCAeHU_twkrWC9uCJRpoI5QYeKZF9GJk.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/ahorrar-agua.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 760, -1, -1));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas (1).png"))); // NOI18N
+        CicloDeAgua1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 10, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/jardin3.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+
+        jScrollPane5.setBorder(null);
+
+        jTextArea4.setEditable(false);
+        jTextArea4.setBackground(new java.awt.Color(0, 51, 153));
+        jTextArea4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea4.setForeground(new java.awt.Color(102, 255, 0));
+        jTextArea4.setTabSize(0);
+        jTextArea4.setText("El ciclo del agua es un hermoso recordatorio de la interconexión \ny la renovación constante en la naturaleza. Desde la evaporación, \ndonde el agua asciende en forma de vapor, nos enseña sobre la \ntransformación y la capacidad de liberarnos de lo que ya no nece\nsitamos. La condensación, al formar nubes, simboliza la unión y \nla colaboración; cada gota se suma a un todo mayor.\n\nCuando el agua precipita en forma de lluvia, nos recuerda que a \nveces es necesario soltar para nutrir y dar vida a nuestro entorno. \nEste proceso alimenta ríos, lagos y océanos, revitalizando la tierra \ny sosteniendo la vida. ");
+        jTextArea4.setWrapStyleWord(true);
+        jTextArea4.setBorder(null);
+        jScrollPane5.setViewportView(jTextArea4);
+
+        CicloDeAgua1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, -1, 260));
+
+        jScrollPane3.setBorder(null);
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setBackground(new java.awt.Color(0, 51, 153));
+        jTextArea2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea2.setForeground(new java.awt.Color(102, 255, 0));
+        jTextArea2.setTabSize(0);
+        jTextArea2.setText("¿Alguna vez te has preguntado de dónde viene el agua que\nbebemos, la que riega las plantas o la que forma los ríos,\nlagunas, pozos y cauces?\n\nEl agua, como fuente de vida, nos enseña la importancia de \nla conexión y la fluidez. Su capacidad para adaptarse a dife\nrentes formas y entornos nos recuerda que, al igual que ella, \ndebemos ser flexibles y resilientes ante los cambios. El agua \ntambién simboliza la vitalidad y la renovación; nos invita a valo\nrar cada gota y a ser conscientes de su papel esencial en nues\ntro bienestar y en el equilibrio del planeta. Aprendamos de su \ntransparencia y pureza, promoviendo la honestidad y la claridad \nen nuestras relaciones. Al cuidar el agua, cuidamos de nosotros \nmismos y del futuro, creando un mundo más sostenible y bello. ");
+        jTextArea2.setWrapStyleWord(true);
+        jTextArea2.setBorder(null);
+        jScrollPane3.setViewportView(jTextArea2);
+
+        CicloDeAgua1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 460, 300));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flores.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 760, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/dia-mundial-del-agua.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/regando-plantas.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 760, 60, -1));
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/flor.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/enfriar.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 770, -1, -1));
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/gato.png"))); // NOI18N
+        CicloDeAgua1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, -1, -1));
+
+        condensacion1.setBackground(new java.awt.Color(153, 102, 0));
+        condensacion1.setForeground(new java.awt.Color(0, 0, 204));
+        condensacion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/arbolRaices.png"))); // NOI18N
+        condensacion1.setActionCommand("¿Que es la evaporacion?");
+        condensacion1.setIconTextGap(1);
+        condensacion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                condensacion1ActionPerformed(evt);
+            }
+        });
+        CicloDeAgua1.add(condensacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 610, -1, -1));
+
+        condensacion2.setBackground(new java.awt.Color(0, 204, 204));
+        condensacion2.setForeground(new java.awt.Color(0, 0, 204));
+        condensacion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-tap_5824199.png"))); // NOI18N
+        condensacion2.setActionCommand("¿Que es la evaporacion?");
+        condensacion2.setIconTextGap(1);
+        condensacion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                condensacion2ActionPerformed(evt);
+            }
+        });
+        CicloDeAgua1.add(condensacion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, -1, 80));
+
+        coleccion.setBackground(new java.awt.Color(255, 153, 0));
+        coleccion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        coleccion.setForeground(new java.awt.Color(153, 153, 0));
+        coleccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/save-water_7296364.png"))); // NOI18N
+        coleccion.setActionCommand("¿Que es la evaporacion?");
+        coleccion.setIconTextGap(1);
+        coleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coleccionActionPerformed(evt);
+            }
+        });
+        CicloDeAgua1.add(coleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 740, 70, 60));
+
+        evaporacion.setBackground(new java.awt.Color(0, 0, 153));
+        evaporacion.setForeground(new java.awt.Color(0, 255, 255));
+        evaporacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-cycle_525893.png"))); // NOI18N
+        evaporacion.setActionCommand("¿Que es la evaporacion?");
+        evaporacion.setIconTextGap(1);
+        evaporacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                evaporacionActionPerformed(evt);
+            }
+        });
+        CicloDeAgua1.add(evaporacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 730, -1, -1));
+
+        precipitacion.setBackground(new java.awt.Color(0, 255, 153));
+        precipitacion.setForeground(new java.awt.Color(0, 204, 153));
+        precipitacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water_5625899.png"))); // NOI18N
+        precipitacion.setActionCommand("¿Que es la evaporacion?");
+        precipitacion.setIconTextGap(1);
+        precipitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precipitacionActionPerformed(evt);
+            }
+        });
+        CicloDeAgua1.add(precipitacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 730, -1, -1));
+
+        condensacion.setBackground(new java.awt.Color(0, 204, 204));
+        condensacion.setForeground(new java.awt.Color(0, 0, 204));
+        condensacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/water-purification_13505860.png"))); // NOI18N
+        condensacion.setActionCommand("¿Que es la evaporacion?");
+        condensacion.setIconTextGap(1);
+        condensacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                condensacionActionPerformed(evt);
+            }
+        });
+        CicloDeAgua1.add(condensacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 730, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 255, 0));
+        jLabel8.setText("El Ciclo del Agua.");
+        CicloDeAgua1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 255, 0));
+        jLabel9.setText("El Agua.");
+        CicloDeAgua1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+
+        jTabbedPane1.addTab("Ciclo del agua", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/filtro-de-agua.png")), CicloDeAgua1); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1627,10 +1540,6 @@ public class Menu1 extends javax.swing.JFrame {
     
     
     
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void condensacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_condensacionActionPerformed
         condensacion acceso = new condensacion();
         acceso.setVisible(true);
@@ -1789,11 +1698,9 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Magnolio;
     private javax.swing.JPanel Margaritas;
     private javax.swing.JPanel Mastuerzo_marino;
-    private javax.swing.JTabbedPane MenuCiclo;
     private javax.swing.JPanel Narciso;
     private javax.swing.JPanel Plantas;
     private javax.swing.JPanel Primula;
-    private javax.swing.JPanel ProcesoPrincipal;
     private javax.swing.JPanel Quenopodio;
     private javax.swing.JPanel Riesgos;
     private javax.swing.JPanel Rododendro;
@@ -1811,13 +1718,10 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton condensacion;
     private javax.swing.JButton condensacion1;
     private javax.swing.JButton condensacion2;
-    private javax.swing.JPanel consejos;
-    private javax.swing.JPanel consejos1;
     private javax.swing.JPanel continental;
     private javax.swing.JButton evaporacion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -1844,14 +1748,10 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -1904,7 +1804,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
@@ -1928,7 +1827,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextArea jTextArea8;
     private javax.swing.JTextArea jTextArea9;
