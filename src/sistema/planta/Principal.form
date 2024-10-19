@@ -136,6 +136,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="Educacion">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="33" red="99" type="rgb"/>
             </Property>
@@ -153,6 +156,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="Operaciones">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/iconos ciclo del agua/icons8-pila-de-compost-48.png"/>
             </Property>
@@ -167,6 +173,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="info">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/iconos ciclo del agua/icons8-parque-con-farola-48.png"/>
             </Property>
@@ -178,6 +187,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="Desarrolladores">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/iconos ciclo del agua/icons8-farmer-hombre-48.png"/>
             </Property>
@@ -189,6 +201,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="Salir">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="cc" type="rgb"/>
+            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/iconos ciclo del agua/icons8-ir-48.png"/>
             </Property>

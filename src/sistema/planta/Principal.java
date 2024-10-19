@@ -74,6 +74,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(414, Short.MAX_VALUE))
         );
 
+        Educacion.setBackground(new java.awt.Color(204, 255, 255));
         Educacion.setForeground(new java.awt.Color(153, 51, 0));
         Educacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-casa-con-jardín-48.png"))); // NOI18N
         Educacion.setToolTipText("Educacion.");
@@ -84,6 +85,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        Operaciones.setBackground(new java.awt.Color(204, 255, 255));
         Operaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-pila-de-compost-48.png"))); // NOI18N
         Operaciones.setToolTipText("Operaciones.");
         Operaciones.setBorder(null);
@@ -93,14 +95,17 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        info.setBackground(new java.awt.Color(204, 255, 255));
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-parque-con-farola-48.png"))); // NOI18N
         info.setToolTipText("Sobre el sistema.");
         info.setBorder(null);
 
+        Desarrolladores.setBackground(new java.awt.Color(204, 255, 255));
         Desarrolladores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-farmer-hombre-48.png"))); // NOI18N
         Desarrolladores.setToolTipText("Desarrolladores.");
         Desarrolladores.setBorder(null);
 
+        Salir.setBackground(new java.awt.Color(204, 255, 255));
         Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-ir-48.png"))); // NOI18N
         Salir.setToolTipText("Salir.");
         Salir.setBorder(null);
