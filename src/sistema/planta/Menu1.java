@@ -85,6 +85,7 @@ public class Menu1 extends javax.swing.JFrame {
         antartico = new javax.swing.JPanel();
         continental = new javax.swing.JPanel();
         tropical = new javax.swing.JPanel();
+        jLabel67 = new javax.swing.JLabel();
         mediterraneo = new javax.swing.JPanel();
         Desertico = new javax.swing.JPanel();
         Templado = new javax.swing.JPanel();
@@ -96,6 +97,11 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
         Plantas = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         Int_Plantas = new javax.swing.JPanel();
@@ -505,15 +511,22 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/sol.png"))); // NOI18N
+
         javax.swing.GroupLayout tropicalLayout = new javax.swing.GroupLayout(tropical);
         tropical.setLayout(tropicalLayout);
         tropicalLayout.setHorizontalGroup(
             tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tropicalLayout.createSequentialGroup()
+                .addContainerGap(310, Short.MAX_VALUE)
+                .addComponent(jLabel67)
+                .addContainerGap())
         );
         tropicalLayout.setVerticalGroup(
             tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(tropicalLayout.createSequentialGroup()
+                .addComponent(jLabel67)
+                .addGap(0, 326, Short.MAX_VALUE))
         );
 
         Clima.add(tropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 380, 390));
@@ -623,6 +636,21 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
         Clima.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1120, -1));
+
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/fuertes-nevadas.png"))); // NOI18N
+        Clima.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 670, -1, -1));
+
+        jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/calido.png"))); // NOI18N
+        Clima.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, -1, -1));
+
+        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/clima.png"))); // NOI18N
+        Clima.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 670, -1, -1));
+
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/clima (1).png"))); // NOI18N
+        Clima.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 670, -1, -1));
+
+        jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/vista-desde-la-montana.png"))); // NOI18N
+        Clima.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 670, -1, -1));
 
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
@@ -1817,8 +1845,14 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane10;
