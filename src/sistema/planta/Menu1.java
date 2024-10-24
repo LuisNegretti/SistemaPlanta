@@ -80,6 +80,23 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jScrollPane22 = new javax.swing.JScrollPane();
         jTextArea21 = new javax.swing.JTextArea();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        jTextArea26 = new javax.swing.JTextArea();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        jTextArea27 = new javax.swing.JTextArea();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        jTextArea28 = new javax.swing.JTextArea();
+        jScrollPane30 = new javax.swing.JScrollPane();
+        jTextArea29 = new javax.swing.JTextArea();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        jTextArea30 = new javax.swing.JTextArea();
+        jScrollPane33 = new javax.swing.JScrollPane();
+        jTextArea32 = new javax.swing.JTextArea();
         Clima = new javax.swing.JPanel();
         SubTropical = new javax.swing.JPanel();
         antartico = new javax.swing.JPanel();
@@ -392,38 +409,185 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea21.setBackground(new java.awt.Color(0, 51, 0));
         jTextArea21.setFont(new java.awt.Font("Elephant", 1, 36)); // NOI18N
         jTextArea21.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea21.setLineWrap(true);
         jTextArea21.setTabSize(0);
-        jTextArea21.setText("RIESGOS");
+        jTextArea21.setText("TIPOS DE RIESGOS");
         jTextArea21.setWrapStyleWord(true);
         jTextArea21.setBorder(null);
         jScrollPane22.setViewportView(jTextArea21);
+
+        jScrollPane27.setBorder(null);
+
+        jTextArea26.setEditable(false);
+        jTextArea26.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea26.setFont(new java.awt.Font("Elephant", 1, 36)); // NOI18N
+        jTextArea26.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea26.setTabSize(0);
+        jTextArea26.setText("RIESGOS");
+        jTextArea26.setWrapStyleWord(true);
+        jTextArea26.setBorder(null);
+        jScrollPane27.setViewportView(jTextArea26);
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/tipo de tierrachiquita.png"))); // NOI18N
+        jButton10.setText("jButton10");
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/Lluviaschiquita.png"))); // NOI18N
+        jButton11.setText("jButton10");
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/bichoschiquita.png"))); // NOI18N
+        jButton12.setText("jButton10");
+
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/riesgos comuneschiquitas.png"))); // NOI18N
+        jButton14.setText("jButton10");
+
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/climaschiquita.png"))); // NOI18N
+        jButton15.setText("jButton10");
+
+        jScrollPane28.setBorder(null);
+
+        jTextArea27.setEditable(false);
+        jTextArea27.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea27.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
+        jTextArea27.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea27.setTabSize(0);
+        jTextArea27.setText("Plagas");
+        jTextArea27.setWrapStyleWord(true);
+        jTextArea27.setBorder(null);
+        jScrollPane28.setViewportView(jTextArea27);
+
+        jScrollPane29.setBorder(null);
+
+        jTextArea28.setEditable(false);
+        jTextArea28.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea28.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
+        jTextArea28.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea28.setTabSize(0);
+        jTextArea28.setText("Lluvias");
+        jTextArea28.setWrapStyleWord(true);
+        jTextArea28.setBorder(null);
+        jScrollPane29.setViewportView(jTextArea28);
+
+        jScrollPane30.setBorder(null);
+
+        jTextArea29.setEditable(false);
+        jTextArea29.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea29.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
+        jTextArea29.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea29.setTabSize(0);
+        jTextArea29.setText("Climas");
+        jTextArea29.setWrapStyleWord(true);
+        jTextArea29.setBorder(null);
+        jScrollPane30.setViewportView(jTextArea29);
+
+        jScrollPane31.setBorder(null);
+
+        jTextArea30.setEditable(false);
+        jTextArea30.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea30.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
+        jTextArea30.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea30.setLineWrap(true);
+        jTextArea30.setTabSize(0);
+        jTextArea30.setText("Riesgos comunes");
+        jTextArea30.setWrapStyleWord(true);
+        jTextArea30.setBorder(null);
+        jScrollPane31.setViewportView(jTextArea30);
+
+        jScrollPane33.setBorder(null);
+
+        jTextArea32.setEditable(false);
+        jTextArea32.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea32.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
+        jTextArea32.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea32.setLineWrap(true);
+        jTextArea32.setTabSize(0);
+        jTextArea32.setText("Tipos de tierra");
+        jTextArea32.setWrapStyleWord(true);
+        jTextArea32.setBorder(null);
+        jScrollPane33.setViewportView(jTextArea32);
 
         javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
             .addGroup(RiesgosLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(RiesgosLayout.createSequentialGroup()
-                            .addGap(56, 56, 56)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(RiesgosLayout.createSequentialGroup()
-                            .addGap(211, 211, 211)
-                            .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(468, Short.MAX_VALUE))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68)
+                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RiesgosLayout.createSequentialGroup()
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RiesgosLayout.createSequentialGroup()
+                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(120, 120, 120)))
+                        .addContainerGap())
+                    .addGroup(RiesgosLayout.createSequentialGroup()
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RiesgosLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32))))))
         );
         RiesgosLayout.setVerticalGroup(
             RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RiesgosLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RiesgosLayout.createSequentialGroup()
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(54, 54, 54)
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RiesgosLayout.createSequentialGroup()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -828,7 +992,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
-                    .addContainerGap(505, Short.MAX_VALUE)
+                    .addContainerGap(499, Short.MAX_VALUE)
                     .addComponent(jLabel61)
                     .addGap(70, 70, 70)))
         );
@@ -1773,6 +1937,11 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton butt_rosaDelDesierto;
     private javax.swing.JPanel continental;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1872,7 +2041,13 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane30;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane33;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -1898,7 +2073,13 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea23;
     private javax.swing.JTextArea jTextArea24;
     private javax.swing.JTextArea jTextArea25;
+    private javax.swing.JTextArea jTextArea26;
+    private javax.swing.JTextArea jTextArea27;
+    private javax.swing.JTextArea jTextArea28;
+    private javax.swing.JTextArea jTextArea29;
     private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea30;
+    private javax.swing.JTextArea jTextArea32;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
