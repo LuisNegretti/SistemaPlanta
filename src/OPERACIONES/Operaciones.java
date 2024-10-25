@@ -33,8 +33,8 @@ public class Operaciones extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
+        Principal = new javax.swing.JPanel();
+        SalaOperaciones = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         tipo_planta = new javax.swing.JPanel();
         cbx_Planta = new javax.swing.JComboBox<>();
@@ -62,10 +62,12 @@ public class Operaciones extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jTextPane1 = new javax.swing.JTextPane();
+        Principal1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Guia = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MenuPricipal = new javax.swing.JMenuItem();
         SalirPrograma = new javax.swing.JMenuItem();
@@ -75,11 +77,11 @@ public class Operaciones extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane2.addTab("Sala principal.", jPanel1);
+        Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane2.addTab("Sala principal.", Principal);
 
-        jPanel8.setBackground(new java.awt.Color(0, 51, 0));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        SalaOperaciones.setBackground(new java.awt.Color(0, 51, 0));
+        SalaOperaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 24), new java.awt.Color(102, 51, 0))); // NOI18N
@@ -319,7 +321,7 @@ public class Operaciones extends javax.swing.JFrame {
         lvl_PH.getAccessibleContext().setAccessibleDescription("");
         cont_mnrl.getAccessibleContext().setAccessibleName("Contenido Minerales.");
 
-        jPanel8.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 744));
+        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, 744));
 
         jPanel7.setBackground(new java.awt.Color(153, 153, 0));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
@@ -405,29 +407,31 @@ public class Operaciones extends javax.swing.JFrame {
             .addComponent(jTabbedPane1)
         );
 
-        jPanel8.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 6, 290, -1));
+        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 6, 290, -1));
 
         jButton1.setBackground(new java.awt.Color(102, 51, 0));
         jButton1.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 255, 153));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/evolucion.png"))); // NOI18N
         jButton1.setText("Realizar operacion.");
-        jPanel8.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 320, -1));
+        SalaOperaciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 320, -1));
 
         jTextPane1.setBackground(new java.awt.Color(153, 102, 0));
         jTextPane1.setFont(new java.awt.Font("Calisto MT", 1, 18)); // NOI18N
         jTextPane1.setForeground(new java.awt.Color(255, 0, 204));
         jTextPane1.setText("Plantas ");
         jTextPane1.setToolTipText("");
-        jPanel8.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(588, 6, 187, 184));
+        SalaOperaciones.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(588, 6, 187, 184));
 
-        jTabbedPane2.addTab("Centro de operaciones.", jPanel8);
+        jTabbedPane2.addTab("Centro de operaciones.", SalaOperaciones);
+
+        Principal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane2.addTab("Historial de operaciones.", Principal1);
 
         Guia.setText("Guia de operaciones.");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, 0));
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem3.setText("¿Como realizar una operacion?");
-        jMenuItem3.setActionCommand("¿Como realizar una operacion?");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -435,14 +439,19 @@ public class Operaciones extends javax.swing.JFrame {
         });
         Guia.add(jMenuItem3);
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setText("¿Que debo tener en cuenta?");
         Guia.add(jMenuItem4);
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Ejemplos de operaciones.");
+        Guia.add(jMenuItem1);
 
         jMenuBar1.add(Guia);
 
         jMenu2.setText("Opciones.");
 
-        MenuPricipal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, 0));
+        MenuPricipal.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         MenuPricipal.setText("Volver al menu principal.");
         MenuPricipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -571,6 +580,9 @@ public class Operaciones extends javax.swing.JFrame {
     private javax.swing.JMenu Guia;
     private javax.swing.JMenuItem MenuPricipal;
     private javax.swing.JPanel Plantas;
+    private javax.swing.JPanel Principal;
+    private javax.swing.JPanel Principal1;
+    private javax.swing.JPanel SalaOperaciones;
     private javax.swing.JMenuItem SalirPrograma;
     private javax.swing.JComboBox<String> cbx_Planta;
     private javax.swing.JPanel cont_mnrl;
@@ -585,9 +597,9 @@ public class Operaciones extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox8;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -595,7 +607,6 @@ public class Operaciones extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTextField jTextField1;

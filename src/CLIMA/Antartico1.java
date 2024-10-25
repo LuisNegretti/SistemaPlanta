@@ -77,7 +77,7 @@ public class Antartico1 extends javax.swing.JFrame {
        Antartico acceso = new Antartico();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
-        this.setVisible(false);
+        
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

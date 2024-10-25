@@ -77,7 +77,7 @@ public class Continental11 extends javax.swing.JFrame {
         Continental1 acceso = new Continental1();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
-        this.setVisible(false);
+        
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
