@@ -26,7 +26,11 @@ import OPERACIONES.Operaciones;
 import Plantas.Margaritas1;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 
 /**
@@ -100,13 +104,20 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea32 = new javax.swing.JTextArea();
         Clima = new javax.swing.JPanel();
         SubTropical = new javax.swing.JPanel();
+        jLabel79 = new javax.swing.JLabel();
         antartico = new javax.swing.JPanel();
+        jLabel69 = new javax.swing.JLabel();
         continental = new javax.swing.JPanel();
+        jLabel80 = new javax.swing.JLabel();
         tropical = new javax.swing.JPanel();
         jLabel67 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
         mediterraneo = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
         Desertico = new javax.swing.JPanel();
+        jLabel78 = new javax.swing.JLabel();
         Templado = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -115,11 +126,11 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
         jLabel70 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
         Plantas = new javax.swing.JPanel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         Int_Plantas = new javax.swing.JPanel();
@@ -606,15 +617,23 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel79.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout SubTropicalLayout = new javax.swing.GroupLayout(SubTropical);
         SubTropical.setLayout(SubTropicalLayout);
         SubTropicalLayout.setHorizontalGroup(
             SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SubTropicalLayout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
+                .addComponent(jLabel79)
+                .addGap(64, 64, 64))
         );
         SubTropicalLayout.setVerticalGroup(
             SubTropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(SubTropicalLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jLabel79)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         Clima.add(SubTropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 430, 220, 220));
@@ -627,15 +646,23 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout antarticoLayout = new javax.swing.GroupLayout(antartico);
         antartico.setLayout(antarticoLayout);
         antarticoLayout.setHorizontalGroup(
             antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
+            .addGroup(antarticoLayout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addComponent(jLabel69)
+                .addContainerGap(225, Short.MAX_VALUE))
         );
         antarticoLayout.setVerticalGroup(
             antarticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 230, Short.MAX_VALUE)
+            .addGroup(antarticoLayout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jLabel69)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         Clima.add(antartico, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 490, 230));
@@ -649,15 +676,23 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel80.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout continentalLayout = new javax.swing.GroupLayout(continental);
         continental.setLayout(continentalLayout);
         continentalLayout.setHorizontalGroup(
             continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
+            .addGroup(continentalLayout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jLabel80)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         continentalLayout.setVerticalGroup(
             continentalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(continentalLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(jLabel80)
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         Clima.add(continental, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 260, 300));
@@ -678,20 +713,28 @@ public class Menu1 extends javax.swing.JFrame {
 
         jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/sol.png"))); // NOI18N
 
+        jLabel75.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout tropicalLayout = new javax.swing.GroupLayout(tropical);
         tropical.setLayout(tropicalLayout);
         tropicalLayout.setHorizontalGroup(
             tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tropicalLayout.createSequentialGroup()
-                .addContainerGap(310, Short.MAX_VALUE)
+            .addGroup(tropicalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel67)
                 .addContainerGap())
+            .addGroup(tropicalLayout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(jLabel75)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         tropicalLayout.setVerticalGroup(
             tropicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tropicalLayout.createSequentialGroup()
                 .addComponent(jLabel67)
-                .addGap(0, 326, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addComponent(jLabel75)
+                .addGap(109, 109, 109))
         );
 
         Clima.add(tropical, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 380, 390));
@@ -704,15 +747,23 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel76.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout mediterraneoLayout = new javax.swing.GroupLayout(mediterraneo);
         mediterraneo.setLayout(mediterraneoLayout);
         mediterraneoLayout.setHorizontalGroup(
             mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(mediterraneoLayout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(jLabel76)
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         mediterraneoLayout.setVerticalGroup(
             mediterraneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mediterraneoLayout.createSequentialGroup()
+                .addContainerGap(80, Short.MAX_VALUE)
+                .addComponent(jLabel76)
+                .addGap(66, 66, 66))
         );
 
         Clima.add(mediterraneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 350, 210));
@@ -725,15 +776,23 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout DeserticoLayout = new javax.swing.GroupLayout(Desertico);
         Desertico.setLayout(DeserticoLayout);
         DeserticoLayout.setHorizontalGroup(
             DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(DeserticoLayout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addComponent(jLabel78)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
         DeserticoLayout.setVerticalGroup(
             DeserticoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(DeserticoLayout.createSequentialGroup()
+                .addGap(131, 131, 131)
+                .addComponent(jLabel78)
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         Clima.add(Desertico, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 330));
@@ -746,15 +805,23 @@ public class Menu1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel77.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/reproduce-el-video.png"))); // NOI18N
+
         javax.swing.GroupLayout TempladoLayout = new javax.swing.GroupLayout(Templado);
         Templado.setLayout(TempladoLayout);
         TempladoLayout.setHorizontalGroup(
             TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(TempladoLayout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(jLabel77)
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         TempladoLayout.setVerticalGroup(
             TempladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addGroup(TempladoLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jLabel77)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         Clima.add(Templado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 350, 180));
@@ -802,9 +869,6 @@ public class Menu1 extends javax.swing.JFrame {
         });
         Clima.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 1120, -1));
 
-        jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/fuertes-nevadas.png"))); // NOI18N
-        Clima.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 670, -1, -1));
-
         jLabel70.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/calido.png"))); // NOI18N
         Clima.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, -1, -1));
 
@@ -816,6 +880,9 @@ public class Menu1 extends javax.swing.JFrame {
 
         jLabel73.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/vista-desde-la-montana.png"))); // NOI18N
         Clima.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 670, -1, -1));
+
+        jLabel74.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/fuertes-nevadas.png"))); // NOI18N
+        Clima.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 670, -1, -1));
 
         jTabbedPane1.addTab("Clima", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/el-planeta-tierra.png")), Clima); // NOI18N
 
@@ -1799,17 +1866,69 @@ public class Menu1 extends javax.swing.JFrame {
     
     
     private void DeserticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeserticoMouseClicked
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Desertico acceso = new Desertico();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
         
-        Desertico acceso = new Desertico();
-        acceso.setVisible(true);
-        acceso.setLocationRelativeTo(null);
         
     }//GEN-LAST:event_DeserticoMouseClicked
 
     private void SubTropicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubTropicalMouseClicked
-        subTropical acceso = new subTropical();
-        acceso.setVisible(true);
-        acceso.setLocationRelativeTo(null);
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            subTropical acceso = new subTropical();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_SubTropicalMouseClicked
 
     private void butt_rosaDelDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_rosaDelDesiertoActionPerformed
@@ -1817,9 +1936,37 @@ public class Menu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_butt_rosaDelDesiertoActionPerformed
 
     private void tropicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tropicalMouseClicked
-        Tropical acceso = new Tropical();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Tropical acceso = new Tropical();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_tropicalMouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
@@ -1827,50 +1974,241 @@ public class Menu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void TempladoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TempladoMouseClicked
-        Templado acceso = new Templado();
+        
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Templado acceso = new Templado();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_TempladoMouseClicked
 
     private void tropicalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tropicalKeyPressed
-        Tropical acceso = new Tropical();
-        acceso.setVisible(true);
-        acceso.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_tropicalKeyPressed
 
     private void mediterraneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mediterraneoMouseClicked
-        Mediterraneo acceso = new Mediterraneo();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Mediterraneo acceso = new Mediterraneo();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_mediterraneoMouseClicked
 
     private void continentalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_continentalMouseClicked
-        Continental acceso = new Continental();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Continental acceso = new Continental();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_continentalMouseClicked
 
     private void antarticoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_antarticoMouseClicked
-        Antartico acceso = new Antartico();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Antartico acceso = new Antartico();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_antarticoMouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        Agua1 acceso = new Agua1();
+
+      try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Agua1 acceso = new Agua1();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+
+     
     
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        ciclo acceso = new ciclo();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            ciclo acceso = new ciclo();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+       
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_salir.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
         Principal acceso = new Principal();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
@@ -1878,9 +2216,37 @@ public class Menu1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void introDiseñosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_introDiseñosActionPerformed
-         introDiseño acceso = new introDiseño();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            introDiseño acceso = new introDiseño();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
        
     }//GEN-LAST:event_introDiseñosActionPerformed
 
@@ -2047,7 +2413,14 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;

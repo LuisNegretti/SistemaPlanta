@@ -7,6 +7,10 @@ package sistema.planta;
 
 import OPERACIONES.Operaciones;
 import java.awt.Toolkit;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -167,17 +171,72 @@ public class Principal extends javax.swing.JFrame {
 
     private void EducacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EducacionActionPerformed
         
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_entrar.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
             Menu1 acceso = new Menu1();
             acceso.setVisible(true);
             acceso.setLocationRelativeTo(null);
             this.setVisible(false);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+           
     }//GEN-LAST:event_EducacionActionPerformed
 
     private void OperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacionesActionPerformed
-       Operaciones acceso = new Operaciones();
+       
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_entrar.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Operaciones acceso = new Operaciones();
             acceso.setVisible(true);
             acceso.setLocationRelativeTo(null);
             this.setVisible(false);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+      
     }//GEN-LAST:event_OperacionesActionPerformed
 
     /**

@@ -6,6 +6,10 @@
 package OPERACIONES;
 
 import java.awt.Toolkit;
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javax.swing.JOptionPane;
 import sistema.planta.Principal;
 
 /**
@@ -531,7 +535,32 @@ public class Operaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void MenuPricipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPricipalActionPerformed
-       Principal acceso = new Principal();
+       
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_salir.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        Principal acceso = new Principal();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
         this.setVisible(false);

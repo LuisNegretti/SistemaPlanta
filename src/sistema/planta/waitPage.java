@@ -74,7 +74,7 @@ public class waitPage extends javax.swing.JFrame {
 
         try {
             // Ruta al archivo de audio
-            File audioFile = new File("magicINTRO.mp3");
+            File audioFile = new File("src/Sonidos/magicINTRO.mp3");
             if (!audioFile.exists()) {
                 throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
             }
