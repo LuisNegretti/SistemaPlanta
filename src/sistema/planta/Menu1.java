@@ -22,6 +22,7 @@ import CLIMA.Templado;
 import CLIMA.Tropical;
 import CLIMA.subTropical;
 import JARDIN.IntroPreparacion;
+import JARDIN.Mantenimiento1;
 import JARDIN.introDiseño;
 import OPERACIONES.Operaciones;
 import Plantas.Margaritas1;
@@ -1061,7 +1062,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
-                    .addContainerGap(499, Short.MAX_VALUE)
+                    .addContainerGap(505, Short.MAX_VALUE)
                     .addComponent(jLabel61)
                     .addGap(70, 70, 70)))
         );
@@ -1503,7 +1504,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea12.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea12.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jTextArea12.setTabSize(0);
-        jTextArea12.setText("Beneficios.");
+        jTextArea12.setText("Preparacion de la tierra.");
         jTextArea12.setWrapStyleWord(true);
         jTextArea12.setBorder(null);
         jScrollPane13.setViewportView(jTextArea12);
@@ -1562,7 +1563,7 @@ public class Menu1 extends javax.swing.JFrame {
         Jardin.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/buenas-practicas-agricolas-tipos-suelo.png"))); // NOI18N
-        Jardin.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, -1, -1));
+        Jardin.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 360, -1, -1));
 
         jScrollPane17.setBorder(null);
 
@@ -1609,7 +1610,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea19.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jTextArea19.setTabSize(0);
-        jTextArea19.setText("Cada uno con características únicas,  \ninfluyen en su capacidad para retener \nagua, nutrientes y su idoneidad para \ndiferentes cultivos.\n");
+        jTextArea19.setText("Para la tierra, su preparacion brinda \ncaracterísticas únicas, influyen en su \ncapacidad para retener agua, nutrientes \ny su idoneidad para diferentes cultivos.\n");
         jTextArea19.setWrapStyleWord(true);
         jTextArea19.setBorder(null);
         jScrollPane20.setViewportView(jTextArea19);
@@ -1633,6 +1634,11 @@ public class Menu1 extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton1.setText(" Contenido.");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         Jardin.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 730, 110, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 102, 0));
@@ -1856,7 +1862,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jTabbedPane1.getAccessibleContext().setAccessibleName("Jardin");
@@ -2290,6 +2296,37 @@ public class Menu1 extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Mantenimiento1 acceso = new Mantenimiento1();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
