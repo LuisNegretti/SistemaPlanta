@@ -154,11 +154,10 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         Amapolas_Rosas = new javax.swing.JPanel();
-        butt_AmapolasRosas = new javax.swing.JButton();
+        jLabel81 = new javax.swing.JLabel();
         Ixoras = new javax.swing.JPanel();
-        butt_Ixora = new javax.swing.JButton();
+        jLabel82 = new javax.swing.JLabel();
         Tulipanes = new javax.swing.JPanel();
-        butt_Tulipanes = new javax.swing.JButton();
         Rosas_Desierto = new javax.swing.JPanel();
         butt_rosaDelDesierto = new javax.swing.JButton();
         Magnolio = new javax.swing.JPanel();
@@ -1062,7 +1061,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
-                    .addContainerGap(505, Short.MAX_VALUE)
+                    .addContainerGap(499, Short.MAX_VALUE)
                     .addComponent(jLabel61)
                     .addGap(70, 70, 70)))
         );
@@ -1071,48 +1070,46 @@ public class Menu1 extends javax.swing.JFrame {
 
         Amapolas_Rosas.setBackground(new java.awt.Color(51, 0, 51));
 
-        butt_AmapolasRosas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amapolas rosas.png"))); // NOI18N
-        butt_AmapolasRosas.setText("jButton1");
+        jLabel81.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/amprosa.png"))); // NOI18N
+        jLabel81.setText("jLabel81");
 
         javax.swing.GroupLayout Amapolas_RosasLayout = new javax.swing.GroupLayout(Amapolas_Rosas);
         Amapolas_Rosas.setLayout(Amapolas_RosasLayout);
         Amapolas_RosasLayout.setHorizontalGroup(
             Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Amapolas_RosasLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(736, Short.MAX_VALUE))
         );
         Amapolas_RosasLayout.setVerticalGroup(
             Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Amapolas_RosasLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(butt_AmapolasRosas, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel81)
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Amapolas Rosas", Amapolas_Rosas);
 
         Ixoras.setBackground(new java.awt.Color(153, 0, 0));
 
-        butt_Ixora.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/planta_ixora.jpg"))); // NOI18N
-        butt_Ixora.setText("jButton1");
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/ixo.png"))); // NOI18N
+        jLabel82.setText("jLabel81");
 
         javax.swing.GroupLayout IxorasLayout = new javax.swing.GroupLayout(Ixoras);
         Ixoras.setLayout(IxorasLayout);
         IxorasLayout.setHorizontalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IxorasLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 716, Short.MAX_VALUE))
         );
         IxorasLayout.setVerticalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IxorasLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(butt_Ixora, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel82)
+                .addGap(0, 332, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Ixoras", Ixoras);
@@ -1120,24 +1117,15 @@ public class Menu1 extends javax.swing.JFrame {
         Tulipanes.setBackground(new java.awt.Color(204, 0, 51));
         Tulipanes.setForeground(new java.awt.Color(204, 0, 51));
 
-        butt_Tulipanes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tulipanes.jpg"))); // NOI18N
-        butt_Tulipanes.setText("jButton1");
-
         javax.swing.GroupLayout TulipanesLayout = new javax.swing.GroupLayout(Tulipanes);
         Tulipanes.setLayout(TulipanesLayout);
         TulipanesLayout.setHorizontalGroup(
             TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TulipanesLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         TulipanesLayout.setVerticalGroup(
             TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TulipanesLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(butt_Tulipanes, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 692, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Tulipanes", Tulipanes);
@@ -2400,9 +2388,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Templado;
     private javax.swing.JPanel Tulipanes;
     private javax.swing.JPanel antartico;
-    private javax.swing.JButton butt_AmapolasRosas;
-    private javax.swing.JButton butt_Ixora;
-    private javax.swing.JButton butt_Tulipanes;
     private javax.swing.JButton butt_rosaDelDesierto;
     private javax.swing.JPanel continental;
     private javax.swing.JButton introDiseños;
@@ -2499,6 +2484,8 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
