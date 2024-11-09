@@ -32,7 +32,7 @@ public class Conexion {
             pln.setTipo_tierra(rs.getString("Tipo_tierra"));
             response.add(pln);
         }
-        
+        conn.close();
         }catch(Exception e){System.out.println("Error al listar");}
         
         
