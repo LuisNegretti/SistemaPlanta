@@ -5,8 +5,12 @@
  */
 package OPERACIONES;
 
+import db_Operaciones.Conexion;
+import db_Operaciones.Plantas_Get_Set;
 import java.awt.Toolkit;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.swing.JOptionPane;
@@ -22,14 +26,13 @@ public class Operaciones extends javax.swing.JFrame {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-        String lista[] = {"hola", "estupe"};
-        for(int x = 0; x < lista.length; x++){
-            this.cbx_Planta.addItem(lista[x]);
-            //Select nombre from plantas
-            //Select url from plantas where nombre=nombrecbx
-            //planta.getResource("/Imagenes/nombre.png"))
-        }
+        Conexion con = new Conexion();
+        ArrayList<Plantas_Get_Set> Lista = con.List_Plantas("plantas");
         
+        for(Plantas_Get_Set plan : Lista){
+            this.cbx_Planta.addItem(plan.getNombre_planta());
+        }
+
     }
     
     @SuppressWarnings("unchecked")
@@ -98,7 +101,7 @@ public class Operaciones extends javax.swing.JFrame {
         cbx_Planta.setBackground(new java.awt.Color(0, 204, 0));
         cbx_Planta.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_Planta.setForeground(new java.awt.Color(0, 153, 102));
-        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "mata", "papa" }));
+        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         cbx_Planta.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_Planta.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -494,7 +497,7 @@ public class Operaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbx_PlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_PlantaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cbx_PlantaActionPerformed
 
     private void sexoCombo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexoCombo3ActionPerformed
