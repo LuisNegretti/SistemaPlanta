@@ -23,6 +23,7 @@ import CLIMA.Tropical;
 import CLIMA.subTropical;
 import JARDIN.IntroPreparacion;
 import JARDIN.Mantenimiento1;
+import JARDIN.TiposSuelos1;
 import JARDIN.introDiseño;
 import OPERACIONES.Operaciones;
 import Plantas.Margaritas1;
@@ -215,7 +216,7 @@ public class Menu1 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         introDiseños = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        Tsuelos = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
@@ -1651,11 +1652,16 @@ public class Menu1 extends javax.swing.JFrame {
         });
         Jardin.add(introDiseños, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 110, -1));
 
-        jButton5.setBackground(new java.awt.Color(255, 102, 0));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
-        jButton5.setText(" Contenido.");
-        jButton5.setBorder(null);
-        Jardin.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 110, -1));
+        Tsuelos.setBackground(new java.awt.Color(255, 102, 0));
+        Tsuelos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
+        Tsuelos.setText(" Contenido.");
+        Tsuelos.setBorder(null);
+        Tsuelos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TsuelosActionPerformed(evt);
+            }
+        });
+        Jardin.add(Tsuelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, 110, -1));
 
         jButton6.setBackground(new java.awt.Color(255, 102, 0));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
@@ -2316,6 +2322,38 @@ public class Menu1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void TsuelosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TsuelosActionPerformed
+       try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            TiposSuelos1 acceso = new TiposSuelos1();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+    }//GEN-LAST:event_TsuelosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2386,6 +2424,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel SubTropical;
     private javax.swing.JPanel Tagetes;
     private javax.swing.JPanel Templado;
+    private javax.swing.JButton Tsuelos;
     private javax.swing.JPanel Tulipanes;
     private javax.swing.JPanel antartico;
     private javax.swing.JButton butt_rosaDelDesierto;
@@ -2399,7 +2438,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
