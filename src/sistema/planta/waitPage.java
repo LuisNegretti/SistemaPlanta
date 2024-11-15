@@ -49,22 +49,22 @@ public class waitPage extends javax.swing.JFrame {
        AudioPlayer();
         ////////////////////////////// HASTA AQUI TERMINA LA MUSICA
        
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(waitPage.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(waitPage.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
-        try {
-            cn=DriverManager.getConnection("jdbc:mysql://localhost/plantas","root", "");
-            Statement stmt = cn.createStatement();
-            //stmt.executeUpdate("INSERT INTO usuarios VALUES('001','Cesar','Perez','22545875','casa los mangos','cesar24@gmail.com', '+58414754485','profeCesar','profe1234') ");
-        } catch (SQLException ex) {
-            Logger.getLogger(waitPage.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
-//            OpenXAMPP();
-        }
-            System.out.println("conectado");
+//        try {
+//            cn=DriverManager.getConnection("jdbc:mysql://localhost/plantas","root", "");
+//            Statement stmt = cn.createStatement();
+//            //stmt.executeUpdate("INSERT INTO usuarios VALUES('001','Cesar','Perez','22545875','casa los mangos','cesar24@gmail.com', '+58414754485','profeCesar','profe1234') ");
+//        } catch (SQLException ex) {
+//            Logger.getLogger(waitPage.class.getName()).log(Level.SEVERE, null, ex);
+//            JOptionPane.showMessageDialog(null, "No se puede conectar a la base de datos");
+////            OpenXAMPP();
+//        }
+//            System.out.println("conectado");
         
     }
 
@@ -120,12 +120,7 @@ public class waitPage extends javax.swing.JFrame {
 //        e.printStackTrace();
 //    }
 //       
-//    }
-    
-    
-    
-    
-    
+//    }  
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

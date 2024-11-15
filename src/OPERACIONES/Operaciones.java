@@ -14,6 +14,7 @@ import java.util.Arrays;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import sistema.planta.Principal;
 
 /**
@@ -21,7 +22,7 @@ import sistema.planta.Principal;
  * @author pc
  */
 public class Operaciones extends javax.swing.JFrame {
-    
+    DefaultTableModel modelo;
     public Operaciones() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
@@ -41,6 +42,7 @@ public class Operaciones extends javax.swing.JFrame {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
         Principal = new javax.swing.JPanel();
+        Principal1 = new javax.swing.JPanel();
         SalaOperaciones = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         tipo_planta = new javax.swing.JPanel();
@@ -62,10 +64,9 @@ public class Operaciones extends javax.swing.JFrame {
         sexoCombo6 = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaP_Details = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jTextPane1 = new javax.swing.JTextPane();
-        Principal1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Guia = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -82,6 +83,9 @@ public class Operaciones extends javax.swing.JFrame {
 
         Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane2.addTab("Sala principal.", Principal);
+
+        Principal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane2.addTab("Historial de operaciones.", Principal1);
 
         SalaOperaciones.setBackground(new java.awt.Color(0, 51, 0));
         SalaOperaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -330,18 +334,15 @@ public class Operaciones extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
         jPanel7.setForeground(new java.awt.Color(102, 51, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaP_Details.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Minerales", "Nivel de PH", "Humedad del suelo", "Salinidad", "Tipo de Tierra"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaP_Details);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -349,36 +350,33 @@ public class Operaciones extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 643, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 6, 290, -1));
+        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 300, 300));
 
         jButton1.setBackground(new java.awt.Color(102, 51, 0));
         jButton1.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 255, 153));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/evolucion.png"))); // NOI18N
         jButton1.setText("Realizar operacion.");
-        SalaOperaciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 320, -1));
+        SalaOperaciones.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 540, -1, 80));
 
         jTextPane1.setBackground(new java.awt.Color(153, 102, 0));
         jTextPane1.setFont(new java.awt.Font("Calisto MT", 1, 18)); // NOI18N
         jTextPane1.setForeground(new java.awt.Color(255, 0, 204));
         jTextPane1.setText("Plantas ");
         jTextPane1.setToolTipText("");
-        SalaOperaciones.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(588, 6, 187, 184));
+        SalaOperaciones.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 270, 187, 184));
 
         jTabbedPane2.addTab("Centro de operaciones.", SalaOperaciones);
-
-        Principal1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane2.addTab("Historial de operaciones.", Principal1);
 
         Guia.setText("Guia de operaciones.");
 
@@ -442,7 +440,22 @@ public class Operaciones extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbx_PlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_PlantaActionPerformed
-
+        Conexion cn = new Conexion();
+        String param = this.cbx_Planta.getSelectedItem().toString();
+        ArrayList<Plantas_Get_Set> Lista = cn.Planta_Details(param);
+        System.out.println(Lista.size());
+        modelo=(DefaultTableModel) this.tablaP_Details.getModel();
+        for(Plantas_Get_Set pl:Lista){
+            Object[] row = new Object[6];
+            row[0]= pl.getNombre_planta();
+            row[1]= pl.getContenidoDeMinerales();
+            row[2]= pl.getNivel_ph();           
+            row[3]= pl.getHumedad_Suelo();           
+            row[4]= pl.getSalinidad();           
+            row[5]= pl.getTipo_tierra();
+            modelo.addRow(row);
+        }
+        this.tablaP_Details.setModel(modelo);
     }//GEN-LAST:event_cbx_PlantaActionPerformed
 
     private void sexoCombo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexoCombo3ActionPerformed
@@ -475,7 +488,7 @@ public class Operaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_cbx_PlantaMouseExited
 
     private void cbx_PlantaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_PlantaItemStateChanged
-      System.out.println(this.cbx_Planta.getSelectedItem().toString() + "state");
+//      System.out.println(this.cbx_Planta.getSelectedItem().toString() + "state");
     }//GEN-LAST:event_cbx_PlantaItemStateChanged
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -581,12 +594,12 @@ public class Operaciones extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JPanel lvl_PH;
     private javax.swing.JComboBox<String> sexoCombo3;
     private javax.swing.JComboBox<String> sexoCombo6;
+    private javax.swing.JTable tablaP_Details;
     private javax.swing.JPanel tipo_planta;
     private javax.swing.JPanel tipo_tierra;
     // End of variables declaration//GEN-END:variables
