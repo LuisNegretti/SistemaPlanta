@@ -23,6 +23,7 @@ import CLIMA.Tropical;
 import CLIMA.subTropical;
 import JARDIN.IntroPreparacion;
 import JARDIN.Mantenimiento1;
+import JARDIN.PreparacionS1;
 import JARDIN.TiposSuelos1;
 import JARDIN.introDiseño;
 import OPERACIONES.Operaciones;
@@ -1667,6 +1668,11 @@ public class Menu1 extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
         jButton6.setText("Contenido.");
         jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         Jardin.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 110, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 102, 0));
@@ -2353,6 +2359,40 @@ public class Menu1 extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_TsuelosActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            PreparacionS1 acceso = new  PreparacionS1();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+       
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
