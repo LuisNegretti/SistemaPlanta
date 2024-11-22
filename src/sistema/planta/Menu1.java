@@ -21,6 +21,7 @@ import CLIMA.Mediterraneo;
 import CLIMA.Templado;
 import CLIMA.Tropical;
 import CLIMA.subTropical;
+import JARDIN.Adaptacion1;
 import JARDIN.IntroPreparacion;
 import JARDIN.Mantenimiento1;
 import JARDIN.PreparacionS1;
@@ -217,6 +218,7 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea18 = new javax.swing.JTextArea();
         jScrollPane20 = new javax.swing.JScrollPane();
         jTextArea19 = new javax.swing.JTextArea();
+        adaptacion = new javax.swing.JButton();
         jScrollPane21 = new javax.swing.JScrollPane();
         jTextArea20 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -224,7 +226,6 @@ public class Menu1 extends javax.swing.JFrame {
         introDiseños = new javax.swing.JButton();
         Tsuelos = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
@@ -234,6 +235,7 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
         CicloDeAgua1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -626,7 +628,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -1087,7 +1089,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(MargaritasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MargaritasLayout.createSequentialGroup()
-                    .addContainerGap(499, Short.MAX_VALUE)
+                    .addContainerGap(505, Short.MAX_VALUE)
                     .addComponent(jLabel61)
                     .addGap(70, 70, 70)))
         );
@@ -1531,12 +1533,12 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea13.setBackground(new java.awt.Color(255, 102, 0));
         jTextArea13.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
         jTextArea13.setTabSize(0);
-        jTextArea13.setText("Adaptacion del terreno.");
+        jTextArea13.setText("Adaptacion del terreno escolar.");
         jTextArea13.setWrapStyleWord(true);
         jTextArea13.setBorder(null);
         jScrollPane14.setViewportView(jTextArea13);
 
-        Jardin.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 580, -1, -1));
+        Jardin.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 550, -1, -1));
 
         jScrollPane15.setBorder(null);
 
@@ -1574,10 +1576,10 @@ public class Menu1 extends javax.swing.JFrame {
         Jardin.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/tierra-arcillosa-seca-y-compactada..png"))); // NOI18N
-        Jardin.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 560, -1, -1));
+        Jardin.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 600, -1, -1));
 
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/DecoracionCicloDelAgua/buenas-practicas-agricolas-tipos-suelo.png"))); // NOI18N
-        Jardin.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 360, -1, -1));
+        Jardin.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 350, -1, -1));
 
         jScrollPane17.setBorder(null);
 
@@ -1631,18 +1633,29 @@ public class Menu1 extends javax.swing.JFrame {
 
         Jardin.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, -1, -1));
 
+        adaptacion.setBackground(new java.awt.Color(255, 102, 0));
+        adaptacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
+        adaptacion.setText(" Contenido.");
+        adaptacion.setBorder(null);
+        adaptacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adaptacionActionPerformed(evt);
+            }
+        });
+        Jardin.add(adaptacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 700, 110, -1));
+
         jScrollPane21.setBorder(null);
 
         jTextArea20.setEditable(false);
         jTextArea20.setBackground(new java.awt.Color(255, 255, 0));
         jTextArea20.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jTextArea20.setTabSize(0);
-        jTextArea20.setText("La adaptación del terreno para maximizar \nel uso de cada tipo de suelo es esencial \npara la agricultura sostenible y la conser\nvación del medio ambiente. \n");
+        jTextArea20.setText("Transformamos el entorno escolar en \nun espacio educativo y ecológico. para \nmaximizar el uso de cada tipo de suelo \nes esencial para la agricultura sostenible \ny la conservación del medio ambiente.\n");
         jTextArea20.setWrapStyleWord(true);
         jTextArea20.setBorder(null);
         jScrollPane21.setViewportView(jTextArea20);
 
-        Jardin.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 630, 294, -1));
+        Jardin.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 590, 330, 140));
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
@@ -1699,12 +1712,6 @@ public class Menu1 extends javax.swing.JFrame {
         });
         Jardin.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, 110, -1));
 
-        jButton7.setBackground(new java.awt.Color(255, 102, 0));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/flecha1.png"))); // NOI18N
-        jButton7.setText(" Contenido.");
-        jButton7.setBorder(null);
-        Jardin.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 730, 110, -1));
-
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/regando-plantas (1).png"))); // NOI18N
         Jardin.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 6, -1, -1));
 
@@ -1714,8 +1721,8 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/cactus.png"))); // NOI18N
         Jardin.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 10, -1, -1));
 
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/impresion-de-la-mano.png"))); // NOI18N
-        Jardin.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 690, -1, -1));
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/lapices-de-color.png"))); // NOI18N
+        Jardin.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, -1, -1));
 
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/impresion-de-mano.png"))); // NOI18N
         Jardin.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, -1, -1));
@@ -1731,6 +1738,9 @@ public class Menu1 extends javax.swing.JFrame {
 
         jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/siembra.png"))); // NOI18N
         Jardin.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 720, -1, -1));
+
+        jLabel83.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/impresion-de-la-mano.png"))); // NOI18N
+        Jardin.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 690, -1, -1));
 
         jTabbedPane1.addTab("Jardin", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/arbol.png")), Jardin); // NOI18N
 
@@ -2448,6 +2458,37 @@ public class Menu1 extends javax.swing.JFrame {
             acceso.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    private void adaptacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaptacionActionPerformed
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Adaptacion1 acceso = new  Adaptacion1();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+    }//GEN-LAST:event_adaptacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2520,6 +2561,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Templado;
     private javax.swing.JButton Tsuelos;
     private javax.swing.JPanel Tulipanes;
+    private javax.swing.JButton adaptacion;
     private javax.swing.JPanel antartico;
     private javax.swing.JButton butt_rosaDelDesierto;
     private javax.swing.JPanel continental;
@@ -2533,7 +2575,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
@@ -2618,6 +2659,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
