@@ -11,7 +11,7 @@ public class Conexion {
     public Conexion(){
         try{
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/plantas","root","");
+        conn = DriverManager.getConnection("jdbc:mysql://192.168.193.11:3306/plantas","Luis","12345");
         System.out.println("Conexion Exitosa!"); 
         }catch(Exception e){System.out.println("Error en conexion!");}
     }

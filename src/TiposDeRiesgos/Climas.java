@@ -34,6 +34,11 @@ public class Climas extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Volver1.setText("Volver");
+        Volver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Volver1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, -1, -1));
 
         FondoClima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Climas.png"))); // NOI18N
@@ -43,6 +48,10 @@ public class Climas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver1ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_Volver1ActionPerformed
 
     /**
      * @param args the command line arguments

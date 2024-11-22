@@ -28,6 +28,11 @@ import JARDIN.TiposSuelos1;
 import JARDIN.introDiseño;
 import OPERACIONES.Operaciones;
 import Plantas.Margaritas1;
+import TiposDeRiesgos.Climas;
+import TiposDeRiesgos.Lluvias;
+import TiposDeRiesgos.Plagas;
+import TiposDeRiesgos.RiesgosComunes;
+import TiposDeRiesgos.TiposDeTierra;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.io.File;
@@ -399,15 +404,14 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Bienvenida ", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/computadora.png")), Bienvenida); // NOI18N
 
-        Riesgos.setBackground(new java.awt.Color(0, 51, 0));
+        Riesgos.setBackground(new java.awt.Color(255, 204, 0));
         Riesgos.setPreferredSize(new java.awt.Dimension(1064, 870));
 
         jScrollPane7.setBorder(null);
 
         jTextArea6.setEditable(false);
-        jTextArea6.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea6.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jTextArea6.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea6.setLineWrap(true);
         jTextArea6.setTabSize(0);
         jTextArea6.setText("Las plantas, aunque vitales para el equilibrio ecológico y la salud de\nlos ecosistemas, enfrentan una serie de riesgos tanto naturales \ncomo inducidos por el hombre. Estos riesgos pueden comprometer \nsu crecimiento, desarrollo y longevidad. Los factores climáticos, \ncomo lluvias excesivas o sequías, así como las condiciones del suelo,\nla presencia de plagas, y hasta la exposición a contaminantes, son \ndeterminantes que pueden afectar su salud. Conocer estos riesgos\nes esencial para entender cómo proteger y cuidar las plantas de \nmanera adecuada. Por ejemplo, las lluvias intensas pueden provocar \nencharcamientos que asfixian las raíces, mientras que la falta de \nagua puede causar marchitez y deshidratación. El tipo de suelo \ntambién juega un papel crucial: un suelo compactado puede impedir \nel desarrollo radicular mientras que uno con alta salinidad puede ser \ntóxico. Los insectos, como pulgones o orugas, y los hongos, pueden \ncausar enfermedades que debilitan las plantas. La protección de las \nplantas implica una comprensión profunda de estos riesgos para im\nplementar medidas preventivas que aseguren su bienestar y promu\nevan un crecimiento saludable.");
@@ -421,9 +425,8 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane22.setBorder(null);
 
         jTextArea21.setEditable(false);
-        jTextArea21.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea21.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea21.setFont(new java.awt.Font("Elephant", 1, 36)); // NOI18N
-        jTextArea21.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea21.setLineWrap(true);
         jTextArea21.setTabSize(0);
         jTextArea21.setText("TIPOS DE RIESGOS");
@@ -434,9 +437,8 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane27.setBorder(null);
 
         jTextArea26.setEditable(false);
-        jTextArea26.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea26.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea26.setFont(new java.awt.Font("Elephant", 1, 36)); // NOI18N
-        jTextArea26.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea26.setTabSize(0);
         jTextArea26.setText("RIESGOS");
         jTextArea26.setWrapStyleWord(true);
@@ -445,25 +447,49 @@ public class Menu1 extends javax.swing.JFrame {
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/tipo de tierrachiquita.png"))); // NOI18N
         jButton10.setText("jButton10");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/Lluviaschiquita.png"))); // NOI18N
         jButton11.setText("jButton10");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/bichoschiquita.png"))); // NOI18N
         jButton12.setText("jButton10");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/riesgos comuneschiquitas.png"))); // NOI18N
         jButton14.setText("jButton10");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/climaschiquita.png"))); // NOI18N
         jButton15.setText("jButton10");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jScrollPane28.setBorder(null);
 
         jTextArea27.setEditable(false);
-        jTextArea27.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea27.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea27.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
-        jTextArea27.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea27.setTabSize(0);
         jTextArea27.setText("Plagas");
         jTextArea27.setWrapStyleWord(true);
@@ -473,9 +499,8 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane29.setBorder(null);
 
         jTextArea28.setEditable(false);
-        jTextArea28.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea28.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea28.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
-        jTextArea28.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea28.setTabSize(0);
         jTextArea28.setText("Lluvias");
         jTextArea28.setWrapStyleWord(true);
@@ -485,9 +510,8 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane30.setBorder(null);
 
         jTextArea29.setEditable(false);
-        jTextArea29.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea29.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea29.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
-        jTextArea29.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea29.setTabSize(0);
         jTextArea29.setText("Climas");
         jTextArea29.setWrapStyleWord(true);
@@ -497,9 +521,8 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane31.setBorder(null);
 
         jTextArea30.setEditable(false);
-        jTextArea30.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea30.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea30.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
-        jTextArea30.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea30.setLineWrap(true);
         jTextArea30.setTabSize(0);
         jTextArea30.setText("Riesgos comunes");
@@ -510,9 +533,8 @@ public class Menu1 extends javax.swing.JFrame {
         jScrollPane33.setBorder(null);
 
         jTextArea32.setEditable(false);
-        jTextArea32.setBackground(new java.awt.Color(0, 51, 0));
+        jTextArea32.setBackground(new java.awt.Color(255, 204, 0));
         jTextArea32.setFont(new java.awt.Font("Elephant", 1, 30)); // NOI18N
-        jTextArea32.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea32.setLineWrap(true);
         jTextArea32.setTabSize(0);
         jTextArea32.setText("Tipos de tierra");
@@ -532,16 +554,18 @@ public class Menu1 extends javax.swing.JFrame {
                 .addGap(106, 106, 106))
             .addGroup(RiesgosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(68, 68, 68)
                 .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RiesgosLayout.createSequentialGroup()
                         .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(RiesgosLayout.createSequentialGroup()
                                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
                                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -577,7 +601,7 @@ public class Menu1 extends javax.swing.JFrame {
                     .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(RiesgosLayout.createSequentialGroup()
                         .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -600,9 +624,9 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RiesgosLayout.createSequentialGroup()
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Riesgos", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/parasito.png")), Riesgos); // NOI18N
@@ -2393,6 +2417,36 @@ public class Menu1 extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+       Lluvias acceso = new Lluvias();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+         Climas acceso = new Climas();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        TiposDeTierra acceso = new TiposDeTierra();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        Plagas acceso = new Plagas();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        RiesgosComunes acceso = new RiesgosComunes();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton14ActionPerformed
 
     /**
      * @param args the command line arguments
