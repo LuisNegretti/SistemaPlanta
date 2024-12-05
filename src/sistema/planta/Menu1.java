@@ -162,7 +162,17 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         Amapolas_Rosas = new javax.swing.JPanel();
-        jLabel81 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        jTextArea31 = new javax.swing.JTextArea();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        jTextArea33 = new javax.swing.JTextArea();
+        jScrollPane35 = new javax.swing.JScrollPane();
+        jTextArea34 = new javax.swing.JTextArea();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        jTextArea35 = new javax.swing.JTextArea();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
         Ixoras = new javax.swing.JPanel();
         jLabel82 = new javax.swing.JLabel();
         Tulipanes = new javax.swing.JPanel();
@@ -962,7 +972,7 @@ public class Menu1 extends javax.swing.JFrame {
         Int_Plantas.setLayout(Int_PlantasLayout);
         Int_PlantasLayout.setHorizontalGroup(
             Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, Short.MAX_VALUE)
+            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 1144, Short.MAX_VALUE)
         );
         Int_PlantasLayout.setVerticalGroup(
             Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1090,26 +1100,124 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Margaritas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/Margaritas.png")), Margaritas); // NOI18N
 
-        Amapolas_Rosas.setBackground(new java.awt.Color(51, 0, 51));
+        Amapolas_Rosas.setBackground(new java.awt.Color(255, 153, 153));
 
-        jLabel81.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/amprosa.png"))); // NOI18N
-        jLabel81.setText("jLabel81");
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Amarosa.png"))); // NOI18N
+        jLabel25.setText("jLabel10");
+        jLabel25.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel25.setPreferredSize(new java.awt.Dimension(350, 380));
+
+        jScrollPane32.setBorder(null);
+
+        jTextArea31.setEditable(false);
+        jTextArea31.setBackground(new java.awt.Color(255, 153, 153));
+        jTextArea31.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea31.setForeground(new java.awt.Color(255, 0, 204));
+        jTextArea31.setTabSize(0);
+        jTextArea31.setText("AMAPOLA ROSA");
+        jTextArea31.setWrapStyleWord(true);
+        jTextArea31.setBorder(null);
+        jScrollPane32.setViewportView(jTextArea31);
+
+        jScrollPane34.setBorder(null);
+
+        jTextArea33.setEditable(false);
+        jTextArea33.setBackground(new java.awt.Color(255, 153, 153));
+        jTextArea33.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea33.setForeground(new java.awt.Color(255, 0, 204));
+        jTextArea33.setLineWrap(true);
+        jTextArea33.setTabSize(0);
+        jTextArea33.setText("Las amapolas rosas son plantas ornamentales\ncon flores grandes y llamativas en tonos rosa-\ndos, populares tanto por su belleza como por \nlos beneficios que aportan a los jardines y a la \necología local. Estas flores no presentan reque-\nrimientos estrictos en cuanto a contenido mine-\nral en el suelo, lo cual las convierte en una \nopción adaptable para jardines con distintos ti-\npos de terrenos, siempre que cuenten con \nbuena fertilidad");
+        jTextArea33.setToolTipText("");
+        jTextArea33.setWrapStyleWord(true);
+        jTextArea33.setBorder(null);
+        jScrollPane34.setViewportView(jTextArea33);
+
+        jScrollPane35.setBorder(null);
+
+        jTextArea34.setEditable(false);
+        jTextArea34.setBackground(new java.awt.Color(255, 153, 153));
+        jTextArea34.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea34.setForeground(new java.awt.Color(255, 0, 204));
+        jTextArea34.setLineWrap(true);
+        jTextArea34.setTabSize(0);
+        jTextArea34.setText("Son plantas versátiles, prefieren un pH\n de 6.0 a 6.8, ligeramente ácido a neu-\ntro, lo que optimiza la absorción de nu-\ntrientes clave como el fósforo y el po-\ntasio para un desarrollo saludable.\n\nLas amapolas rosas toleran bien diver-\nsas condiciones de humedad en el su-\nelo, sin requisitos estrictos, pero se \nbenefician particularmente de un suelo\ncon buen drenaje. Un suelo bien drena-\ndo previene el riesgo de encharca-\nmientos, que podrían afectar a sus \nraíces sensibles y provocar problemas \nde hongos. En cuanto a la salinidad, son \nplantas sensibles que no soportan altos \nniveles de sal en el suelo, por lo que de-\nben evitarse zonas cercanas a aguas \nsalinas o suelos salinizados. Prefieren \nuna tierra de jardín común y de textura \nligera que les permita establecerse sin \ndificultad.\n");
+        jTextArea34.setToolTipText("");
+        jTextArea34.setWrapStyleWord(true);
+        jTextArea34.setBorder(null);
+        jScrollPane35.setViewportView(jTextArea34);
+
+        jScrollPane36.setBorder(null);
+
+        jTextArea35.setEditable(false);
+        jTextArea35.setBackground(new java.awt.Color(255, 153, 153));
+        jTextArea35.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea35.setForeground(new java.awt.Color(255, 0, 204));
+        jTextArea35.setLineWrap(true);
+        jTextArea35.setTabSize(0);
+        jTextArea35.setText("El cultivo de las amapolas rosas ofrece \nbeneficios para el ecosistema del jardín,\nya que atraen polinizadores como abe-\njas y mariposas, apoyando la biodiversi-\ndad local. Además de embellecer el pai-\nsaje, estas plantas ayudan a mejorar la \nsalud general del suelo y el ambiente, \nincrementando la presencia de poliniza-\ndores que, a su vez, benefician otras \nplantas en el jardín. Las amapolas tam-\nbién son valoradas por su resistencia \nmoderada, y aunque florecen mejor en \nclimas templados, son capaces de ada-\nptarse a condiciones más cálidas si se \nles proporciona algo de sombra y riego \nadecuado en temporadas secas.");
+        jTextArea35.setToolTipText("");
+        jTextArea35.setWrapStyleWord(true);
+        jTextArea35.setBorder(null);
+        jScrollPane36.setViewportView(jTextArea35);
+
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Rositas.png"))); // NOI18N
+        jLabel50.setText("jLabel24");
+
+        jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Rosasaba.png"))); // NOI18N
+        jLabel58.setText("jLabel6");
 
         javax.swing.GroupLayout Amapolas_RosasLayout = new javax.swing.GroupLayout(Amapolas_Rosas);
         Amapolas_Rosas.setLayout(Amapolas_RosasLayout);
         Amapolas_RosasLayout.setHorizontalGroup(
             Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Amapolas_RosasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                        .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
+                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         Amapolas_RosasLayout.setVerticalGroup(
             Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
+            .addGroup(Amapolas_RosasLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel81)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane34))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Amapolas Rosas", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/Amapola.rosa.png")), Amapolas_Rosas); // NOI18N
@@ -1125,7 +1233,7 @@ public class Menu1 extends javax.swing.JFrame {
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IxorasLayout.createSequentialGroup()
                 .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 805, Short.MAX_VALUE))
         );
         IxorasLayout.setVerticalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1143,7 +1251,7 @@ public class Menu1 extends javax.swing.JFrame {
         Tulipanes.setLayout(TulipanesLayout);
         TulipanesLayout.setHorizontalGroup(
             TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         TulipanesLayout.setVerticalGroup(
             TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1169,7 +1277,7 @@ public class Menu1 extends javax.swing.JFrame {
             .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(907, Short.MAX_VALUE))
         );
         Rosas_DesiertoLayout.setVerticalGroup(
             Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1185,7 +1293,7 @@ public class Menu1 extends javax.swing.JFrame {
         Magnolio.setLayout(MagnolioLayout);
         MagnolioLayout.setHorizontalGroup(
             MagnolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         MagnolioLayout.setVerticalGroup(
             MagnolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1198,7 +1306,7 @@ public class Menu1 extends javax.swing.JFrame {
         Azalea.setLayout(AzaleaLayout);
         AzaleaLayout.setHorizontalGroup(
             AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         AzaleaLayout.setVerticalGroup(
             AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1211,7 +1319,7 @@ public class Menu1 extends javax.swing.JFrame {
         Genciana.setLayout(GencianaLayout);
         GencianaLayout.setHorizontalGroup(
             GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         GencianaLayout.setVerticalGroup(
             GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1224,7 +1332,7 @@ public class Menu1 extends javax.swing.JFrame {
         Primula.setLayout(PrimulaLayout);
         PrimulaLayout.setHorizontalGroup(
             PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         PrimulaLayout.setVerticalGroup(
             PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1237,7 +1345,7 @@ public class Menu1 extends javax.swing.JFrame {
         Hortensia.setLayout(HortensiaLayout);
         HortensiaLayout.setHorizontalGroup(
             HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         HortensiaLayout.setVerticalGroup(
             HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1250,7 +1358,7 @@ public class Menu1 extends javax.swing.JFrame {
         Begonia.setLayout(BegoniaLayout);
         BegoniaLayout.setHorizontalGroup(
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         BegoniaLayout.setVerticalGroup(
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1263,7 +1371,7 @@ public class Menu1 extends javax.swing.JFrame {
         Narciso.setLayout(NarcisoLayout);
         NarcisoLayout.setHorizontalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         NarcisoLayout.setVerticalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1276,7 +1384,7 @@ public class Menu1 extends javax.swing.JFrame {
         Brezo.setLayout(BrezoLayout);
         BrezoLayout.setHorizontalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         BrezoLayout.setVerticalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1289,7 +1397,7 @@ public class Menu1 extends javax.swing.JFrame {
         Gardenia.setLayout(GardeniaLayout);
         GardeniaLayout.setHorizontalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         GardeniaLayout.setVerticalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1302,7 +1410,7 @@ public class Menu1 extends javax.swing.JFrame {
         Helecho.setLayout(HelechoLayout);
         HelechoLayout.setHorizontalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         HelechoLayout.setVerticalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1315,7 +1423,7 @@ public class Menu1 extends javax.swing.JFrame {
         Diente_Leon.setLayout(Diente_LeonLayout);
         Diente_LeonLayout.setHorizontalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         Diente_LeonLayout.setVerticalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1328,7 +1436,7 @@ public class Menu1 extends javax.swing.JFrame {
         Fresa.setLayout(FresaLayout);
         FresaLayout.setHorizontalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         FresaLayout.setVerticalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1341,7 +1449,7 @@ public class Menu1 extends javax.swing.JFrame {
         Rododendro.setLayout(RododendroLayout);
         RododendroLayout.setHorizontalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         RododendroLayout.setVerticalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1354,7 +1462,7 @@ public class Menu1 extends javax.swing.JFrame {
         Llanten.setLayout(LlantenLayout);
         LlantenLayout.setHorizontalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         LlantenLayout.setVerticalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1367,7 +1475,7 @@ public class Menu1 extends javax.swing.JFrame {
         Achicoria.setLayout(AchicoriaLayout);
         AchicoriaLayout.setHorizontalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         AchicoriaLayout.setVerticalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1380,7 +1488,7 @@ public class Menu1 extends javax.swing.JFrame {
         Quenopodio.setLayout(QuenopodioLayout);
         QuenopodioLayout.setHorizontalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         QuenopodioLayout.setVerticalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1393,7 +1501,7 @@ public class Menu1 extends javax.swing.JFrame {
         Boca_De_dragon.setLayout(Boca_De_dragonLayout);
         Boca_De_dragonLayout.setHorizontalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         Boca_De_dragonLayout.setVerticalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1406,7 +1514,7 @@ public class Menu1 extends javax.swing.JFrame {
         Caléndula.setLayout(CaléndulaLayout);
         CaléndulaLayout.setHorizontalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         CaléndulaLayout.setVerticalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1419,7 +1527,7 @@ public class Menu1 extends javax.swing.JFrame {
         Mastuerzo_marino.setLayout(Mastuerzo_marinoLayout);
         Mastuerzo_marinoLayout.setHorizontalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         Mastuerzo_marinoLayout.setVerticalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1432,7 +1540,7 @@ public class Menu1 extends javax.swing.JFrame {
         Tagetes.setLayout(TagetesLayout);
         TagetesLayout.setHorizontalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         TagetesLayout.setVerticalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1445,7 +1553,7 @@ public class Menu1 extends javax.swing.JFrame {
         Árbol_del_amor.setLayout(Árbol_del_amorLayout);
         Árbol_del_amorLayout.setHorizontalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1144, Short.MAX_VALUE)
         );
         Árbol_del_amorLayout.setVerticalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2590,6 +2698,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -2617,6 +2726,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
@@ -2624,6 +2734,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
@@ -2648,7 +2759,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
@@ -2679,7 +2789,11 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane30;
     private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
     private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -2711,7 +2825,11 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea29;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea30;
+    private javax.swing.JTextArea jTextArea31;
     private javax.swing.JTextArea jTextArea32;
+    private javax.swing.JTextArea jTextArea33;
+    private javax.swing.JTextArea jTextArea34;
+    private javax.swing.JTextArea jTextArea35;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;

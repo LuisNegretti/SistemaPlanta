@@ -11,7 +11,7 @@ public class Conexion {
     public Conexion(){
         try{
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("localhost:/plantas","root","");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_planta","root","");
         System.out.println("Conexion Exitosa!"); 
         }catch(Exception e){System.out.println("Error en conexion!");}
     }
@@ -23,7 +23,7 @@ public class Conexion {
         rs = pst.executeQuery();
         while(rs.next()){
             Plantas_Get_Set pln = new Plantas_Get_Set();
-            pln.setId(rs.getInt("id"));
+            pln.setId(rs.getInt("id_planta"));
             pln.setNombre_planta(rs.getString("Nombre_planta"));
             pln.setContenidoDeMinerales(rs.getString("contenidoDeMinerales"));
             pln.setNivel_ph(rs.getString("Nivel_ph"));
@@ -42,12 +42,12 @@ public class Conexion {
     public ArrayList<Plantas_Get_Set> Planta_Details(String request){
         ArrayList<Plantas_Get_Set> response = new ArrayList<>();
         try{
-            pst=conn.prepareStatement("SELECT * FROM plantas WHERE Nombre_planta=?");
+            pst=conn.prepareStatement("SELECT * FROM Plantas WHERE Nombre_Planta=?");
             pst.setString(1, request);
             rs = pst.executeQuery();
             while(rs.next()){
                 Plantas_Get_Set pln = new Plantas_Get_Set();
-                pln.setId(rs.getInt("id"));
+                pln.setId(rs.getInt("id_planta"));
                 pln.setNombre_planta(rs.getString("Nombre_planta"));
                 pln.setContenidoDeMinerales(rs.getString("contenidoDeMinerales"));
                 pln.setNivel_ph(rs.getString("Nivel_ph"));
