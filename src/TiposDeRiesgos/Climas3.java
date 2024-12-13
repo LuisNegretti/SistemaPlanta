@@ -9,12 +9,12 @@ package TiposDeRiesgos;
  *
  * @author USUARIO
  */
-public class Plagas extends javax.swing.JFrame {
+public class Climas3 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Plagas
+     * Creates new form Climas3
      */
-    public Plagas() {
+    public Climas3() {
         initComponents();
     }
 
@@ -27,46 +27,47 @@ public class Plagas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Volver1 = new javax.swing.JToggleButton();
-        Siguiente = new javax.swing.JToggleButton();
+        Volver = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Volver1.setText("Volver");
-        Volver1.addActionListener(new java.awt.event.ActionListener() {
+        Volver.setText("Volver");
+        Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Volver1ActionPerformed(evt);
+                VolverActionPerformed(evt);
             }
         });
-        getContentPane().add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, -1, -1));
+        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, -1, -1));
+        Volver.getAccessibleContext().setAccessibleName("Volver");
 
-        Siguiente.setText("Siguiente");
-        Siguiente.addActionListener(new java.awt.event.ActionListener() {
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiguienteActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
-        getContentPane().add(Siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 570, -1, -1));
+        getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 560, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Plagas.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Climas 3 (1).png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver1ActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_Volver1ActionPerformed
-
-    private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
-        Plagas2 acceso = new  Plagas2();
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+         Climas2 acceso = new  Climas2();
         acceso.setVisible(true);
         acceso.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_SiguienteActionPerformed
+    }//GEN-LAST:event_VolverActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+         this.setVisible(false);
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -85,27 +86,27 @@ public class Plagas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Plagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Climas3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Plagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Climas3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Plagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Climas3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Plagas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Climas3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Plagas().setVisible(true);
+                new Climas3().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton Siguiente;
-    private javax.swing.JToggleButton Volver1;
+    private javax.swing.JButton Salir;
+    private javax.swing.JButton Volver;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -28,6 +28,7 @@ public class TiposDeTierra extends javax.swing.JFrame {
     private void initComponents() {
 
         Volver1 = new javax.swing.JToggleButton();
+        Siguiente = new javax.swing.JToggleButton();
         FondoTiposTierra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,7 +40,15 @@ public class TiposDeTierra extends javax.swing.JFrame {
                 Volver1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 560, -1, -1));
+        getContentPane().add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 560, -1, -1));
+
+        Siguiente.setText("Siguiente");
+        Siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SiguienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 560, -1, -1));
 
         FondoTiposTierra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Tipos de Tierra.png"))); // NOI18N
         FondoTiposTierra.setText("jLabel1");
@@ -51,6 +60,13 @@ public class TiposDeTierra extends javax.swing.JFrame {
     private void Volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver1ActionPerformed
         this.setVisible(false); 
     }//GEN-LAST:event_Volver1ActionPerformed
+
+    private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
+         TiposDeTierra2 acceso = new  TiposDeTierra2();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +105,7 @@ public class TiposDeTierra extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FondoTiposTierra;
+    private javax.swing.JToggleButton Siguiente;
     private javax.swing.JToggleButton Volver1;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,6 +30,7 @@ public class Lluvias extends javax.swing.JFrame {
     private void initComponents() {
 
         Volver1 = new javax.swing.JToggleButton();
+        Siguiente = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,7 +42,15 @@ public class Lluvias extends javax.swing.JFrame {
                 Volver1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 570, -1, -1));
+        getContentPane().add(Volver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 570, 80, -1));
+
+        Siguiente.setText("Siguiente");
+        Siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SiguienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 570, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Lluvias.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -53,6 +62,13 @@ public class Lluvias extends javax.swing.JFrame {
     private void Volver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver1ActionPerformed
          this.setVisible(false);
     }//GEN-LAST:event_Volver1ActionPerformed
+
+    private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
+        Lluvias2 acceso = new  Lluvias2();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_SiguienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +106,7 @@ public class Lluvias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton Siguiente;
     private javax.swing.JToggleButton Volver1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
