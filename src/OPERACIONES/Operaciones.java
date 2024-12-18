@@ -74,12 +74,19 @@ public class Operaciones extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 51));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(902, 622));
         setResizable(false);
 
+        jTabbedPane2.setPreferredSize(new java.awt.Dimension(902, 622));
+
+        Principal.setPreferredSize(new java.awt.Dimension(902, 622));
+        Principal.setRequestFocusEnabled(false);
         Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane2.addTab("Sala principal.", Principal);
 
         SalaOperaciones.setBackground(new java.awt.Color(0, 51, 0));
+        SalaOperaciones.setName(""); // NOI18N
+        SalaOperaciones.setPreferredSize(new java.awt.Dimension(902, 622));
         SalaOperaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 102));
@@ -93,7 +100,7 @@ public class Operaciones extends javax.swing.JFrame {
         cbx_Planta.setBackground(new java.awt.Color(0, 204, 0));
         cbx_Planta.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_Planta.setForeground(new java.awt.Color(0, 153, 102));
-        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
+        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Margarita", "Bugambilia", "Tulipanes", "Corona de cristo", "Ixoras", "Amapola rosa", "Rosa del desierto" }));
         cbx_Planta.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_Planta.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -128,8 +135,8 @@ public class Operaciones extends javax.swing.JFrame {
         tipo_plantaLayout.setHorizontalGroup(
             tipo_plantaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tipo_plantaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cbx_Planta, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(cbx_Planta, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tipo_plantaLayout.setVerticalGroup(
@@ -145,7 +152,7 @@ public class Operaciones extends javax.swing.JFrame {
         tierraCombo.setBackground(new java.awt.Color(102, 51, 0));
         tierraCombo.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         tierraCombo.setForeground(new java.awt.Color(255, 255, 255));
-        tierraCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Negra", "Arena", "Lodo" }));
+        tierraCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Arcilla", "Arena", "Limonosa Organica", "Franco Negra" }));
         tierraCombo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         tierraCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,8 +165,8 @@ public class Operaciones extends javax.swing.JFrame {
         tipo_tierraLayout.setHorizontalGroup(
             tipo_tierraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tipo_tierraLayout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(tierraCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(tierraCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tipo_tierraLayout.setVerticalGroup(
@@ -249,7 +256,7 @@ public class Operaciones extends javax.swing.JFrame {
                     .addComponent(tipo_planta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(cont_mnrl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -263,13 +270,13 @@ public class Operaciones extends javax.swing.JFrame {
                 .addComponent(lvl_PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cont_mnrl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         lvl_PH.getAccessibleContext().setAccessibleDescription("");
         cont_mnrl.getAccessibleContext().setAccessibleName("Contenido Minerales.");
 
-        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 250, 460));
+        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 590));
 
         jPanel7.setBackground(new java.awt.Color(153, 153, 0));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
@@ -289,7 +296,10 @@ public class Operaciones extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +308,7 @@ public class Operaciones extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 610, 220));
+        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 610, 220));
 
         RealizarOperacion.setBackground(new java.awt.Color(102, 51, 0));
         RealizarOperacion.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
@@ -310,17 +320,18 @@ public class Operaciones extends javax.swing.JFrame {
                 RealizarOperacionActionPerformed(evt);
             }
         });
-        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, -1, 80));
+        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, -1, 80));
 
         jTextPane1.setBackground(new java.awt.Color(153, 102, 0));
         jTextPane1.setFont(new java.awt.Font("Calisto MT", 1, 18)); // NOI18N
         jTextPane1.setForeground(new java.awt.Color(255, 0, 204));
         jTextPane1.setText("Plantas ");
         jTextPane1.setToolTipText("");
-        SalaOperaciones.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 187, 184));
+        SalaOperaciones.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 187, 184));
 
         jTabbedPane2.addTab("Centro de operaciones.", SalaOperaciones);
 
+        HistorialdeOpe.setPreferredSize(new java.awt.Dimension(902, 622));
         HistorialdeOpe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane2.addTab("Historial de operaciones.", HistorialdeOpe);
 
@@ -373,65 +384,17 @@ public class Operaciones extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 876, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
         );
 
         jTabbedPane2.getAccessibleContext().setAccessibleName("Operaciones.");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cbx_PlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_PlantaActionPerformed
-        Conexion cn = new Conexion();
-        String param = this.cbx_Planta.getSelectedItem().toString();
-        ArrayList<Plantas_Get_Set> Lista = cn.Planta_Details(param);
-        System.out.println(Lista.size());
-        modelo=(DefaultTableModel) this.tablaP_Details.getModel();
-        for(Plantas_Get_Set pl:Lista){
-            Object[] row = new Object[6];
-            row[0]= pl.getNombre_planta();
-            row[1]= pl.getContenidoDeMinerales();
-            row[2]= pl.getNivel_ph();           
-            row[3]= pl.getHumedad_Suelo();           
-            row[4]= pl.getSalinidad();           
-            row[5]= pl.getTipo_tierra();
-            modelo.addRow(row);
-        }
-        this.tablaP_Details.setModel(modelo);
-    }//GEN-LAST:event_cbx_PlantaActionPerformed
-
-    private void tierraComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tierraComboActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tierraComboActionPerformed
-
-    private void cbx_PlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseClicked
-        //System.out.println(this.cbx_Planta.getSelectedItem().toString());
-        
-    }//GEN-LAST:event_cbx_PlantaMouseClicked
-
-    private void cbx_PlantaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMousePressed
-//
-    }//GEN-LAST:event_cbx_PlantaMousePressed
-
-    private void cbx_PlantaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseEntered
-//
-    }//GEN-LAST:event_cbx_PlantaMouseEntered
-
-    private void cbx_PlantaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseReleased
-//
-    }//GEN-LAST:event_cbx_PlantaMouseReleased
-
-    private void cbx_PlantaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseExited
-//
-    }//GEN-LAST:event_cbx_PlantaMouseExited
-
-    private void cbx_PlantaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_PlantaItemStateChanged
-//      System.out.println(this.cbx_Planta.getSelectedItem().toString() + "state");
-    }//GEN-LAST:event_cbx_PlantaItemStateChanged
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
@@ -3375,62 +3338,197 @@ JOptionPane.showMessageDialog(null, mensaje,
 
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Amapola rosa
-        else if ("Amapola rosa".equals(planta) && "FrancoNegra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8))  {
+        else if ("Amapola rosa".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5))  {
                     
 
-                    String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                     String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-                    JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-            } else if ("Amapola rosa".equals(planta) && "FrancoNegra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+            } else if ("Amapola rosa".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Amapola rosa".equals(planta) && "FrancoNegra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Amapola rosa".equals(planta) && "FrancoNegra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Amapola rosa".equals(planta) && "FrancoNegra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Amapola rosa".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado </body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }  //Desde aqui cambia la tierra.!
-        else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
+        else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br>" +
+                "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica. Los tipos de tierra más adecuados son:<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br>" +
+                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }
-         else if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+         else if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
                 String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3440,7 +3538,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                         new javax.swing.ImageIcon(getClass().getResource(
                             "/iconos/ciclo.png")));
 
-        } else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
@@ -3451,7 +3549,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
-        }else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        }else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() &&(PH >= 6 && PH <= 7.5)) {
             
 
             String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3463,19 +3561,50 @@ JOptionPane.showMessageDialog(null, mensaje,
 
         
         }//Desde aqui cambia la tierra.!
-        else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
+        else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br>" +
+                "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica. Los tipos de tierra más adecuados son:<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br>" +
+                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }
-         else if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+         else if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
                 String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3485,7 +3614,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                         new javax.swing.ImageIcon(getClass().getResource(
                             "/iconos/ciclo.png")));
 
-        } else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
@@ -3496,7 +3625,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
-        }else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        }else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
             String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3508,17 +3637,48 @@ JOptionPane.showMessageDialog(null, mensaje,
 
         
         }//Desde aqui cambia la tierra.!
-        else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
+        else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br>" +
+                "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica. Los tipos de tierra más adecuados son:<br>" +
+                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br>" +
+                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
         }
-         else if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+         else if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() &&(PH >= 6 && PH <= 7.5)) {
                 
 
                 String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3528,7 +3688,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                         new javax.swing.ImageIcon(getClass().getResource(
                             "/iconos/ciclo.png")));
 
-        } else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
@@ -3539,7 +3699,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
-        }else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        }else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
             String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3551,7 +3711,7 @@ JOptionPane.showMessageDialog(null, mensaje,
 
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Rosa del desierto
-        else if ("Rosa del desierto".equals(planta) && "FrancoNegra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8))  {
+        else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8))  {
                     
 
                     String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3561,7 +3721,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                         new javax.swing.ImageIcon(getClass().getResource(
                             "/iconos/ciclo.png")));
 
-            } else if ("Rosa del desierto".equals(planta) && "FrancoNegra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+            } else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
                 
 
                 String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3571,7 +3731,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                         new javax.swing.ImageIcon(getClass().getResource(
                             "/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "FrancoNegra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
             
             
 
@@ -3582,7 +3742,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "FrancoNegra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
             
 
             String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
@@ -3746,6 +3906,38 @@ JOptionPane.showMessageDialog(null, mensaje,
 
     
     }//GEN-LAST:event_RealizarOperacionActionPerformed
+
+    private void cbx_PlantaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_PlantaItemStateChanged
+        //      System.out.println(this.cbx_Planta.getSelectedItem().toString() + "state");
+    }//GEN-LAST:event_cbx_PlantaItemStateChanged
+
+    private void cbx_PlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseClicked
+        //System.out.println(this.cbx_Planta.getSelectedItem().toString());
+    }//GEN-LAST:event_cbx_PlantaMouseClicked
+
+    private void cbx_PlantaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseEntered
+        //
+    }//GEN-LAST:event_cbx_PlantaMouseEntered
+
+    private void cbx_PlantaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseExited
+        //
+    }//GEN-LAST:event_cbx_PlantaMouseExited
+
+    private void cbx_PlantaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMousePressed
+        //
+    }//GEN-LAST:event_cbx_PlantaMousePressed
+
+    private void cbx_PlantaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseReleased
+        //
+    }//GEN-LAST:event_cbx_PlantaMouseReleased
+
+    private void cbx_PlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_PlantaActionPerformed
+
+    }//GEN-LAST:event_cbx_PlantaActionPerformed
+
+    private void tierraComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tierraComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tierraComboActionPerformed
 
     /**
      * @param args the command line arguments
