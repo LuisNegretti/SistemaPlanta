@@ -3492,10 +3492,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
                 "▎2. Contenido de Minerales<br>" +
-                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br>" +
-                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br>" +
-                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br>" +
-                "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br><br>" +
                 "▎3. Humedad del Suelo<br>" +
                 "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
                 "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
@@ -3506,10 +3503,7 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
                 "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
                 "▎5. Tipo de Tierra<br>" +
-                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica. Los tipos de tierra más adecuados son:<br>" +
-                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br>" +
-                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br>" +
-                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "• Arcillosa: No es la más recomendada debido a su mala drenaje, aunque puede ser mejorada con enmiendas.<br><br>" +
                 "▎6. Cuidados Generales<br>" +
                 "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
                 "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
@@ -3531,46 +3525,83 @@ JOptionPane.showMessageDialog(null, mensaje,
          else if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "• Arcillosa: No es la más recomendada debido a su mala drenaje, aunque puede ser mejorada con enmiendas.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+
 
         } else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
-
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
-
-        }else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() &&(PH >= 6 && PH <= 7.5)) {
-            
-
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
-
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
-
-        
-        }//Desde aqui cambia la tierra.!
-        else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
                 "▎2. Contenido de Minerales<br>" +
-                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br>" +
-                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br>" +
-                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "• Arcillosa: No es la más recomendada debido a su mala drenaje, aunque puede ser mejorada con enmiendas.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
+
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+
+
+        }else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() &&(PH >= 6 && PH <= 7.5)) {
+            
+
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
                 "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
                 "▎3. Humedad del Suelo<br>" +
                 "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
@@ -3582,10 +3613,46 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
                 "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
                 "▎5. Tipo de Tierra<br>" +
-                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica. Los tipos de tierra más adecuados son:<br>" +
-                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br>" +
-                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br>" +
-                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "• Arcillosa: No es la más recomendada debido a su mala drenaje, aunque puede ser mejorada con enmiendas.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
+
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+
+
+        
+        }//Desde aqui cambia la tierra.!
+        else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
+            
+
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br><br>" +
                 "▎6. Cuidados Generales<br>" +
                 "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
                 "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
@@ -3607,46 +3674,83 @@ JOptionPane.showMessageDialog(null, mensaje,
          else if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         } else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
-
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
-
-        }else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
-            
-
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
-
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
-
-        
-        }//Desde aqui cambia la tierra.!
-        else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
                 "▎2. Contenido de Minerales<br>" +
-                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br>" +
-                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br>" +
-                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
+
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+
+        }else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
+            
+
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
                 "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
                 "▎3. Humedad del Suelo<br>" +
                 "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
@@ -3658,9 +3762,45 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
                 "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
                 "▎5. Tipo de Tierra<br>" +
-                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica. Los tipos de tierra más adecuados son:<br>" +
-                "• Franco negra: Ideal por su equilibrio en nutrientes y retención de humedad.<br>" +
-                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Arenosa: Buena para el drenaje, pero puede requerir más fertilización.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
+
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+
+        
+        }//Desde aqui cambia la tierra.!
+        else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
+            
+
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La amapola rosa requiere un contenido adecuado de calcio, que ayuda en la formación de estructuras celulares. Un nivel de 1-2% en el suelo es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
                 "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
                 "▎6. Cuidados Generales<br>" +
                 "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
@@ -3681,209 +3821,687 @@ JOptionPane.showMessageDialog(null, mensaje,
          else if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() &&(PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para el desarrollo de raíces y la floración. Se recomienda un contenido de fósforo disponible (P2O5) entre 40-60 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         } else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de 0.1-0.3% es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         }else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Potasio: Ayuda en la formación de flores y semillas. Se sugiere un contenido de potasio (K2O) entre 100-200 mg/kg de suelo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos Hídricos: La amapola rosa necesita un suministro constante de agua, especialmente durante la germinación y la floración. Se recomienda una humedad del suelo del 60-70%.<br>" +
+                "• Frecuencia de Riego: Dependiendo del clima, se puede regar cada 7-14 días, asegurando que el suelo no se seque completamente.<br>" +
+                "• Método de Riego: El riego por goteo es ideal, ya que permite un suministro eficiente de agua y reduce la evaporación.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La amapola rosa tiene una baja tolerancia a la salinidad. Para prevenir problemas, es importante:<br>" +
+                "• Mantener el pH del suelo en niveles adecuados.<br>" +
+                "• Realizar análisis de suelo regularmente para monitorear los niveles de sal.<br>" +
+                "• Implementar prácticas de manejo que eviten la acumulación de sales, como el drenaje adecuado.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La amapola rosa prefiere suelos bien drenados y ricos en materia orgánica.<br>" +
+                "• Limonosa orgánica: También adecuada, siempre que tenga buena estructura y nutrientes.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: Requiere un lugar soleado con al menos 6 horas de luz solar directa al día.<br>" +
+                "• Poda: La poda no es común en amapola rosa, pero se pueden eliminar las hojas muertas o dañadas para mejorar la circulación de aire y reducir enfermedades.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "La fertilización debe ser equilibrada y basada en análisis de suelo. Se recomienda:<br>" +
+                "• Aplicar un fertilizante NPK (nitrógeno, fósforo, potasio) antes de la siembra.<br>" +
+                "• Considerar fertilizantes orgánicos como compost o estiércol bien descompuesto.<br>" +
+                "• Realizar aplicaciones adicionales durante el ciclo de crecimiento, especialmente durante la floración.<br><br>" +
+                "Con estos cuidados, tus amapolas rosas deberían crecer sanas y florecer abundantemente. ¡Buena suerte con tu cultivo!" +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Rosa del desierto
-        else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8))  {
+        else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5))  {
                     
 
-                    String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                   String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La rosa del desierto se beneficia de un buen nivel de calcio, que ayuda a fortalecer las paredes celulares. Un contenido de 1-2% en el suelo es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Franco negra: Puede ser utilizada, pero debe estar bien drenada.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-                    JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-            } else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+            } else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para la floración y el desarrollo radicular. Se recomienda un contenido de fósforo en el suelo de aproximadamente 15-30 ppm.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Franco negra: Puede ser utilizada, pero debe estar bien drenada.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de entre 20-40 ppm es óptimo.<br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Franco negra: Puede ser utilizada, pero debe estar bien drenada.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Potasio: Importante para la formación de flores y resistencia a enfermedades. Un nivel de potasio en el suelo de aproximadamente 100-150 ppm es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Franco negra: Puede ser utilizada, pero debe estar bien drenada.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }  //Desde aqui cambia la tierra.!
-        else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
+        else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La rosa del desierto se beneficia de un buen nivel de calcio, que ayuda a fortalecer las paredes celulares. Un contenido de 1-2% en el suelo es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Arcillosa: No es recomendable a menos que se mejore con enmiendas para aumentar el drenaje.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }
-         else if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+         else if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para la floración y el desarrollo radicular. Se recomienda un contenido de fósforo en el suelo de aproximadamente 15-30 ppm.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Arcillosa: No es recomendable a menos que se mejore con enmiendas para aumentar el drenaje.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() &&(PH >= 6 && PH <= 7.5)) {
             
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de entre 20-40 ppm es óptimo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Arcillosa: No es recomendable a menos que se mejore con enmiendas para aumentar el drenaje.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        }else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        }else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Potasio: Importante para la formación de flores y resistencia a enfermedades. Un nivel de potasio en el suelo de aproximadamente 100-150 ppm es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Arcillosa: No es recomendable a menos que se mejore con enmiendas para aumentar el drenaje.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }//Desde aqui cambia la tierra.!
-        else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
+        else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La rosa del desierto se beneficia de un buen nivel de calcio, que ayuda a fortalecer las paredes celulares. Un contenido de 1-2% en el suelo es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Arenosa: Ideal por su excelente drenaje y aireación.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }
-         else if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+         else if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para la floración y el desarrollo radicular. Se recomienda un contenido de fósforo en el suelo de aproximadamente 15-30 ppm.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Arenosa: Ideal por su excelente drenaje y aireación.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de entre 20-40 ppm es óptimo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados. Los tipos de tierra más adecuados son:<br>" +
+                "• Arenosa: Ideal por su excelente drenaje y aireación.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        }else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        }else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Potasio: Importante para la formación de flores y resistencia a enfermedades. Un nivel de potasio en el suelo de aproximadamente 100-150 ppm es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados. Los tipos de tierra más adecuados son:<br>" +
+                "• Arenosa: Ideal por su excelente drenaje y aireación.<br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }//Desde aqui cambia la tierra.!
-        else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
+        else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Calcio: La rosa del desierto se beneficia de un buen nivel de calcio, que ayuda a fortalecer las paredes celulares. Un contenido de 1-2% en el suelo es adecuado.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Limonosa orgánica: Puede ser adecuada si se mezcla con arena o perlita para mejorar el drenaje.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
         }
-         else if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
+         else if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
 
-                String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Fósforo: Es esencial para la floración y el desarrollo radicular. Se recomienda un contenido de fósforo en el suelo de aproximadamente 15-30 ppm.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Limonosa orgánica: Puede ser adecuada si se mezcla con arena o perlita para mejorar el drenaje.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-                JOptionPane.showMessageDialog(null, mensaje,
-                        "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                        new javax.swing.ImageIcon(getClass().getResource(
-                            "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        } else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+        } else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Nitrógeno: Fundamental para el crecimiento vegetativo. Un nivel de nitrógeno en el suelo de entre 20-40 ppm es óptimo.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Limonosa orgánica: Puede ser adecuada si se mezcla con arena o perlita para mejorar el drenaje.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
-        }else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
+        }else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
 
-            String mensaje = "<html><body style='width: 300px; font-size: 18px;'> hola aqui arrojo el primer resultado</body></html>";
+            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "▎2. Contenido de Minerales<br>" +
+                "• Potasio: Importante para la formación de flores y resistencia a enfermedades. Un nivel de potasio en el suelo de aproximadamente 100-150 ppm es ideal.<br><br>" +
+                "▎3. Humedad del Suelo<br>" +
+                "• Requerimientos hídricos: La rosa del desierto es una planta suculenta que requiere un riego moderado. Prefiere que el sustrato se seque entre riegos.<br>" +
+                "• Frecuencia de riego: Generalmente, se recomienda regar cada 1-2 semanas durante la temporada de crecimiento (primavera y verano) y reducir la frecuencia en otoño e invierno.<br>" +
+                "• Método de riego: El riego por inmersión o riego en la base es ideal, evitando mojar las hojas para prevenir enfermedades fúngicas.<br><br>" +
+                "▎4. Salinidad<br>" +
+                "La rosa del desierto tiene una tolerancia moderada a la salinidad, pero un exceso puede afectar su crecimiento. Para prevenir problemas:<br>" +
+                "• Realizar análisis regulares del suelo.<br>" +
+                "• Utilizar agua de riego con bajo contenido salino.<br>" +
+                "• Implementar un buen drenaje en las macetas o en el suelo para evitar acumulación de sales.<br><br>" +
+                "▎5. Tipo de Tierra<br>" +
+                "La rosa del desierto prefiere suelos bien drenados.<br>" +
+                "• Limonosa orgánica: Puede ser adecuada si se mezcla con arena o perlita para mejorar el drenaje.<br><br>" +
+                "▎6. Cuidados Generales<br>" +
+                "• Ubicación: La rosa del desierto prefiere lugares soleados, con al menos 6 horas de luz directa al día. Un lugar cálido y protegido del viento es ideal.<br>" +
+                "• Poda: La poda se puede realizar para dar forma a la planta y eliminar ramas muertas o enfermas. Es mejor podar al final del invierno o al comienzo de la primavera.<br><br>" +
+                "▎7. Fertilización<br>" +
+                "Es importante realizar una fertilización adecuada para asegurar un buen crecimiento:<br>" +
+                "• Fertilizantes NPK: Se recomienda aplicar un fertilizante equilibrado (como 10-10-10) cada 4-6 semanas durante la temporada de crecimiento.<br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
 
-            JOptionPane.showMessageDialog(null, mensaje,
-                "Definicion del ciclo del agua", JOptionPane.DEFAULT_OPTION,
-                new javax.swing.ImageIcon(getClass().getResource(
-                    "/iconos/ciclo.png")));
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
         
         }
