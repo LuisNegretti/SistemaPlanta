@@ -7,6 +7,7 @@ package OPERACIONES;
 
 import db_Operaciones.Conexion;
 import db_Operaciones.Plantas_Get_Set;
+import db_Operaciones.TipoTierra_Get_Set;
 import java.awt.Toolkit;
 import java.io.File;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.Arrays;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sistema.planta.Principal;
@@ -32,9 +34,9 @@ public class Operaciones extends javax.swing.JFrame {
         ArrayList<Plantas_Get_Set> Lista = con.List_Plantas("plantas");
         
         for(Plantas_Get_Set plan : Lista){
-            this.cbx_Planta.addItem(plan.getNombre_planta());
+            this.cbx_Planta.addItem(plan.getNombre_planta());          
         }
-
+              
     }
     
     @SuppressWarnings("unchecked")
@@ -74,7 +76,6 @@ public class Operaciones extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 51));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(902, 622));
         setResizable(false);
 
         jTabbedPane2.setPreferredSize(new java.awt.Dimension(902, 622));
@@ -100,7 +101,7 @@ public class Operaciones extends javax.swing.JFrame {
         cbx_Planta.setBackground(new java.awt.Color(0, 204, 0));
         cbx_Planta.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_Planta.setForeground(new java.awt.Color(0, 153, 102));
-        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Margarita", "Bugambilia", "Tulipanes", "Corona de cristo", "Ixoras", "Amapola rosa", "Rosa del desierto" }));
+        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         cbx_Planta.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_Planta.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -152,7 +153,7 @@ public class Operaciones extends javax.swing.JFrame {
         tierraCombo.setBackground(new java.awt.Color(102, 51, 0));
         tierraCombo.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         tierraCombo.setForeground(new java.awt.Color(255, 255, 255));
-        tierraCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Arcilla", "Arena", "Limonosa Organica", "Franco Negra" }));
+        tierraCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         tierraCombo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         tierraCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4554,7 +4555,8 @@ JOptionPane.showMessageDialog(null, mensaje,
     }//GEN-LAST:event_cbx_PlantaActionPerformed
 
     private void tierraComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tierraComboActionPerformed
-        // TODO add your handling code here:
+    
+
     }//GEN-LAST:event_tierraComboActionPerformed
 
     /**

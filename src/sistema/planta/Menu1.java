@@ -178,7 +178,7 @@ public class Menu1 extends javax.swing.JFrame {
         Tulipanes = new javax.swing.JPanel();
         Rosas_Desierto = new javax.swing.JPanel();
         butt_rosaDelDesierto = new javax.swing.JButton();
-        Magnolio = new javax.swing.JPanel();
+        Bugambilia = new javax.swing.JPanel();
         Azalea = new javax.swing.JPanel();
         Genciana = new javax.swing.JPanel();
         Primula = new javax.swing.JPanel();
@@ -972,7 +972,7 @@ public class Menu1 extends javax.swing.JFrame {
         Int_Plantas.setLayout(Int_PlantasLayout);
         Int_PlantasLayout.setHorizontalGroup(
             Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 1144, Short.MAX_VALUE)
+            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Int_PlantasLayout.setVerticalGroup(
             Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1196,7 +1196,7 @@ public class Menu1 extends javax.swing.JFrame {
                     .addGroup(Amapolas_RosasLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Amapolas_RosasLayout.setVerticalGroup(
             Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1233,7 +1233,7 @@ public class Menu1 extends javax.swing.JFrame {
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IxorasLayout.createSequentialGroup()
                 .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 805, Short.MAX_VALUE))
+                .addGap(0, 716, Short.MAX_VALUE))
         );
         IxorasLayout.setVerticalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1251,7 +1251,7 @@ public class Menu1 extends javax.swing.JFrame {
         Tulipanes.setLayout(TulipanesLayout);
         TulipanesLayout.setHorizontalGroup(
             TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         TulipanesLayout.setVerticalGroup(
             TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1277,7 +1277,7 @@ public class Menu1 extends javax.swing.JFrame {
             .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(907, Short.MAX_VALUE))
+                .addContainerGap(818, Short.MAX_VALUE))
         );
         Rosas_DesiertoLayout.setVerticalGroup(
             Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1289,24 +1289,24 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Rosas Del Desierto", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/rosa.png")), Rosas_Desierto); // NOI18N
 
-        javax.swing.GroupLayout MagnolioLayout = new javax.swing.GroupLayout(Magnolio);
-        Magnolio.setLayout(MagnolioLayout);
-        MagnolioLayout.setHorizontalGroup(
-            MagnolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+        javax.swing.GroupLayout BugambiliaLayout = new javax.swing.GroupLayout(Bugambilia);
+        Bugambilia.setLayout(BugambiliaLayout);
+        BugambiliaLayout.setHorizontalGroup(
+            BugambiliaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
-        MagnolioLayout.setVerticalGroup(
-            MagnolioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        BugambiliaLayout.setVerticalGroup(
+            BugambiliaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Magnolio", Magnolio);
+        jTabbedPane2.addTab("Bugambilia", Bugambilia);
 
         javax.swing.GroupLayout AzaleaLayout = new javax.swing.GroupLayout(Azalea);
         Azalea.setLayout(AzaleaLayout);
         AzaleaLayout.setHorizontalGroup(
             AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         AzaleaLayout.setVerticalGroup(
             AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1319,7 +1319,7 @@ public class Menu1 extends javax.swing.JFrame {
         Genciana.setLayout(GencianaLayout);
         GencianaLayout.setHorizontalGroup(
             GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         GencianaLayout.setVerticalGroup(
             GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1332,7 +1332,7 @@ public class Menu1 extends javax.swing.JFrame {
         Primula.setLayout(PrimulaLayout);
         PrimulaLayout.setHorizontalGroup(
             PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         PrimulaLayout.setVerticalGroup(
             PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1345,7 +1345,7 @@ public class Menu1 extends javax.swing.JFrame {
         Hortensia.setLayout(HortensiaLayout);
         HortensiaLayout.setHorizontalGroup(
             HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         HortensiaLayout.setVerticalGroup(
             HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1358,7 +1358,7 @@ public class Menu1 extends javax.swing.JFrame {
         Begonia.setLayout(BegoniaLayout);
         BegoniaLayout.setHorizontalGroup(
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         BegoniaLayout.setVerticalGroup(
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1371,7 +1371,7 @@ public class Menu1 extends javax.swing.JFrame {
         Narciso.setLayout(NarcisoLayout);
         NarcisoLayout.setHorizontalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         NarcisoLayout.setVerticalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1384,7 +1384,7 @@ public class Menu1 extends javax.swing.JFrame {
         Brezo.setLayout(BrezoLayout);
         BrezoLayout.setHorizontalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         BrezoLayout.setVerticalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1397,7 +1397,7 @@ public class Menu1 extends javax.swing.JFrame {
         Gardenia.setLayout(GardeniaLayout);
         GardeniaLayout.setHorizontalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         GardeniaLayout.setVerticalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1410,7 +1410,7 @@ public class Menu1 extends javax.swing.JFrame {
         Helecho.setLayout(HelechoLayout);
         HelechoLayout.setHorizontalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         HelechoLayout.setVerticalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1423,7 +1423,7 @@ public class Menu1 extends javax.swing.JFrame {
         Diente_Leon.setLayout(Diente_LeonLayout);
         Diente_LeonLayout.setHorizontalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         Diente_LeonLayout.setVerticalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1436,7 +1436,7 @@ public class Menu1 extends javax.swing.JFrame {
         Fresa.setLayout(FresaLayout);
         FresaLayout.setHorizontalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         FresaLayout.setVerticalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1449,7 +1449,7 @@ public class Menu1 extends javax.swing.JFrame {
         Rododendro.setLayout(RododendroLayout);
         RododendroLayout.setHorizontalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         RododendroLayout.setVerticalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1462,7 +1462,7 @@ public class Menu1 extends javax.swing.JFrame {
         Llanten.setLayout(LlantenLayout);
         LlantenLayout.setHorizontalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         LlantenLayout.setVerticalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1475,7 +1475,7 @@ public class Menu1 extends javax.swing.JFrame {
         Achicoria.setLayout(AchicoriaLayout);
         AchicoriaLayout.setHorizontalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         AchicoriaLayout.setVerticalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1488,7 +1488,7 @@ public class Menu1 extends javax.swing.JFrame {
         Quenopodio.setLayout(QuenopodioLayout);
         QuenopodioLayout.setHorizontalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         QuenopodioLayout.setVerticalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1501,7 +1501,7 @@ public class Menu1 extends javax.swing.JFrame {
         Boca_De_dragon.setLayout(Boca_De_dragonLayout);
         Boca_De_dragonLayout.setHorizontalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         Boca_De_dragonLayout.setVerticalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1514,7 +1514,7 @@ public class Menu1 extends javax.swing.JFrame {
         Caléndula.setLayout(CaléndulaLayout);
         CaléndulaLayout.setHorizontalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         CaléndulaLayout.setVerticalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1527,7 +1527,7 @@ public class Menu1 extends javax.swing.JFrame {
         Mastuerzo_marino.setLayout(Mastuerzo_marinoLayout);
         Mastuerzo_marinoLayout.setHorizontalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         Mastuerzo_marinoLayout.setVerticalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1540,7 +1540,7 @@ public class Menu1 extends javax.swing.JFrame {
         Tagetes.setLayout(TagetesLayout);
         TagetesLayout.setHorizontalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         TagetesLayout.setVerticalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1553,7 +1553,7 @@ public class Menu1 extends javax.swing.JFrame {
         Árbol_del_amor.setLayout(Árbol_del_amorLayout);
         Árbol_del_amorLayout.setHorizontalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1144, Short.MAX_VALUE)
+            .addGap(0, 1055, Short.MAX_VALUE)
         );
         Árbol_del_amorLayout.setVerticalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2635,6 +2635,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Bienvenida;
     private javax.swing.JPanel Boca_De_dragon;
     private javax.swing.JPanel Brezo;
+    private javax.swing.JPanel Bugambilia;
     private javax.swing.JPanel Caléndula;
     private javax.swing.JPanel CicloDeAgua1;
     private javax.swing.JPanel Clima;
@@ -2649,7 +2650,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Ixoras;
     private javax.swing.JPanel Jardin;
     private javax.swing.JPanel Llanten;
-    private javax.swing.JPanel Magnolio;
     private javax.swing.JPanel Margaritas;
     private javax.swing.JPanel Mastuerzo_marino;
     private javax.swing.JPanel Narciso;
