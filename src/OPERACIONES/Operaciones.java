@@ -33,8 +33,15 @@ public class Operaciones extends javax.swing.JFrame {
         Conexion con = new Conexion();
         ArrayList<Plantas_Get_Set> Lista = con.List_Plantas("plantas");
         
+        ArrayList<TipoTierra_Get_Set> simple = con.List_TipoTierra();
+        
+        
         for(Plantas_Get_Set plan : Lista){
             this.cbx_Planta.addItem(plan.getNombre_planta());          
+        }
+        
+        for(TipoTierra_Get_Set tierra : simple){
+            this.cbx_tierra.addItem(tierra.getNombreTierra());
         }
               
     }
@@ -50,7 +57,7 @@ public class Operaciones extends javax.swing.JFrame {
         tipo_planta = new javax.swing.JPanel();
         cbx_Planta = new javax.swing.JComboBox<>();
         tipo_tierra = new javax.swing.JPanel();
-        tierraCombo = new javax.swing.JComboBox<>();
+        cbx_tierra = new javax.swing.JComboBox<>();
         lvl_PH = new javax.swing.JPanel();
         txtPH = new javax.swing.JTextField();
         cont_mnrl = new javax.swing.JPanel();
@@ -150,14 +157,14 @@ public class Operaciones extends javax.swing.JFrame {
         tipo_tierra.setBackground(new java.awt.Color(102, 51, 0));
         tipo_tierra.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tipo de tierra.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 24), new java.awt.Color(0, 204, 102))); // NOI18N
 
-        tierraCombo.setBackground(new java.awt.Color(102, 51, 0));
-        tierraCombo.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
-        tierraCombo.setForeground(new java.awt.Color(255, 255, 255));
-        tierraCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
-        tierraCombo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        tierraCombo.addActionListener(new java.awt.event.ActionListener() {
+        cbx_tierra.setBackground(new java.awt.Color(102, 51, 0));
+        cbx_tierra.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
+        cbx_tierra.setForeground(new java.awt.Color(255, 255, 255));
+        cbx_tierra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
+        cbx_tierra.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        cbx_tierra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tierraComboActionPerformed(evt);
+                cbx_tierraActionPerformed(evt);
             }
         });
 
@@ -167,13 +174,13 @@ public class Operaciones extends javax.swing.JFrame {
             tipo_tierraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tipo_tierraLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tierraCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cbx_tierra, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         tipo_tierraLayout.setVerticalGroup(
             tipo_tierraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tipo_tierraLayout.createSequentialGroup()
-                .addComponent(tierraCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbx_tierra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -443,7 +450,7 @@ public class Operaciones extends javax.swing.JFrame {
         String ph = txtPH.getText();
 
         //PRIMERO SON LAS CONDICIONES DE VALIDACION DE DATOS
-        if (ph.equals("")   || (cbx_Planta.getSelectedItem() == null || cbx_Planta.getSelectedIndex() == 0) || (tierraCombo.getSelectedItem() == null || tierraCombo.getSelectedIndex() == 0))
+        if (ph.equals("")   || (cbx_Planta.getSelectedItem() == null || cbx_Planta.getSelectedIndex() == 0) || (cbx_tierra.getSelectedItem() == null || cbx_tierra.getSelectedIndex() == 0))
         {
             JOptionPane.showMessageDialog(null, "Todos los campos tienen que estar rellenados, por favor verifica");
             
@@ -473,7 +480,7 @@ public class Operaciones extends javax.swing.JFrame {
                 //1* AQUI VIENE LA OPERACION UNA VEZ SE VALIDEN LOS DATOS.
                 double PH = Double.parseDouble(txtPH.getText());
                 String planta = cbx_Planta.getSelectedItem().toString();
-                String tierra = tierraCombo.getSelectedItem().toString();
+                String tierra = cbx_tierra.getSelectedItem().toString();
 
                 
                 //AQUI ESTA EL PRIMER TIPO DE PLANTA MARGARITA
@@ -4554,10 +4561,10 @@ JOptionPane.showMessageDialog(null, mensaje,
 
     }//GEN-LAST:event_cbx_PlantaActionPerformed
 
-    private void tierraComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tierraComboActionPerformed
-    
+    private void cbx_tierraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_tierraActionPerformed
+//holaaaaaaaaaaaaaaaaa aqui es    
 
-    }//GEN-LAST:event_tierraComboActionPerformed
+    }//GEN-LAST:event_cbx_tierraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4607,6 +4614,7 @@ JOptionPane.showMessageDialog(null, mensaje,
     private javax.swing.JPanel SalaOperaciones;
     private javax.swing.JMenuItem SalirPrograma;
     private javax.swing.JComboBox<String> cbx_Planta;
+    private javax.swing.JComboBox<String> cbx_tierra;
     private javax.swing.JPanel cont_mnrl;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -4620,7 +4628,6 @@ JOptionPane.showMessageDialog(null, mensaje,
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JPanel lvl_PH;
     private javax.swing.JTable tablaP_Details;
-    private javax.swing.JComboBox<String> tierraCombo;
     private javax.swing.JPanel tipo_planta;
     private javax.swing.JPanel tipo_tierra;
     private javax.swing.JTextField txtPH;
