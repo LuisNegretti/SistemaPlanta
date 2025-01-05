@@ -52,6 +52,7 @@ public class Operaciones extends javax.swing.JFrame {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
         Principal = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
         SalaOperaciones = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         tipo_planta = new javax.swing.JPanel();
@@ -69,13 +70,13 @@ public class Operaciones extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaP_Details = new javax.swing.JTable();
         RealizarOperacion = new javax.swing.JButton();
-        jTextPane1 = new javax.swing.JTextPane();
+        jLabel60 = new javax.swing.JLabel();
         HistorialdeOpe = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Guia = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        MenuOpe = new javax.swing.JMenu();
+        ComoRealizarOpe = new javax.swing.JMenuItem();
+        TenerCuenta = new javax.swing.JMenuItem();
+        EjemploOpe = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MenuPricipal = new javax.swing.JMenuItem();
         SalirPrograma = new javax.swing.JMenuItem();
@@ -90,6 +91,10 @@ public class Operaciones extends javax.swing.JFrame {
         Principal.setPreferredSize(new java.awt.Dimension(902, 622));
         Principal.setRequestFocusEnabled(false);
         Principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/una imagen de bienvenida para un centro de operaciones que realiza estudios sobre plantas ornamentales y tipos de tierra, sin palabras.png"))); // NOI18N
+        Principal.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
+
         jTabbedPane2.addTab("Sala principal.", Principal);
 
         SalaOperaciones.setBackground(new java.awt.Color(0, 51, 0));
@@ -108,7 +113,7 @@ public class Operaciones extends javax.swing.JFrame {
         cbx_Planta.setBackground(new java.awt.Color(0, 204, 0));
         cbx_Planta.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_Planta.setForeground(new java.awt.Color(0, 153, 102));
-        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
+        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Margarita", "Bugambilia", "Tulipanes", "Corona de cristo", "Ixoras", "Amapola rosa", "Rosa del desierto" }));
         cbx_Planta.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_Planta.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -160,7 +165,7 @@ public class Operaciones extends javax.swing.JFrame {
         cbx_tierra.setBackground(new java.awt.Color(102, 51, 0));
         cbx_tierra.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_tierra.setForeground(new java.awt.Color(255, 255, 255));
-        cbx_tierra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
+        cbx_tierra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Franco Negra", "Limonosa Organica", "Arena", "Arcilla" }));
         cbx_tierra.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_tierra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,13 +283,13 @@ public class Operaciones extends javax.swing.JFrame {
                 .addComponent(lvl_PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cont_mnrl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         lvl_PH.getAccessibleContext().setAccessibleDescription("");
         cont_mnrl.getAccessibleContext().setAccessibleName("Contenido Minerales.");
 
-        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 590));
+        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 460));
 
         jPanel7.setBackground(new java.awt.Color(153, 153, 0));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
@@ -328,14 +333,10 @@ public class Operaciones extends javax.swing.JFrame {
                 RealizarOperacionActionPerformed(evt);
             }
         });
-        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, -1, 80));
+        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, 80));
 
-        jTextPane1.setBackground(new java.awt.Color(153, 102, 0));
-        jTextPane1.setFont(new java.awt.Font("Calisto MT", 1, 18)); // NOI18N
-        jTextPane1.setForeground(new java.awt.Color(255, 0, 204));
-        jTextPane1.setText("Plantas ");
-        jTextPane1.setToolTipText("");
-        SalaOperaciones.add(jTextPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 187, 184));
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/un fondo más oscuro con un tema sobre plantas, estudios de tierra y fertilización.png"))); // NOI18N
+        SalaOperaciones.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
 
         jTabbedPane2.addTab("Centro de operaciones.", SalaOperaciones);
 
@@ -343,26 +344,41 @@ public class Operaciones extends javax.swing.JFrame {
         HistorialdeOpe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jTabbedPane2.addTab("Historial de operaciones.", HistorialdeOpe);
 
-        Guia.setText("Guia de operaciones.");
-
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("¿Como realizar una operacion?");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        MenuOpe.setText("Guia de operaciones.");
+        MenuOpe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                MenuOpeActionPerformed(evt);
             }
         });
-        Guia.add(jMenuItem3);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("¿Que debo tener en cuenta?");
-        Guia.add(jMenuItem4);
+        ComoRealizarOpe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        ComoRealizarOpe.setText("¿Como realizar una operacion?");
+        ComoRealizarOpe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComoRealizarOpeActionPerformed(evt);
+            }
+        });
+        MenuOpe.add(ComoRealizarOpe);
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Ejemplos de operaciones.");
-        Guia.add(jMenuItem1);
+        TenerCuenta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        TenerCuenta.setText("¿Que debo tener en cuenta?");
+        TenerCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TenerCuentaActionPerformed(evt);
+            }
+        });
+        MenuOpe.add(TenerCuenta);
 
-        jMenuBar1.add(Guia);
+        EjemploOpe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        EjemploOpe.setText("Ejemplo de operacion.");
+        EjemploOpe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EjemploOpeActionPerformed(evt);
+            }
+        });
+        MenuOpe.add(EjemploOpe);
+
+        jMenuBar1.add(MenuOpe);
 
         jMenu2.setText("Opciones.");
 
@@ -392,11 +408,11 @@ public class Operaciones extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
         );
 
         jTabbedPane2.getAccessibleContext().setAccessibleName("Operaciones.");
@@ -404,9 +420,19 @@ public class Operaciones extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void ComoRealizarOpeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComoRealizarOpeActionPerformed
+       String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
+
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Como realizar una operacion", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+    }//GEN-LAST:event_ComoRealizarOpeActionPerformed
 
     private void MenuPricipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPricipalActionPerformed
        
@@ -4566,6 +4592,34 @@ JOptionPane.showMessageDialog(null, mensaje,
 
     }//GEN-LAST:event_cbx_tierraActionPerformed
 
+    private void TenerCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TenerCuentaActionPerformed
+        String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                "▎1. pH del Suelo<br>" +
+                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
+                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
+                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
+                "</body></html>";
+
+        // Mostrar el mensaje en un JOptionPane
+        JOptionPane.showMessageDialog(null, mensaje,
+                "Tener en cuenta para realizar Operacion", JOptionPane.DEFAULT_OPTION,
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+    }//GEN-LAST:event_TenerCuentaActionPerformed
+
+    private void MenuOpeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuOpeActionPerformed
+        Imagen1 acceso = new  Imagen1();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_MenuOpeActionPerformed
+
+    private void EjemploOpeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EjemploOpeActionPerformed
+        Imagen1 acceso = new  Imagen1();
+        acceso.setVisible(true);
+        acceso.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_EjemploOpeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -4606,26 +4660,27 @@ JOptionPane.showMessageDialog(null, mensaje,
     private javax.swing.JCheckBox BoxFosforo;
     private javax.swing.JCheckBox BoxNitrogeno;
     private javax.swing.JCheckBox BoxPotasio;
-    private javax.swing.JMenu Guia;
+    private javax.swing.JMenuItem ComoRealizarOpe;
+    private javax.swing.JMenuItem EjemploOpe;
     private javax.swing.JPanel HistorialdeOpe;
+    private javax.swing.JMenu MenuOpe;
     private javax.swing.JMenuItem MenuPricipal;
     private javax.swing.JPanel Principal;
     private javax.swing.JButton RealizarOperacion;
     private javax.swing.JPanel SalaOperaciones;
     private javax.swing.JMenuItem SalirPrograma;
+    private javax.swing.JMenuItem TenerCuenta;
     private javax.swing.JComboBox<String> cbx_Planta;
     private javax.swing.JComboBox<String> cbx_tierra;
     private javax.swing.JPanel cont_mnrl;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JPanel lvl_PH;
     private javax.swing.JTable tablaP_Details;
     private javax.swing.JPanel tipo_planta;
