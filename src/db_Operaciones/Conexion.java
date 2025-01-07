@@ -9,16 +9,24 @@ public class Conexion {
     ResultSet rs;
      
     public Conexion(){
+        
         try{
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_planta","root","");
         System.out.println("Conexion Exitosa!"); 
+        
+         // Crear una declaración SQL
+            Statement statement = conn.createStatement();
+        
         }catch(Exception e){System.out.println("Error en conexion!");}
+        
     }
     
     public ArrayList<Plantas_Get_Set> List_Plantas(String Tabla){
         ArrayList<Plantas_Get_Set> response = new ArrayList<>();
+        
         try{
+            
         pst = conn.prepareStatement("SELECT * FROM plantas");
         rs = pst.executeQuery();
         while(rs.next()){
@@ -83,5 +91,9 @@ public class Conexion {
     }
     return response;
 }
+
+    public Statement createStatement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

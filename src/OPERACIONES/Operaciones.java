@@ -8,10 +8,19 @@ package OPERACIONES;
 import db_Operaciones.Conexion;
 import db_Operaciones.Plantas_Get_Set;
 import db_Operaciones.TipoTierra_Get_Set;
+import static java.awt.Event.INSERT;
 import java.awt.Toolkit;
 import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import static java.sql.DriverManager.getConnection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.swing.ImageIcon;
@@ -25,16 +34,67 @@ import sistema.planta.Principal;
  * @author pc
  */
 public class Operaciones extends javax.swing.JFrame {
-    DefaultTableModel modelo;
+     
+     DefaultTableModel modelo;
+    
     public Operaciones() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+        
+        modelo=new DefaultTableModel();
+         modelo.addColumn("ID_Operacion");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Planta");
+        modelo.addColumn("Tierra");
+        modelo.addColumn("PH");
+        modelo.addColumn("Mineral");
+        modelo.addColumn("Resultado");
+        this. HistorialModelo.setModel(modelo);
+        
         Conexion con = new Conexion();
+        
         ArrayList<Plantas_Get_Set> Lista = con.List_Plantas("plantas");
         
         ArrayList<TipoTierra_Get_Set> simple = con.List_TipoTierra();
         
+        
+        try {
+    // Establecer la conexión con la base de datos
+    String url = "jdbc:mysql://localhost/sistema_planta";
+    String usuario = "root";
+    String contraseña = "";
+    Connection cn = DriverManager.getConnection(url, usuario, contraseña);
+    
+    // Crear una declaración SQL
+    Statement statement = cn.createStatement();
+    
+    // Ejecutar la consulta SQL y obtener el resultado
+    String consulta = "SELECT * FROM historial";
+    ResultSet resultSet = statement.executeQuery(consulta);
+    
+    // Recorrer el resultado y agregar los datos a la tabla
+    while (resultSet.next()) {
+        Object[] fila = new Object[6]; // Ajusta el número de columnas según la tabla
+        fila[0] = resultSet.getString("ID_Operacion");
+        fila[1] = resultSet.getInt("Fecha");
+        fila[2] = resultSet.getString("Planta");
+        fila[3] = resultSet.getString("Tierra");
+        fila[4] = resultSet.getString("PH");
+        fila[5] = resultSet.getString("Mineral");
+        fila[6] = resultSet.getString("Resultado");
+        
+        modelo.addRow(fila);
+    }
+    
+    // Cerrar la conexión y liberar recursos
+    resultSet.close();
+    statement.close();
+    cn.close();
+    
+} catch (SQLException ex) {
+    System.out.println("Error al cargar los datos: " + ex.getMessage());
+}
         
         for(Plantas_Get_Set plan : Lista){
             this.cbx_Planta.addItem(plan.getNombre_planta());          
@@ -72,6 +132,9 @@ public class Operaciones extends javax.swing.JFrame {
         RealizarOperacion = new javax.swing.JButton();
         jLabel60 = new javax.swing.JLabel();
         HistorialdeOpe = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        HistorialModelo = new javax.swing.JTable();
+        jLabel61 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuOpe = new javax.swing.JMenu();
         ComoRealizarOpe = new javax.swing.JMenuItem();
@@ -194,6 +257,16 @@ public class Operaciones extends javax.swing.JFrame {
         lvl_PH.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
         txtPH.setText("Nivel PH");
+        txtPH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtPHMousePressed(evt);
+            }
+        });
+        txtPH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPHActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout lvl_PHLayout = new javax.swing.GroupLayout(lvl_PH);
         lvl_PH.setLayout(lvl_PHLayout);
@@ -283,13 +356,13 @@ public class Operaciones extends javax.swing.JFrame {
                 .addComponent(lvl_PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cont_mnrl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         lvl_PH.getAccessibleContext().setAccessibleDescription("");
         cont_mnrl.getAccessibleContext().setAccessibleName("Contenido Minerales.");
 
-        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 460));
+        SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 610));
 
         jPanel7.setBackground(new java.awt.Color(153, 153, 0));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
@@ -333,7 +406,7 @@ public class Operaciones extends javax.swing.JFrame {
                 RealizarOperacionActionPerformed(evt);
             }
         });
-        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, 80));
+        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, -1, 80));
 
         jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/un fondo más oscuro con un tema sobre plantas, estudios de tierra y fertilización.png"))); // NOI18N
         SalaOperaciones.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
@@ -342,6 +415,37 @@ public class Operaciones extends javax.swing.JFrame {
 
         HistorialdeOpe.setPreferredSize(new java.awt.Dimension(902, 622));
         HistorialdeOpe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        HistorialModelo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "fecha", "Planta", "Nivel de PH", "Tipo de Tierra", "Minerales", "Resultado"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(HistorialModelo);
+
+        HistorialdeOpe.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 890, 510));
+
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/un fondo oscuro con un tema sobre plantas, estudios de tierra y minerales.png"))); // NOI18N
+        HistorialdeOpe.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
+
         jTabbedPane2.addTab("Historial de operaciones.", HistorialdeOpe);
 
         MenuOpe.setText("Guia de operaciones.");
@@ -544,6 +648,26 @@ public class Operaciones extends javax.swing.JFrame {
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+    try {
+    // Establecer la conexión a la base de datos
+    Conexion con = new Conexion();
+           Statement statement = con.createStatement();
+
+            // Crear la consulta SQL
+            
+             statement.executeUpdate("INSERT INTO historial VALUES('"+cbx_Planta.getSelectedItem()+"','"+cbx_tierra.getSelectedItem()+"','"+txtPH.getText()+"', "+mensaje+") ");
+            
+
+            // Ejecutar la inserción
+           
+            
+        } catch (SQLException e) {
+            
+            e.printStackTrace();
+            
+        } 
+    
     
     
         
@@ -4620,6 +4744,14 @@ JOptionPane.showMessageDialog(null, mensaje,
         
     }//GEN-LAST:event_EjemploOpeActionPerformed
 
+    private void txtPHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPHActionPerformed
+
+    private void txtPHMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPHMousePressed
+        txtPH.setText("");
+    }//GEN-LAST:event_txtPHMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -4662,6 +4794,7 @@ JOptionPane.showMessageDialog(null, mensaje,
     private javax.swing.JCheckBox BoxPotasio;
     private javax.swing.JMenuItem ComoRealizarOpe;
     private javax.swing.JMenuItem EjemploOpe;
+    private javax.swing.JTable HistorialModelo;
     private javax.swing.JPanel HistorialdeOpe;
     private javax.swing.JMenu MenuOpe;
     private javax.swing.JMenuItem MenuPricipal;
@@ -4675,11 +4808,13 @@ JOptionPane.showMessageDialog(null, mensaje,
     private javax.swing.JPanel cont_mnrl;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel lvl_PH;
     private javax.swing.JTable tablaP_Details;
