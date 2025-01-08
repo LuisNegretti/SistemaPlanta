@@ -39,6 +39,35 @@ public class Operaciones extends javax.swing.JFrame {
      
      DefaultTableModel modelo;
      
+     // Método auxiliar para verificar si una cadena es numérica
+private boolean isNumeric(String str) {
+    try {
+        Double.parseDouble(str);
+        return true;
+    } catch (NumberFormatException e) {
+        return false;
+    }
+}
+
+// Método para insertar datos en la base de datos
+private void insertarEnBaseDeDatos(String numberAsString, String fechaString, String planta, String PHString, String tierra, String stateString, String mensaje) {
+    try (Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/sistema_planta", "root", "")) {
+        String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement statement = cn.prepareStatement(query);
+        
+        statement.setString(1, numberAsString);
+        statement.setString(2, fechaString);
+        statement.setString(3, planta);
+        statement.setString(4, PHString);
+        statement.setString(5, tierra);
+        statement.setString(6, stateString);
+        statement.setString(7, mensaje);
+        
+        statement.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
      
     public Operaciones() {
         initComponents();
@@ -583,19 +612,16 @@ public class Operaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirProgramaActionPerformed
 
     private void RealizarOperacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RealizarOperacionActionPerformed
-                                                 
-
+           
         String ph = txtPH.getText();
 
         //PRIMERO SON LAS CONDICIONES DE VALIDACION DE DATOS
         if (ph.equals("")   || (cbx_Planta.getSelectedItem() == null || cbx_Planta.getSelectedIndex() == 0) || (cbx_tierra.getSelectedItem() == null || cbx_tierra.getSelectedIndex() == 0))
         {
             JOptionPane.showMessageDialog(null, "Todos los campos tienen que estar rellenados, por favor verifica");
-            
         }
         else{//aqui este es el primer else.
-            
-              
+                  
             if (!BoxCalcio.isSelected() && !BoxFosforo.isSelected() && !BoxNitrogeno.isSelected()&& !BoxPotasio.isSelected()){
 
                 JOptionPane.showMessageDialog(null, "No hay ningun tipo de mineral selecionado, por favor verifica");
@@ -605,28 +631,18 @@ public class Operaciones extends javax.swing.JFrame {
                 //EN EL IF DE ABAJO FALTA COMPLETAR ALGUNAS CODICIONES DE LOS MINERALES.
                  if ((BoxCalcio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()&& BoxPotasio.isSelected()) || (BoxCalcio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()) || (BoxPotasio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()) || (BoxCalcio.isSelected() && BoxFosforo.isSelected()) || (BoxNitrogeno.isSelected() && BoxFosforo.isSelected()) || (BoxPotasio.isSelected() && BoxFosforo.isSelected()))
         {
-            JOptionPane.showMessageDialog(null, "Solo puede estar seleccionado un mineral para la operacion, por favor verifica");
-            
+            JOptionPane.showMessageDialog(null, "Solo puede estar seleccionado un mineral para la operacion, por favor verifica"); 
         }
         else{ //ESTE ES EL ELSE DE LOS VARIOS MINERALES //Esta llave es del TERCER else
-               
-        
-             
-                
-                
 
                 //1* AQUI VIENE LA OPERACION UNA VEZ SE VALIDEN LOS DATOS.
-                // Obtener la fecha actual del sistema
                 LocalDate fechaActual = LocalDate.now();
                 String fechaString = fechaActual.toString();
-                
-               
                 double PH = Double.parseDouble(txtPH.getText());
                 String PHString = String.valueOf(PH);
                 String planta = cbx_Planta.getSelectedItem().toString();
                 String tierra = cbx_tierra.getSelectedItem().toString();
-                
-                
+              
                 //AQUI ESTA EL PRIMER TIPO DE PLANTA MARGARITA
                 if ("Margarita".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
     
@@ -666,21 +682,22 @@ public class Operaciones extends javax.swing.JFrame {
     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
     //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
     boolean isSelected = BoxCalcio.isSelected();
-                String stateString = isSelected ? "Calcio" : "No seleccionado";
-                
-                boolean hasNumber = false;
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
 double maxNumber = 0; // Inicializar con 0
 String numberAsString = null; // Variable para almacenar el número como String
 
 if (modelo.getRowCount() > 0) {
     for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
-        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
         System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
         
-        if (value instanceof Number) {
+        if (value instanceof Number || isNumeric(value.toString())) {
             hasNumber = true;
             // Convertir el número a double y verificar si es mayor que el máximo encontrado
-            double number = ((Number) value).doubleValue();
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
             
             if (number > maxNumber) {
                 maxNumber = number; // Actualizar el máximo encontrado
@@ -689,61 +706,25 @@ if (modelo.getRowCount() > 0) {
         }
     }
     if (hasNumber) {
-        maxNumber += 1; // Sumar 1 al número mayor
+        maxNumber += 1.0; // Sumar 1 al número mayor
         numberAsString = Double.toString(maxNumber); // Convertir a String
         System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
     } else {
-        // Si no se encuentra un número, almacenar directamente el número 1
-        numberAsString = "1";
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
         System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
     }
 } else {
-    System.out.println("El modelo no contiene filas."); // Imprimir si no hay filas en el modelo
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
 }
-
 System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
 
-  
-    
-    String []info=new String[7];
-        info[0] = numberAsString;
-        info[1] = fechaString;
-        info[2] = planta;
-        info[3] = PHString;
-        info[4] = tierra;
-        info[5] =  stateString;
-        info[6] = mensaje;
-        modelo.addRow(info);
-    
-   try {
-    // Establecer la conexión a la base de datos
-    String url = "jdbc:mysql://localhost/sistema_planta";
-    String usuario = "root";
-    String contraseña = "";
-    Connection cn = DriverManager.getConnection(url, usuario, contraseña);
-    
-    // Crear la consulta SQL con valores correctamente escapados
-    String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    PreparedStatement statement = cn.prepareStatement(query);
-    
-    // Asignar los valores a los parámetros de la consulta
-    statement.setString(1, numberAsString);
-    statement.setString(2, fechaString);
-    statement.setString(3, cbx_Planta.getSelectedItem().toString());
-    statement.setString(4, PHString);
-    statement.setString(5, cbx_tierra.getSelectedItem().toString());
-    statement.setString(6, stateString);
-    statement.setString(7, mensaje);
-    
-    // Ejecutar la inserción
-    statement.executeUpdate();
-    
-} catch (SQLException e) {
-    e.printStackTrace();
-}
-    
-    
-    
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
 } else if ("Margarita".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
                 
@@ -780,6 +761,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+      //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Margarita".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
             
@@ -817,6 +845,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Margarita".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
             
@@ -854,6 +929,52 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+    
+   boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }  //Desde aqui cambia la tierra.!
         else  if ("Margarita".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
@@ -891,6 +1012,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         
         }
@@ -929,6 +1097,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Margarita".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
             
@@ -966,6 +1181,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Margarita".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
             
@@ -1003,6 +1265,52 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Margarita".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
@@ -1040,8 +1348,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
 
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Margarita".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
@@ -1079,6 +1432,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Margarita".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
             
@@ -1116,9 +1516,55 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Margarita".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
         "1. pH del Suelo<br>" +
@@ -1153,10 +1599,55 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Margarita".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
         "1. pH del Suelo<br>" +
@@ -1190,6 +1681,53 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+    
         }
          else if ("Margarita".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
                 
@@ -1226,10 +1764,54 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Margarita".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
-            
-            
 
            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
         "1. pH del Suelo<br>" +
@@ -1263,10 +1845,54 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             "Cuidados de las Margaritas", JOptionPane.DEFAULT_OPTION,
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
+    
+     //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         }else  if ("Margarita".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
         "1. pH del Suelo<br>" +
         "• Rango Ideal: Las margaritas prefieren un pH entre 4.5 y 7.5. Este rango permite una buena absorción de nutrientes.<br>" +
@@ -1300,10 +1926,54 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
 
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         } //AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Bugambilia
         else if ("Bugambilia".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6.0 && PH <= 7.0))  {
-                    
 
                     String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
@@ -1336,6 +2006,52 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de las Bugambilias", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
             } else if ("Bugambilia".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
                 
@@ -1371,6 +2087,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de las Bugambilias", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Bugambilia".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
@@ -1408,9 +2171,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         } else  if ("Bugambilia".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1442,7 +2250,52 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de las Bugambilias", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }  //Desde aqui cambia la tierra.!
         else  if ("Bugambilia".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
@@ -1480,11 +2333,57 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         
         }
          else if ("Bugambilia".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1516,6 +2415,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de las Bugambilias", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Bugambilia".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
@@ -1553,6 +2499,52 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         }else  if ("Bugambilia".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
 
@@ -1588,11 +2580,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Bugambilia".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1625,11 +2662,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Bugambilia".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1662,9 +2744,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         } else  if ("Bugambilia".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
-            
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
@@ -1698,10 +2824,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         }else  if ("Bugambilia".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
-
-            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+           String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
     "• Prueba de pH: Utiliza kits de prueba de pH disponibles en tiendas de jardinería para verificar el nivel de acidez o alcalinidad de tu suelo.<br>" +
@@ -1733,11 +2904,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Bugambilia".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1769,10 +2984,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de las Bugambilias", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         }
          else if ("Bugambilia".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1805,9 +3065,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         } else  if ("Bugambilia".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
-            
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
@@ -1841,9 +3145,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         }else  if ("Bugambilia".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6.0 && PH <= 7.0)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "• Rango Ideal: Las bugambilias prefieren un pH entre 6.0 y 7.0. Este rango permite una buena absorción de nutrientes, incluido el calcio, y un crecimiento saludable.<br>" +
@@ -1875,13 +3224,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de las Bugambilias", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! TULIPANES
         else if ("Tulipanes".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7))  {
                     
-
                     String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -1914,9 +3306,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
             } else if ("Tulipanes".equals(planta) && "FrancoNegra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
                 
-
                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -1949,10 +3386,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         } else  if ("Tulipanes".equals(planta) && "FrancoNegra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -1985,9 +3466,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         } else  if ("Tulipanes".equals(planta) && "FrancoNegra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2020,11 +3546,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }  //Desde aqui cambia la tierra.!
         else  if ("Tulipanes".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2057,11 +3627,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
         
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+  
         }
          else if ("Tulipanes".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2094,10 +3708,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         } else  if ("Tulipanes".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2130,9 +3787,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         }else  if ("Tulipanes".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2165,11 +3866,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Tulipanes".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2202,11 +3947,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Tulipanes".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 4 && PH <= 8)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2239,11 +4028,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
 
         } else  if ("Tulipanes".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2276,10 +4109,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Tulipanes".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2312,12 +4189,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Tulipanes".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2349,6 +4269,52 @@ JOptionPane.showMessageDialog(null, mensaje,
         "Cuidados de los Tulipanes", JOptionPane.DEFAULT_OPTION,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
+
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
 
         }
@@ -2387,9 +4353,53 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
-        } else  if ("Tulipanes".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
             
-            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
+        } else  if ("Tulipanes".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 4 && PH <= 8)) {           
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
@@ -2423,9 +4433,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+ //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
         }else  if ("Tulipanes".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 4 && PH <= 8)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
     "▎1. pH del Suelo<br>" +
     "El pH óptimo para el cultivo de tulipanes se encuentra entre 6.0 y 7.0. Este rango es ideal porque favorece la disponibilidad de nutrientes esenciales para las plantas. Si el pH es demasiado ácido (por debajo de 6.0) o demasiado alcalino (por encima de 7.0), puede afectar negativamente el crecimiento y la floración.<br><br>" +
@@ -2458,11 +4513,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         new javax.swing.ImageIcon(getClass().getResource(
                 "/iconos/ciclo.png")));
 
+//DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! CORONA DE CRISTO
         else if ("Corona de cristo".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5))  {
-                    
-
+                   
                     String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2494,10 +4593,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
             } else if ("Corona de cristo".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2529,10 +4673,54 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
-        } else  if ("Corona de cristo".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
             
-            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+
+        } else  if ("Corona de cristo".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {     
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -2565,10 +4753,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Corona de cristo".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2601,10 +4834,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
         
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+        
         }  //Desde aqui cambia la tierra.!
         else  if ("Corona de cristo".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2639,12 +4917,57 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         
         }
          else if ("Corona de cristo".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2676,11 +4999,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Corona de cristo".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2712,10 +5079,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Corona de cristo".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2748,11 +5160,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Corona de cristo".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2784,12 +5240,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
-         else if ("Corona de cristo".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
-                
-
+         else if ("Corona de cristo".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {           
                  String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2821,10 +5320,54 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Corona de cristo".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
-            
-            
 
              String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -2857,10 +5400,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Corona de cristo".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2893,11 +5481,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Corona de cristo".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2929,10 +5561,56 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+        
         }
          else if ("Corona de cristo".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -2964,11 +5642,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Corona de cristo".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -3000,10 +5722,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Corona de Cristo", JOptionPane.DEFAULT_OPTION,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Corona de cristo".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal para el cultivo de la Corona de Cristo se sitúa entre 6.0 y 7.5. Prefiere suelos ligeramente ácidos a neutros. Un pH fuera de este rango puede afectar la absorción de nutrientes.<br><br>" +
@@ -3036,12 +5803,56 @@ JOptionPane.showMessageDialog(null, mensaje,
                 new javax.swing.ImageIcon(getClass().getResource(
                         "/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Ixoras
         else if ("Ixoras".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7))  {
                     
-
-                    String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
                 "▎2. Contenido de Minerales<br>" +
@@ -3072,10 +5883,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
             } else if ("Ixoras".equals(planta) && "FrancoNegra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3104,11 +5960,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Ixoras".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3137,10 +6037,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Ixoras".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3170,11 +6115,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }  //Desde aqui cambia la tierra.!
         else  if ("Ixoras".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3204,11 +6193,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Ixoras".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3237,11 +6270,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Ixoras".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7)) {
-            
-            
-
+           
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3271,10 +6348,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Ixoras".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3304,11 +6426,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Ixoras".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3337,12 +6503,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Ixoras".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3371,11 +6581,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Ixoras".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3404,10 +6658,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Ixoras".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3437,11 +6736,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Ixoras".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
            String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3470,9 +6813,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
         }
-         else if ("Ixoras".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7)) {
-                
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+        
+        }
+         else if ("Ixoras".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7)) {    
 
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -3502,10 +6891,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Ixoras".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7)) {
-            
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -3535,10 +6968,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Ixoras".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "Las ixoras prefieren un pH del suelo ligeramente ácido a neutro, idealmente entre 6.0 y 7.0. Un pH fuera de este rango puede afectar la disponibilidad de nutrientes.<br><br>" +
@@ -3568,12 +7046,56 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de las Ixoras", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Amapola rosa
         else if ("Amapola rosa".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5))  {
                     
-
-                     String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
+                String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
                 "▎2. Contenido de Minerales<br>" +
@@ -3605,10 +7127,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
             } else if ("Amapola rosa".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3641,11 +7208,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);     
 
         } else  if ("Amapola rosa".equals(planta) && "FrancoNegra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3678,10 +7289,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Amapola rosa".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3715,11 +7371,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }  //Desde aqui cambia la tierra.!
         else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3751,12 +7451,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3788,12 +7532,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
 
         } else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3825,11 +7613,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
 
         }else  if ("Amapola rosa".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() &&(PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3861,13 +7694,58 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
 
         
         }//Desde aqui cambia la tierra.!
         else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3900,12 +7778,57 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         
         }
          else if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3938,11 +7861,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -3975,10 +7942,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Amapola rosa".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -4012,11 +8024,55 @@ JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
 
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -4049,10 +8105,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+        
         }
          else if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() &&(PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -4085,11 +8187,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -4122,10 +8268,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Amapola rosa".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH óptimo del suelo para el cultivo de amapola rosa se encuentra entre 6.0 y 7.5. Un pH dentro de este rango favorece la disponibilidad de nutrientes y el desarrollo radicular adecuado.<br><br>" +
@@ -4158,12 +8349,57 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         
         }//AQUI VIENE OTRO TIPO DE PLANTA QUE LE SIGUE"! Rosa del desierto
         else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5))  {
                     
-
                    String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4195,10 +8431,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
             } else if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4230,10 +8511,54 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+ boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
-            
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -4266,10 +8591,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Rosa del desierto".equals(planta) && "Franco Negra".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4301,11 +8671,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }  //Desde aqui cambia la tierra.!
         else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -4338,12 +8752,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }
          else if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
-                
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4375,11 +8832,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxNitrogeno.isSelected() &&(PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4411,10 +8912,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Rosa del desierto".equals(planta) && "Arcilla".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4446,12 +8992,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4483,12 +9073,93 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+    
+    boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        // Si no se encuentra un número, almacenar directamente el número 1
+        numberAsString = "1";
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    System.out.println("El modelo no contiene filas."); // Imprimir si no hay filas en el modelo
+    // Si no se encuentra un número, almacenar directamente el número 1
+        numberAsString = "1";
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+
+  //AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+    String []info=new String[7];
+        info[0] = numberAsString;
+        info[1] = fechaString;
+        info[2] = planta;
+        info[3] = PHString;
+        info[4] = tierra;
+        info[5] =  stateString;
+        info[6] = mensaje;
+        modelo.addRow(info);
+    
+   try {
+    // Establecer la conexión a la base de datos
+    String url = "jdbc:mysql://localhost/sistema_planta";
+    String usuario = "root";
+    String contraseña = "";
+    Connection cn = DriverManager.getConnection(url, usuario, contraseña);
+    
+    // Crear la consulta SQL con valores correctamente escapados
+    String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    PreparedStatement statement = cn.prepareStatement(query);
+    
+    // Asignar los valores a los parámetros de la consulta
+    statement.setString(1, numberAsString);
+    statement.setString(2, fechaString);
+    statement.setString(3, cbx_Planta.getSelectedItem().toString());
+    statement.setString(4, PHString);
+    statement.setString(5, cbx_tierra.getSelectedItem().toString());
+    statement.setString(6, stateString);
+    statement.setString(7, mensaje);
+    
+    // Ejecutar la inserción
+    statement.executeUpdate();
+    
+} catch (SQLException e) {
+    e.printStackTrace();
+}
 
         
         }
          else if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4520,11 +9191,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
              String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4556,6 +9271,52 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
@@ -4591,11 +9352,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
 
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         
         }//Desde aqui cambia la tierra.!
         else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxCalcio.isSelected() && (PH >= 6 && PH <= 7.5)) {
-            
 
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
@@ -4628,10 +9433,56 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+String stateString = isSelected ? "Calcio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+        
         }
          else if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
-
                 String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4663,11 +9514,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxFosforo.isSelected();
+String stateString = isSelected ? "Fosforo" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         } else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxNitrogeno.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-            
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4699,10 +9594,55 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+        
+         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxNitrogeno.isSelected();
+String stateString = isSelected ? "Nitrogeno" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
 
         }else  if ("Rosa del desierto".equals(planta) && "Limonosa Organica".equals(tierra) && BoxPotasio.isSelected() && (PH >= 6 && PH <= 7.5)) {
             
-
             String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
                 "▎1. pH del Suelo<br>" +
                 "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
@@ -4734,8 +9674,52 @@ JOptionPane.showMessageDialog(null, mensaje,
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Rosa del Desierto", JOptionPane.DEFAULT_OPTION,
                 new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
-
         
+        //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxPotasio.isSelected();
+String stateString = isSelected ? "Potasio" : "No seleccionado";
+    
+boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna (índice 0)
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number || isNumeric(value.toString())) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = (value instanceof Number) ? ((Number) value).doubleValue() : Double.parseDouble(value.toString());
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1.0; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        numberAsString = "1"; // Asignar 1 si no se encuentra un número
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    numberAsString = "1"; // Asignar 1 si no hay filas en el modelo
+    System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
+}
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+// AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
+String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
+modelo.addRow(info);
+
+// Método para insertar datos en la base de datos
+insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
         }
             
             
@@ -4752,7 +9736,7 @@ JOptionPane.showMessageDialog(null, mensaje,
 
         }//Esta llave es del primer else
 
-        //BASE DE DATOS
+        //BASE DE DATOS LISTA E INCLUIDA EN CADA OPERACION   AUTHOR: EMMANUEL DALIS
 
     
     }//GEN-LAST:event_RealizarOperacionActionPerformed
