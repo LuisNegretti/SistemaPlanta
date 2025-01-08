@@ -92,8 +92,6 @@ public class Conexion {
     return response;
 }
 
-    public Statement createStatement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 
 }

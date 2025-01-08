@@ -14,9 +14,11 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import static java.sql.DriverManager.getConnection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -36,7 +38,8 @@ import sistema.planta.Principal;
 public class Operaciones extends javax.swing.JFrame {
      
      DefaultTableModel modelo;
-    
+     
+     
     public Operaciones() {
         initComponents();
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGENGRANDES/logo del software.png")));
@@ -46,11 +49,14 @@ public class Operaciones extends javax.swing.JFrame {
          modelo.addColumn("ID_Operacion");
         modelo.addColumn("Fecha");
         modelo.addColumn("Planta");
-        modelo.addColumn("Tierra");
         modelo.addColumn("PH");
+        modelo.addColumn("Tierra");
+        
         modelo.addColumn("Mineral");
         modelo.addColumn("Resultado");
         this. HistorialModelo.setModel(modelo);
+        
+        
         
         Conexion con = new Conexion();
         
@@ -75,9 +81,9 @@ public class Operaciones extends javax.swing.JFrame {
     
     // Recorrer el resultado y agregar los datos a la tabla
     while (resultSet.next()) {
-        Object[] fila = new Object[6]; // Ajusta el número de columnas según la tabla
+        Object[] fila = new Object[7]; // Ajusta el número de columnas según la tabla
         fila[0] = resultSet.getString("ID_Operacion");
-        fila[1] = resultSet.getInt("Fecha");
+        fila[1] = resultSet.getString("Fecha");
         fila[2] = resultSet.getString("Planta");
         fila[3] = resultSet.getString("Tierra");
         fila[4] = resultSet.getString("PH");
@@ -85,6 +91,8 @@ public class Operaciones extends javax.swing.JFrame {
         fila[6] = resultSet.getString("Resultado");
         
         modelo.addRow(fila);
+        
+        
     }
     
     // Cerrar la conexión y liberar recursos
@@ -166,7 +174,7 @@ public class Operaciones extends javax.swing.JFrame {
         SalaOperaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 102));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 24), new java.awt.Color(102, 51, 0))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 36))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(51, 153, 0));
 
         tipo_planta.setBackground(new java.awt.Color(102, 51, 0));
@@ -356,7 +364,7 @@ public class Operaciones extends javax.swing.JFrame {
                 .addComponent(lvl_PH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cont_mnrl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         lvl_PH.getAccessibleContext().setAccessibleDescription("");
@@ -421,14 +429,14 @@ public class Operaciones extends javax.swing.JFrame {
 
             },
             new String [] {
-                "fecha", "Planta", "Nivel de PH", "Tipo de Tierra", "Minerales", "Resultado"
+                "ID_Operacion", "Fecha", "Planta", "Nivel de PH", "Tipo de Tierra", "Mineral", "Resultado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -608,10 +616,16 @@ public class Operaciones extends javax.swing.JFrame {
                 
 
                 //1* AQUI VIENE LA OPERACION UNA VEZ SE VALIDEN LOS DATOS.
+                // Obtener la fecha actual del sistema
+                LocalDate fechaActual = LocalDate.now();
+                String fechaString = fechaActual.toString();
+                
+               
                 double PH = Double.parseDouble(txtPH.getText());
+                String PHString = String.valueOf(PH);
                 String planta = cbx_Planta.getSelectedItem().toString();
                 String tierra = cbx_tierra.getSelectedItem().toString();
-
+                
                 
                 //AQUI ESTA EL PRIMER TIPO DE PLANTA MARGARITA
                 if ("Margarita".equals(planta) && "Franco Negra".equals(tierra) && BoxCalcio.isSelected() && (PH >= 4.5 && PH <= 7.5)) {
@@ -649,24 +663,84 @@ public class Operaciones extends javax.swing.JFrame {
             new javax.swing.ImageIcon(getClass().getResource(
                     "/iconos/ciclo.png")));
     
-    try {
+    //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
+    //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
+    boolean isSelected = BoxCalcio.isSelected();
+                String stateString = isSelected ? "Calcio" : "No seleccionado";
+                
+                boolean hasNumber = false;
+double maxNumber = 0; // Inicializar con 0
+String numberAsString = null; // Variable para almacenar el número como String
+
+if (modelo.getRowCount() > 0) {
+    for (int rowIndex = 0; rowIndex < modelo.getRowCount(); rowIndex++) {
+        Object value = modelo.getValueAt(rowIndex, 0); // Buscar en la primera columna
+        System.out.println("Valor encontrado: " + value); // Imprimir el valor encontrado
+        
+        if (value instanceof Number) {
+            hasNumber = true;
+            // Convertir el número a double y verificar si es mayor que el máximo encontrado
+            double number = ((Number) value).doubleValue();
+            
+            if (number > maxNumber) {
+                maxNumber = number; // Actualizar el máximo encontrado
+                System.out.println("Nuevo número máximo: " + maxNumber); // Imprimir el nuevo máximo
+            }
+        }
+    }
+    if (hasNumber) {
+        maxNumber += 1; // Sumar 1 al número mayor
+        numberAsString = Double.toString(maxNumber); // Convertir a String
+        System.out.println("Número incrementado: " + numberAsString); // Imprimir el número incrementado
+    } else {
+        // Si no se encuentra un número, almacenar directamente el número 1
+        numberAsString = "1";
+        System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
+    }
+} else {
+    System.out.println("El modelo no contiene filas."); // Imprimir si no hay filas en el modelo
+}
+
+System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
+
+  
+    
+    String []info=new String[7];
+        info[0] = numberAsString;
+        info[1] = fechaString;
+        info[2] = planta;
+        info[3] = PHString;
+        info[4] = tierra;
+        info[5] =  stateString;
+        info[6] = mensaje;
+        modelo.addRow(info);
+    
+   try {
     // Establecer la conexión a la base de datos
-    Conexion con = new Conexion();
-           Statement statement = con.createStatement();
-
-            // Crear la consulta SQL
-            
-             statement.executeUpdate("INSERT INTO historial VALUES('"+cbx_Planta.getSelectedItem()+"','"+cbx_tierra.getSelectedItem()+"','"+txtPH.getText()+"', "+mensaje+") ");
-            
-
-            // Ejecutar la inserción
-           
-            
-        } catch (SQLException e) {
-            
-            e.printStackTrace();
-            
-        } 
+    String url = "jdbc:mysql://localhost/sistema_planta";
+    String usuario = "root";
+    String contraseña = "";
+    Connection cn = DriverManager.getConnection(url, usuario, contraseña);
+    
+    // Crear la consulta SQL con valores correctamente escapados
+    String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    PreparedStatement statement = cn.prepareStatement(query);
+    
+    // Asignar los valores a los parámetros de la consulta
+    statement.setString(1, numberAsString);
+    statement.setString(2, fechaString);
+    statement.setString(3, cbx_Planta.getSelectedItem().toString());
+    statement.setString(4, PHString);
+    statement.setString(5, cbx_tierra.getSelectedItem().toString());
+    statement.setString(6, stateString);
+    statement.setString(7, mensaje);
+    
+    // Ejecutar la inserción
+    statement.executeUpdate();
+    
+} catch (SQLException e) {
+    e.printStackTrace();
+}
     
     
     

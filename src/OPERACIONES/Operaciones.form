@@ -192,8 +192,7 @@
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder justification="2" title="Datos">
-                      <Font PropertyName="font" name="Calisto MT" size="24" style="1"/>
-                      <Color PropertyName="color" blue="0" green="33" red="66" type="rgb"/>
+                      <Font PropertyName="font" name="Dialog" size="36" style="1"/>
                     </TitledBorder>
                   </Border>
                 </Property>
@@ -236,7 +235,7 @@
                           <Component id="lvl_PH" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="cont_mnrl" min="-2" pref="162" max="-2" attributes="0"/>
-                          <EmptySpace pref="161" max="32767" attributes="0"/>
+                          <EmptySpace pref="143" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -721,12 +720,13 @@
                 <Component class="javax.swing.JTable" name="HistorialModelo">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="0">
-                        <Column editable="false" title="fecha" type="java.lang.String"/>
+                      <Table columnCount="7" rowCount="0">
+                        <Column editable="false" title="ID_Operacion" type="java.lang.Double"/>
+                        <Column editable="false" title="Fecha" type="java.lang.String"/>
                         <Column editable="false" title="Planta" type="java.lang.String"/>
                         <Column editable="false" title="Nivel de PH" type="java.lang.Float"/>
                         <Column editable="false" title="Tipo de Tierra" type="java.lang.String"/>
-                        <Column editable="false" title="Minerales" type="java.lang.String"/>
+                        <Column editable="false" title="Mineral" type="java.lang.String"/>
                         <Column editable="false" title="Resultado" type="java.lang.Object"/>
                       </Table>
                     </Property>
