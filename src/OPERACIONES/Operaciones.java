@@ -51,7 +51,7 @@ private boolean isNumeric(String str) {
 
 // Método para insertar datos en la base de datos
 private void insertarEnBaseDeDatos(String numberAsString, String fechaString, String planta, String PHString, String tierra, String stateString, String mensaje) {
-    try (Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/sistema_planta", "root", "")) {
+    try (Connection cn = DriverManager.getConnection("jdbc:mysql://localhost3306/sistema_planta", "root", "")) {
         String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = cn.prepareStatement(query);
         

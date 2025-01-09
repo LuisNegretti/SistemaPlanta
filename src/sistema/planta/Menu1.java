@@ -175,9 +175,40 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         Ixoras = new javax.swing.JPanel();
         jLabel82 = new javax.swing.JLabel();
-        Tulipanes = new javax.swing.JPanel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jScrollPane41 = new javax.swing.JScrollPane();
+        jTextArea40 = new javax.swing.JTextArea();
+        jScrollPane42 = new javax.swing.JScrollPane();
+        jTextArea41 = new javax.swing.JTextArea();
+        jScrollPane43 = new javax.swing.JScrollPane();
+        jTextArea42 = new javax.swing.JTextArea();
+        jScrollPane44 = new javax.swing.JScrollPane();
+        jTextArea43 = new javax.swing.JTextArea();
         Rosas_Desierto = new javax.swing.JPanel();
-        butt_rosaDelDesierto = new javax.swing.JButton();
+        jLabel61 = new javax.swing.JLabel();
+        jScrollPane37 = new javax.swing.JScrollPane();
+        jTextArea36 = new javax.swing.JTextArea();
+        jScrollPane38 = new javax.swing.JScrollPane();
+        jTextArea37 = new javax.swing.JTextArea();
+        jScrollPane39 = new javax.swing.JScrollPane();
+        jTextArea38 = new javax.swing.JTextArea();
+        jScrollPane40 = new javax.swing.JScrollPane();
+        jTextArea39 = new javax.swing.JTextArea();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel88 = new javax.swing.JLabel();
+        Tulipanes = new javax.swing.JPanel();
+        jLabel91 = new javax.swing.JLabel();
+        jScrollPane45 = new javax.swing.JScrollPane();
+        jTextArea44 = new javax.swing.JTextArea();
+        jScrollPane46 = new javax.swing.JScrollPane();
+        jTextArea45 = new javax.swing.JTextArea();
+        jScrollPane47 = new javax.swing.JScrollPane();
+        jTextArea46 = new javax.swing.JTextArea();
+        jScrollPane48 = new javax.swing.JScrollPane();
+        jTextArea47 = new javax.swing.JTextArea();
+        jLabel92 = new javax.swing.JLabel();
+        jLabel93 = new javax.swing.JLabel();
         Bugambilia = new javax.swing.JPanel();
         Azalea = new javax.swing.JPanel();
         Genciana = new javax.swing.JPanel();
@@ -1222,72 +1253,373 @@ public class Menu1 extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Amapolas Rosas", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/Amapola.rosa.png")), Amapolas_Rosas); // NOI18N
 
-        Ixoras.setBackground(new java.awt.Color(153, 0, 0));
+        Ixoras.setBackground(new java.awt.Color(153, 255, 204));
 
-        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/ixo.png"))); // NOI18N
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Ixo_1.png"))); // NOI18N
         jLabel82.setText("jLabel81");
+
+        jLabel90.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Ixor1.png"))); // NOI18N
+        jLabel90.setText("jLabel6");
+
+        jLabel89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/proixo2.png"))); // NOI18N
+        jLabel89.setText("jLabel24");
+
+        jScrollPane41.setBorder(null);
+
+        jTextArea40.setEditable(false);
+        jTextArea40.setBackground(new java.awt.Color(153, 255, 204));
+        jTextArea40.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea40.setForeground(new java.awt.Color(153, 153, 153));
+        jTextArea40.setTabSize(0);
+        jTextArea40.setText("IXORAS");
+        jTextArea40.setWrapStyleWord(true);
+        jTextArea40.setBorder(null);
+        jScrollPane41.setViewportView(jTextArea40);
+
+        jScrollPane42.setBorder(null);
+
+        jTextArea41.setEditable(false);
+        jTextArea41.setBackground(new java.awt.Color(153, 255, 204));
+        jTextArea41.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea41.setForeground(new java.awt.Color(153, 153, 153));
+        jTextArea41.setLineWrap(true);
+        jTextArea41.setTabSize(0);
+        jTextArea41.setText("Las ixoras son plantas tropicales muy valoradas\npor sus flores agrupadas en racimos brillantes \nde colores vivos, que incluyen tonos de rojo, ro-\nsa,naranja y amarillo. Estas plantas destacan por \nsu adaptabilidad en jardines y paisajes decora-\ntivos, además de su resistencia en climas cálidos.");
+        jTextArea41.setToolTipText("");
+        jTextArea41.setWrapStyleWord(true);
+        jTextArea41.setBorder(null);
+        jScrollPane42.setViewportView(jTextArea41);
+
+        jScrollPane43.setBorder(null);
+
+        jTextArea42.setEditable(false);
+        jTextArea42.setBackground(new java.awt.Color(153, 255, 204));
+        jTextArea42.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea42.setForeground(new java.awt.Color(153, 153, 153));
+        jTextArea42.setLineWrap(true);
+        jTextArea42.setTabSize(0);
+        jTextArea42.setText("Las ixoras no tienen requisitos estrictos en \ncuanto al contenido mineral del suelo, por \nlo que pueden crecer bien en terrenos que \ncuenten con nutrientes básicos, sin necesi-\ndad de suelos enriquecidos específica-\nmente. Sin embargo, prefieren un nivel de \npH ligeramente ácido, alrededor de 5, lo \ncual facilita una óptima absorción de los \nnutrientes disponibles en el suelo, en esp-\necial el hierro, para mantener el follaje \nverde y saludable.\n\nEn cuanto a la humedad del suelo, no ne-\ncesitan condiciones específicas, aunque \nprosperan mejor en suelos que retengan \nsuficiente humedad sin llegar a encharcarse");
+        jTextArea42.setToolTipText("");
+        jTextArea42.setWrapStyleWord(true);
+        jTextArea42.setBorder(null);
+        jScrollPane43.setViewportView(jTextArea42);
+
+        jScrollPane44.setBorder(null);
+
+        jTextArea43.setEditable(false);
+        jTextArea43.setBackground(new java.awt.Color(153, 255, 204));
+        jTextArea43.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea43.setForeground(new java.awt.Color(153, 153, 153));
+        jTextArea43.setLineWrap(true);
+        jTextArea43.setTabSize(0);
+        jTextArea43.setText("Esto las convierte en una buena opción \npara jardines de bajo mantenimiento, \nsiempre que se les dé un riego adecu-\nado, especialmente en temporadas \nsecas. Las ixoras no toleran la salini-\ndad en el suelo, por lo que deben evi-\ntarse los suelos con altos niveles de \nsal para no comprometer su crecimi-\nento y desarrollo. La tierra de jardín \ncomún, de textura media y con buen \ndrenaje, es ideal para su cultivo, permi-\ntiendo que sus raíces se establezcan \nsin dificultades y reduciendo el riesgo \nde enfermedades.\n\nAdemás de su valor ornamental, las \nixoras aportan beneficios al ecosistema \ndel jardín al atraer polinizadores como \nmariposas y abejas, contribuyendo a un \nentorno más biodiverso.");
+        jTextArea43.setToolTipText("");
+        jTextArea43.setWrapStyleWord(true);
+        jTextArea43.setBorder(null);
+        jScrollPane44.setViewportView(jTextArea43);
 
         javax.swing.GroupLayout IxorasLayout = new javax.swing.GroupLayout(Ixoras);
         Ixoras.setLayout(IxorasLayout);
         IxorasLayout.setHorizontalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IxorasLayout.createSequentialGroup()
-                .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 716, Short.MAX_VALUE))
+                .addGroup(IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IxorasLayout.createSequentialGroup()
+                        .addGroup(IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(IxorasLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(IxorasLayout.createSequentialGroup()
+                                .addGap(116, 116, 116)
+                                .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel90, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(IxorasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         IxorasLayout.setVerticalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(IxorasLayout.createSequentialGroup()
-                .addComponent(jLabel82)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(IxorasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel82)
+                            .addGroup(IxorasLayout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(IxorasLayout.createSequentialGroup()
+                                .addGap(34, 34, 34)
+                                .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(IxorasLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel90))))
+                    .addGroup(IxorasLayout.createSequentialGroup()
+                        .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Ixoras", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/ixora.png")), Ixoras); // NOI18N
 
-        Tulipanes.setBackground(new java.awt.Color(204, 0, 51));
-        Tulipanes.setForeground(new java.awt.Color(204, 0, 51));
+        Rosas_Desierto.setBackground(new java.awt.Color(244, 231, 197));
 
-        javax.swing.GroupLayout TulipanesLayout = new javax.swing.GroupLayout(Tulipanes);
-        Tulipanes.setLayout(TulipanesLayout);
-        TulipanesLayout.setHorizontalGroup(
-            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
-        );
-        TulipanesLayout.setVerticalGroup(
-            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Rosa del desierto.png"))); // NOI18N
+        jLabel61.setText("jLabel10");
+        jLabel61.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel61.setPreferredSize(new java.awt.Dimension(350, 380));
 
-        jTabbedPane2.addTab("Tulipanes", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/tulipanes.png")), Tulipanes); // NOI18N
+        jScrollPane37.setBorder(null);
 
-        Rosas_Desierto.setBackground(new java.awt.Color(255, 153, 255));
+        jTextArea36.setEditable(false);
+        jTextArea36.setBackground(new java.awt.Color(244, 231, 197));
+        jTextArea36.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea36.setForeground(new java.awt.Color(92, 64, 51));
+        jTextArea36.setTabSize(0);
+        jTextArea36.setText("ROSA DEL DESIERTO");
+        jTextArea36.setWrapStyleWord(true);
+        jTextArea36.setBorder(null);
+        jScrollPane37.setViewportView(jTextArea36);
 
-        butt_rosaDelDesierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/flor-rosa-desierto.png"))); // NOI18N
-        butt_rosaDelDesierto.setText("jButton1");
-        butt_rosaDelDesierto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butt_rosaDelDesiertoActionPerformed(evt);
-            }
-        });
+        jScrollPane38.setBorder(null);
+
+        jTextArea37.setEditable(false);
+        jTextArea37.setBackground(new java.awt.Color(244, 231, 197));
+        jTextArea37.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea37.setForeground(new java.awt.Color(92, 64, 51));
+        jTextArea37.setLineWrap(true);
+        jTextArea37.setTabSize(0);
+        jTextArea37.setText("La Rosa del Desierto es una planta suculenta\nde aspecto exótico, popular por sus llamati-\nvas flores y su adaptación a climas áridos. \nNo requiere de un contenido mineral especí-\nfico, lo cual la hace muy versátil en diferentes \ntipos de sustratos siempre que ofrezcan bu-\nenos niveles de drenaje.");
+        jTextArea37.setToolTipText("");
+        jTextArea37.setWrapStyleWord(true);
+        jTextArea37.setBorder(null);
+        jScrollPane38.setViewportView(jTextArea37);
+
+        jScrollPane39.setBorder(null);
+
+        jTextArea38.setEditable(false);
+        jTextArea38.setBackground(new java.awt.Color(244, 231, 197));
+        jTextArea38.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea38.setForeground(new java.awt.Color(92, 64, 51));
+        jTextArea38.setLineWrap(true);
+        jTextArea38.setTabSize(0);
+        jTextArea38.setText("Su pH ideal es de alrededor de 6.0, lo que asegura \nla absorción de nutrientes sin sobrecargar la \nplanta, promoviendo un crecimiento saludable de \nsus raíces y tallos. Para la humedad, la rosa del \ndesierto es una planta de bajos requerimientos, \nadaptada a ambientes secos y que no necesita \nniveles constantes de agua en el suelo; por lo \ntanto, es fundamental evitar el riego excesivo, ya \nque esto puede afectar su salud debido a su sen-\nsibilidad a los encharcamientos.\n\nRespecto a la salinidad, esta planta no la soporta,\npor lo que su cultivo en suelos salinos puede \nafectar su desarrollo y provocar estrés en sus te-\njidos. El tipo de tierra ideal para la rosa del desi-\nerto es un sustrato ligero y de excelente drenaje,\ncomo una mezcla de arena gruesa y perlita, que \npermite que el agua circule con rapidez y evite el \nestancamiento. Esta combinación de sustrato \ntambién facilita el paso de oxígeno a las raíces, \nayudando a prevenir enfermedades fúngicas.");
+        jTextArea38.setToolTipText("");
+        jTextArea38.setWrapStyleWord(true);
+        jTextArea38.setBorder(null);
+        jScrollPane39.setViewportView(jTextArea38);
+
+        jScrollPane40.setBorder(null);
+
+        jTextArea39.setEditable(false);
+        jTextArea39.setBackground(new java.awt.Color(244, 231, 197));
+        jTextArea39.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea39.setForeground(new java.awt.Color(92, 64, 51));
+        jTextArea39.setLineWrap(true);
+        jTextArea39.setTabSize(0);
+        jTextArea39.setText("Además de su atractivo visual, la rosa del desierto\nes una planta de bajo mantenimiento y gran du-\nrabilidad, lo que la hace perfecta para jardines \ndecorativos en regiones cálidas o para interiores \nluminosos. Como una suculenta, almacena agua \nen sus tallos y raíces, lo que le permite sobrevivir \nbien en condiciones de sequía. En el jardín, esta\nplanta aporta un toque único con su apariencia es \ncultural y sus flores de colores vivos, mientras que\nsu bajo requerimiento de riego contribuye a la \nconservación de agua. Con un cuidado básico y \nun sustrato adecuado, la rosa del desierto puede \nflorecer de manera espectacular y convertirse en \nel centro de atención en cualquier jardín o espacio\ninterior.");
+        jTextArea39.setToolTipText("");
+        jTextArea39.setWrapStyleWord(true);
+        jTextArea39.setBorder(null);
+        jScrollPane40.setViewportView(jTextArea39);
+
+        jLabel81.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/r1.png"))); // NOI18N
+        jLabel81.setText("jLabel6");
+
+        jLabel88.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/r2.png"))); // NOI18N
+        jLabel88.setText("jLabel24");
 
         javax.swing.GroupLayout Rosas_DesiertoLayout = new javax.swing.GroupLayout(Rosas_Desierto);
         Rosas_Desierto.setLayout(Rosas_DesiertoLayout);
         Rosas_DesiertoLayout.setHorizontalGroup(
             Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(818, Short.MAX_VALUE))
+                .addGroup(Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                        .addGroup(Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel88, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         Rosas_DesiertoLayout.setVerticalGroup(
             Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(butt_rosaDelDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Rosas_DesiertoLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Rosas_DesiertoLayout.createSequentialGroup()
+                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Rosas_DesiertoLayout.createSequentialGroup()
+                        .addGroup(Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel81, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Rosas_DesiertoLayout.createSequentialGroup()
+                                .addComponent(jLabel88)
+                                .addGap(56, 56, 56)
+                                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jTabbedPane2.addTab("Rosas Del Desierto", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/rosa.png")), Rosas_Desierto); // NOI18N
+
+        Tulipanes.setBackground(new java.awt.Color(230, 230, 250));
+        Tulipanes.setForeground(new java.awt.Color(204, 0, 51));
+
+        jLabel91.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/tulip.png"))); // NOI18N
+        jLabel91.setText("jLabel10");
+        jLabel91.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel91.setPreferredSize(new java.awt.Dimension(350, 380));
+
+        jScrollPane45.setBorder(null);
+
+        jTextArea44.setEditable(false);
+        jTextArea44.setBackground(new java.awt.Color(230, 230, 250));
+        jTextArea44.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea44.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea44.setTabSize(0);
+        jTextArea44.setText("TULIPANES");
+        jTextArea44.setWrapStyleWord(true);
+        jTextArea44.setBorder(null);
+        jScrollPane45.setViewportView(jTextArea44);
+
+        jScrollPane46.setBorder(null);
+
+        jTextArea45.setEditable(false);
+        jTextArea45.setBackground(new java.awt.Color(230, 230, 250));
+        jTextArea45.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea45.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea45.setLineWrap(true);
+        jTextArea45.setTabSize(0);
+        jTextArea45.setText("Los tulipanes son flores icónicas, conocidas \npor su elegancia y por ser un símbolo de la \nprimavera. Originarias de Asia Central, estas \nplantas bulbosas se han cultivado durante \nsiglos, especialmente en regiones de climas \ntemplados. Su capacidad para adaptarse a \ndiferentes ambientes y su amplia variedad de \ncolores y formas las convierten en una opción \npopular para jardines y espacios decorativos.");
+        jTextArea45.setToolTipText("");
+        jTextArea45.setWrapStyleWord(true);
+        jTextArea45.setBorder(null);
+        jScrollPane46.setViewportView(jTextArea45);
+
+        jScrollPane47.setBorder(null);
+
+        jTextArea46.setEditable(false);
+        jTextArea46.setBackground(new java.awt.Color(230, 230, 250));
+        jTextArea46.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea46.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea46.setLineWrap(true);
+        jTextArea46.setTabSize(0);
+        jTextArea46.setText("El suelo es un aspecto clave para los tulipanes.\nPrefieren un terreno rico en materia orgánica, \ncomo compost, y mezclado con arena para \ngarantizar un drenaje adecuado. El nivel de pH \nideal oscila entre 6.0 y 7.0, lo que asegura un \nambiente ligeramente ácido a neutro para el \ncrecimiento de las raíces. Aunque estas plantas \nno tienen requisitos estrictos en cuanto a mine-\nrales, es importante evitar terrenos salinos, ya \nque los tulipanes no toleran la salinidad. La hu-\nmedad del suelo también debe manejarse \ncuidadosamente: debe estar moderadamente \nhúmedo pero sin llegar a encharcarse, ya que \nel exceso de agua puede provocar pudrición en \nlos bulbos, afectando su salud y desarrollo.\n\nPara plantarlos, selecciona un lugar que reciba \nabundante luz solar, ya que esto favorece una \nfloración más brillante y prolongada. ");
+        jTextArea46.setToolTipText("");
+        jTextArea46.setWrapStyleWord(true);
+        jTextArea46.setBorder(null);
+        jScrollPane47.setViewportView(jTextArea46);
+
+        jScrollPane48.setBorder(null);
+
+        jTextArea47.setEditable(false);
+        jTextArea47.setBackground(new java.awt.Color(230, 230, 250));
+        jTextArea47.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea47.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea47.setLineWrap(true);
+        jTextArea47.setTabSize(0);
+        jTextArea47.setText("Antes de plantar los bulbos, trabaja bien \nla tierra incorporando compost para \nmejorar su fertilidad. Coloca los bulbos \na una profundidad de aproximadamente \ntres veces su tamaño, con la punta hacia \narriba, y asegúrate de espaciar cada bulbo \npara que las plantas tengan espacio su-\nficiente para crecer. Durante su crecimi-\nento, riégalos de forma moderada y pro-\ntege las plantas de plagas comunes \ncomo los pulgones, que pueden afectar \ntanto las hojas como las flores.");
+        jTextArea47.setToolTipText("");
+        jTextArea47.setWrapStyleWord(true);
+        jTextArea47.setBorder(null);
+        jScrollPane48.setViewportView(jTextArea47);
+
+        jLabel92.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Tuli2.png"))); // NOI18N
+        jLabel92.setText("jLabel6");
+
+        jLabel93.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel93.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/tuli1.png"))); // NOI18N
+
+        javax.swing.GroupLayout TulipanesLayout = new javax.swing.GroupLayout(Tulipanes);
+        Tulipanes.setLayout(TulipanesLayout);
+        TulipanesLayout.setHorizontalGroup(
+            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TulipanesLayout.createSequentialGroup()
+                .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TulipanesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(TulipanesLayout.createSequentialGroup()
+                        .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(TulipanesLayout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(TulipanesLayout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        TulipanesLayout.setVerticalGroup(
+            TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TulipanesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TulipanesLayout.createSequentialGroup()
+                        .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TulipanesLayout.createSequentialGroup()
+                        .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(TulipanesLayout.createSequentialGroup()
+                                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(jScrollPane48))
+                            .addGroup(TulipanesLayout.createSequentialGroup()
+                                .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel93)))
+                        .addGap(5, 5, 5)))
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Tulipanes", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/tulipanes.png")), Tulipanes); // NOI18N
 
         javax.swing.GroupLayout BugambiliaLayout = new javax.swing.GroupLayout(Bugambilia);
         Bugambilia.setLayout(BugambiliaLayout);
@@ -2080,10 +2412,6 @@ public class Menu1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_SubTropicalMouseClicked
 
-    private void butt_rosaDelDesiertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butt_rosaDelDesiertoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butt_rosaDelDesiertoActionPerformed
-
     private void tropicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tropicalMouseClicked
         
         try {
@@ -2666,7 +2994,6 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Tulipanes;
     private javax.swing.JButton adaptacion;
     private javax.swing.JPanel antartico;
-    private javax.swing.JButton butt_rosaDelDesierto;
     private javax.swing.JPanel continental;
     private javax.swing.JButton introDiseños;
     private javax.swing.JButton jButton1;
@@ -2738,6 +3065,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
@@ -2759,13 +3087,20 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -2794,7 +3129,19 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
     private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane37;
+    private javax.swing.JScrollPane jScrollPane38;
+    private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane40;
+    private javax.swing.JScrollPane jScrollPane41;
+    private javax.swing.JScrollPane jScrollPane42;
+    private javax.swing.JScrollPane jScrollPane43;
+    private javax.swing.JScrollPane jScrollPane44;
+    private javax.swing.JScrollPane jScrollPane45;
+    private javax.swing.JScrollPane jScrollPane46;
+    private javax.swing.JScrollPane jScrollPane47;
+    private javax.swing.JScrollPane jScrollPane48;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -2830,7 +3177,19 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea33;
     private javax.swing.JTextArea jTextArea34;
     private javax.swing.JTextArea jTextArea35;
+    private javax.swing.JTextArea jTextArea36;
+    private javax.swing.JTextArea jTextArea37;
+    private javax.swing.JTextArea jTextArea38;
+    private javax.swing.JTextArea jTextArea39;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea40;
+    private javax.swing.JTextArea jTextArea41;
+    private javax.swing.JTextArea jTextArea42;
+    private javax.swing.JTextArea jTextArea43;
+    private javax.swing.JTextArea jTextArea44;
+    private javax.swing.JTextArea jTextArea45;
+    private javax.swing.JTextArea jTextArea46;
+    private javax.swing.JTextArea jTextArea47;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextArea jTextArea7;
