@@ -80,7 +80,6 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         modelo.addColumn("Planta");
         modelo.addColumn("PH");
         modelo.addColumn("Tierra");
-        
         modelo.addColumn("Mineral");
         modelo.addColumn("Resultado");
         this. HistorialModelo.setModel(modelo);
@@ -114,8 +113,8 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         fila[0] = resultSet.getString("ID_Operacion");
         fila[1] = resultSet.getString("Fecha");
         fila[2] = resultSet.getString("Planta");
-        fila[3] = resultSet.getString("Tierra");
-        fila[4] = resultSet.getString("PH");
+        fila[3] = resultSet.getString("PH");
+        fila[4] = resultSet.getString("Tierra");
         fila[5] = resultSet.getString("Mineral");
         fila[6] = resultSet.getString("Resultado");
         
@@ -203,7 +202,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         SalaOperaciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 102));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 36))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 36))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(51, 153, 0));
 
         tipo_planta.setBackground(new java.awt.Color(102, 51, 0));
@@ -405,6 +404,13 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
         jPanel7.setForeground(new java.awt.Color(102, 51, 0));
 
+        tablaP_Details = new javax.swing.JTable()
+        {
+
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         tablaP_Details.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -413,6 +419,12 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
                 "Nombre", "Minerales", "Nivel de PH", "Humedad del suelo", "Salinidad", "Tipo de Tierra"
             }
         ));
+        tablaP_Details.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaP_Details.setFocusable(false);
+
+        tablaP_Details.setGridColor(new java.awt.Color(255, 255, 255));
+
+        tablaP_Details.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tablaP_Details);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -453,6 +465,17 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         HistorialdeOpe.setPreferredSize(new java.awt.Dimension(902, 622));
         HistorialdeOpe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane2.setBackground(new java.awt.Color(102, 51, 0));
+        jScrollPane2.setForeground(new java.awt.Color(0, 255, 0));
+
+        HistorialModelo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        HistorialModelo = new javax.swing.JTable()
+        {
+
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         HistorialModelo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -464,21 +487,20 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
             Class[] types = new Class [] {
                 java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
         });
+        HistorialModelo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        HistorialModelo.setFocusable(false);
+
+        HistorialModelo.setGridColor(new java.awt.Color(255, 255, 255));
+
+        HistorialModelo.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(HistorialModelo);
 
-        HistorialdeOpe.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 890, 510));
+        HistorialdeOpe.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 890, 510));
 
         jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/un fondo oscuro con un tema sobre plantas, estudios de tierra y minerales.png"))); // NOI18N
         HistorialdeOpe.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
