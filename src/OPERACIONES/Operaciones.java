@@ -48,22 +48,23 @@ private boolean isNumeric(String str) {
 
 // Método para insertar datos en la base de datos BORRAR
 private void insertarEnBaseDeDatos(String numberAsString, String fechaString, String planta, String PHString, String tierra, String stateString, String mensaje) {
-    try (Connection cn = DriverManager.getConnection("jdbc:mysql://localhost3306/sistema_planta", "root", "")) {
-        String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement statement = cn.prepareStatement(query);
-        
-        statement.setString(1, numberAsString);
-        statement.setString(2, fechaString);
-        statement.setString(3, planta);
-        statement.setString(4, PHString);
-        statement.setString(5, tierra);
-        statement.setString(6, stateString);
-        statement.setString(7, mensaje);
-        
-        statement.executeUpdate();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
+    try (Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sistema_planta", "root", "")) {
+    String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    PreparedStatement statement = cn.prepareStatement(query);
+    
+    statement.setString(1, numberAsString);
+    statement.setString(2, fechaString);
+    statement.setString(3, planta);
+    statement.setString(4, PHString);
+    statement.setString(5, tierra);
+    statement.setString(6, stateString);
+    statement.setString(7, mensaje);
+    
+    statement.executeUpdate();
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+
 }
      
     public Operaciones() {
@@ -210,7 +211,6 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         cbx_Planta.setBackground(new java.awt.Color(0, 204, 0));
         cbx_Planta.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_Planta.setForeground(new java.awt.Color(0, 153, 102));
-        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         cbx_Planta.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_Planta.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -262,7 +262,6 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         cbx_tierra.setBackground(new java.awt.Color(102, 51, 0));
         cbx_tierra.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_tierra.setForeground(new java.awt.Color(255, 255, 255));
-        cbx_tierra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         cbx_tierra.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_tierra.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -487,7 +486,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
                 RealizarOperacionActionPerformed(evt);
             }
         });
-        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, -1, 80));
+        SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, 80));
 
         jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/un fondo más oscuro con un tema sobre plantas, estudios de tierra y fertilización.png"))); // NOI18N
         SalaOperaciones.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
@@ -603,11 +602,11 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 912, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 746, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
         );
 
         jTabbedPane2.getAccessibleContext().setAccessibleName("Operaciones.");
@@ -9781,32 +9780,43 @@ con.InsertarHistoria( fechaString, planta, PHString, tierra, stateString, mensaj
     }//GEN-LAST:event_RealizarOperacionActionPerformed
 
     private void cbx_PlantaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_PlantaItemStateChanged
-        Conexion con = new Conexion();
-   
-        ArrayList<Plantas_Get_Set> Fila = con.Planta_Details(this.cbx_Planta.getSelectedItem().toString());
+       
+try { 
+     
+    Conexion con = new Conexion();
+    
+    // Obtener detalles de las plantas
+    String plantaSeleccionada = this.cbx_Planta.getSelectedItem().toString();
+    ArrayList<Plantas_Get_Set> Fila = con.Planta_Details(plantaSeleccionada);
+
+    // Configurar el modelo de tabla
+    DefaultTableModel table = new DefaultTableModel();
+    table.addColumn("Nombre");
+    table.addColumn("Minerales");
+    table.addColumn("Nivel de PH");
+    table.addColumn("Humedad");
+    table.addColumn("Salinidad");
+    table.addColumn("Tipo de Tierra");
+    this.tablaP_Details.setModel(table);
+    
+    // Rellenar la tabla con los datos obtenidos
+    for (Plantas_Get_Set fn : Fila) {
+        Object[] obj = new Object[6];
+        obj[0] = fn.getNombre_planta();
+        obj[1] = fn.getContenidoDeMinerales();
+        obj[2] = fn.getNivel_ph();
+        obj[3] = fn.getHumedad_Suelo();
+        obj[4] = fn.getSalinidad();
+        obj[5] = fn.getTipo_tierra();
+
+        table.addRow(obj);
+    }
+}catch (Exception e) {
+    e.printStackTrace(); // Manejo general para otras excepciones
+}
+         // Manejo específico para SQLException
+         
         
-        DefaultTableModel table;
-        table = new DefaultTableModel();
-        table.addColumn("Nombre");
-        table.addColumn("Minerales");
-        table.addColumn("Nivel de PH");
-        table.addColumn("Humedad");
-        table.addColumn("Salinidad");
-        table.addColumn("Tipo de Tierra");
-        this.tablaP_Details.setModel(table);
-           
-        for(Plantas_Get_Set fn : Fila){
-            Object[] obj = new Object[6];
-            obj[0] = fn.getNombre_planta();
-            obj[1] = fn.getContenidoDeMinerales();
-            obj[2] = fn.getNivel_ph();
-            obj[3] = fn.getHumedad_Suelo();
-            obj[4] = fn.getSalinidad();
-            obj[5] = fn.getTipo_tierra();
-            
-            table.addRow(obj);
-        }
-        //con.InsertarHistoria("10-01-2025", "ixora", "7", "Arena", "sodio", "Algo");
     }//GEN-LAST:event_cbx_PlantaItemStateChanged
 
     private void cbx_PlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseClicked
@@ -9874,29 +9884,40 @@ con.InsertarHistoria( fechaString, planta, PHString, tierra, stateString, mensaj
     }//GEN-LAST:event_txtPHMousePressed
 
     private void cbx_tierraItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_tierraItemStateChanged
-        Conexion con = new Conexion();
-   
-        ArrayList<TipoTierra_Get_Set> Fila = con.Tierra_Details(this.cbx_tierra.getSelectedItem().toString());
-        
-        DefaultTableModel table;
-        table = new DefaultTableModel();
-        table.addColumn("Nombre");
-        table.addColumn("Minerales");
-        table.addColumn("Nivel de PH");
-        table.addColumn("Humedad");
-        table.addColumn("Salinidad");
-        this.tablaT_Details.setModel(table);
-           
-        for(TipoTierra_Get_Set fn : Fila){
-            Object[] obj = new Object[5];
-            obj[0] = fn.getNombreTierra();
-            obj[1] = fn.getContenidoDeMinerales();
-            obj[2] = fn.getNivelPh();
-            obj[3] = fn.getHumedadSuelo();
-            obj[4] = fn.getSalinidad();
-            
-            table.addRow(obj);
-        }  
+       // Crear la conexión
+
+
+// Usar try-with-resources para asegurar el cierre adecuado de la conexión
+try { 
+    Conexion con = new Conexion();
+    // Obtener detalles de la tierra
+    ArrayList<TipoTierra_Get_Set> Fila = con.Tierra_Details(this.cbx_tierra.getSelectedItem().toString());
+
+    // Configurar el modelo de tabla
+    DefaultTableModel table = new DefaultTableModel();
+    table.addColumn("Nombre");
+    table.addColumn("Minerales");
+    table.addColumn("Nivel de PH");
+    table.addColumn("Humedad");
+    table.addColumn("Salinidad");
+    this.tablaT_Details.setModel(table);
+
+    // Rellenar la tabla con los datos obtenidos
+    for (TipoTierra_Get_Set fn : Fila) {
+        Object[] obj = new Object[5];
+        obj[0] = fn.getNombreTierra();
+        obj[1] = fn.getContenidoDeMinerales();
+        obj[2] = fn.getNivelPh();
+        obj[3] = fn.getHumedadSuelo();
+        obj[4] = fn.getSalinidad();
+
+        table.addRow(obj);
+    }
+}catch (Exception e) {
+    e.printStackTrace(); // Manejo general para otras excepciones
+}
+         
+
     }//GEN-LAST:event_cbx_tierraItemStateChanged
 
     public static void main(String args[]) {
