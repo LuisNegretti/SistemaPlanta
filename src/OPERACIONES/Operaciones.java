@@ -31,10 +31,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import sistema.planta.Principal;
 
-/**
- * 
- * @author pc
- */
+
 public class Operaciones extends javax.swing.JFrame {
      
      DefaultTableModel modelo;
@@ -49,7 +46,7 @@ private boolean isNumeric(String str) {
     }
 }
 
-// Método para insertar datos en la base de datos
+// Método para insertar datos en la base de datos BORRAR
 private void insertarEnBaseDeDatos(String numberAsString, String fechaString, String planta, String PHString, String tierra, String stateString, String mensaje) {
     try (Connection cn = DriverManager.getConnection("jdbc:mysql://localhost3306/sistema_planta", "root", "")) {
         String query = "INSERT INTO historial (ID_Operacion, Fecha, Planta, PH, Tierra, Mineral, Resultado) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -83,9 +80,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         modelo.addColumn("Mineral");
         modelo.addColumn("Resultado");
         this. HistorialModelo.setModel(modelo);
-        
-        
-        
+          
         Conexion con = new Conexion();
         
         ArrayList<Plantas_Get_Set> Lista = con.List_Plantas("plantas");
@@ -93,7 +88,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         ArrayList<TipoTierra_Get_Set> simple = con.List_TipoTierra();
         
         
-        try {
+        try {        
     // Establecer la conexión con la base de datos
     String url = "jdbc:mysql://localhost/sistema_planta";
     String usuario = "root";
@@ -162,6 +157,9 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         BoxNitrogeno = new javax.swing.JCheckBox();
         BoxFosforo = new javax.swing.JCheckBox();
         BoxPotasio = new javax.swing.JCheckBox();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaT_Details = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaP_Details = new javax.swing.JTable();
@@ -212,7 +210,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         cbx_Planta.setBackground(new java.awt.Color(0, 204, 0));
         cbx_Planta.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_Planta.setForeground(new java.awt.Color(0, 153, 102));
-        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Margarita", "Bugambilia", "Tulipanes", "Corona de cristo", "Ixoras", "Amapola rosa", "Rosa del desierto" }));
+        cbx_Planta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         cbx_Planta.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cbx_Planta.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -264,8 +262,13 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         cbx_tierra.setBackground(new java.awt.Color(102, 51, 0));
         cbx_tierra.setFont(new java.awt.Font("Calisto MT", 1, 12)); // NOI18N
         cbx_tierra.setForeground(new java.awt.Color(255, 255, 255));
-        cbx_tierra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno", "Franco Negra", "Limonosa Organica", "Arena", "Arcilla" }));
+        cbx_tierra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione uno" }));
         cbx_tierra.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        cbx_tierra.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbx_tierraItemStateChanged(evt);
+            }
+        });
         cbx_tierra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_tierraActionPerformed(evt);
@@ -400,6 +403,35 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
 
         SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 610));
 
+        tablaT_Details.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Minerales", "Nivel de PH", "Humedad", "Salinidad"
+            }
+        ));
+        jScrollPane3.setViewportView(tablaT_Details);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(316, 316, 316))
+        );
+
+        SalaOperaciones.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 610, 160));
+
         jPanel7.setBackground(new java.awt.Color(153, 153, 0));
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Valores (Referencias)", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calisto MT", 1, 18), new java.awt.Color(102, 51, 0))); // NOI18N
         jPanel7.setForeground(new java.awt.Color(102, 51, 0));
@@ -433,17 +465,17 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
-        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 610, 220));
+        SalaOperaciones.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 610, 190));
 
         RealizarOperacion.setBackground(new java.awt.Color(102, 51, 0));
         RealizarOperacion.setFont(new java.awt.Font("Calisto MT", 1, 24)); // NOI18N
@@ -571,11 +603,11 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 912, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 746, Short.MAX_VALUE)
         );
 
         jTabbedPane2.getAccessibleContext().setAccessibleName("Operaciones.");
@@ -8370,8 +8402,7 @@ insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, sta
         // Mostrar el mensaje en un JOptionPane
         JOptionPane.showMessageDialog(null, mensaje,
                 "Cuidados de la Amapola Rosa", JOptionPane.DEFAULT_OPTION,
-                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
-        
+                new ImageIcon(getClass().getResource("/iconos/ciclo.png"))); 
         //DESDE AQUI COMIENZA EL CODIGO PARA EL HISTORIAL.
     //ESTO ES PARA LLEVAR EL MINERAL SELECCIONADO A STRING.
     boolean isSelected = BoxPotasio.isSelected();
@@ -8410,7 +8441,6 @@ if (modelo.getRowCount() > 0) {
     System.out.println("El modelo no contiene filas, asignando 1"); // Imprimir asignación de 1
 }
 System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
-
 // AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
 String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje};
 modelo.addRow(info);
@@ -8539,7 +8569,7 @@ insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, sta
     boolean isSelected = BoxFosforo.isSelected();
 String stateString = isSelected ? "Fosforo" : "No seleccionado";
     
- boolean hasNumber = false;
+boolean hasNumber = false;
 double maxNumber = 0; // Inicializar con 0
 String numberAsString = null; // Variable para almacenar el número como String
 
@@ -9101,7 +9131,6 @@ insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, sta
     boolean isSelected = BoxCalcio.isSelected();
 String stateString = isSelected ? "Calcio" : "No seleccionado";
     
-    
     boolean hasNumber = false;
 double maxNumber = 0; // Inicializar con 0
 String numberAsString = null; // Variable para almacenar el número como String
@@ -9138,7 +9167,6 @@ if (modelo.getRowCount() > 0) {
         System.out.println("No se encontraron números, asignando 1"); // Imprimir asignación de 1
 }
 System.out.println("Número final como String: " + numberAsString); // Imprimir el número final
-
 
   //AQUI ES PARA GUARDARLO EN LA TABLA DEL PROGRAMA
     String []info=new String[7];
@@ -9177,8 +9205,6 @@ System.out.println("Número final como String: " + numberAsString); // Imprimir 
 } catch (SQLException e) {
     e.printStackTrace();
 }
-
-        
         }
          else if ("Rosa del desierto".equals(planta) && "Arena".equals(tierra) && BoxFosforo.isSelected() && (PH >= 6 && PH <= 7.5)) {
                 
@@ -9741,30 +9767,46 @@ String[] info = {numberAsString, fechaString, planta, PHString, tierra, stateStr
 modelo.addRow(info);
 
 // Método para insertar datos en la base de datos
-insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, stateString, mensaje);
+Conexion con = new Conexion();//lo pones al principio del todo RECUERDA EN EL INICIO DE LAS OPERACIONES DEL HISTORIAL
+con.InsertarHistoria( fechaString, planta, PHString, tierra, stateString, mensaje);
         }
             
-            
          }//ESTE ES EL ELSE DE LOS VARIOS MINERALES //Esta llave es del TERCER else
-                 
-       
-               
-        
-        
 
         //2* VERIFICAR LOS DATOS SELECCIONADOS POR EL USUARIO.
 
         }//Esta llave es del segundo else
 
         }//Esta llave es del primer else
-
-        //BASE DE DATOS LISTA E INCLUIDA EN CADA OPERACION   AUTHOR: EMMANUEL DALIS
-
-    
     }//GEN-LAST:event_RealizarOperacionActionPerformed
 
     private void cbx_PlantaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_PlantaItemStateChanged
-        //      System.out.println(this.cbx_Planta.getSelectedItem().toString() + "state");
+        Conexion con = new Conexion();
+   
+        ArrayList<Plantas_Get_Set> Fila = con.Planta_Details(this.cbx_Planta.getSelectedItem().toString());
+        
+        DefaultTableModel table;
+        table = new DefaultTableModel();
+        table.addColumn("Nombre");
+        table.addColumn("Minerales");
+        table.addColumn("Nivel de PH");
+        table.addColumn("Humedad");
+        table.addColumn("Salinidad");
+        table.addColumn("Tipo de Tierra");
+        this.tablaP_Details.setModel(table);
+           
+        for(Plantas_Get_Set fn : Fila){
+            Object[] obj = new Object[6];
+            obj[0] = fn.getNombre_planta();
+            obj[1] = fn.getContenidoDeMinerales();
+            obj[2] = fn.getNivel_ph();
+            obj[3] = fn.getHumedad_Suelo();
+            obj[4] = fn.getSalinidad();
+            obj[5] = fn.getTipo_tierra();
+            
+            table.addRow(obj);
+        }
+        //con.InsertarHistoria("10-01-2025", "ixora", "7", "Arena", "sodio", "Algo");
     }//GEN-LAST:event_cbx_PlantaItemStateChanged
 
     private void cbx_PlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbx_PlantaMouseClicked
@@ -9792,7 +9834,6 @@ insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, sta
     }//GEN-LAST:event_cbx_PlantaActionPerformed
 
     private void cbx_tierraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_tierraActionPerformed
-//holaaaaaaaaaaaaaaaaa aqui es    
 
     }//GEN-LAST:event_cbx_tierraActionPerformed
 
@@ -9832,34 +9873,33 @@ insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, sta
         txtPH.setText("");
     }//GEN-LAST:event_txtPHMousePressed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Operaciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void cbx_tierraItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbx_tierraItemStateChanged
+        Conexion con = new Conexion();
+   
+        ArrayList<TipoTierra_Get_Set> Fila = con.Tierra_Details(this.cbx_tierra.getSelectedItem().toString());
+        
+        DefaultTableModel table;
+        table = new DefaultTableModel();
+        table.addColumn("Nombre");
+        table.addColumn("Minerales");
+        table.addColumn("Nivel de PH");
+        table.addColumn("Humedad");
+        table.addColumn("Salinidad");
+        this.tablaT_Details.setModel(table);
+           
+        for(TipoTierra_Get_Set fn : Fila){
+            Object[] obj = new Object[5];
+            obj[0] = fn.getNombreTierra();
+            obj[1] = fn.getContenidoDeMinerales();
+            obj[2] = fn.getNivelPh();
+            obj[3] = fn.getHumedadSuelo();
+            obj[4] = fn.getSalinidad();
+            
+            table.addRow(obj);
+        }  
+    }//GEN-LAST:event_cbx_tierraItemStateChanged
 
-        /* Create and display the form */
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Operaciones().setVisible(true);
@@ -9891,13 +9931,16 @@ insertarEnBaseDeDatos(numberAsString, fechaString, planta, PHString, tierra, sta
     private javax.swing.JLabel jLabel61;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel lvl_PH;
     private javax.swing.JTable tablaP_Details;
+    private javax.swing.JTable tablaT_Details;
     private javax.swing.JPanel tipo_planta;
     private javax.swing.JPanel tipo_tierra;
     private javax.swing.JTextField txtPH;
