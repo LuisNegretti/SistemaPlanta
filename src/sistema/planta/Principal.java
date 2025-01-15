@@ -39,6 +39,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         Educacion = new javax.swing.JButton();
         Operaciones = new javax.swing.JButton();
         info = new javax.swing.JButton();
@@ -55,28 +56,20 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 0));
         jPanel2.setForeground(new java.awt.Color(102, 51, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(102, 51, 0));
         jLabel1.setFont(new java.awt.Font("Calisto MT", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Software GardenGrow Learning");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addContainerGap(414, Short.MAX_VALUE))
-        );
+        jLabel3.setBackground(new java.awt.Color(102, 51, 0));
+        jLabel3.setFont(new java.awt.Font("Calisto MT", 1, 28)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/Software GardenGrow Learning (1).png"))); // NOI18N
+        jLabel3.setToolTipText("");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
         Educacion.setBackground(new java.awt.Color(204, 255, 255));
         Educacion.setForeground(new java.awt.Color(153, 51, 0));
@@ -103,6 +96,11 @@ public class Principal extends javax.swing.JFrame {
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-parque-con-farola-48.png"))); // NOI18N
         info.setToolTipText("Sobre el sistema.");
         info.setBorder(null);
+        info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoActionPerformed(evt);
+            }
+        });
 
         Desarrolladores.setBackground(new java.awt.Color(204, 255, 255));
         Desarrolladores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-farmer-hombre-48.png"))); // NOI18N
@@ -124,31 +122,31 @@ public class Principal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 15, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Operaciones, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(info, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Desarrolladores, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Salir, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(info, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Operaciones, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Educacion, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(38, 38, 38)
                 .addComponent(Educacion)
-                .addGap(37, 37, 37)
-                .addComponent(Operaciones)
-                .addGap(40, 40, 40)
-                .addComponent(info)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Operaciones)
+                .addGap(64, 64, 64)
+                .addComponent(info)
+                .addGap(49, 49, 49)
                 .addComponent(Desarrolladores)
-                .addGap(35, 35, 35)
+                .addGap(62, 62, 62)
                 .addComponent(Salir)
-                .addGap(18, 18, 18))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,6 +237,87 @@ public class Principal extends javax.swing.JFrame {
       
     }//GEN-LAST:event_OperacionesActionPerformed
 
+    private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
+        
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_entrar.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            String mensaje = "<html><body style='width: 900px; font-size: 11px;'>" +
+        "<h1>Descripción General del Sistema</h1>" +
+        "<p>El sistema autosustentable para la regeneración de espacios verdes, es un enfoque integral diseñado para restaurar, mantener y potenciar la biodiversidad de un entorno escolar. Este sistema busca crear un ecosistema equilibrado que no solo embellezca el espacio, sino que también sirva como un recurso educativo y un modelo de sostenibilidad para la comunidad.</p>" +
+        "<h1>Propósito</h1>" +
+        "<ul>" +
+        "<li>Regenerar el Espacio Verde: Transformar áreas degradadas en espacios verdes saludables y funcionales que fomenten la biodiversidad.</li>" +
+        "<li>Fomentar la Educación Ambiental: Proporcionar a los estudiantes y a la comunidad herramientas y conocimientos sobre sostenibilidad, conservación y cuidado del medio ambiente.</li>" +
+        "<li>Promover la Participación Comunitaria: Involucrar a estudiantes, docentes y padres en actividades de cultivo y mantenimiento, fortaleciendo así el sentido de comunidad.</li>" +
+        "<li>Establecer un Modelo de Sostenibilidad: Crear un ejemplo replicable en otras instituciones educativas y comunidades sobre cómo gestionar espacios verdes de manera autosustentable.</li>" +
+        "</ul>" +
+        "<h1>Funciones del Sistema</h1>" +
+        "<ol>" +
+        "<li>Regeneración Ecológica:</li>" +
+        "<ul>" +
+        "<li>Implementar prácticas de restauración ecológica que favorezcan el crecimiento de flora nativa y la recuperación de la fauna local.</li>" +
+        "<li>Mejorar la calidad del suelo mediante el uso de técnicas de compostaje y abono orgánico.</li>" +
+        "</ul>" +
+        "<li>Educación y Concienciación:</li>" +
+        "<ul>" +
+        "<li>Desarrollar programas educativos que enseñen a los estudiantes sobre la importancia de la biodiversidad, el ciclo de vida de las plantas y el impacto humano en el medio ambiente.</li>" +
+        "<li>Organizar talleres y actividades prácticas que fomenten el aprendizaje activo.</li>" +
+        "</ul>" +
+        "<li>Mantenimiento Sostenible:</li>" +
+        "<ul>" +
+        "<li>Establecer un calendario de riego, poda y cuidado general del espacio verde que minimice el uso de recursos hídricos y químicos.</li>" +
+        "<li>Utilizar métodos de control biológico para manejar plagas y enfermedades en las plantas.</li>" +
+        "</ul>" +
+        "<li>Participación Comunitaria:</li>" +
+        "<ul>" +
+        "<li>Crear un programa de voluntariado que invite a estudiantes, padres y miembros de la comunidad a participar en las actividades de mantenimiento y cuidado del espacio verde.</li>" +
+        "<li>Fomentar la colaboración con organizaciones locales para enriquecer las actividades y recursos disponibles.</li>" +
+        "</ul>" +
+        "<li>Monitoreo y Evaluación:</li>" +
+        "<ul>" +
+        "<li>Implementar un sistema de monitoreo que evalúe periódicamente el estado del ecosistema, incluyendo la salud de las plantas, la biodiversidad presente y el impacto de las actividades realizadas.</li>" +
+        "<li>Recoger datos que permitan realizar ajustes en las prácticas y mejorar continuamente el sistema.</li>" +
+        "</ul>" +
+        "<li>Documentación y Difusión:</li>" +
+        "<ul>" +
+        "<li>Mantener un registro detallado de todas las actividades realizadas, así como de los resultados obtenidos.</li>" +
+        "<li>Compartir los aprendizajes y logros con la comunidad escolar y más allá, a través de informes, presentaciones y eventos comunitarios.</li>" +
+        "</ul>" +
+        "</ol>" +
+        "</body></html>";
+
+// Mostrar el mensaje en un JOptionPane
+JOptionPane.showMessageDialog(null, mensaje,
+        "SOBRE EL SISTEMA", JOptionPane.DEFAULT_OPTION,
+        new javax.swing.ImageIcon(getClass().getResource(
+                "/iconos/ciclo.png")));
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
+    }//GEN-LAST:event_infoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -281,6 +360,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton Salir;
     private javax.swing.JButton info;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

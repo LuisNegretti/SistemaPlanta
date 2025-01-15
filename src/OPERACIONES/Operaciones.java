@@ -172,8 +172,6 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         jLabel61 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuOpe = new javax.swing.JMenu();
-        ComoRealizarOpe = new javax.swing.JMenuItem();
-        TenerCuenta = new javax.swing.JMenuItem();
         EjemploOpe = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MenuPricipal = new javax.swing.JMenuItem();
@@ -402,6 +400,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
 
         SalaOperaciones.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 270, 610));
 
+        tablaT_Details.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tablaT_Details.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -425,8 +424,8 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(316, 316, 316))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(291, 291, 291))
         );
 
         SalaOperaciones.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 610, 160));
@@ -442,6 +441,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
                 return false;
             }
         };
+        tablaP_Details.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tablaP_Details.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -545,24 +545,6 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
             }
         });
 
-        ComoRealizarOpe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
-        ComoRealizarOpe.setText("¿Como realizar una operacion?");
-        ComoRealizarOpe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComoRealizarOpeActionPerformed(evt);
-            }
-        });
-        MenuOpe.add(ComoRealizarOpe);
-
-        TenerCuenta.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        TenerCuenta.setText("¿Que debo tener en cuenta?");
-        TenerCuenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TenerCuentaActionPerformed(evt);
-            }
-        });
-        MenuOpe.add(TenerCuenta);
-
         EjemploOpe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         EjemploOpe.setText("Ejemplo de operacion.");
         EjemploOpe.addActionListener(new java.awt.event.ActionListener() {
@@ -613,20 +595,6 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ComoRealizarOpeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComoRealizarOpeActionPerformed
-       String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
-                "▎1. pH del Suelo<br>" +
-                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
-                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
-                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
-                "</body></html>";
-
-        // Mostrar el mensaje en un JOptionPane
-        JOptionPane.showMessageDialog(null, mensaje,
-                "Como realizar una operacion", JOptionPane.DEFAULT_OPTION,
-                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
-    }//GEN-LAST:event_ComoRealizarOpeActionPerformed
 
     private void MenuPricipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPricipalActionPerformed
        
@@ -9847,20 +9815,6 @@ try {
 
     }//GEN-LAST:event_cbx_tierraActionPerformed
 
-    private void TenerCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TenerCuentaActionPerformed
-        String mensaje = "<html><body style='width: 900px; font-size: 12px;'>" +
-                "▎1. pH del Suelo<br>" +
-                "El pH ideal del suelo para la rosa del desierto se encuentra entre 6.0 y 7.5. Este rango permite una buena disponibilidad de nutrientes y un crecimiento saludable.<br><br>" +
-                "• Fertilizantes específicos para suculentas: También se pueden utilizar fertilizantes formulados específicamente para plantas suculentas, que suelen tener un menor contenido de nitrógeno.<br><br>" +
-                "Recuerda que la rosa del desierto es una planta resistente que puede adaptarse a diversas condiciones, pero siempre es mejor seguir estas recomendaciones para asegurar su salud y belleza." +
-                "</body></html>";
-
-        // Mostrar el mensaje en un JOptionPane
-        JOptionPane.showMessageDialog(null, mensaje,
-                "Tener en cuenta para realizar Operacion", JOptionPane.DEFAULT_OPTION,
-                new ImageIcon(getClass().getResource("/iconos/ciclo.png")));
-    }//GEN-LAST:event_TenerCuentaActionPerformed
-
     private void MenuOpeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuOpeActionPerformed
         Imagen1 acceso = new  Imagen1();
         acceso.setVisible(true);
@@ -9933,7 +9887,6 @@ try {
     private javax.swing.JCheckBox BoxFosforo;
     private javax.swing.JCheckBox BoxNitrogeno;
     private javax.swing.JCheckBox BoxPotasio;
-    private javax.swing.JMenuItem ComoRealizarOpe;
     private javax.swing.JMenuItem EjemploOpe;
     private javax.swing.JTable HistorialModelo;
     private javax.swing.JPanel HistorialdeOpe;
@@ -9943,7 +9896,6 @@ try {
     private javax.swing.JButton RealizarOperacion;
     private javax.swing.JPanel SalaOperaciones;
     private javax.swing.JMenuItem SalirPrograma;
-    private javax.swing.JMenuItem TenerCuenta;
     private javax.swing.JComboBox<String> cbx_Planta;
     private javax.swing.JComboBox<String> cbx_tierra;
     private javax.swing.JPanel cont_mnrl;
