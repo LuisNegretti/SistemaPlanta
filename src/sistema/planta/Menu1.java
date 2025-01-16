@@ -210,9 +210,57 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
         Bugambilia = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel94 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jScrollPane49 = new javax.swing.JScrollPane();
+        jTextArea48 = new javax.swing.JTextArea();
+        jScrollPane50 = new javax.swing.JScrollPane();
+        jTextArea49 = new javax.swing.JTextArea();
+        jScrollPane51 = new javax.swing.JScrollPane();
+        jTextArea50 = new javax.swing.JTextArea();
+        jScrollPane52 = new javax.swing.JScrollPane();
+        jTextArea51 = new javax.swing.JTextArea();
         Azalea = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jScrollPane53 = new javax.swing.JScrollPane();
+        jTextArea52 = new javax.swing.JTextArea();
+        jScrollPane54 = new javax.swing.JScrollPane();
+        jTextArea53 = new javax.swing.JTextArea();
+        jScrollPane55 = new javax.swing.JScrollPane();
+        jTextArea54 = new javax.swing.JTextArea();
+        jScrollPane56 = new javax.swing.JScrollPane();
+        jTextArea55 = new javax.swing.JTextArea();
         Genciana = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel100 = new javax.swing.JLabel();
+        jScrollPane57 = new javax.swing.JScrollPane();
+        jTextArea56 = new javax.swing.JTextArea();
+        jScrollPane58 = new javax.swing.JScrollPane();
+        jTextArea57 = new javax.swing.JTextArea();
+        jScrollPane59 = new javax.swing.JScrollPane();
+        jTextArea58 = new javax.swing.JTextArea();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jScrollPane60 = new javax.swing.JScrollPane();
+        jTextArea59 = new javax.swing.JTextArea();
         Primula = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel103 = new javax.swing.JLabel();
+        jScrollPane61 = new javax.swing.JScrollPane();
+        jTextArea60 = new javax.swing.JTextArea();
+        jScrollPane62 = new javax.swing.JScrollPane();
+        jTextArea61 = new javax.swing.JTextArea();
+        jLabel104 = new javax.swing.JLabel();
+        jScrollPane63 = new javax.swing.JScrollPane();
+        jTextArea62 = new javax.swing.JTextArea();
+        jLabel105 = new javax.swing.JLabel();
+        jScrollPane64 = new javax.swing.JScrollPane();
+        jTextArea63 = new javax.swing.JTextArea();
         Hortensia = new javax.swing.JPanel();
         Begonia = new javax.swing.JPanel();
         Narciso = new javax.swing.JPanel();
@@ -1217,7 +1265,7 @@ public class Menu1 extends javax.swing.JFrame {
                                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
-                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1240,15 +1288,18 @@ public class Menu1 extends javax.swing.JFrame {
             .addGroup(Amapolas_RosasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(Amapolas_RosasLayout.createSequentialGroup()
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Amapolas_RosasLayout.createSequentialGroup()
+                        .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)))
                 .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane34))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Amapolas Rosas", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/Amapola.rosa.png")), Amapolas_Rosas); // NOI18N
@@ -1343,7 +1394,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         IxorasLayout.setVerticalGroup(
             IxorasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1369,7 +1420,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Ixoras", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/ixora.png")), Ixoras); // NOI18N
@@ -1577,7 +1628,8 @@ public class Menu1 extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE))
                     .addGroup(TulipanesLayout.createSequentialGroup()
                         .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(TulipanesLayout.createSequentialGroup()
@@ -1586,9 +1638,9 @@ public class Menu1 extends javax.swing.JFrame {
                             .addGroup(TulipanesLayout.createSequentialGroup()
                                 .addGap(90, 90, 90)
                                 .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)))
                 .addGroup(TulipanesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1610,65 +1662,552 @@ public class Menu1 extends javax.swing.JFrame {
                             .addGroup(TulipanesLayout.createSequentialGroup()
                                 .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(jScrollPane48))
+                                .addComponent(jScrollPane48, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE))
                             .addGroup(TulipanesLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
                                 .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel93)))
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel93)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(5, 5, 5)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Tulipanes", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/tulipanes.png")), Tulipanes); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(255, 102, 178));
+        jPanel1.setForeground(new java.awt.Color(255, 102, 178));
+
+        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Bugpri.png"))); // NOI18N
+        jLabel94.setText("jLabel10");
+        jLabel94.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel94.setPreferredSize(new java.awt.Dimension(350, 380));
+
+        jLabel95.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel95.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/bug2.png"))); // NOI18N
+
+        jLabel96.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Bug3.png"))); // NOI18N
+        jLabel96.setText("jLabel6");
+
+        jScrollPane49.setBorder(null);
+
+        jTextArea48.setEditable(false);
+        jTextArea48.setBackground(new java.awt.Color(255, 102, 178));
+        jTextArea48.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea48.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea48.setLineWrap(true);
+        jTextArea48.setTabSize(0);
+        jTextArea48.setText("En cuanto a minerales, la bugambilia no tiene \nrequisitos estrictos, pero responde bien a su-\nelos moderadamente fértiles. Añadir compost \no abono orgánico ayudará a mejorar el con-\ntenido de nutrientes y promover un crecimi-\nento saludable. El rango de pH ideal para la \nbugambilia es de 5.5 a 6.5, ligeramente ácido.\nEs crucial mantener este equilibrio, ya que ni-\nveles de pH fuera de este rango pueden li-\nmitar la absorción de nutrientes esenciales. \nEl uso de suelos arenosos o francoarenosos \ncon buen drenaje es ideal, ya que evita el en-\ncharcamiento que puede perjudicar las raíces.\n\nEn términos de humedad del suelo, la bugam-\nbilia no es exigente, pero prefiere suelos que \npuedan retener algo de agua sin volverse pe-\nsados o compactos.");
+        jTextArea48.setToolTipText("");
+        jTextArea48.setWrapStyleWord(true);
+        jTextArea48.setBorder(null);
+        jScrollPane49.setViewportView(jTextArea48);
+
+        jScrollPane50.setBorder(null);
+
+        jTextArea49.setEditable(false);
+        jTextArea49.setBackground(new java.awt.Color(255, 102, 178));
+        jTextArea49.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea49.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea49.setLineWrap(true);
+        jTextArea49.setTabSize(0);
+        jTextArea49.setText("Un riego moderado, asegurándose de que la\ncapa superficial del suelo se seque ligera-\nmente entre riegos, es la clave para evitar \nproblemas como la pudrición radicular. Dado \nque la planta no tolera la salinidad, es esen-\ncial evitar agua de riego o fertilizantes con \naltos niveles de sales.\n\nLa bugambilia prospera mejor en suelos bien \naireados y ricos en materia orgánica, donde \nsus raíces pueden extenderse fácilmente. \nIncorporar arena o materia orgánica en el su-\nelo es una práctica útil para asegurar el dre\nnaje y mantener las raíces saludables, maxi-\nmizando su resistencia y floración.");
+        jTextArea49.setToolTipText("");
+        jTextArea49.setWrapStyleWord(true);
+        jTextArea49.setBorder(null);
+        jScrollPane50.setViewportView(jTextArea49);
+
+        jScrollPane51.setBorder(null);
+
+        jTextArea50.setEditable(false);
+        jTextArea50.setBackground(new java.awt.Color(255, 102, 178));
+        jTextArea50.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea50.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea50.setLineWrap(true);
+        jTextArea50.setTabSize(0);
+        jTextArea50.setText("La bugambilia, con sus llamativos colores y\ncapacidad para adaptarse a diversas con-\ndiciones climáticas, es una planta orna-\nmental ideal para embellecer jardines y \nespacios exteriores. Su cultivo es sencillo \nsi se respetan sus necesidades básicas, \nlo que la convierte en una opción favorita \npara jardines en regiones cálidas y soleadas.");
+        jTextArea50.setToolTipText("");
+        jTextArea50.setWrapStyleWord(true);
+        jTextArea50.setBorder(null);
+        jScrollPane51.setViewportView(jTextArea50);
+
+        jScrollPane52.setBorder(null);
+
+        jTextArea51.setEditable(false);
+        jTextArea51.setBackground(new java.awt.Color(255, 102, 178));
+        jTextArea51.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea51.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea51.setTabSize(0);
+        jTextArea51.setText("BUGAMBILIA");
+        jTextArea51.setWrapStyleWord(true);
+        jTextArea51.setBorder(null);
+        jScrollPane52.setViewportView(jTextArea51);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(82, 82, 82)
+                                .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel96)
+                        .addGap(74, 74, 74)
+                        .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel94, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel95)))))
+                .addGap(77, 152, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout BugambiliaLayout = new javax.swing.GroupLayout(Bugambilia);
         Bugambilia.setLayout(BugambiliaLayout);
         BugambiliaLayout.setHorizontalGroup(
             BugambiliaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         BugambiliaLayout.setVerticalGroup(
             BugambiliaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(BugambiliaLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Bugambilia", Bugambilia);
+
+        jPanel2.setBackground(new java.awt.Color(255, 192, 203));
+
+        jLabel97.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Bugpri.png"))); // NOI18N
+        jLabel97.setText("jLabel10");
+        jLabel97.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel97.setPreferredSize(new java.awt.Dimension(350, 380));
+
+        jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel98.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Aza2.png"))); // NOI18N
+
+        jLabel99.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/aza3.png"))); // NOI18N
+        jLabel99.setText("jLabel6");
+
+        jScrollPane53.setBorder(null);
+
+        jTextArea52.setEditable(false);
+        jTextArea52.setBackground(new java.awt.Color(255, 192, 203));
+        jTextArea52.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea52.setForeground(new java.awt.Color(46, 139, 87));
+        jTextArea52.setTabSize(0);
+        jTextArea52.setText("AZALEAS");
+        jTextArea52.setWrapStyleWord(true);
+        jTextArea52.setBorder(null);
+        jScrollPane53.setViewportView(jTextArea52);
+
+        jScrollPane54.setBorder(null);
+
+        jTextArea53.setEditable(false);
+        jTextArea53.setBackground(new java.awt.Color(255, 192, 203));
+        jTextArea53.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea53.setForeground(new java.awt.Color(46, 139, 87));
+        jTextArea53.setLineWrap(true);
+        jTextArea53.setTabSize(0);
+        jTextArea53.setText("Las azaleas son arbustos ornamentales \nmuy valorados por su belleza y su capa-\ncidad para llenar jardines con vibrantes \ncolores. Estas plantas son conocidas \npor sus flores delicadas y su naturaleza \nadaptable, lo que las hace ideales tanto \npara jardineros principiantes como ex-\nperimentados.");
+        jTextArea53.setToolTipText("");
+        jTextArea53.setWrapStyleWord(true);
+        jTextArea53.setBorder(null);
+        jScrollPane54.setViewportView(jTextArea53);
+
+        jScrollPane55.setBorder(null);
+
+        jTextArea54.setEditable(false);
+        jTextArea54.setBackground(new java.awt.Color(255, 192, 203));
+        jTextArea54.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea54.setForeground(new java.awt.Color(46, 139, 87));
+        jTextArea54.setLineWrap(true);
+        jTextArea54.setTabSize(0);
+        jTextArea54.setText("En cuanto al riego, necesitan un suelo cons-\ntantemente húmedo, pero bien drenado, \npara evitar problemas como la pudrición de \nraíces. Regarlas de manera uniforme, espe-\ncialmente durante la temporada de floración, \nasegurará un crecimiento vigoroso.\n\nSu mantenimiento incluye la poda ligera \ndespués de la floración para estimular nu-\nevos brotes y mantener una forma compacta. \nAdemás, aplicar fertilizante específico para \nplantas acidófilas durante la primavera ayu-\ndará a proporcionarles los nutrientes nece-\nsarios para una floración abundante.");
+        jTextArea54.setToolTipText("");
+        jTextArea54.setWrapStyleWord(true);
+        jTextArea54.setBorder(null);
+        jScrollPane55.setViewportView(jTextArea54);
+
+        jScrollPane56.setBorder(null);
+
+        jTextArea55.setEditable(false);
+        jTextArea55.setBackground(new java.awt.Color(255, 192, 203));
+        jTextArea55.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea55.setForeground(new java.awt.Color(46, 139, 87));
+        jTextArea55.setLineWrap(true);
+        jTextArea55.setTabSize(0);
+        jTextArea55.setText("Para cultivarlas con éxito, es fundamental propor-\ncionarles un suelo ácido, con un pH que oscile \nentre 4.5 y 6.0, ya que las azaleas prosperan en \nsuelos ligeramente ácidos. Este entorno favorece \nla absorción de nutrientes esenciales y asegura \nsu desarrollo saludable. El tipo de tierra más \nadecuado incluye mezclas ricas en materia orgá-\nnica, como turba, corteza de pino o tierra de jardín \ncon compost. Estas condiciones recrean su há-\nbitat natural, que generalmente se encuentra en \nbosques húmedos y sombreados.\n\nLas azaleas requieren un equilibrio entre sol y \nsombra para florecer en su máximo esplendor. \nLo ideal es colocarlas en un lugar donde reciban \nluz solar filtrada o sombra parcial, evitando la ex-\nposición directa al sol durante las horas más \nintensas del día.");
+        jTextArea55.setToolTipText("");
+        jTextArea55.setWrapStyleWord(true);
+        jTextArea55.setBorder(null);
+        jScrollPane56.setViewportView(jTextArea55);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel98, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(jScrollPane55)))
+                .addGap(18, 18, 18))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane54))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane56)
+                            .addComponent(jLabel99, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel98))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(132, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout AzaleaLayout = new javax.swing.GroupLayout(Azalea);
         Azalea.setLayout(AzaleaLayout);
         AzaleaLayout.setHorizontalGroup(
             AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         AzaleaLayout.setVerticalGroup(
             AzaleaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Azalea", Azalea);
+
+        jPanel3.setBackground(new java.awt.Color(173, 216, 230));
+
+        jLabel100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Gen.png"))); // NOI18N
+        jLabel100.setText("jLabel10");
+        jLabel100.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel100.setPreferredSize(new java.awt.Dimension(350, 380));
+
+        jScrollPane57.setBorder(null);
+
+        jTextArea56.setEditable(false);
+        jTextArea56.setBackground(new java.awt.Color(173, 216, 230));
+        jTextArea56.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea56.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea56.setTabSize(0);
+        jTextArea56.setText("GENCIANAS");
+        jTextArea56.setWrapStyleWord(true);
+        jTextArea56.setBorder(null);
+        jScrollPane57.setViewportView(jTextArea56);
+
+        jScrollPane58.setBorder(null);
+
+        jTextArea57.setEditable(false);
+        jTextArea57.setBackground(new java.awt.Color(173, 216, 230));
+        jTextArea57.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea57.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea57.setLineWrap(true);
+        jTextArea57.setTabSize(0);
+        jTextArea57.setText("Las gencianas son plantas herbáceas pere-\nnnes muy apreciadas por sus flores de co-\nlores vivos, que van desde el azul profundo \nhasta el violeta, pasando por tonos blancos \ny amarillos en algunas variedades. Estas \nplantas son originarias de regiones monta-\nñosas y de climas frescos, lo que las hace \nideales para suelos bien drenados y ligera-\nmente ácidos.");
+        jTextArea57.setToolTipText("");
+        jTextArea57.setWrapStyleWord(true);
+        jTextArea57.setBorder(null);
+        jScrollPane58.setViewportView(jTextArea57);
+
+        jScrollPane59.setBorder(null);
+
+        jTextArea58.setEditable(false);
+        jTextArea58.setBackground(new java.awt.Color(173, 216, 230));
+        jTextArea58.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea58.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea58.setLineWrap(true);
+        jTextArea58.setTabSize(0);
+        jTextArea58.setText("En términos de exposición, prefieren lugares con\n luz solar indirecta o semisombra, especialmente \nen regiones donde el sol es muy intenso.\n\nEn cuanto a cuidados generales, estas plantas \nnecesitan protección contra vientos fuertes y tem-\nperaturas extremas. Durante los meses más fríos, \nun acolchado de hojas secas puede ayudar a \nmantener la temperatura del suelo estable. Ade-\nmás, es importante evitar zonas con alta salinidad, \nya que las gencianas no la toleran bien. \nSu mantenimiento es sencillo, lo que las convierte\nen una excelente opción para jardines escolares, \ndonde pueden ser utilizadas para enseñar a los \nniños sobre la biodiversidad y el cuidado ambiental.");
+        jTextArea58.setToolTipText("");
+        jTextArea58.setWrapStyleWord(true);
+        jTextArea58.setBorder(null);
+        jScrollPane59.setViewportView(jTextArea58);
+
+        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel101.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/gen2.png"))); // NOI18N
+
+        jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/gen3.png"))); // NOI18N
+        jLabel102.setText("jLabel6");
+
+        jScrollPane60.setBorder(null);
+
+        jTextArea59.setEditable(false);
+        jTextArea59.setBackground(new java.awt.Color(173, 216, 230));
+        jTextArea59.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea59.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea59.setLineWrap(true);
+        jTextArea59.setTabSize(0);
+        jTextArea59.setText("Para preparar el suelo adecuado para las gen-\ncianas, se recomienda mezclar tierra para jar-\ndín con arena gruesa y un poco de turba o \ncompost. Esto asegura un drenaje eficiente \nmientras proporciona los nutrientes necesarios \npara su desarrollo. Su rango óptimo de pH está \nentre 5.5 y 6.5, condiciones que favorecen el \ncrecimiento saludable de sus raíces. Aunque no \nrequieren un contenido específico de minerales, \nagradecen suelos enriquecidos con materia \norgánica.\n\nEl riego debe ser moderado, manteniendo la ti-\nerra húmeda sin llegar a encharcarla. Las gen-\ncianas son sensibles al exceso de agua, ya que \npuede provocar la pudrición de las raíces, uno \nde los principales riesgos para su salud. ");
+        jTextArea59.setToolTipText("");
+        jTextArea59.setWrapStyleWord(true);
+        jTextArea59.setBorder(null);
+        jScrollPane60.setViewportView(jTextArea59);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9))
+                    .addComponent(jScrollPane58, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel102, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel102)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel101))))
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout GencianaLayout = new javax.swing.GroupLayout(Genciana);
         Genciana.setLayout(GencianaLayout);
         GencianaLayout.setHorizontalGroup(
             GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         GencianaLayout.setVerticalGroup(
             GencianaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Genciana", Genciana);
+
+        jPanel4.setBackground(new java.awt.Color(255, 228, 225));
+
+        jLabel103.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel103.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Prim.png"))); // NOI18N
+        jLabel103.setMinimumSize(new java.awt.Dimension(350, 380));
+        jLabel103.setPreferredSize(new java.awt.Dimension(350, 380));
+
+        jScrollPane61.setBorder(null);
+
+        jTextArea60.setEditable(false);
+        jTextArea60.setBackground(new java.awt.Color(255, 228, 225));
+        jTextArea60.setFont(new java.awt.Font("Elephant", 1, 20)); // NOI18N
+        jTextArea60.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea60.setTabSize(0);
+        jTextArea60.setText("PRIMULAS");
+        jTextArea60.setWrapStyleWord(true);
+        jTextArea60.setBorder(null);
+        jScrollPane61.setViewportView(jTextArea60);
+
+        jScrollPane62.setBorder(null);
+
+        jTextArea61.setEditable(false);
+        jTextArea61.setBackground(new java.awt.Color(255, 228, 225));
+        jTextArea61.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea61.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea61.setLineWrap(true);
+        jTextArea61.setTabSize(0);
+        jTextArea61.setText("Las prímulas son plantas de floración atrac-\ntiva que destacan por sus colores vivos y su \ncapacidad de adaptarse a diferentes ent-\nornos. Son ideales para embellecer jardines \nescolares gracias a su bajo mantenimiento \ny resistencia, además de fomentar la apre-\nciación por la diversidad floral en los niños. \nEstas flores prefieren suelos bien drenados \ny ricos en materia orgánica.");
+        jTextArea61.setToolTipText("");
+        jTextArea61.setWrapStyleWord(true);
+        jTextArea61.setBorder(null);
+        jScrollPane62.setViewportView(jTextArea61);
+
+        jLabel104.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel104.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/Prim1.png"))); // NOI18N
+
+        jScrollPane63.setBorder(null);
+
+        jTextArea62.setEditable(false);
+        jTextArea62.setBackground(new java.awt.Color(255, 228, 225));
+        jTextArea62.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea62.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea62.setLineWrap(true);
+        jTextArea62.setTabSize(0);
+        jTextArea62.setText("Para protegerlas, es importante vigilar posi-\nbles plagas como ácaros o pulgones y ac-\ntuar rápidamente si se detectan, utilizando \nmétodos naturales o productos adecuados.\n\nEn conclusión, las prímulas son una exce-\nlente elección para cualquier jardín escolar, \naportando belleza y enseñando a los niños \nel valor del cuidado y la observación de la \nnaturaleza.");
+        jTextArea62.setToolTipText("");
+        jTextArea62.setWrapStyleWord(true);
+        jTextArea62.setBorder(null);
+        jScrollPane63.setViewportView(jTextArea62);
+
+        jLabel105.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesPlanta/prim 2.png"))); // NOI18N
+
+        jScrollPane64.setBorder(null);
+
+        jTextArea63.setEditable(false);
+        jTextArea63.setBackground(new java.awt.Color(255, 228, 225));
+        jTextArea63.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jTextArea63.setForeground(new java.awt.Color(75, 0, 130));
+        jTextArea63.setLineWrap(true);
+        jTextArea63.setTabSize(0);
+        jTextArea63.setText("El cultivo de las prímulas requiere una prepa-\nración básica del suelo. Se recomienda mez-\nclar tierra de jardín común con compost para \nenriquecerla, lo que mejorará tanto la reten-\nción de agua como la disponibilidad de nu-\ntrientes. La ubicación también juega un pa-\npel crucial: las prímulas prosperan en áreas \ncon luz indirecta o semisombra, ya que una \nexposición prolongada al sol puede dañar \nsus delicadas hojas.\n\nEl riego debe ser moderado, manteniendo \nel suelo húmedo pero no encharcado. Un \nbuen drenaje es fundamental para evitar \nproblemas de pudrición de raíces. \n\nAdemás, es beneficioso fertilizar las prí\nmulas cada dos semanas durante la tem-\nporada de crecimiento con un fertilizante \nequilibrado, lo que favorecerá una floración \nmás abundante.");
+        jTextArea63.setToolTipText("");
+        jTextArea63.setWrapStyleWord(true);
+        jTextArea63.setBorder(null);
+        jScrollPane64.setViewportView(jTextArea63);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel104, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel103, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel105, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel103, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jLabel105, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel104))))
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout PrimulaLayout = new javax.swing.GroupLayout(Primula);
         Primula.setLayout(PrimulaLayout);
         PrimulaLayout.setHorizontalGroup(
             PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PrimulaLayout.setVerticalGroup(
             PrimulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(PrimulaLayout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 40, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Primula", Primula);
@@ -1677,7 +2216,7 @@ public class Menu1 extends javax.swing.JFrame {
         Hortensia.setLayout(HortensiaLayout);
         HortensiaLayout.setHorizontalGroup(
             HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         HortensiaLayout.setVerticalGroup(
             HortensiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1690,7 +2229,7 @@ public class Menu1 extends javax.swing.JFrame {
         Begonia.setLayout(BegoniaLayout);
         BegoniaLayout.setHorizontalGroup(
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         BegoniaLayout.setVerticalGroup(
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1703,7 +2242,7 @@ public class Menu1 extends javax.swing.JFrame {
         Narciso.setLayout(NarcisoLayout);
         NarcisoLayout.setHorizontalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         NarcisoLayout.setVerticalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1716,7 +2255,7 @@ public class Menu1 extends javax.swing.JFrame {
         Brezo.setLayout(BrezoLayout);
         BrezoLayout.setHorizontalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         BrezoLayout.setVerticalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1729,7 +2268,7 @@ public class Menu1 extends javax.swing.JFrame {
         Gardenia.setLayout(GardeniaLayout);
         GardeniaLayout.setHorizontalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         GardeniaLayout.setVerticalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1742,7 +2281,7 @@ public class Menu1 extends javax.swing.JFrame {
         Helecho.setLayout(HelechoLayout);
         HelechoLayout.setHorizontalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         HelechoLayout.setVerticalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1755,7 +2294,7 @@ public class Menu1 extends javax.swing.JFrame {
         Diente_Leon.setLayout(Diente_LeonLayout);
         Diente_LeonLayout.setHorizontalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Diente_LeonLayout.setVerticalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1768,7 +2307,7 @@ public class Menu1 extends javax.swing.JFrame {
         Fresa.setLayout(FresaLayout);
         FresaLayout.setHorizontalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         FresaLayout.setVerticalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1781,7 +2320,7 @@ public class Menu1 extends javax.swing.JFrame {
         Rododendro.setLayout(RododendroLayout);
         RododendroLayout.setHorizontalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         RododendroLayout.setVerticalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1794,7 +2333,7 @@ public class Menu1 extends javax.swing.JFrame {
         Llanten.setLayout(LlantenLayout);
         LlantenLayout.setHorizontalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         LlantenLayout.setVerticalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1807,7 +2346,7 @@ public class Menu1 extends javax.swing.JFrame {
         Achicoria.setLayout(AchicoriaLayout);
         AchicoriaLayout.setHorizontalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         AchicoriaLayout.setVerticalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1820,7 +2359,7 @@ public class Menu1 extends javax.swing.JFrame {
         Quenopodio.setLayout(QuenopodioLayout);
         QuenopodioLayout.setHorizontalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         QuenopodioLayout.setVerticalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1833,7 +2372,7 @@ public class Menu1 extends javax.swing.JFrame {
         Boca_De_dragon.setLayout(Boca_De_dragonLayout);
         Boca_De_dragonLayout.setHorizontalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Boca_De_dragonLayout.setVerticalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1846,7 +2385,7 @@ public class Menu1 extends javax.swing.JFrame {
         Caléndula.setLayout(CaléndulaLayout);
         CaléndulaLayout.setHorizontalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         CaléndulaLayout.setVerticalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1859,7 +2398,7 @@ public class Menu1 extends javax.swing.JFrame {
         Mastuerzo_marino.setLayout(Mastuerzo_marinoLayout);
         Mastuerzo_marinoLayout.setHorizontalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Mastuerzo_marinoLayout.setVerticalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1872,7 +2411,7 @@ public class Menu1 extends javax.swing.JFrame {
         Tagetes.setLayout(TagetesLayout);
         TagetesLayout.setHorizontalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         TagetesLayout.setVerticalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1885,7 +2424,7 @@ public class Menu1 extends javax.swing.JFrame {
         Árbol_del_amor.setLayout(Árbol_del_amorLayout);
         Árbol_del_amorLayout.setHorizontalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1055, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         Árbol_del_amorLayout.setVerticalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3010,6 +3549,12 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -3101,6 +3646,16 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
@@ -3142,8 +3697,24 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane46;
     private javax.swing.JScrollPane jScrollPane47;
     private javax.swing.JScrollPane jScrollPane48;
+    private javax.swing.JScrollPane jScrollPane49;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane50;
+    private javax.swing.JScrollPane jScrollPane51;
+    private javax.swing.JScrollPane jScrollPane52;
+    private javax.swing.JScrollPane jScrollPane53;
+    private javax.swing.JScrollPane jScrollPane54;
+    private javax.swing.JScrollPane jScrollPane55;
+    private javax.swing.JScrollPane jScrollPane56;
+    private javax.swing.JScrollPane jScrollPane57;
+    private javax.swing.JScrollPane jScrollPane58;
+    private javax.swing.JScrollPane jScrollPane59;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane60;
+    private javax.swing.JScrollPane jScrollPane61;
+    private javax.swing.JScrollPane jScrollPane62;
+    private javax.swing.JScrollPane jScrollPane63;
+    private javax.swing.JScrollPane jScrollPane64;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
@@ -3190,8 +3761,24 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea45;
     private javax.swing.JTextArea jTextArea46;
     private javax.swing.JTextArea jTextArea47;
+    private javax.swing.JTextArea jTextArea48;
+    private javax.swing.JTextArea jTextArea49;
     private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea50;
+    private javax.swing.JTextArea jTextArea51;
+    private javax.swing.JTextArea jTextArea52;
+    private javax.swing.JTextArea jTextArea53;
+    private javax.swing.JTextArea jTextArea54;
+    private javax.swing.JTextArea jTextArea55;
+    private javax.swing.JTextArea jTextArea56;
+    private javax.swing.JTextArea jTextArea57;
+    private javax.swing.JTextArea jTextArea58;
+    private javax.swing.JTextArea jTextArea59;
     private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea60;
+    private javax.swing.JTextArea jTextArea61;
+    private javax.swing.JTextArea jTextArea62;
+    private javax.swing.JTextArea jTextArea63;
     private javax.swing.JTextArea jTextArea7;
     private javax.swing.JTextArea jTextArea8;
     private javax.swing.JTextArea jTextArea9;
