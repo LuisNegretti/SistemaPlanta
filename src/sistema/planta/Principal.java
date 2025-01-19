@@ -104,8 +104,13 @@ public class Principal extends javax.swing.JFrame {
 
         Desarrolladores.setBackground(new java.awt.Color(204, 255, 255));
         Desarrolladores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-farmer-hombre-48.png"))); // NOI18N
-        Desarrolladores.setToolTipText("Desarrolladores.");
+        Desarrolladores.setToolTipText("Aprendizajes y concluciones del Sistema.");
         Desarrolladores.setBorder(null);
+        Desarrolladores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesarrolladoresActionPerformed(evt);
+            }
+        });
 
         Salir.setBackground(new java.awt.Color(204, 255, 255));
         Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/icons8-ir-48.png"))); // NOI18N
@@ -318,6 +323,63 @@ JOptionPane.showMessageDialog(null, mensaje,
         
     }//GEN-LAST:event_infoActionPerformed
 
+    private void DesarrolladoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesarrolladoresActionPerformed
+       
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_entrar.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            String mensaje = "<html><body style='width: 900px; font-size: 11px;'>" +
+    "<h1>Aprendizajes Más Importantes</h1>" +
+    "<ul>" +
+    "<li><strong>Diagnóstico Exhaustivo:</strong> Consideramos que realizar un diagnóstico completo del espacio es fundamental. Esto nos permitió identificar las limitaciones y potencialidades que afectan el cultivo.</li>" +
+    "<li><strong>Optimización del Espacio:</strong> Diseñamos el jardín de manera eficiente, lo que maximiza el uso de recursos y favorece el crecimiento de las plantas.</li>" +
+    "<li><strong>Adaptación a Necesidades Locales:</strong> Al conocer las necesidades específicas del entorno escolar, pudimos personalizar nuestro enfoque, asegurando la sostenibilidad del proyecto.</li>" +
+    "<li><strong>Análisis del Suelo:</strong> Evaluar las propiedades del suelo resultó crucial para seleccionar las plantas adecuadas y mejorar la fertilidad cuando fue necesario.</li>" +
+    "<li><strong>Sistema de Información Integrado:</strong> El sistema sistema de información autosustentable nos facilito en gran medida el control y la toma de decisiones basadas en datos proporcionados por el usuario, sobre el cultivo de las plantas ornamentales.</li>" +
+    "<li><strong>Monitoreo Continuo:</strong> Implementar el sistema nos permitió detectar cambios en el suelo realizando monitoreos por recomendacion del mismo, y realizar intervenciones oportunas.</li>" +
+    "<li><strong>Ejecución Práctica:</strong> La implementación del sistema demostró nuestra capacidad para aplicar lo aprendido en un contexto real, fomentando la educación ambiental entre los estudiantes.</li>" +
+    "</ul>" +
+    "<h1>Conclusiones</h1>" +
+    "<ul>" +
+    "<li>Un diagnóstico adecuado resultó esencial para el éxito del proyecto, permitiéndonos tomar decisiones informadas sobre el cultivo.</li>" +
+    "<li>Un diseño eficiente del jardín no solo aumentó la productividad, sino que también contribuyó a crear un ecosistema más saludable.</li>" +
+    "<li>La adaptación a las condiciones locales garantizó la sostenibilidad del proyecto a largo plazo.</li>" +
+    "<li>La calidad del suelo se demostró determinante para el éxito del cultivo, y su análisis fue una prioridad en nuestro trabajo.</li>" +
+    "<li>Adoptar un enfoque sistemático y basado en datos mejoró la eficiencia del proyecto y nos permitió hacer ajustes en tiempo real.</li>" +
+    "<li>El monitoreo regular aseguró que nuestro sistema se mantuviera saludable y productivo, previniendo problemas futuros.</li>" +
+    "<li>La ejecución práctica del sistema fomentó la educación ambiental y creó conciencia ecológica entre los estudiantes, contribuyendo a una cultura de sostenibilidad en la comunidad escolar.</li>" +
+    "</ul>" +
+    "<p>Nos sentimos orgullosos de lo que hemos logrado y estamos comprometidos a seguir aprendiendo y mejorando en el futuro.</p>" +
+    "</body></html>";
+
+// Mostrar el mensaje en un JOptionPane
+JOptionPane.showMessageDialog(null, mensaje,
+    "APRENDIZAJES Y CONCLUSIONES SOBRE EL SISTEMA", JOptionPane.DEFAULT_OPTION,
+    new javax.swing.ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+    }//GEN-LAST:event_DesarrolladoresActionPerformed
+    
     /**
      * @param args the command line arguments
      */

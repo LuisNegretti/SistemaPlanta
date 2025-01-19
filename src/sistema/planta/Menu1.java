@@ -1088,7 +1088,7 @@ public class Menu1 extends javax.swing.JFrame {
             Int_PlantasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Int_PlantasLayout.createSequentialGroup()
                 .addComponent(jLabel49)
-                .addGap(0, 113, Short.MAX_VALUE))
+                .addGap(0, 97, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Plantas", Int_Plantas);
@@ -1205,7 +1205,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Margaritas", new javax.swing.ImageIcon(getClass().getResource("/sistema/planta/iconos/Margaritas.png")), Margaritas); // NOI18N
@@ -1329,7 +1329,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addGroup(Amapolas_RosasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane34))))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Amapolas Rosas", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/Amapola.rosa.png")), Amapolas_Rosas); // NOI18N
@@ -1450,7 +1450,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Ixoras", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/ixora.png")), Ixoras); // NOI18N
@@ -1555,7 +1555,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addGroup(Rosas_DesiertoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Rosas_DesiertoLayout.createSequentialGroup()
                         .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1685,7 +1685,7 @@ public class Menu1 extends javax.swing.JFrame {
                             .addGroup(TulipanesLayout.createSequentialGroup()
                                 .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(jScrollPane48, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
+                                .addComponent(jScrollPane48, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
                             .addGroup(TulipanesLayout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1693,7 +1693,7 @@ public class Menu1 extends javax.swing.JFrame {
                                 .addComponent(jLabel93)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(5, 5, 5)))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Tulipanes", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/tulipanes.png")), Tulipanes); // NOI18N
@@ -1836,7 +1836,7 @@ public class Menu1 extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Bugambilia", Bugambilia);
+        jTabbedPane2.addTab("Bugambilia", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/bugambilia.png")), Bugambilia); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(255, 192, 203));
 
@@ -1954,7 +1954,7 @@ public class Menu1 extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout AzaleaLayout = new javax.swing.GroupLayout(Azalea);
@@ -2217,7 +2217,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel104)
                             .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PrimulaLayout = new javax.swing.GroupLayout(Primula);
@@ -2348,7 +2348,7 @@ public class Menu1 extends javax.swing.JFrame {
                         .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 127, Short.MAX_VALUE))
+                .addGap(28, 111, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout HortensiaLayout = new javax.swing.GroupLayout(Hortensia);
@@ -2445,12 +2445,11 @@ public class Menu1 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap(28, Short.MAX_VALUE)
+                        .addContainerGap(22, Short.MAX_VALUE)
                         .addComponent(jScrollPane69, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(116, 116, 116)
-                        .addComponent(jScrollPane70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
@@ -2493,7 +2492,7 @@ public class Menu1 extends javax.swing.JFrame {
             BegoniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BegoniaLayout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Begonia", Begonia);
@@ -2506,10 +2505,10 @@ public class Menu1 extends javax.swing.JFrame {
         );
         NarcisoLayout.setVerticalGroup(
             NarcisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Narciso", Narciso);
+        jTabbedPane2.addTab("Narciso", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/narciso.png")), Narciso); // NOI18N
 
         javax.swing.GroupLayout BrezoLayout = new javax.swing.GroupLayout(Brezo);
         Brezo.setLayout(BrezoLayout);
@@ -2519,7 +2518,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         BrezoLayout.setVerticalGroup(
             BrezoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Brezo", Brezo);
@@ -2532,7 +2531,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         GardeniaLayout.setVerticalGroup(
             GardeniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Gardenia", Gardenia);
@@ -2545,7 +2544,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         HelechoLayout.setVerticalGroup(
             HelechoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Helecho", Helecho);
@@ -2558,10 +2557,10 @@ public class Menu1 extends javax.swing.JFrame {
         );
         Diente_LeonLayout.setVerticalGroup(
             Diente_LeonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Diente De León", Diente_Leon);
+        jTabbedPane2.addTab("Diente De León", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/diente leon.png")), Diente_Leon); // NOI18N
 
         javax.swing.GroupLayout FresaLayout = new javax.swing.GroupLayout(Fresa);
         Fresa.setLayout(FresaLayout);
@@ -2571,10 +2570,10 @@ public class Menu1 extends javax.swing.JFrame {
         );
         FresaLayout.setVerticalGroup(
             FresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Fresa", Fresa);
+        jTabbedPane2.addTab("Fresa", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/planta fresa.png")), Fresa); // NOI18N
 
         javax.swing.GroupLayout RododendroLayout = new javax.swing.GroupLayout(Rododendro);
         Rododendro.setLayout(RododendroLayout);
@@ -2584,7 +2583,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         RododendroLayout.setVerticalGroup(
             RododendroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Rododendro", Rododendro);
@@ -2597,7 +2596,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         LlantenLayout.setVerticalGroup(
             LlantenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Llantén", Llanten);
@@ -2610,7 +2609,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         AchicoriaLayout.setVerticalGroup(
             AchicoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Achicoria", Achicoria);
@@ -2623,7 +2622,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         QuenopodioLayout.setVerticalGroup(
             QuenopodioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Quenopodio", Quenopodio);
@@ -2636,7 +2635,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         Boca_De_dragonLayout.setVerticalGroup(
             Boca_De_dragonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Boca de dragón", Boca_De_dragon);
@@ -2649,7 +2648,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         CaléndulaLayout.setVerticalGroup(
             CaléndulaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Caléndula", Caléndula);
@@ -2662,7 +2661,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         Mastuerzo_marinoLayout.setVerticalGroup(
             Mastuerzo_marinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Mastuerzo marino", Mastuerzo_marino);
@@ -2675,7 +2674,7 @@ public class Menu1 extends javax.swing.JFrame {
         );
         TagetesLayout.setVerticalGroup(
             TagetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Tagetes", Tagetes);
@@ -2688,10 +2687,10 @@ public class Menu1 extends javax.swing.JFrame {
         );
         Árbol_del_amorLayout.setVerticalGroup(
             Árbol_del_amorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 828, Short.MAX_VALUE)
+            .addGap(0, 812, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Árbol del amor", Árbol_del_amor);
+        jTabbedPane2.addTab("Árbol del amor", new javax.swing.ImageIcon(getClass().getResource("/IconosPlantas/arbol amor.png")), Árbol_del_amor); // NOI18N
 
         Plantas.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 870));
 

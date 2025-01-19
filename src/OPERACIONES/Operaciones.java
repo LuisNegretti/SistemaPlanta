@@ -165,6 +165,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaP_Details = new javax.swing.JTable();
         RealizarOperacion = new javax.swing.JButton();
+        info = new javax.swing.JButton();
         jLabel60 = new javax.swing.JLabel();
         HistorialdeOpe = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -422,10 +423,10 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(291, 291, 291))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         SalaOperaciones.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 610, 160));
@@ -487,6 +488,20 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
             }
         });
         SalaOperaciones.add(RealizarOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 630, -1, 80));
+
+        info.setBackground(new java.awt.Color(204, 255, 255));
+        info.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        info.setForeground(new java.awt.Color(255, 51, 51));
+        info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos ciclo del agua/clima.png"))); // NOI18N
+        info.setText("!Importante!");
+        info.setToolTipText("Sobre el sistema.");
+        info.setBorder(null);
+        info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                infoActionPerformed(evt);
+            }
+        });
+        SalaOperaciones.add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 220, -1));
 
         jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENGRANDES/un fondo más oscuro con un tema sobre plantas, estudios de tierra y fertilización.png"))); // NOI18N
         SalaOperaciones.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 720));
@@ -584,7 +599,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -637,7 +652,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
         String ph = txtPH.getText();
 
         //PRIMERO SON LAS CONDICIONES DE VALIDACION DE DATOS
-        if (ph.equals("")   || (cbx_Planta.getSelectedItem() == null || cbx_Planta.getSelectedIndex() == 0) || (cbx_tierra.getSelectedItem() == null || cbx_tierra.getSelectedIndex() == 0))
+        if (ph.equals("")   || (cbx_Planta.getSelectedItem() == null) || (cbx_tierra.getSelectedItem() == null))
         {
             JOptionPane.showMessageDialog(null, "Todos los campos tienen que estar rellenados, por favor verifica");
         }
@@ -650,7 +665,7 @@ private void insertarEnBaseDeDatos(String numberAsString, String fechaString, St
             }else{ //aqui este es el segundo else.
                 
                 //EN EL IF DE ABAJO FALTA COMPLETAR ALGUNAS CODICIONES DE LOS MINERALES.
-                 if ((BoxCalcio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()&& BoxPotasio.isSelected()) || (BoxCalcio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()) || (BoxPotasio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()) || (BoxCalcio.isSelected() && BoxFosforo.isSelected()) || (BoxNitrogeno.isSelected() && BoxFosforo.isSelected()) || (BoxPotasio.isSelected() && BoxFosforo.isSelected()))
+                 if ((BoxCalcio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()&& BoxPotasio.isSelected()) || (BoxCalcio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()) || (BoxPotasio.isSelected() && BoxFosforo.isSelected() && BoxNitrogeno.isSelected()) || (BoxCalcio.isSelected() && BoxFosforo.isSelected()) || (BoxNitrogeno.isSelected() && BoxFosforo.isSelected()) || (BoxPotasio.isSelected() && BoxFosforo.isSelected()) || (BoxCalcio.isSelected() && BoxNitrogeno.isSelected()) || (BoxPotasio.isSelected() && BoxNitrogeno.isSelected()))
         {
             JOptionPane.showMessageDialog(null, "Solo puede estar seleccionado un mineral para la operacion, por favor verifica"); 
         }
@@ -9874,6 +9889,47 @@ try {
 
     }//GEN-LAST:event_cbx_tierraItemStateChanged
 
+    private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
+
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_entrar.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+
+            String mensaje = "<html><body style='width: 900px; font-size: 13px;'>" +
+    "Por favor, tenga en cuenta el pH adecuado para la planta que usted seleccionó con la cual realizara la operacion. " +
+    "En los valores de referencia encontrará más información sobre el pH ideal de la planta " +
+    "y asegúrese de que el pH vaya acorde con su estudio de tierra previo, para que el sistema pueda hacer los calculos sin problemas. " +
+    "El sistema no toma en cuenta un pH distinto al acorde con la planta, ya que la función principal del sistema es proporcionar información de utilidad para sucultivo posterior." +
+    "</body></html>";
+
+// Mostrar el mensaje en un JOptionPane
+JOptionPane.showMessageDialog(null, mensaje,
+    "SOBRE EL SISTEMA", JOptionPane.DEFAULT_OPTION,
+    new javax.swing.ImageIcon(getClass().getResource("/iconos/ciclo.png")));
+
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+
+        }
+
+    }//GEN-LAST:event_infoActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -9899,6 +9955,7 @@ try {
     private javax.swing.JComboBox<String> cbx_Planta;
     private javax.swing.JComboBox<String> cbx_tierra;
     private javax.swing.JPanel cont_mnrl;
+    private javax.swing.JButton info;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;

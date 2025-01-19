@@ -2,6 +2,7 @@ package db_Operaciones;
 
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Conexion {
     Connection conn;
@@ -18,7 +19,10 @@ public class Conexion {
          // Crear una declaración SQL
             Statement statement = conn.createStatement();
         //conn.close() probar mañana
-        }catch(Exception e){System.out.println("Error en conexion!");}
+        }catch(Exception e){
+            System.out.println("Error en conexion!");
+        JOptionPane.showMessageDialog(null, "Error de conexion con la base de datos, asegurate de tener en ejecucion WampServer."); 
+        }
         
     }
     

@@ -208,11 +208,14 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/iconos ciclo del agua/icons8-farmer-hombre-48.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Desarrolladores."/>
+            <Property name="toolTipText" type="java.lang.String" value="Aprendizajes y concluciones del Sistema."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DesarrolladoresActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Salir">
           <Properties>
