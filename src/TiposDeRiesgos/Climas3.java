@@ -32,6 +32,8 @@ public class Climas3 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Volver.setText("Volver");
@@ -41,7 +43,6 @@ public class Climas3 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, -1, -1));
-        Volver.getAccessibleContext().setAccessibleName("Volver");
 
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {

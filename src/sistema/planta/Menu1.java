@@ -28,7 +28,7 @@ import JARDIN.PreparacionS1;
 import JARDIN.TiposSuelos1;
 import JARDIN.introDiseño;
 import OPERACIONES.Operaciones;
-import Plantas.Margaritas1;
+
 import TiposDeRiesgos.Climas;
 import TiposDeRiesgos.Lluvias;
 import TiposDeRiesgos.Plagas;
@@ -3684,34 +3684,173 @@ public class Menu1 extends javax.swing.JFrame {
 
     private void LluviaslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LluviaslblMouseClicked
 
-    Lluvias acceso = new Lluvias();
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Lluvias acceso = new Lluvias();
     acceso.setVisible(true);
     acceso.setLocationRelativeTo(null); 
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+    
             
     }//GEN-LAST:event_LluviaslblMouseClicked
 
     private void ClimaslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClimaslblMouseClicked
-        Climas acceso = new Climas();
+        
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Climas acceso = new Climas();
             acceso.setVisible(true);
             acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_ClimaslblMouseClicked
 
     private void TierralblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TierralblMouseClicked
-        TiposDeTierra acceso = new TiposDeTierra();
+        
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            TiposDeTierra acceso = new TiposDeTierra();
             acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
+            acceso.setLocationRelativeTo(null); 
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_TierralblMouseClicked
 
     private void PlagaslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlagaslblMouseClicked
-        Plagas acceso = new Plagas();
+        
+        try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            Plagas acceso = new Plagas();
             acceso.setVisible(true);
             acceso.setLocationRelativeTo(null);
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_PlagaslblMouseClicked
 
     private void comuneslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comuneslblMouseClicked
-        RiesgosComunes acceso = new RiesgosComunes();
+        
+         try {
+            // Ruta al archivo de audio
+            File audioFile = new File("src/Sonidos/Menu_play.wav");
+            if (!audioFile.exists()) {
+                throw new IllegalArgumentException("El archivo de audio no existe: " + audioFile.getAbsolutePath());
+            }
+
+            // Crea el objeto Media y MediaPlayer
+            String audioPath = audioFile.toURI().toString();
+            MediaPlayer mediaPlayer = new MediaPlayer(new Media(audioPath));
+
+            // Reproduce el audio
+            mediaPlayer.play();
+
+            // Espera a que el audio termine de reproducirse
+            // (opcional, solo si quieres que el programa espere hasta que termine la reproducción)
+            mediaPlayer.setOnEndOfMedia(() -> System.out.println("Reproducción finalizada"));
+            mediaPlayer.play();
+            
+            RiesgosComunes acceso = new RiesgosComunes();
             acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
+            acceso.setLocationRelativeTo(null); 
+            
+        } catch (Exception e) {
+            // Manejo de excepciones
+            e.printStackTrace();
+            
+        }
+        
+        
     }//GEN-LAST:event_comuneslblMouseClicked
 
     /**

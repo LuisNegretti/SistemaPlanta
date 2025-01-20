@@ -32,6 +32,8 @@ public class Climas2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Siguiente.setText("Siguiente");
@@ -41,7 +43,7 @@ public class Climas2 extends javax.swing.JFrame {
                 SiguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(Siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 570, -1, -1));
+        getContentPane().add(Siguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 560, -1, -1));
 
         Volver.setText("Volver");
         Volver.addActionListener(new java.awt.event.ActionListener() {
@@ -49,7 +51,7 @@ public class Climas2 extends javax.swing.JFrame {
                 VolverActionPerformed(evt);
             }
         });
-        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, -1, -1));
+        getContentPane().add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 560, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Climas 2.png"))); // NOI18N
         jLabel1.setText("jLabel1");

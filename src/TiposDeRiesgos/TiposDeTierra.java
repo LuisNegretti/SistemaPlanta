@@ -32,6 +32,8 @@ public class TiposDeTierra extends javax.swing.JFrame {
         FondoTiposTierra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Volver1.setText("Volver");

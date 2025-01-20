@@ -32,6 +32,8 @@ public class Climas extends javax.swing.JFrame {
         FondoClima = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Volver1.setText("Volver");
