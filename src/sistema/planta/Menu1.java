@@ -97,11 +97,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea21 = new javax.swing.JTextArea();
         jScrollPane27 = new javax.swing.JScrollPane();
         jTextArea26 = new javax.swing.JTextArea();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
         jScrollPane28 = new javax.swing.JScrollPane();
         jTextArea27 = new javax.swing.JTextArea();
         jScrollPane29 = new javax.swing.JScrollPane();
@@ -116,6 +111,11 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel85 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
+        Lluviaslbl = new javax.swing.JLabel();
+        Tierralbl = new javax.swing.JLabel();
+        Climaslbl = new javax.swing.JLabel();
+        Plagaslbl = new javax.swing.JLabel();
+        comuneslbl = new javax.swing.JLabel();
         Clima = new javax.swing.JPanel();
         SubTropical = new javax.swing.JPanel();
         jLabel79 = new javax.swing.JLabel();
@@ -563,46 +563,6 @@ public class Menu1 extends javax.swing.JFrame {
         jTextArea26.setBorder(null);
         jScrollPane27.setViewportView(jTextArea26);
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/tipo de tierrachiquita.png"))); // NOI18N
-        jButton10.setText("jButton10");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/Lluviaschiquita.png"))); // NOI18N
-        jButton11.setText("jButton10");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
-            }
-        });
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/bichoschiquita.png"))); // NOI18N
-        jButton12.setText("jButton10");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
-            }
-        });
-
-        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/riesgos comuneschiquitas.png"))); // NOI18N
-        jButton14.setText("jButton10");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/climaschiquita.png"))); // NOI18N
-        jButton15.setText("jButton10");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-
         jScrollPane28.setBorder(null);
 
         jTextArea27.setEditable(false);
@@ -677,6 +637,41 @@ public class Menu1 extends javax.swing.JFrame {
         jLabel87.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Riesgos/save-nature.png"))); // NOI18N
         jLabel87.setText("jLabel84");
 
+        Lluviaslbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/Lluviasova.png"))); // NOI18N
+        Lluviaslbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LluviaslblMouseClicked(evt);
+            }
+        });
+
+        Tierralbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/tipo de tierraova.png"))); // NOI18N
+        Tierralbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TierralblMouseClicked(evt);
+            }
+        });
+
+        Climaslbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/climasova_1.png"))); // NOI18N
+        Climaslbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClimaslblMouseClicked(evt);
+            }
+        });
+
+        Plagaslbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/bichosova.png"))); // NOI18N
+        Plagaslbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PlagaslblMouseClicked(evt);
+            }
+        });
+
+        comuneslbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesTiposDeRiesgos/riesgos comunesova.png"))); // NOI18N
+        comuneslbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comuneslblMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout RiesgosLayout = new javax.swing.GroupLayout(Riesgos);
         Riesgos.setLayout(RiesgosLayout);
         RiesgosLayout.setHorizontalGroup(
@@ -698,38 +693,36 @@ public class Menu1 extends javax.swing.JFrame {
                     .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(RiesgosLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(RiesgosLayout.createSequentialGroup()
-                                .addGap(68, 68, 68)
+                                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Lluviaslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Tierralbl, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(RiesgosLayout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(120, 120, 120))
-                                    .addGroup(RiesgosLayout.createSequentialGroup()
-                                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(RiesgosLayout.createSequentialGroup()
-                                                .addGap(19, 19, 19)
-                                                .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
-                                                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(RiesgosLayout.createSequentialGroup()
-                                                        .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(5, 5, 5)))
-                                                .addGap(22, 22, 22))
-                                            .addComponent(jButton12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(44, 44, 44))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                        .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(44, 44, 44))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                        .addComponent(Climaslbl)
+                                        .addGap(22, 22, 22))
+                                    .addComponent(Plagaslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comuneslbl)
+                                    .addGroup(RiesgosLayout.createSequentialGroup()
+                                        .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(64, 64, 64)
+                                        .addComponent(jLabel86, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap())
                     .addGroup(RiesgosLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
@@ -760,25 +753,26 @@ public class Menu1 extends javax.swing.JFrame {
                             .addComponent(jLabel84)
                             .addComponent(jLabel86)))
                     .addGroup(RiesgosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
                         .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(RiesgosLayout.createSequentialGroup()
-                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Climaslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(RiesgosLayout.createSequentialGroup()
-                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RiesgosLayout.createSequentialGroup()
+                                .addComponent(Lluviaslbl)
+                                .addGap(18, 18, 18)
                                 .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(43, 43, 43)
-                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Tierralbl, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(Plagaslbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(RiesgosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comuneslbl, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -3657,36 +3651,6 @@ public class Menu1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-       Lluvias acceso = new Lluvias();
-            acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-         Climas acceso = new Climas();
-            acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        TiposDeTierra acceso = new TiposDeTierra();
-            acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        Plagas acceso = new Plagas();
-            acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        RiesgosComunes acceso = new RiesgosComunes();
-            acceso.setVisible(true);
-            acceso.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton14ActionPerformed
-
     private void adaptacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaptacionActionPerformed
          try {
             // Ruta al archivo de audio
@@ -3717,6 +3681,38 @@ public class Menu1 extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_adaptacionActionPerformed
+
+    private void LluviaslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LluviaslblMouseClicked
+
+    Lluvias acceso = new Lluvias();
+    acceso.setVisible(true);
+    acceso.setLocationRelativeTo(null); 
+            
+    }//GEN-LAST:event_LluviaslblMouseClicked
+
+    private void ClimaslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClimaslblMouseClicked
+        Climas acceso = new Climas();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_ClimaslblMouseClicked
+
+    private void TierralblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TierralblMouseClicked
+        TiposDeTierra acceso = new TiposDeTierra();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_TierralblMouseClicked
+
+    private void PlagaslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PlagaslblMouseClicked
+        Plagas acceso = new Plagas();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_PlagaslblMouseClicked
+
+    private void comuneslblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comuneslblMouseClicked
+        RiesgosComunes acceso = new RiesgosComunes();
+            acceso.setVisible(true);
+            acceso.setLocationRelativeTo(null);
+    }//GEN-LAST:event_comuneslblMouseClicked
 
     /**
      * @param args the command line arguments
@@ -3765,6 +3761,7 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Caléndula;
     private javax.swing.JPanel CicloDeAgua1;
     private javax.swing.JPanel Clima;
+    private javax.swing.JLabel Climaslbl;
     private javax.swing.JPanel Desertico;
     private javax.swing.JPanel Diente_Leon;
     private javax.swing.JPanel Fresa;
@@ -3776,9 +3773,11 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel Ixoras;
     private javax.swing.JPanel Jardin;
     private javax.swing.JPanel Llanten;
+    private javax.swing.JLabel Lluviaslbl;
     private javax.swing.JPanel Margaritas;
     private javax.swing.JPanel Mastuerzo_marino;
     private javax.swing.JPanel Narciso;
+    private javax.swing.JLabel Plagaslbl;
     private javax.swing.JPanel Plantas;
     private javax.swing.JPanel Primula;
     private javax.swing.JPanel Quenopodio;
@@ -3788,18 +3787,15 @@ public class Menu1 extends javax.swing.JFrame {
     private javax.swing.JPanel SubTropical;
     private javax.swing.JPanel Tagetes;
     private javax.swing.JPanel Templado;
+    private javax.swing.JLabel Tierralbl;
     private javax.swing.JButton Tsuelos;
     private javax.swing.JPanel Tulipanes;
     private javax.swing.JButton adaptacion;
     private javax.swing.JPanel antartico;
+    private javax.swing.JLabel comuneslbl;
     private javax.swing.JPanel continental;
     private javax.swing.JButton introDiseños;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton6;
